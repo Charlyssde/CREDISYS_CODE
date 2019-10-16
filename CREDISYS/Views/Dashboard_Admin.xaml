@@ -1,0 +1,62 @@
+﻿<Window x:Class="CREDISYS.Views.DashboardAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views"
+        mc:Ignorable="d"
+        Title="Dashboard Administrador General" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <DockPanel LastChildFill="True" Background="AliceBlue">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="Transparent" 
+                    Height="50" Margin="0,0,0,15">
+            <Button x:Name="btnBack" Margin="10,0,10,0" Cursor="Hand" Width="50" Height="50">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Label Width="250"></Label>
+            <Label Content="Dashboard" FontSize="18" FontWeight="Bold" Margin="10,10,0,10" ></Label>
+            <Label x:Name="lblNombre" Content="Carlos de Jesus Carrillo Ceballos" MinWidth="250" FontSize="18" FontWeight="Bold" Margin="10,10,0,10"></Label>
+            <Image Source="pack://application:,,,/Resources/IcUsuario.png" Margin="10,10,0,10"></Image>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Separator Background="Black" Height="5"></Separator>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Height="50">
+            <Label Content="Notificaciones pendientes: "></Label>
+            <Label x:Name="lblNotificaciones"></Label>
+        </StackPanel>
+        <Grid DockPanel.Dock="Bottom" Background="Transparent">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DockPanel Grid.Row="0" Grid.Column="0" Margin="35">
+                <Button x:Name="btnAdminUsuarios" Content="Administrar Usuarios" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnAdminUsuarios_Click"></Button>
+            </DockPanel>
+            <DockPanel Grid.Row="0" Grid.Column="1" Margin="35">
+                <Button x:Name="btnAdminCatalogos" Content="Administrar catálogos" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnAdminCatalogos_Click"></Button>
+            </DockPanel>
+            <DockPanel Grid.Row="1" Grid.Column="0" Margin="35">
+                <Button x:Name="btnCobranza" Content="Cobranza" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnCobranza_Click"></Button>
+            </DockPanel>
+            <DockPanel Grid.Row="1" Grid.Column="1" Margin="35">
+                <Button x:Name="btnSolicitud" Content="Solicitudes" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnSolicitud_Click"></Button>
+            </DockPanel>
+            <DockPanel Grid.Row="1" Grid.Column="2" Margin="35">
+                <Button x:Name="btnDictamen" Content="Dictámenes" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnDictamen_Click"></Button>
+            </DockPanel>
+            <DockPanel Grid.Row="0" Grid.Column="2" Margin="35">
+                <Button x:Name="btnCliente" Content="Clientes" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnCliente_Click"></Button>
+            </DockPanel>
+        </Grid>
+    </DockPanel>
+</Window>
