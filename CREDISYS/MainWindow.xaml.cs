@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CREDISYS.Model.dao;
+using CREDISYS.Model.poco;
+using CREDISYS.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +23,37 @@ namespace CREDISYS
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            String username = txtUsername.Text;
+            String password = txtPassword.Password;
+            if (username.Equals("") || password.Equals(""))
+            {
+                MessageBox.Show("No puede quedar ningún elemento vacío", "Advertencia");
+            }
+            else
+            {
+                Usuario user = LoginDAO.Login(username, password);
+                if (user == null)
+                {
+                    MessageBox.Show("No se pudo iniciar sesión", "WARNING");
+                }
+                else
+                {
+                    DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
+                    dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
+                    dashboard_Admin.Show();
+
+                    this.Close();
+                }
+            }
+            
         }
     }
 }

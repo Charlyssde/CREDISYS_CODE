@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +56,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\dao\LoginDAO.cs" />
+    <Compile Include="Model\dao\RolDAO.cs" />
+    <Compile Include="Model\dao\UsuarioDAO.cs" />
+    <Compile Include="Model\db\ConnectionDB.cs" />
+    <Compile Include="Model\poco\Rol.cs" />
+    <Compile Include="Model\poco\Usuario.cs" />
+    <Compile Include="Views\Dashboard_Admin.xaml.cs">
+      <DependentUpon>Dashboard_Admin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministrarUsuarios.xaml.cs">
+      <DependentUpon>AdministrarUsuarios.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,6 +80,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Dashboard_Admin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministrarUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -83,7 +104,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -93,6 +114,34 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IcUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IcRegresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IcAceptar.png" />
+    <Resource Include="Resources\IcAgregar.png" />
+    <Resource Include="Resources\IcAgregarCliente.png" />
+    <Resource Include="Resources\IcBorrar.png" />
+    <Resource Include="Resources\IcBuscar.png" />
+    <Resource Include="Resources\IcCancelar.png" />
+    <Resource Include="Resources\IcContinuar.png" />
+    <Resource Include="Resources\IcEditar.png" />
+    <Resource Include="Resources\IcRealizarSolicitud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\btnCatalogos.png" />
+    <Resource Include="Resources\btnClientes.png" />
+    <Resource Include="Resources\btnCobranza.png" />
+    <Resource Include="Resources\btnDictamenes.png" />
+    <Resource Include="Resources\btnSolicitudes.png" />
+    <Resource Include="Resources\btnUsuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IcLogin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

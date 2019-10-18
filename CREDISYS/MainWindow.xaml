@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        ResizeMode="NoResize"
+        Title="MainWindow" Height="300" Width="350">
+
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top" Height="25">
+            <Label Content="Iniciar sesión" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="15"></Label>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Separator Background="Black" Height="5" Width="150"></Separator>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Width="100" Height="auto" VerticalAlignment="Center">
+            <Image Source="pack://application:,,,/Resources/IcLogin.png" ></Image>
+        </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Bottom">
+                <Label Content="Nombre de usuario: " FontWeight="Bold"></Label>
+                <TextBox x:Name="txtUsername" ToolTip="Nombre de usuario" Height="25" Width="150" HorizontalAlignment="Left"
+                         VerticalContentAlignment="Center"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Top" >
+                <Label Content="Contraseña: " FontWeight="Bold"></Label>
+                <PasswordBox x:Name="txtPassword" ToolTip="Contraseña" Height="25" Width="150" 
+                             VerticalContentAlignment="Center" HorizontalAlignment="Left"></PasswordBox>
+                <Button x:Name="btnIngresar" Content="Ingresar" Margin="35,15,150,0" Click="Button_Click"></Button>
+            </StackPanel>
+        </Grid>
         
-    </Grid>
+    </DockPanel>
 </Window>

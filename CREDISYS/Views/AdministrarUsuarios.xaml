@@ -1,0 +1,30 @@
+﻿<Window x:Class="CREDISYS.Views.AdministrarUsuarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views"
+        mc:Ignorable="d"
+        Title="Administración de usuarios" Height="450" Width="800"
+        ResizeMode="NoResize">
+    <DockPanel LastChildFill="True">
+        <StackPanel DockPanel.Dock="Top" Height="55" Background="CadetBlue" Orientation="Horizontal">
+            <Label Content="Ingrese un nombre de usuario" Margin="100,10,10,10"></Label>
+            <TextBox x:Name="txtBusqueda" Background="Transparent" Margin="10" MinWidth="250" FontSize="15" 
+                     TextAlignment="Left" TextWrapping="Wrap" VerticalContentAlignment="Center"></TextBox>
+            <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="pack://application:,,,/Resources/IcBuscar.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Height="50" Background="Bisque">
+            
+        </StackPanel>
+        <DockPanel DockPanel.Dock="Bottom">
+            <DataGrid Name="dg_Datos" IsReadOnly="True" AutoGenerateColumns="True"/>
+        </DockPanel>
+    </DockPanel>
+</Window>

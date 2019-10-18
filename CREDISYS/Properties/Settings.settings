@@ -1,7 +1,18 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CREDISYS.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="usernameBD" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sa</Value>
+    </Setting>
+    <Setting Name="passwordDB" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2580</Value>
+    </Setting>
+    <Setting Name="portDB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1433</Value>
+    </Setting>
+    <Setting Name="databaseDB" Type="System.String" Scope="User">
+      <Value Profile="(Default)">credisys</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
