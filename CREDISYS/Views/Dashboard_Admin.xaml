@@ -7,55 +7,94 @@
         mc:Ignorable="d"
         Title="Dashboard Administrador General" Height="450" Width="800"
         ResizeMode="NoResize">
-    <DockPanel LastChildFill="True" Background="AliceBlue">
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="Transparent" 
+    <DockPanel LastChildFill="True"  Background="#5c6bc0">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal"   
                     Height="50" Margin="0,0,0,15">
-            <Button x:Name="btnBack" Margin="10,0,10,0" Cursor="Hand" Width="50" Height="50">
+            <Button x:Name="btnBack" Margin="10,8,10,0" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Top" Click="btnBack_Click" >
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Label Width="250"></Label>
+            <Label Name="lblRol" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="20" FontStyle="Italic"></Label>
             <Label Content="Dashboard" FontSize="18" FontWeight="Bold" Margin="10,10,0,10" ></Label>
             <Label x:Name="lblNombre" Content="Carlos de Jesus Carrillo Ceballos" MinWidth="250" FontSize="18" FontWeight="Bold" Margin="10,10,0,10"></Label>
             <Image Source="pack://application:,,,/Resources/IcUsuario.png" Margin="10,10,0,10"></Image>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Top">
-            <Separator Background="Black" Height="5"></Separator>
+        <StackPanel DockPanel.Dock="Top" Background="#7986cb">
+            <Separator Background="Black" Height="5" ></Separator>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Bottom" Height="50">
-            <Label Content="Notificaciones pendientes: "></Label>
-            <Label x:Name="lblNotificaciones"></Label>
-        </StackPanel>
-        <Grid DockPanel.Dock="Bottom" Background="Transparent">
+        <Grid DockPanel.Dock="Bottom" Background="#9fa8da">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
                 <RowDefinition Height="auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition Width="250"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <DockPanel Grid.Row="0" Grid.Column="0" Margin="35">
-                <Button x:Name="btnAdminUsuarios" Content="Administrar Usuarios" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnAdminUsuarios_Click"></Button>
+            <DockPanel Grid.Row="0" Grid.Column="0">
+                <Label DockPanel.Dock="Top" Content="Administrar usuarios" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                <Button x:Name="btnAdminUsuarios" Content="Administrar Usuarios" Cursor="Hand" MinWidth="95" Width="auto" Height="95" FontSize="20" Margin="0,0,0,10" Click="btnAdminUsuarios_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/btnUsuarios.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </DockPanel>
-            <DockPanel Grid.Row="0" Grid.Column="1" Margin="35">
-                <Button x:Name="btnAdminCatalogos" Content="Administrar catálogos" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnAdminCatalogos_Click"></Button>
+            <DockPanel Grid.Row="0" Grid.Column="1" >
+                <Label DockPanel.Dock="Top" Content="Administrar catálogos" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                <Button x:Name="btnAdminCatalogos" Content="Administrar catálogos" Cursor="Hand" MinWidth="95" Width="auto" Height="95" FontSize="20" Margin="0,0,0,10" Click="btnAdminCatalogos_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/btnCatalogos.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </DockPanel>
-            <DockPanel Grid.Row="1" Grid.Column="0" Margin="35">
-                <Button x:Name="btnCobranza" Content="Cobranza" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnCobranza_Click"></Button>
+            <DockPanel Grid.Row="1" Grid.Column="0">
+                <Label DockPanel.Dock="Top" Content="Cobranza" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                <Button x:Name="btnCobranza" Content="Cobranza" Cursor="Hand" MinWidth="95" Width="auto" Height="95" FontSize="20" Margin="0,0,0,10" Click="btnCobranza_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/btnCobranza.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </DockPanel>
-            <DockPanel Grid.Row="1" Grid.Column="1" Margin="35">
-                <Button x:Name="btnSolicitud" Content="Solicitudes" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnSolicitud_Click"></Button>
+            <DockPanel Grid.Row="1" Grid.Column="1" >
+                <Label DockPanel.Dock="Top" Content="Solicitudes" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                <Button x:Name="btnSolicitud" Content="Solicitudes" Cursor="Hand" MinWidth="100" Width="95" FontSize="20" Margin="0,0,0,10" Click="btnSolicitud_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/btnSolicitudes.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </DockPanel>
-            <DockPanel Grid.Row="1" Grid.Column="2" Margin="35">
-                <Button x:Name="btnDictamen" Content="Dictámenes" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnDictamen_Click"></Button>
+            <DockPanel Grid.Row="1" Grid.Column="2" >
+                <Label DockPanel.Dock="Top" Content="Reportes" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                <Button x:Name="btnReportes" Content="Reportes" Cursor="Hand" MinWidth="100" Width="95" Height="95" FontSize="20" Margin="0,0,0,10" Click="btnReportes_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/btnDictamenes.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </DockPanel>
-            <DockPanel Grid.Row="0" Grid.Column="2" Margin="35">
-                <Button x:Name="btnCliente" Content="Clientes" MinWidth="100" Width="auto" FontSize="20" Margin="0,0,0,10" Click="btnCliente_Click"></Button>
+            <DockPanel Grid.Row="0" Grid.Column="2" >
+                <Label DockPanel.Dock="Top" Content="Clientes" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
+                <Button x:Name="btnCliente" Content="Clientes"  Cursor="Hand" Width="95" FontSize="20" Margin="0,0,0,10" Click="btnCliente_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/btnClientes.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </DockPanel>
         </Grid>
     </DockPanel>

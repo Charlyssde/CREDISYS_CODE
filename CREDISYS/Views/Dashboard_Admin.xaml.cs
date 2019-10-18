@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CREDISYS.Model.poco;
 using CREDISYS.Properties;
 
 namespace CREDISYS.Views
@@ -20,16 +21,18 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class DashboardAdmin: Window
     {
-        public DashboardAdmin()
+        public DashboardAdmin(Usuario user)
         {
             InitializeComponent();
-            lblNombre.Content = "Carlos de Jesús Carrillo Ceballos";
-            
+            lblNombre.Content = user.Nombre;
+            lblRol.Content = user.Rol.Nombre;
         }
 
         private void btnAdminUsuarios_Click(object sender, RoutedEventArgs e)
         {
-
+            AdministrarUsuarios admin = new AdministrarUsuarios();
+            admin.Show();
+            this.Close();
         }
 
         private void btnAdminCatalogos_Click(object sender, RoutedEventArgs e)
@@ -47,14 +50,22 @@ namespace CREDISYS.Views
 
         }
 
-        private void btnDictamen_Click(object sender, RoutedEventArgs e)
+        private void btnCliente_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnCliente_Click(object sender, RoutedEventArgs e)
+        private void btnReportes_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow window = new MainWindow();
+            window.WindowStartupLocation = this.WindowStartupLocation;
+            window.Show();
+            this.Close();
         }
     }
 }
