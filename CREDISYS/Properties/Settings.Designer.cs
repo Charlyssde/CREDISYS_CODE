@@ -34,7 +34,7 @@ namespace CREDISYS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2580")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Aline")]
         public string passwordDB {
             get {
                 return ((string)(this["passwordDB"]));

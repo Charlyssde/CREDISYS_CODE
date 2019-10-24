@@ -56,10 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\dao\CiudadDAO.cs" />
     <Compile Include="Model\dao\LoginDAO.cs" />
     <Compile Include="Model\dao\RolDAO.cs" />
     <Compile Include="Model\dao\UsuarioDAO.cs" />
     <Compile Include="Model\db\ConnectionDB.cs" />
+    <Compile Include="Model\poco\Ciudad.cs" />
     <Compile Include="Model\poco\Rol.cs" />
     <Compile Include="Model\poco\Usuario.cs" />
     <Compile Include="Views\Dashboard_Admin.xaml.cs">

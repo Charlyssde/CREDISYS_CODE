@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CREDISYS"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="300" Width="350">
+        Title="Iniciar sesión" Height="300" Width="350">
 
     <DockPanel LastChildFill="True">
         <StackPanel DockPanel.Dock="Top" Height="25">
