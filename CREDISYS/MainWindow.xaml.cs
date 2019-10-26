@@ -28,6 +28,8 @@ namespace CREDISYS
         public MainWindow()
         {
             InitializeComponent();
+            txtUsername.Text = "Charlyssde";
+            txtPassword.Password = "secret";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -5,36 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views"
         mc:Ignorable="d"
-        Title="Dashboard Administrador General" Height="450" Width="800"
-        ResizeMode="NoResize">
-    <DockPanel LastChildFill="True"  Background="#5c6bc0">
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal"   
-                    Height="50" Margin="0,0,0,15">
-            <Button x:Name="btnBack" Margin="10,8,10,0" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Top" Click="btnBack_Click" >
-                <Button.Template>
-                    <ControlTemplate>
-                        <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Label Name="lblRol" Width="250" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                   FontSize="20" FontStyle="Italic"></Label>
-            <Label Content="Dashboard" FontSize="18" FontWeight="Bold" Margin="10,10,0,10" ></Label>
-            <Label x:Name="lblNombre" Content="Carlos de Jesus Carrillo Ceballos" MinWidth="250" FontSize="18" FontWeight="Bold" Margin="10,10,0,10"></Label>
-            <Image Source="pack://application:,,,/Resources/IcUsuario.png" Margin="10,10,0,10"></Image>
+        Title="Dashboard Administrador General" Height="450" Width="800">
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top" Background="Blue" Height="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="btnBack" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnBack_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Dashboard" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" ></Label>
+                <Image Source="pack://application:,,,/Resources/IcUsuario.png" Height="35" ></Image>
+            </StackPanel>
+            </Grid>
+            
+
+            <StackPanel DockPanel.Dock="Top" Background="Blue">
+            <Separator Background="Black" Height="3" ></Separator>
         </StackPanel>
-        <StackPanel DockPanel.Dock="Top" Background="#7986cb">
-            <Separator Background="Black" Height="5" ></Separator>
-        </StackPanel>
-        <Grid DockPanel.Dock="Bottom" Background="#9fa8da">
+        <Grid DockPanel.Dock="Bottom" >
             <Grid.RowDefinitions>
-                <RowDefinition Height="150"></RowDefinition>
-                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition ></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="250"></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
+                <ColumnDefinition ></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <DockPanel Grid.Row="0" Grid.Column="0">
                 <Label DockPanel.Dock="Top" Content="Administrar usuarios" FontWeight="Bold" HorizontalContentAlignment="Center"></Label>
