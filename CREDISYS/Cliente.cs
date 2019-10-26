@@ -24,6 +24,7 @@ namespace CREDISYS
             this.Referencias = new HashSet<Referencia>();
             this.Tarjetas = new HashSet<Tarjeta>();
             this.Telefonoes = new HashSet<Telefono>();
+            this.Solicituds = new HashSet<Solicitud>();
         }
     
         public string rfc { get; set; }
@@ -56,5 +57,7 @@ namespace CREDISYS
         public virtual ICollection<Tarjeta> Tarjetas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Telefono> Telefonoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Solicitud> Solicituds { get; set; }
     }
 }

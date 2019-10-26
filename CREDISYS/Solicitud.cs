@@ -26,5 +26,6 @@ namespace CREDISYS
     
         public virtual CondicionCredito CondicionCredito { get; set; }
         public virtual Usuario Usuario { get; set; }
+        public virtual Cliente Cliente { get; set; }
     }
 }

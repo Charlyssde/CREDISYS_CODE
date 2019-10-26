@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CREDISYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CREDISYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Banco">
           <Key>
             <PropertyRef Name="idBanco" />
@@ -20,6 +20,7 @@
           <Property Name="idCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ciudad" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -424,6 +425,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Solicitud_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Solicitud_CondicionCredito">
           <End Role="CondicionCredito" Type="Self.CondicionCredito" Multiplicity="1" />
           <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
@@ -585,6 +598,10 @@
             <End Role="Relacion" EntitySet="Relacion" />
             <End Role="Referencia" EntitySet="Referencia" />
           </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_Cliente" Association="Self.FK_Solicitud_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
           <AssociationSet Name="FK_Solicitud_CondicionCredito" Association="Self.FK_Solicitud_CondicionCredito">
             <End Role="CondicionCredito" EntitySet="CondicionCredito" />
             <End Role="Solicitud" EntitySet="Solicitud" />
@@ -610,8 +627,7 @@
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CREDISYSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -634,6 +650,7 @@
           <NavigationProperty Name="Clientes" Relationship="Self.FK_Ciudad_Cliente" FromRole="Ciudad" ToRole="Cliente" />
           <NavigationProperty Name="Estado" Relationship="Self.FK_Ciudad_Estado" FromRole="Ciudad" ToRole="Estado" />
           <NavigationProperty Name="Domicilios" Relationship="Self.FK_Domicilio_Ciudad" FromRole="Ciudad" ToRole="Domicilio" />
+          <Property Name="estatus" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -661,6 +678,7 @@
           <NavigationProperty Name="Referencias" Relationship="Self.FK_Referencia_Cliente" FromRole="Cliente" ToRole="Referencia" />
           <NavigationProperty Name="Tarjetas" Relationship="Self.FK_Tarjeta_Cliente" FromRole="Cliente" ToRole="Tarjeta" />
           <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_Cliente" FromRole="Cliente" ToRole="Telefono" />
+          <NavigationProperty Name="Solicituds" Relationship="CREDISYSModel.FK_Solicitud_Cliente" FromRole="Cliente" ToRole="Solicitud" />
         </EntityType>
         <EntityType Name="CondicionCredito">
           <Key>
@@ -820,6 +838,7 @@
           <Property Name="idCondicion" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CondicionCredito" Relationship="Self.FK_Solicitud_CondicionCredito" FromRole="Solicitud" ToRole="CondicionCredito" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Solicitud_Usuario" FromRole="Solicitud" ToRole="Usuario" />
+          <NavigationProperty Name="Cliente" Relationship="CREDISYSModel.FK_Solicitud_Cliente" FromRole="Solicitud" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1265,7 +1284,23 @@
             <End Role="Usuario" EntitySet="Usuarios" />
             <End Role="Solicitud" EntitySet="Solicituds" />
           </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_Cliente" Association="CREDISYSModel.FK_Solicitud_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Solicitud" EntitySet="Solicituds" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_Solicitud_Cliente">
+          <End Type="CREDISYSModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="CREDISYSModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1284,6 +1319,7 @@
           <EntitySetMapping Name="Ciudads">
             <EntityTypeMapping TypeName="CREDISYSModel.Ciudad">
               <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
                 <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
                 <ScalarProperty Name="ciudad1" ColumnName="ciudad" />
                 <ScalarProperty Name="idEstado" ColumnName="idEstado" />

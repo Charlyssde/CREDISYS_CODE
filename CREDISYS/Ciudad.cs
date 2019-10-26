@@ -24,6 +24,7 @@ namespace CREDISYS
         public int idCiudad { get; set; }
         public string ciudad1 { get; set; }
         public int idEstado { get; set; }
+        public string estatus { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente> Clientes { get; set; }
