@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/iclogin.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbmodels.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbmodels.tt")]
 
 

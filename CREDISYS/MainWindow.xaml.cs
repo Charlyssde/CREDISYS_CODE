@@ -1,5 +1,4 @@
-﻿using CREDISYS.Model.dao;
-using CREDISYS.Model.poco;
+﻿
 using CREDISYS.Views;
 using System;
 using System.Collections.Generic;
@@ -15,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data.Entity;
+using System.Runtime.Remoting.Contexts;
 
 namespace CREDISYS
 {
@@ -32,26 +33,38 @@ namespace CREDISYS
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             String username = txtUsername.Text;
-            String password = txtPassword.Password;
+            string password = txtPassword.Password;
+            byte[] theBytes = Encoding.UTF8.GetBytes(password);
+
+
             if (username.Equals("") || password.Equals(""))
             {
                 MessageBox.Show("No puede quedar ningún elemento vacío", "Advertencia");
             }
             else
             {
-                Usuario user = LoginDAO.Login(username, password);
-                if (user == null)
+               
+                using (DBEntities db = new DBEntities())
                 {
-                    MessageBox.Show("No se pudo iniciar sesión", "WARNING");
-                }
-                else
-                {
-                    DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
-                    dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
-                    dashboard_Admin.Show();
+                   
+                    var user = db.Usuarios.Where(b => b.username.Equals(username) && b.password == theBytes).FirstOrDefault();
+                    if (user != null)
+                    {
+                        DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
+                        dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
+                        dashboard_Admin.Show();
 
-                    this.Close();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo iniciar sesión", "WARNING");
+                    }
+
                 }
+                   
+                   
+                
             }
             
         }

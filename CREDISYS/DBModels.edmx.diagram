@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="8065a08de5ef4b2281b464b0532c8b2a" Name="Diagram1">
+        <EntityTypeShape EntityType="CREDISYSModel.Banco" Width="1.5" PointX="10.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Ciudad" Width="1.5" PointX="5.25" PointY="30" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Cliente" Width="1.5" PointX="7.5" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.CondicionCredito" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Correo" Width="1.5" PointX="9.75" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Domicilio" Width="1.5" PointX="12.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Empleo" Width="1.5" PointX="9.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Estado" Width="1.5" PointX="3" PointY="29.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Expediente" Width="1.5" PointX="9.75" PointY="29.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Pai" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.PoliticaAprobacion" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Referencia" Width="1.5" PointX="9.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Relacion" Width="1.5" PointX="7.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Rol" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Solicitud" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Tarjeta" Width="1.5" PointX="12.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Telefono" Width="1.5" PointX="9.75" PointY="40.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.TipoDomicilio" Width="1.5" PointX="10.5" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="CREDISYSModel.Usuario" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="CREDISYSModel.FK_Tarjeta_Banco" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Ciudad_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Ciudad_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Domicilio_Ciudad" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Cliente_Correo" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Cliente_Empleo" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Cliente_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Cliente_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Correo_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Domicilio_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Empleo_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Expediente_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Referencia_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Tarjeta_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Telefono_Cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Solicitud_CondicionCredito" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Domicilio_Estado" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Domicilio_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Domicilio_TipoDomicilio" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_estado_pais" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Referencia_Relacion" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Usuario_Rol" ManuallyRouted="false" />
+        <AssociationConnector Association="CREDISYSModel.FK_Solicitud_Usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

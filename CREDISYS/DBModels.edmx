@@ -1,0 +1,1533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CREDISYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Banco">
+          <Key>
+            <PropertyRef Name="idBanco" />
+          </Key>
+          <Property Name="idBanco" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="banco" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="idCiudad" />
+          </Key>
+          <Property Name="idCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciudad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idEstado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="rfc" />
+          </Key>
+          <Property Name="rfc" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idEmpleo" Type="int" Nullable="false" />
+          <Property Name="idCorreo" Type="int" Nullable="false" />
+          <Property Name="folio" Type="int" Nullable="false" />
+          <Property Name="idPais" Type="int" Nullable="false" />
+          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="idCiudad" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CondicionCredito">
+          <Key>
+            <PropertyRef Name="idCondicionCredito" />
+          </Key>
+          <Property Name="idCondicionCredito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="condicion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="interes" Type="float" Nullable="false" />
+          <Property Name="iva" Type="float" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Correo">
+          <Key>
+            <PropertyRef Name="idCorreo" />
+          </Key>
+          <Property Name="idCorreo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="correo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Domicilio">
+          <Key>
+            <PropertyRef Name="idDomicilio" />
+          </Key>
+          <Property Name="idDomicilio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="colonia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="codPostal" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="numIn" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="numExt" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="calle" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idCiudad" Type="int" Nullable="false" />
+          <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="idPais" Type="int" Nullable="false" />
+          <Property Name="tiempoResidencia" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idTipoDomicilio" Type="int" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Empleo">
+          <Key>
+            <PropertyRef Name="idEmpleo" />
+          </Key>
+          <Property Name="idEmpleo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="numEmpleado" Type="int" Nullable="false" />
+          <Property Name="centroDeTrabajo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="antiguedadMeses" Type="int" Nullable="false" />
+          <Property Name="antiguedadAños" Type="int" Nullable="false" />
+          <Property Name="ocupacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="puesto" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="periodoPresentacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="idEstado" />
+          </Key>
+          <Property Name="idEstado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="idPais" Type="int" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expediente">
+          <Key>
+            <PropertyRef Name="idExpediente" />
+          </Key>
+          <Property Name="idExpediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="caratula" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="solicitud" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="domicializacion" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="pagare" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="INE" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="comprobanteDomicilio" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="estadoCuenta" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="reciboPago" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="folio" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="idPais" />
+          </Key>
+          <Property Name="idPais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="pais" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PoliticaAprobacion">
+          <Key>
+            <PropertyRef Name="idPolitica" />
+          </Key>
+          <Property Name="idPolitica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="politica" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Referencia">
+          <Key>
+            <PropertyRef Name="idReferencia" />
+          </Key>
+          <Property Name="idReferencia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="telefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="idRelacion" Type="int" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Relacion">
+          <Key>
+            <PropertyRef Name="idRelacion" />
+          </Key>
+          <Property Name="idRelacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="relacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rol" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Solicitud">
+          <Key>
+            <PropertyRef Name="folio" />
+          </Key>
+          <Property Name="folio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="vendedor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="montoNumero" Type="float" Nullable="false" />
+          <Property Name="montoLetra" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="destinoCredito" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="disposicion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="idCondicion" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tarjeta">
+          <Key>
+            <PropertyRef Name="numTarjeta" />
+          </Key>
+          <Property Name="clabeBancaria" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="idBanco" Type="int" Nullable="false" />
+          <Property Name="numTarjeta" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="numTelefono" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="idTelefono" />
+          </Key>
+          <Property Name="idTelefono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipoTelefono" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="numero" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="extension" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoDomicilio">
+          <Key>
+            <PropertyRef Name="idTipoDomicilio" />
+          </Key>
+          <Property Name="idTipoDomicilio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipoDomicilio" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="idRol" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Ciudad_Cliente">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ciudad_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Correo">
+          <End Role="Correo" Type="Self.Correo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Correo">
+              <PropertyRef Name="idCorreo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idCorreo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Empleo">
+          <End Role="Empleo" Type="Self.Empleo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Correo_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Correo" Type="Self.Correo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Correo">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Ciudad">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_TipoDomicilio">
+          <End Role="TipoDomicilio" Type="Self.TipoDomicilio" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoDomicilio">
+              <PropertyRef Name="idTipoDomicilio" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idTipoDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleo_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Empleo" Type="Self.Empleo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Empleo">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_estado_pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+          <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expediente_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Expediente">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_Relacion">
+          <End Role="Relacion" Type="Self.Relacion" Multiplicity="1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacion">
+              <PropertyRef Name="idRelacion" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="idRelacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitud_CondicionCredito">
+          <End Role="CondicionCredito" Type="Self.CondicionCredito" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CondicionCredito">
+              <PropertyRef Name="idCondicionCredito" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idCondicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitud_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="vendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarjeta_Banco">
+          <End Role="Banco" Type="Self.Banco" Multiplicity="1" />
+          <End Role="Tarjeta" Type="Self.Tarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Banco">
+              <PropertyRef Name="idBanco" />
+            </Principal>
+            <Dependent Role="Tarjeta">
+              <PropertyRef Name="idBanco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarjeta_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Tarjeta" Type="Self.Tarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Tarjeta">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CREDISYSModelStoreContainer">
+          <EntitySet Name="Banco" EntityType="Self.Banco" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ciudad" EntityType="Self.Ciudad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CondicionCredito" EntityType="Self.CondicionCredito" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Correo" EntityType="Self.Correo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Domicilio" EntityType="Self.Domicilio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleo" EntityType="Self.Empleo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expediente" EntityType="Self.Expediente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PoliticaAprobacion" EntityType="Self.PoliticaAprobacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Referencia" EntityType="Self.Referencia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Relacion" EntityType="Self.Relacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitud" EntityType="Self.Solicitud" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tarjeta" EntityType="Self.Tarjeta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Telefono" EntityType="Self.Telefono" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoDomicilio" EntityType="Self.TipoDomicilio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Ciudad_Cliente" Association="Self.FK_Ciudad_Cliente">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ciudad_Estado" Association="Self.FK_Ciudad_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Ciudad" EntitySet="Ciudad" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Correo" Association="Self.FK_Cliente_Correo">
+            <End Role="Correo" EntitySet="Correo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Empleo" Association="Self.FK_Cliente_Empleo">
+            <End Role="Empleo" EntitySet="Empleo" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Estado" Association="Self.FK_Cliente_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Pais" Association="Self.FK_Cliente_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Correo_Cliente" Association="Self.FK_Correo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Correo" EntitySet="Correo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Ciudad" Association="Self.FK_Domicilio_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudad" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Cliente" Association="Self.FK_Domicilio_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Estado" Association="Self.FK_Domicilio_Estado">
+            <End Role="Estado" EntitySet="Estado" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Pais" Association="Self.FK_Domicilio_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_TipoDomicilio" Association="Self.FK_Domicilio_TipoDomicilio">
+            <End Role="TipoDomicilio" EntitySet="TipoDomicilio" />
+            <End Role="Domicilio" EntitySet="Domicilio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleo_Cliente" Association="Self.FK_Empleo_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Empleo" EntitySet="Empleo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_estado_pais" Association="Self.FK_estado_pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expediente_Cliente" Association="Self.FK_Expediente_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Expediente" EntitySet="Expediente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_Cliente" Association="Self.FK_Referencia_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Referencia" EntitySet="Referencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_Relacion" Association="Self.FK_Referencia_Relacion">
+            <End Role="Relacion" EntitySet="Relacion" />
+            <End Role="Referencia" EntitySet="Referencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_CondicionCredito" Association="Self.FK_Solicitud_CondicionCredito">
+            <End Role="CondicionCredito" EntitySet="CondicionCredito" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_Usuario" Association="Self.FK_Solicitud_Usuario">
+            <End Role="Usuario" EntitySet="Usuario" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarjeta_Banco" Association="Self.FK_Tarjeta_Banco">
+            <End Role="Banco" EntitySet="Banco" />
+            <End Role="Tarjeta" EntitySet="Tarjeta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarjeta_Cliente" Association="Self.FK_Tarjeta_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Tarjeta" EntitySet="Tarjeta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Cliente" Association="Self.FK_Telefono_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Telefono" EntitySet="Telefono" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
+            <End Role="Rol" EntitySet="Rol" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CREDISYSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Banco">
+          <Key>
+            <PropertyRef Name="idBanco" />
+          </Key>
+          <Property Name="idBanco" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="banco1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Tarjetas" Relationship="Self.FK_Tarjeta_Banco" FromRole="Banco" ToRole="Tarjeta" />
+        </EntityType>
+        <EntityType Name="Ciudad">
+          <Key>
+            <PropertyRef Name="idCiudad" />
+          </Key>
+          <Property Name="idCiudad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ciudad1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Ciudad_Cliente" FromRole="Ciudad" ToRole="Cliente" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_Ciudad_Estado" FromRole="Ciudad" ToRole="Estado" />
+          <NavigationProperty Name="Domicilios" Relationship="Self.FK_Domicilio_Ciudad" FromRole="Ciudad" ToRole="Domicilio" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="rfc" />
+          </Key>
+          <Property Name="rfc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idEmpleo" Type="Int32" Nullable="false" />
+          <Property Name="idCorreo" Type="Int32" Nullable="false" />
+          <Property Name="folio" Type="Int32" Nullable="false" />
+          <Property Name="idPais" Type="Int32" Nullable="false" />
+          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <Property Name="idCiudad" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ciudad" Relationship="Self.FK_Ciudad_Cliente" FromRole="Cliente" ToRole="Ciudad" />
+          <NavigationProperty Name="Correo" Relationship="Self.FK_Cliente_Correo" FromRole="Cliente" ToRole="Correo" />
+          <NavigationProperty Name="Empleo" Relationship="Self.FK_Cliente_Empleo" FromRole="Cliente" ToRole="Empleo" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_Cliente_Estado" FromRole="Cliente" ToRole="Estado" />
+          <NavigationProperty Name="Pai" Relationship="Self.FK_Cliente_Pais" FromRole="Cliente" ToRole="Pais" />
+          <NavigationProperty Name="Correos" Relationship="Self.FK_Correo_Cliente" FromRole="Cliente" ToRole="Correo" />
+          <NavigationProperty Name="Domicilios" Relationship="Self.FK_Domicilio_Cliente" FromRole="Cliente" ToRole="Domicilio" />
+          <NavigationProperty Name="Empleos" Relationship="Self.FK_Empleo_Cliente" FromRole="Cliente" ToRole="Empleo" />
+          <NavigationProperty Name="Expedientes" Relationship="Self.FK_Expediente_Cliente" FromRole="Cliente" ToRole="Expediente" />
+          <NavigationProperty Name="Referencias" Relationship="Self.FK_Referencia_Cliente" FromRole="Cliente" ToRole="Referencia" />
+          <NavigationProperty Name="Tarjetas" Relationship="Self.FK_Tarjeta_Cliente" FromRole="Cliente" ToRole="Tarjeta" />
+          <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_Cliente" FromRole="Cliente" ToRole="Telefono" />
+        </EntityType>
+        <EntityType Name="CondicionCredito">
+          <Key>
+            <PropertyRef Name="idCondicionCredito" />
+          </Key>
+          <Property Name="idCondicionCredito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="condicion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="interes" Type="Double" Nullable="false" />
+          <Property Name="iva" Type="Double" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Solicituds" Relationship="Self.FK_Solicitud_CondicionCredito" FromRole="CondicionCredito" ToRole="Solicitud" />
+        </EntityType>
+        <EntityType Name="Correo">
+          <Key>
+            <PropertyRef Name="idCorreo" />
+          </Key>
+          <Property Name="idCorreo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="correo1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Correo" FromRole="Correo" ToRole="Cliente" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Correo_Cliente" FromRole="Correo" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Domicilio">
+          <Key>
+            <PropertyRef Name="idDomicilio" />
+          </Key>
+          <Property Name="idDomicilio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="colonia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="codPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numIn" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numExt" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="calle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idCiudad" Type="Int32" Nullable="false" />
+          <Property Name="idEstado" Type="Int32" Nullable="false" />
+          <Property Name="idPais" Type="Int32" Nullable="false" />
+          <Property Name="tiempoResidencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idTipoDomicilio" Type="Int32" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Ciudad" Relationship="Self.FK_Domicilio_Ciudad" FromRole="Domicilio" ToRole="Ciudad" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Domicilio_Cliente" FromRole="Domicilio" ToRole="Cliente" />
+          <NavigationProperty Name="Estado" Relationship="Self.FK_Domicilio_Estado" FromRole="Domicilio" ToRole="Estado" />
+          <NavigationProperty Name="Pai" Relationship="Self.FK_Domicilio_Pais" FromRole="Domicilio" ToRole="Pais" />
+          <NavigationProperty Name="TipoDomicilio" Relationship="Self.FK_Domicilio_TipoDomicilio" FromRole="Domicilio" ToRole="TipoDomicilio" />
+        </EntityType>
+        <EntityType Name="Empleo">
+          <Key>
+            <PropertyRef Name="idEmpleo" />
+          </Key>
+          <Property Name="idEmpleo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="centroDeTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="antiguedadMeses" Type="Int32" Nullable="false" />
+          <Property Name="antiguedadAños" Type="Int32" Nullable="false" />
+          <Property Name="ocupacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="periodoPresentacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Empleo" FromRole="Empleo" ToRole="Cliente" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Empleo_Cliente" FromRole="Empleo" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Estado">
+          <Key>
+            <PropertyRef Name="idEstado" />
+          </Key>
+          <Property Name="idEstado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="estado1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idPais" Type="Int32" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Ciudads" Relationship="Self.FK_Ciudad_Estado" FromRole="Estado" ToRole="Ciudad" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Estado" FromRole="Estado" ToRole="Cliente" />
+          <NavigationProperty Name="Domicilios" Relationship="Self.FK_Domicilio_Estado" FromRole="Estado" ToRole="Domicilio" />
+          <NavigationProperty Name="Pai" Relationship="Self.FK_estado_pais" FromRole="Estado" ToRole="Pais" />
+        </EntityType>
+        <EntityType Name="Expediente">
+          <Key>
+            <PropertyRef Name="idExpediente" />
+          </Key>
+          <Property Name="idExpediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="caratula" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="solicitud" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="domicializacion" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="pagare" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="INE" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="comprobanteDomicilio" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="estadoCuenta" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="reciboPago" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="folio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Expediente_Cliente" FromRole="Expediente" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Pai">
+          <Key>
+            <PropertyRef Name="idPais" />
+          </Key>
+          <Property Name="idPais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Pais" FromRole="Pais" ToRole="Cliente" />
+          <NavigationProperty Name="Domicilios" Relationship="Self.FK_Domicilio_Pais" FromRole="Pais" ToRole="Domicilio" />
+          <NavigationProperty Name="Estadoes" Relationship="Self.FK_estado_pais" FromRole="Pais" ToRole="Estado" />
+        </EntityType>
+        <EntityType Name="PoliticaAprobacion">
+          <Key>
+            <PropertyRef Name="idPolitica" />
+          </Key>
+          <Property Name="idPolitica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="politica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Referencia">
+          <Key>
+            <PropertyRef Name="idReferencia" />
+          </Key>
+          <Property Name="idReferencia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idRelacion" Type="Int32" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Referencia_Cliente" FromRole="Referencia" ToRole="Cliente" />
+          <NavigationProperty Name="Relacion" Relationship="Self.FK_Referencia_Relacion" FromRole="Referencia" ToRole="Relacion" />
+        </EntityType>
+        <EntityType Name="Relacion">
+          <Key>
+            <PropertyRef Name="idRelacion" />
+          </Key>
+          <Property Name="idRelacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="relacion1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Referencias" Relationship="Self.FK_Referencia_Relacion" FromRole="Relacion" ToRole="Referencia" />
+        </EntityType>
+        <EntityType Name="Rol">
+          <Key>
+            <PropertyRef Name="idRol" />
+          </Key>
+          <Property Name="idRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rol1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Usuario_Rol" FromRole="Rol" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Solicitud">
+          <Key>
+            <PropertyRef Name="folio" />
+          </Key>
+          <Property Name="folio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="vendedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="montoNumero" Type="Double" Nullable="false" />
+          <Property Name="montoLetra" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="destinoCredito" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="disposicion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idCondicion" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CondicionCredito" Relationship="Self.FK_Solicitud_CondicionCredito" FromRole="Solicitud" ToRole="CondicionCredito" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK_Solicitud_Usuario" FromRole="Solicitud" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tarjeta">
+          <Key>
+            <PropertyRef Name="numTarjeta" />
+          </Key>
+          <Property Name="clabeBancaria" Type="String" MaxLength="18" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idBanco" Type="Int32" Nullable="false" />
+          <Property Name="numTarjeta" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numTelefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Banco" Relationship="Self.FK_Tarjeta_Banco" FromRole="Tarjeta" ToRole="Banco" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Tarjeta_Cliente" FromRole="Tarjeta" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="Telefono">
+          <Key>
+            <PropertyRef Name="idTelefono" />
+          </Key>
+          <Property Name="idTelefono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="extension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Cliente" Relationship="Self.FK_Telefono_Cliente" FromRole="Telefono" ToRole="Cliente" />
+        </EntityType>
+        <EntityType Name="TipoDomicilio">
+          <Key>
+            <PropertyRef Name="idTipoDomicilio" />
+          </Key>
+          <Property Name="idTipoDomicilio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoDomicilio1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Domicilios" Relationship="Self.FK_Domicilio_TipoDomicilio" FromRole="TipoDomicilio" ToRole="Domicilio" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idRol" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rol" Relationship="Self.FK_Usuario_Rol" FromRole="Usuario" ToRole="Rol" />
+          <NavigationProperty Name="Solicituds" Relationship="Self.FK_Solicitud_Usuario" FromRole="Usuario" ToRole="Solicitud" />
+        </EntityType>
+        <Association Name="FK_Tarjeta_Banco">
+          <End Role="Banco" Type="Self.Banco" Multiplicity="1" />
+          <End Role="Tarjeta" Type="Self.Tarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Banco">
+              <PropertyRef Name="idBanco" />
+            </Principal>
+            <Dependent Role="Tarjeta">
+              <PropertyRef Name="idBanco" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ciudad_Cliente">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ciudad_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Ciudad">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Ciudad">
+          <End Role="Ciudad" Type="Self.Ciudad" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudad">
+              <PropertyRef Name="idCiudad" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idCiudad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Correo">
+          <End Role="Correo" Type="Self.Correo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Correo">
+              <PropertyRef Name="idCorreo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idCorreo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Empleo">
+          <End Role="Empleo" Type="Self.Empleo" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleo">
+              <PropertyRef Name="idEmpleo" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idEmpleo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cliente_Pais">
+          <End Role="Pais" Type="Self.Pai" Multiplicity="1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Correo_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Correo" Type="Self.Correo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Correo">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleo_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Empleo" Type="Self.Empleo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Empleo">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Expediente_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Expediente" Type="Self.Expediente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Expediente">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tarjeta_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Tarjeta" Type="Self.Tarjeta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Tarjeta">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Telefono_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Telefono" Type="Self.Telefono" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Telefono">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitud_CondicionCredito">
+          <End Role="CondicionCredito" Type="Self.CondicionCredito" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CondicionCredito">
+              <PropertyRef Name="idCondicionCredito" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idCondicion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Estado">
+          <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estado">
+              <PropertyRef Name="idEstado" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_Pais">
+          <End Role="Pais" Type="Self.Pai" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Domicilio_TipoDomicilio">
+          <End Role="TipoDomicilio" Type="Self.TipoDomicilio" Multiplicity="1" />
+          <End Role="Domicilio" Type="Self.Domicilio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoDomicilio">
+              <PropertyRef Name="idTipoDomicilio" />
+            </Principal>
+            <Dependent Role="Domicilio">
+              <PropertyRef Name="idTipoDomicilio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_estado_pais">
+          <End Role="Pais" Type="Self.Pai" Multiplicity="1" />
+          <End Role="Estado" Type="Self.Estado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Estado">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Referencia_Relacion">
+          <End Role="Relacion" Type="Self.Relacion" Multiplicity="1" />
+          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relacion">
+              <PropertyRef Name="idRelacion" />
+            </Principal>
+            <Dependent Role="Referencia">
+              <PropertyRef Name="idRelacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Usuario_Rol">
+          <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rol">
+              <PropertyRef Name="idRol" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitud_Usuario">
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="username" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="vendedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bancoes" EntityType="Self.Banco" />
+          <EntitySet Name="Ciudads" EntityType="Self.Ciudad" />
+          <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+          <EntitySet Name="CondicionCreditoes" EntityType="Self.CondicionCredito" />
+          <EntitySet Name="Correos" EntityType="Self.Correo" />
+          <EntitySet Name="Domicilios" EntityType="Self.Domicilio" />
+          <EntitySet Name="Empleos" EntityType="Self.Empleo" />
+          <EntitySet Name="Estadoes" EntityType="Self.Estado" />
+          <EntitySet Name="Expedientes" EntityType="Self.Expediente" />
+          <EntitySet Name="Pais" EntityType="Self.Pai" />
+          <EntitySet Name="PoliticaAprobacions" EntityType="Self.PoliticaAprobacion" />
+          <EntitySet Name="Referencias" EntityType="Self.Referencia" />
+          <EntitySet Name="Relacions" EntityType="Self.Relacion" />
+          <EntitySet Name="Rols" EntityType="Self.Rol" />
+          <EntitySet Name="Solicituds" EntityType="Self.Solicitud" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Tarjetas" EntityType="Self.Tarjeta" />
+          <EntitySet Name="Telefonoes" EntityType="Self.Telefono" />
+          <EntitySet Name="TipoDomicilios" EntityType="Self.TipoDomicilio" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuario" />
+          <AssociationSet Name="FK_Tarjeta_Banco" Association="Self.FK_Tarjeta_Banco">
+            <End Role="Banco" EntitySet="Bancoes" />
+            <End Role="Tarjeta" EntitySet="Tarjetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ciudad_Cliente" Association="Self.FK_Ciudad_Cliente">
+            <End Role="Ciudad" EntitySet="Ciudads" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ciudad_Estado" Association="Self.FK_Ciudad_Estado">
+            <End Role="Estado" EntitySet="Estadoes" />
+            <End Role="Ciudad" EntitySet="Ciudads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Ciudad" Association="Self.FK_Domicilio_Ciudad">
+            <End Role="Ciudad" EntitySet="Ciudads" />
+            <End Role="Domicilio" EntitySet="Domicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Correo" Association="Self.FK_Cliente_Correo">
+            <End Role="Correo" EntitySet="Correos" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Empleo" Association="Self.FK_Cliente_Empleo">
+            <End Role="Empleo" EntitySet="Empleos" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Estado" Association="Self.FK_Cliente_Estado">
+            <End Role="Estado" EntitySet="Estadoes" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cliente_Pais" Association="Self.FK_Cliente_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Cliente" EntitySet="Clientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Correo_Cliente" Association="Self.FK_Correo_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Correo" EntitySet="Correos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Cliente" Association="Self.FK_Domicilio_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Domicilio" EntitySet="Domicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleo_Cliente" Association="Self.FK_Empleo_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Empleo" EntitySet="Empleos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Expediente_Cliente" Association="Self.FK_Expediente_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Expediente" EntitySet="Expedientes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_Cliente" Association="Self.FK_Referencia_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Referencia" EntitySet="Referencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tarjeta_Cliente" Association="Self.FK_Tarjeta_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Tarjeta" EntitySet="Tarjetas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Telefono_Cliente" Association="Self.FK_Telefono_Cliente">
+            <End Role="Cliente" EntitySet="Clientes" />
+            <End Role="Telefono" EntitySet="Telefonoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_CondicionCredito" Association="Self.FK_Solicitud_CondicionCredito">
+            <End Role="CondicionCredito" EntitySet="CondicionCreditoes" />
+            <End Role="Solicitud" EntitySet="Solicituds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Estado" Association="Self.FK_Domicilio_Estado">
+            <End Role="Estado" EntitySet="Estadoes" />
+            <End Role="Domicilio" EntitySet="Domicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_Pais" Association="Self.FK_Domicilio_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Domicilio" EntitySet="Domicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Domicilio_TipoDomicilio" Association="Self.FK_Domicilio_TipoDomicilio">
+            <End Role="TipoDomicilio" EntitySet="TipoDomicilios" />
+            <End Role="Domicilio" EntitySet="Domicilios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_estado_pais" Association="Self.FK_estado_pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Estado" EntitySet="Estadoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Referencia_Relacion" Association="Self.FK_Referencia_Relacion">
+            <End Role="Relacion" EntitySet="Relacions" />
+            <End Role="Referencia" EntitySet="Referencias" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
+            <End Role="Rol" EntitySet="Rols" />
+            <End Role="Usuario" EntitySet="Usuarios" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_Usuario" Association="Self.FK_Solicitud_Usuario">
+            <End Role="Usuario" EntitySet="Usuarios" />
+            <End Role="Solicitud" EntitySet="Solicituds" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CREDISYSModelStoreContainer" CdmEntityContainer="DBEntities">
+          <EntitySetMapping Name="Bancoes">
+            <EntityTypeMapping TypeName="CREDISYSModel.Banco">
+              <MappingFragment StoreEntitySet="Banco">
+                <ScalarProperty Name="idBanco" ColumnName="idBanco" />
+                <ScalarProperty Name="banco1" ColumnName="banco" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ciudads">
+            <EntityTypeMapping TypeName="CREDISYSModel.Ciudad">
+              <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+                <ScalarProperty Name="ciudad1" ColumnName="ciudad" />
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="CREDISYSModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="rfc" ColumnName="rfc" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
+                <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
+                <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
+                <ScalarProperty Name="idCorreo" ColumnName="idCorreo" />
+                <ScalarProperty Name="folio" ColumnName="folio" />
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CondicionCreditoes">
+            <EntityTypeMapping TypeName="CREDISYSModel.CondicionCredito">
+              <MappingFragment StoreEntitySet="CondicionCredito">
+                <ScalarProperty Name="idCondicionCredito" ColumnName="idCondicionCredito" />
+                <ScalarProperty Name="condicion" ColumnName="condicion" />
+                <ScalarProperty Name="interes" ColumnName="interes" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Correos">
+            <EntityTypeMapping TypeName="CREDISYSModel.Correo">
+              <MappingFragment StoreEntitySet="Correo">
+                <ScalarProperty Name="idCorreo" ColumnName="idCorreo" />
+                <ScalarProperty Name="correo1" ColumnName="correo" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Domicilios">
+            <EntityTypeMapping TypeName="CREDISYSModel.Domicilio">
+              <MappingFragment StoreEntitySet="Domicilio">
+                <ScalarProperty Name="idDomicilio" ColumnName="idDomicilio" />
+                <ScalarProperty Name="colonia" ColumnName="colonia" />
+                <ScalarProperty Name="codPostal" ColumnName="codPostal" />
+                <ScalarProperty Name="numIn" ColumnName="numIn" />
+                <ScalarProperty Name="numExt" ColumnName="numExt" />
+                <ScalarProperty Name="calle" ColumnName="calle" />
+                <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="tiempoResidencia" ColumnName="tiempoResidencia" />
+                <ScalarProperty Name="idTipoDomicilio" ColumnName="idTipoDomicilio" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleos">
+            <EntityTypeMapping TypeName="CREDISYSModel.Empleo">
+              <MappingFragment StoreEntitySet="Empleo">
+                <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
+                <ScalarProperty Name="nombreEmpresa" ColumnName="nombreEmpresa" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="numEmpleado" ColumnName="numEmpleado" />
+                <ScalarProperty Name="centroDeTrabajo" ColumnName="centroDeTrabajo" />
+                <ScalarProperty Name="antiguedadMeses" ColumnName="antiguedadMeses" />
+                <ScalarProperty Name="antiguedadAños" ColumnName="antiguedadAños" />
+                <ScalarProperty Name="ocupacion" ColumnName="ocupacion" />
+                <ScalarProperty Name="puesto" ColumnName="puesto" />
+                <ScalarProperty Name="periodoPresentacion" ColumnName="periodoPresentacion" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estadoes">
+            <EntityTypeMapping TypeName="CREDISYSModel.Estado">
+              <MappingFragment StoreEntitySet="Estado">
+                <ScalarProperty Name="idEstado" ColumnName="idEstado" />
+                <ScalarProperty Name="estado1" ColumnName="estado" />
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expedientes">
+            <EntityTypeMapping TypeName="CREDISYSModel.Expediente">
+              <MappingFragment StoreEntitySet="Expediente">
+                <ScalarProperty Name="idExpediente" ColumnName="idExpediente" />
+                <ScalarProperty Name="caratula" ColumnName="caratula" />
+                <ScalarProperty Name="solicitud" ColumnName="solicitud" />
+                <ScalarProperty Name="domicializacion" ColumnName="domicializacion" />
+                <ScalarProperty Name="pagare" ColumnName="pagare" />
+                <ScalarProperty Name="INE" ColumnName="INE" />
+                <ScalarProperty Name="comprobanteDomicilio" ColumnName="comprobanteDomicilio" />
+                <ScalarProperty Name="estadoCuenta" ColumnName="estadoCuenta" />
+                <ScalarProperty Name="reciboPago" ColumnName="reciboPago" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="folio" ColumnName="folio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pais">
+            <EntityTypeMapping TypeName="CREDISYSModel.Pai">
+              <MappingFragment StoreEntitySet="Pais">
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="pais" ColumnName="pais" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PoliticaAprobacions">
+            <EntityTypeMapping TypeName="CREDISYSModel.PoliticaAprobacion">
+              <MappingFragment StoreEntitySet="PoliticaAprobacion">
+                <ScalarProperty Name="idPolitica" ColumnName="idPolitica" />
+                <ScalarProperty Name="politica" ColumnName="politica" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Referencias">
+            <EntityTypeMapping TypeName="CREDISYSModel.Referencia">
+              <MappingFragment StoreEntitySet="Referencia">
+                <ScalarProperty Name="idReferencia" ColumnName="idReferencia" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="idRelacion" ColumnName="idRelacion" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relacions">
+            <EntityTypeMapping TypeName="CREDISYSModel.Relacion">
+              <MappingFragment StoreEntitySet="Relacion">
+                <ScalarProperty Name="idRelacion" ColumnName="idRelacion" />
+                <ScalarProperty Name="relacion1" ColumnName="relacion" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rols">
+            <EntityTypeMapping TypeName="CREDISYSModel.Rol">
+              <MappingFragment StoreEntitySet="Rol">
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="rol1" ColumnName="rol" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicituds">
+            <EntityTypeMapping TypeName="CREDISYSModel.Solicitud">
+              <MappingFragment StoreEntitySet="Solicitud">
+                <ScalarProperty Name="folio" ColumnName="folio" />
+                <ScalarProperty Name="vendedor" ColumnName="vendedor" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="montoNumero" ColumnName="montoNumero" />
+                <ScalarProperty Name="montoLetra" ColumnName="montoLetra" />
+                <ScalarProperty Name="destinoCredito" ColumnName="destinoCredito" />
+                <ScalarProperty Name="disposicion" ColumnName="disposicion" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="idCondicion" ColumnName="idCondicion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="CREDISYSModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tarjetas">
+            <EntityTypeMapping TypeName="CREDISYSModel.Tarjeta">
+              <MappingFragment StoreEntitySet="Tarjeta">
+                <ScalarProperty Name="clabeBancaria" ColumnName="clabeBancaria" />
+                <ScalarProperty Name="idBanco" ColumnName="idBanco" />
+                <ScalarProperty Name="numTarjeta" ColumnName="numTarjeta" />
+                <ScalarProperty Name="numTelefono" ColumnName="numTelefono" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Telefonoes">
+            <EntityTypeMapping TypeName="CREDISYSModel.Telefono">
+              <MappingFragment StoreEntitySet="Telefono">
+                <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
+                <ScalarProperty Name="tipoTelefono" ColumnName="tipoTelefono" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoDomicilios">
+            <EntityTypeMapping TypeName="CREDISYSModel.TipoDomicilio">
+              <MappingFragment StoreEntitySet="TipoDomicilio">
+                <ScalarProperty Name="idTipoDomicilio" ColumnName="idTipoDomicilio" />
+                <ScalarProperty Name="tipoDomicilio1" ColumnName="tipoDomicilio" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="CREDISYSModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

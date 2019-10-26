@@ -11,8 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using CREDISYS.Model.poco;
 using CREDISYS.Properties;
+
 
 namespace CREDISYS.Views
 {
@@ -24,8 +24,8 @@ namespace CREDISYS.Views
         public DashboardAdmin(Usuario user)
         {
             InitializeComponent();
-            lblNombre.Content = user.Nombre;
-            lblRol.Content = user.Rol.Nombre;
+            lblNombre.Content = user.nombre;
+            lblRol.Content = user.Rol.rol1;
         }
 
         private void btnAdminUsuarios_Click(object sender, RoutedEventArgs e)
