@@ -15,20 +15,13 @@ using System.Windows.Shapes;
 namespace CREDISYS.Views
 {
     /// <summary>
-    /// Lógica de interacción para Dashboard_AnalistaC.xaml
+    /// Lógica de interacción para VisualizarSolicitudes.xaml
     /// </summary>
-    public partial class Dashboard_AnalistaC : Window
+    public partial class VisualizarSolicitudes : Window
     {
-        public Dashboard_AnalistaC(Usuario user)
+        public VisualizarSolicitudes()
         {
             InitializeComponent();
-            cargarDatos(user);
-        }
-
-        private void cargarDatos(Usuario user)
-        {
-            lblNombre.Content = user.nombre;
-            lblRol.Content = user.Rol.rol1;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -36,7 +29,7 @@ namespace CREDISYS.Views
 
         }
 
-        private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
 
         }

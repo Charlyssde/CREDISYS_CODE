@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:CREDISYS.Views"
         xmlns:CREDISYS="clr-namespace:CREDISYS" x:Class="CREDISYS.Views.AdministrarUsuarios"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="Administración de usuarios" Height="450" Width="800">
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Background="#283593"  Height="50">

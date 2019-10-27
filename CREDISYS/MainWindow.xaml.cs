@@ -54,9 +54,31 @@ namespace CREDISYS
                         var user = db.Usuarios.Where(b => b.username.Equals(username) && b.password == theBytes).FirstOrDefault();
                         if (user != null)
                         {
-                            DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
-                            dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
-                            dashboard_Admin.Show();
+                            switch (user.idRol)
+                            {
+                                case 5:
+                                    DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
+                                    dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
+                                    dashboard_Admin.Show();
+                                    break;
+                                case 6:
+                                    /*
+                                     * para el capturista
+                                     */
+                                    break;
+                                case 7:
+                                    /*
+                                     * DashboardGestorC dashboard_Gestor = new DashboardGestorC();
+                                     * dashboard_Gestor.windowStartupLocation = this.WindowStartupLocation;
+                                     * dashboard_Gestor.Show();
+                                     */
+                                    break;
+                                case 8:
+                                    Dashboard_AnalistaC dashboard_AnalistaC = new Dashboard_AnalistaC(user);
+                                    dashboard_AnalistaC.WindowStartupLocation = this.WindowStartupLocation;
+                                    dashboard_AnalistaC.Show();
+                                    break;
+                            }
 
                             this.Close();
                         }
