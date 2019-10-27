@@ -146,6 +146,9 @@
     <Compile Include="Views\AdministrarUsuarios.xaml.cs">
       <DependentUpon>AdministrarUsuarios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard_AnalistaC.xaml.cs">
+      <DependentUpon>Dashboard_AnalistaC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\EditarUsuario.xaml.cs">
       <DependentUpon>EditarUsuario.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdministrarUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dashboard_AnalistaC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

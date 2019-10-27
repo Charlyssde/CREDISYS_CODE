@@ -41,7 +41,7 @@ namespace CREDISYS.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -104,6 +104,7 @@ namespace CREDISYS.Views
             txtPassword.Password = "";
             txtUsername.Text = "";
             txtRol.Text = "";
+            
         }
     }
 
