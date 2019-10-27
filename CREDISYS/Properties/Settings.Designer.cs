@@ -25,43 +25,10 @@ namespace CREDISYS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("sa")]
-        public string usernameBD {
+        [global::System.Configuration.DefaultSettingValueAttribute("#5c6bc0")]
+        public string colorCabeceras {
             get {
-                return ((string)(this["usernameBD"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("2580")]
-        public string passwordDB {
-            get {
-                return ((string)(this["passwordDB"]));
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1433")]
-        public string portDB {
-            get {
-                return ((string)(this["portDB"]));
-            }
-            set {
-                this["portDB"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("credisys")]
-        public string databaseDB {
-            get {
-                return ((string)(this["databaseDB"]));
-            }
-            set {
-                this["databaseDB"] = value;
+                return ((string)(this["colorCabeceras"]));
             }
         }
     }

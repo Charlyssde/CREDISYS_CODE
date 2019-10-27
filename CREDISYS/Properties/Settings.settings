@@ -2,17 +2,8 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CREDISYS.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="usernameBD" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">sa</Value>
-    </Setting>
-    <Setting Name="passwordDB" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">2580</Value>
-    </Setting>
-    <Setting Name="portDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1433</Value>
-    </Setting>
-    <Setting Name="databaseDB" Type="System.String" Scope="User">
-      <Value Profile="(Default)">credisys</Value>
+    <Setting Name="colorCabeceras" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">#5c6bc0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

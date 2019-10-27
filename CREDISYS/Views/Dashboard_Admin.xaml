@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Dashboard Administrador General" Height="450" Width="800">
     <DockPanel LastChildFill="True">
-        <Grid DockPanel.Dock="Top" Background="Blue" Height="50">
+        <Grid DockPanel.Dock="Top" Background="#283593" Height="50">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
@@ -32,10 +32,10 @@
                 <Image Source="pack://application:,,,/Resources/IcUsuario.png" Height="35" ></Image>
             </StackPanel>
             </Grid>
-            
 
-            <StackPanel DockPanel.Dock="Top" Background="Blue">
-            <Separator Background="Black" Height="3" ></Separator>
+
+        <StackPanel DockPanel.Dock="Top" Background="#283593" VerticalAlignment="Bottom">
+            <Separator Background="Black" Height="3"  ></Separator>
         </StackPanel>
         <Grid DockPanel.Dock="Bottom" >
             <Grid.RowDefinitions>

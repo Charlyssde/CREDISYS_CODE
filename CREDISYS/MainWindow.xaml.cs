@@ -48,19 +48,27 @@ namespace CREDISYS
                
                 using (DBEntities db = new DBEntities())
                 {
-                   
-                    var user = db.Usuarios.Where(b => b.username.Equals(username) && b.password == theBytes).FirstOrDefault();
-                    if (user != null)
-                    {
-                        DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
-                        dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
-                        dashboard_Admin.Show();
 
-                        this.Close();
-                    }
-                    else
+                    try
                     {
-                        MessageBox.Show("No se pudo iniciar sesión", "WARNING");
+                        var user = db.Usuarios.Where(b => b.username.Equals(username) && b.password == theBytes).FirstOrDefault();
+                        if (user != null)
+                        {
+                            DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
+                            dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
+                            dashboard_Admin.Show();
+
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se pudo iniciar sesión", "WARNING");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Error a la hora de conectar a la base de datos\n" +
+                            "Intente de nuevo más tarde");
                     }
 
                 }

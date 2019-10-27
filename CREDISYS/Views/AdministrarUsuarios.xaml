@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="Administración de usuarios" Height="450" Width="800">
     <DockPanel LastChildFill="True">
-        <Grid DockPanel.Dock="Top" Background="Blue" Height="50">
+        <Grid DockPanel.Dock="Top" Background="#283593"  Height="50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -68,12 +68,36 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        <DockPanel DockPanel.Dock="Bottom">
-            <DataGrid x:Name="dg_Datos" IsReadOnly="True" SelectionChanged="dg_Datos_SelectionChanged" AutoGenerateColumns="True" HeadersVisibility="Column" ColumnWidth="auto" MinColumnWidth="100" >
-                <DataGrid.DataContext>
-                    <CREDISYS:Usuario/>
-                </DataGrid.DataContext>
-            </DataGrid>
+        <DockPanel DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="80"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="pack://application:,,,/Resources/IcUsuario.png" Width="100" Height="100" HorizontalAlignment="Right"></Image>
+                <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Nombre completo:" Margin="0,0,5,0"></Label>
+                        <TextBox x:Name="txtNombre" Width="200" Margin="0,0,0,2" IsReadOnly="True"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Nombre de usuario:"></Label>
+                        <TextBox x:Name="txtUsername" Width="200" Margin="0,0,0,2" IsReadOnly="True" ></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Contraseña:" Margin="0,0,43,0"></Label>
+                        <PasswordBox x:Name="txtPassword" IsEnabled="False" Width="200" Margin="0,0,0,2"></PasswordBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Rol:" Margin="0,0,86,0"></Label>
+                        <TextBox Name="txtRol" Margin="0,0,0,2" Width="200" IsReadOnly="True"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
         </DockPanel>
     </DockPanel>
 </Window>
