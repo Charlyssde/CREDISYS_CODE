@@ -13,6 +13,7 @@ namespace CREDISYS.Views
     public partial class AdministrarUsuarios : Window
     {
         Usuario selected = null;
+        List<Rol> roles;
         public AdministrarUsuarios()
         {
             InitializeComponent();
@@ -28,8 +29,14 @@ namespace CREDISYS.Views
         {
             if (selected != null)
             {
-
+                using (DBEntities db = new DBEntities())
+                {
+                    roles = db.Rols.ToList<Rol>();
+                }
+                EditarUsuario screen = new EditarUsuario(selected, roles);
+                screen.ShowDialog();
             }
+            limpiarInformacion();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -42,7 +49,8 @@ namespace CREDISYS.Views
             RegistrarUsuario screen = new RegistrarUsuario();
             screen.WindowStartupLocation = this.WindowStartupLocation;
             screen.ShowDialog();
-            
+
+            limpiarInformacion();
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -77,6 +85,9 @@ namespace CREDISYS.Views
                         txtUsername.Text = selected.username;
                         txtRol.Text = selected.Rol.rol1;
                         txtPassword.Password = "" + selected.password;
+
+                        btnDelete.IsEnabled = true;
+                        btnEdit.IsEnabled = true;
                     }
                     else
                     {
@@ -86,12 +97,15 @@ namespace CREDISYS.Views
             }
             txtBusqueda.Text = "";
         }
-
-        private void dg_Datos_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+ 
+    private void limpiarInformacion()
         {
-            
-            btnDelete.IsEnabled = true;
-            btnEdit.IsEnabled = true;
+            txtNombre.Text = "";
+            txtPassword.Password = "";
+            txtUsername.Text = "";
+            txtRol.Text = "";
         }
     }
+
+   
 }
