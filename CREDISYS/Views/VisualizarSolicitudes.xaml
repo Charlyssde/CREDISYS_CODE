@@ -61,10 +61,11 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label Content="Filtro"></Label>
-                    <ComboBox x:Name="cbFiltro" MinWidth="150"></ComboBox>
+                    <ComboBox x:Name="cbFiltro" MinWidth="150" SelectionChanged="cbFiltro_SelectionChanged"></ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBox x:Name="txtBusqueda" MinWidth="150" Height="25"></TextBox>
+                    <DatePickerTextBox x:Name="txtDate" MinWidth="150" Height="25"></DatePickerTextBox>
                     <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35" Click="btnBuscar_Click">
                         <Button.Template>
                             <ControlTemplate>

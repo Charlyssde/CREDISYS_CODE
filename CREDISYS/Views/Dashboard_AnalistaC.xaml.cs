@@ -19,9 +19,12 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class Dashboard_AnalistaC : Window
     {
+        Usuario usuario;
+
         public Dashboard_AnalistaC(Usuario user)
         {
             InitializeComponent();
+            usuario = user;
             cargarDatos(user);
         }
 
@@ -38,7 +41,10 @@ namespace CREDISYS.Views
 
         private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
         {
-
+            VisualizarSolicitudes visualizarSolicitudes = new VisualizarSolicitudes(usuario);
+            visualizarSolicitudes.WindowStartupLocation = this.WindowStartupLocation;
+            visualizarSolicitudes.Show();
+            this.Close();
         }
     }
 }

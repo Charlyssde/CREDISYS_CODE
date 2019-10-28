@@ -19,9 +19,27 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class VisualizarSolicitudes : Window
     {
-        public VisualizarSolicitudes()
+        public VisualizarSolicitudes(Usuario user)
         {
             InitializeComponent();
+            cargarDatos(user);
+            cargarComboBox();
+        }
+
+        private void cargarComboBox()
+        {
+            String[] listaFiltros = {"Fecha","Folio","Rango de monto","RFC de cliente" };
+            String[] listaEstadosSol = {"Aceptada","Rechazada","En espera","En modificación", "Cancelada" };
+
+            cbEstatus.ItemsSource = listaEstadosSol;
+            cbFiltro.ItemsSource = listaFiltros;
+
+        }
+
+        private void cargarDatos(Usuario user)
+        {
+            lblNombre.Content = user.nombre;
+            lblRol.Content = user.Rol.rol1;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -31,7 +49,25 @@ namespace CREDISYS.Views
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
+            if (cbFiltro.SelectedItem == null || cbEstatus.SelectedItem == null
+                || txtBusqueda.Text.Equals(null))
+            {
+                MessageBox.Show("No puede quedar ningún apartado vacío");
+            }
+            else
+            {
 
+            }
+        }
+
+        private void cbFiltro_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            switch (cbFiltro.SelectedItem)
+            {
+                case "Fecha":
+                     
+                    break;
+            }
         }
     }
 }
