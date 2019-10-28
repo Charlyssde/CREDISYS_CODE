@@ -23,6 +23,7 @@ namespace CREDISYS
         public string disposicion { get; set; }
         public string rfcCliente { get; set; }
         public int idCondicion { get; set; }
+        public string estatus { get; set; }
     
         public virtual CondicionCredito CondicionCredito { get; set; }
         public virtual Usuario Usuario { get; set; }

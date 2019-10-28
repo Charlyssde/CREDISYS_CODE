@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CREDISYS.Properties;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -62,7 +63,7 @@ namespace CREDISYS.Views.PopUp
                     if (txtUsername.Text.Equals("") || txtNombre.Text.Equals("") || txtPassword.Password.Equals("")
                         || cbRoles.SelectedItem == null)
                     {
-                        MessageBox.Show("Todos los campos deben estar completos");
+                        MessageBox.Show(Settings.Default.MensajeCamposVacios);
                     }
                     else
                     {
@@ -78,14 +79,13 @@ namespace CREDISYS.Views.PopUp
                            }
                         db.SaveChanges();
 
-                        MessageBox.Show("Actualización efectuada correctamente");
+                        MessageBox.Show(Settings.Default.MensajeExito);
                         closeWindow();
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error a la hora de conectar a la base de datos\n" +
-                            "Intente de nuevo más tarde");
+                    MessageBox.Show(Settings.Default.MensajeErrorBD);
                 }
             }
         }

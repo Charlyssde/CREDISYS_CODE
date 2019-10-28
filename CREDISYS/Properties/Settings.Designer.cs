@@ -23,12 +23,75 @@ namespace CREDISYS.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("#5c6bc0")]
-        public string colorCabeceras {
+        [global::System.Configuration.DefaultSettingValueAttribute("No pueden quedar campos vacíos, intente nuevamente")]
+        public string MensajeCamposVacios {
             get {
-                return ((string)(this["colorCabeceras"]));
+                return ((string)(this["MensajeCamposVacios"]));
+            }
+            set {
+                this["MensajeCamposVacios"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Se ha realizado la operación correctamente")]
+        public string MensajeExito {
+            get {
+                return ((string)(this["MensajeExito"]));
+            }
+            set {
+                this["MensajeExito"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No se ha podido conectar a la base de datos, intente nuevamente")]
+        public string MensajeErrorBD {
+            get {
+                return ((string)(this["MensajeErrorBD"]));
+            }
+            set {
+                this["MensajeErrorBD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("¿Desea eliminar este elemento?")]
+        public string MensajeConfirmacion {
+            get {
+                return ((string)(this["MensajeConfirmacion"]));
+            }
+            set {
+                this["MensajeConfirmacion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No se ha encontrado el elemento, intente nuevamente")]
+        public string MensajeNoEncontrado {
+            get {
+                return ((string)(this["MensajeNoEncontrado"]));
+            }
+            set {
+                this["MensajeNoEncontrado"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ya existe un elemento con esta información, inserte nueva información")]
+        public string MensajeYaExiste {
+            get {
+                return ((string)(this["MensajeYaExiste"]));
+            }
+            set {
+                this["MensajeYaExiste"] = value;
             }
         }
     }

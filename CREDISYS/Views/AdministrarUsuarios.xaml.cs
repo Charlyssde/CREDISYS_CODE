@@ -1,4 +1,5 @@
-﻿using CREDISYS.Views.PopUp;
+﻿using CREDISYS.Properties;
+using CREDISYS.Views.PopUp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,7 +63,7 @@ namespace CREDISYS.Views
 
                 if (username.Equals("")) 
                 {
-                    MessageBox.Show("No ha ingresado elementos para su búsqueda");
+                    MessageBox.Show(Settings.Default.MensajeCamposVacios);
                     txtNombre.Text = "";
                     txtUsername.Text = "";
                     txtRol.Text = "";
@@ -76,8 +77,7 @@ namespace CREDISYS.Views
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Error a la hora de conectar a la base de datos\n" +
-                            "Intente de nuevo más tarde");
+                        MessageBox.Show(Settings.Default.MensajeErrorBD);
                     }
                     if (selected != null)
                     {
@@ -91,7 +91,7 @@ namespace CREDISYS.Views
                     }
                     else
                     {
-                        MessageBox.Show("No se ha encontrado ningún elemento");
+                        MessageBox.Show(Settings.Default.MensajeNoEncontrado);
                     }
                 }
             }

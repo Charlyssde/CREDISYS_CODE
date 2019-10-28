@@ -35,7 +35,7 @@
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="45" HorizontalAlignment="Right" VerticalAlignment="Center">
             <Label Content="Dictaminar"></Label>
-            <Button x:Name="btnDictamen" Height="40" Cursor="Hand" >
+            <Button x:Name="btnDictamen" Height="40" Cursor="Hand" IsEnabled="False" >
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="pack://application:,,,/Resources/btnDictamenes.png"></Image>
@@ -63,10 +63,35 @@
                     <Label Content="Filtro"></Label>
                     <ComboBox x:Name="cbFiltro" MinWidth="150" SelectionChanged="cbFiltro_SelectionChanged"></ComboBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <StackPanel x:Name="stackEasy" Orientation="Horizontal" Grid.Column="2" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBox x:Name="txtBusqueda" MinWidth="150" Height="25"></TextBox>
-                    <DatePickerTextBox x:Name="txtDate" MinWidth="150" Height="25"></DatePickerTextBox>
                     <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35" Click="btnBuscar_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcBuscar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <StackPanel x:Name="stackDate" Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Visibility="Hidden">
+                    <DatePicker x:Name="txtDate" MinWidth="150" Height="25"></DatePicker>
+                    <Button x:Name="btnBuscarDate" Cursor="Hand" Width="35" Height="35" Click="btnBuscarDate_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcBuscar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <StackPanel x:Name="stackRange" Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            Visibility="Hidden">
+                    <Label Content="$Min:"></Label>
+                    <TextBox x:Name="txtRangeMin" MinWidth="50" Height="25"></TextBox>
+                    <Label Content="$Máx:"></Label>
+                    <TextBox x:Name="txtRangeMax" MinWidth="50" Height="25"></TextBox>
+                    <Button x:Name="btnBuscarRango" Cursor="Hand" Width="35" Height="35" Click="btnBuscarRango_Click">
                         <Button.Template>
                             <ControlTemplate>
                                 <Image Source="pack://application:,,,/Resources/IcBuscar.png"/>

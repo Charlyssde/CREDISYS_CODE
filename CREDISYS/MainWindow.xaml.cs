@@ -16,6 +16,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.Entity;
 using System.Runtime.Remoting.Contexts;
+using CREDISYS.Properties;
 
 namespace CREDISYS
 {
@@ -28,6 +29,9 @@ namespace CREDISYS
         public MainWindow()
         {
             InitializeComponent();
+            /*
+             * TEMPORAL PARA PRUEBAS
+             */
             txtUsername.Text = "Charlyssde";
             txtPassword.Password = "secret";
         }
@@ -41,7 +45,7 @@ namespace CREDISYS
 
             if (username.Equals("") || password.Equals(""))
             {
-                MessageBox.Show("No puede quedar ningún elemento vacío", "Advertencia");
+                MessageBox.Show(Settings.Default.MensajeCamposVacios);
             }
             else
             {
@@ -84,13 +88,12 @@ namespace CREDISYS
                         }
                         else
                         {
-                            MessageBox.Show("No se pudo iniciar sesión", "WARNING");
+                            MessageBox.Show(Settings.Default.MensajeNoEncontrado);
                         }
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Error a la hora de conectar a la base de datos\n" +
-                            "Intente de nuevo más tarde");
+                        MessageBox.Show(Settings.Default.MensajeErrorBD);
                     }
 
                 }

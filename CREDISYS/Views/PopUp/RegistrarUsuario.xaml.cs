@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CREDISYS.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,15 +42,14 @@ namespace CREDISYS.Views.PopUp
                     if (txtUsername.Text.Equals("") || txtNombre.Text.Equals("") || txtPassword.Password.Equals("")
                         || cbRoles.SelectedItem == null)
                     {
-                        MessageBox.Show("Todos los campos deben estar completos");
+                        MessageBox.Show(Settings.Default.MensajeCamposVacios);
                     }
                     else
                     {
                         Usuario existe = db.Usuarios.Where(b => b.username.Equals(txtUsername.Text)).FirstOrDefault();
                         if (existe != null)
                         {
-                            MessageBox.Show("Ya existe un usuario con ese nombre de usuario, por favor " +
-                                "introduzca otro nombre");
+                            MessageBox.Show(Settings.Default.MensajeYaExiste);
                             txtUsername.Text = "";
                         }
                         else
@@ -70,7 +70,7 @@ namespace CREDISYS.Views.PopUp
 
                             db.Usuarios.Add(nuevo);
                             db.SaveChanges();
-                            MessageBox.Show("Guardado exitósamente en la base de datos");
+                            MessageBox.Show(Settings.Default.MensajeExito);
                             closeWindow();
                         }
                     }
@@ -78,8 +78,7 @@ namespace CREDISYS.Views.PopUp
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Error a la hora de conectar a la base de datos\n" +
-                            "Intente de nuevo más tarde");
+                    MessageBox.Show(Settings.Default.MensajeErrorBD);
                 }
 
             }

@@ -171,6 +171,7 @@
           <Property Name="disposicion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="idCondicion" Type="int" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -839,6 +840,7 @@
           <NavigationProperty Name="CondicionCredito" Relationship="Self.FK_Solicitud_CondicionCredito" FromRole="Solicitud" ToRole="CondicionCredito" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Solicitud_Usuario" FromRole="Solicitud" ToRole="Usuario" />
           <NavigationProperty Name="Cliente" Relationship="CREDISYSModel.FK_Solicitud_Cliente" FromRole="Solicitud" ToRole="Cliente" />
+          <Property Name="estatus" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1477,6 +1479,7 @@
           <EntitySetMapping Name="Solicituds">
             <EntityTypeMapping TypeName="CREDISYSModel.Solicitud">
               <MappingFragment StoreEntitySet="Solicitud">
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
                 <ScalarProperty Name="folio" ColumnName="folio" />
                 <ScalarProperty Name="vendedor" ColumnName="vendedor" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
