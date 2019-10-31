@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\obj\Debug\
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\
 CREDISYS
 none
 false
 DEBUG;TRACE
-C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\App.xaml
-9-385847282
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\App.xaml
+10-1236116844
 2-506896003
-37-1773815377
-19-1977617026
-MainWindow.xaml;Views\Dashboard_Admin.xaml;Views\AdministrarUsuarios.xaml;Views\Dashboard_AnalistaC.xaml;Views\Dashboard_Capturista.xaml;Views\PopUp\EditarUsuario.xaml;Views\PopUp\RegistrarCliente.xaml;Views\PopUp\RegistrarUsuario.xaml;Views\VisualizarSolicitudes.xaml;
+38-849213742
+191376300475
+MainWindow.xaml;Views\Dashboard_Admin.xaml;Views\AdministrarUsuarios.xaml;Views\Dashboard_AnalistaC.xaml;Views\Dashboard_Capturista.xaml;Views\PopUp\EditarUsuario.xaml;Views\PopUp\RegistrarCliente.xaml;Views\PopUp\RegistrarUsuario.xaml;Views\RealizarDictamen.xaml;Views\VisualizarSolicitudes.xaml;
 
-False
+True
 

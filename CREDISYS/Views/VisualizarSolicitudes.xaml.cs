@@ -21,6 +21,7 @@ namespace CREDISYS.Views
     public partial class VisualizarSolicitudes : Window
     {
         bool emptyFields;
+        Solicitud selected;
         public VisualizarSolicitudes(Usuario user)
         {
             InitializeComponent();
@@ -161,6 +162,16 @@ namespace CREDISYS.Views
                     MessageBox.Show(Settings.Default.MensajeErrorBD);
                 }
             }
+        }
+
+        private void btnDictamen_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void dg_Solicitudes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            selected = (Solicitud) dg_Solicitudes.SelectedItem;
         }
     }
 }

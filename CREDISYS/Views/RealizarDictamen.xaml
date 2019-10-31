@@ -1,0 +1,57 @@
+﻿<Window x:Class="CREDISYS.Views.RealizarDictamen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views"
+        mc:Ignorable="d"
+        Title="RealizarDictamen" Height="1000" Width="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="#283593"  Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="btnBack" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnBack_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label x:Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Solicitudes" FontSize="15" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
+                <Image Source="pack://application:,,,/Resources/IcUsuario.png" Height="35" />
+            </StackPanel>
+        </Grid>
+        <StackPanel DockPanel.Dock="Top" Height="50" >
+            <Button x:Name="btnVerExpediente" Content="Visualizar los documentos del expediente" Height="40" Click="btnVerExpediente_Click"></Button>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
+            <CheckBox Content="Correcto"></CheckBox>
+            <Label Width="150"></Label>
+            <CheckBox Content="Incorrecto"></CheckBox>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Top" Margin="5,5,5,0">
+            <Separator Background="Black" Height="3"></Separator>
+        </StackPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+        </Grid>
+    </DockPanel>
+</Window>
