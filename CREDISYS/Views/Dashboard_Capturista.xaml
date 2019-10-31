@@ -1,4 +1,4 @@
-﻿<Window x:Class="CREDISYS.Views.Dashboard_AnalistaC"
+﻿<Window x:Class="CREDISYS.Views.Dashboard_Capturista"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -41,8 +41,17 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-
             <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+                <Label Content="Clientes" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
+                <Button x:Name="btnClientes" Width="150" Cursor="Hand" Click="btnClientes_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/btnClientes.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
                 <Label Content="Solicitudes" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
                 <Button x:Name="btnSolicitudes" Width="150" Cursor="Hand" Click="btnSolicitudes_Click">
                     <Button.Template>

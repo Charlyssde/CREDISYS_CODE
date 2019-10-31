@@ -149,8 +149,14 @@
     <Compile Include="Views\Dashboard_AnalistaC.xaml.cs">
       <DependentUpon>Dashboard_AnalistaC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard_Capturista.xaml.cs">
+      <DependentUpon>Dashboard_Capturista.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\EditarUsuario.xaml.cs">
       <DependentUpon>EditarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RegistrarCliente.xaml.cs">
+      <DependentUpon>RegistrarCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\RegistrarUsuario.xaml.cs">
       <DependentUpon>RegistrarUsuario.xaml</DependentUpon>
@@ -182,7 +188,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Dashboard_Capturista.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\EditarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\RegistrarCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
