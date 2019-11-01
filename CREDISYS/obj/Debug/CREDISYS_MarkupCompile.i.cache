@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\App.xaml
-9-385847282
+9-1175853146
 2-506896003
-37-1773815377
+37-622272633
 19-1977617026
-MainWindow.xaml;Views\Dashboard_Admin.xaml;Views\AdministrarUsuarios.xaml;Views\Dashboard_AnalistaC.xaml;Views\Dashboard_Capturista.xaml;Views\PopUp\EditarUsuario.xaml;Views\PopUp\RegistrarCliente.xaml;Views\PopUp\RegistrarUsuario.xaml;Views\VisualizarSolicitudes.xaml;
+MainWindow.xaml;Views\Dashboard_Admin.xaml;Views\AdministrarUsuarios.xaml;Views\Dashboard_AnalistaC.xaml;Views\Dashboard_Capturista.xaml;Views\PopUp\EditarUsuario.xaml;Views\PopUp\RegistrarCliente2.xaml;Views\PopUp\RegistrarUsuario.xaml;Views\VisualizarSolicitudes.xaml;
 
-False
+True
 
