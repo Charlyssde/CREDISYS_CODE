@@ -5,7 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;  
+using System.Windows.Controls;
+
 namespace CREDISYS.Views
 {
     /// <summary>
@@ -42,7 +43,25 @@ namespace CREDISYS.Views
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-           
+           MessageBoxResult result =  MessageBox.Show("¿Desea eliminar?", "Confirmación", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                if (selected != null)
+                {
+                    try
+                    {
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Usuarios.Remove(selected);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(Settings.Default.MensajeErrorBD);
+                    }
+                }
+            }
+            limpiarInformacion();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -100,6 +119,7 @@ namespace CREDISYS.Views
  
     private void limpiarInformacion()
         {
+            selected = null;
             txtNombre.Text = "";
             txtPassword.Password = "";
             txtUsername.Text = "";

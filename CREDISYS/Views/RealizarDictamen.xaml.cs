@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CREDISYS.Views.PopUp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,8 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class RealizarDictamen : Window
     {
+        public bool porcentajeRealizado = false;
+        private string resultado;
         public RealizarDictamen(Solicitud solicitud)
         {
             InitializeComponent();
@@ -31,22 +34,42 @@ namespace CREDISYS.Views
 
         private void btnContinuar_Click(object sender, RoutedEventArgs e)
         {
-
+            if (!porcentajeRealizado)
+            {
+                MessageBox.Show("No se ha realizado el cálculo de las políticas");
+            }
         }
 
         private void btnCalcularPoliticas_Click(object sender, RoutedEventArgs e)
         {
-
+            CalcularPoliticas calcularPoliticas = new CalcularPoliticas(this);
+            calcularPoliticas.ShowDialog();
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            //DashboardAdmin dashboardAdmin = new DashboardAdmin();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        public void setResultado(String resultado)
+        {
+            this.resultado = resultado;
+            if (this.resultado.Equals("RECHAZADA"))
+            {
+                rbRechazarSolicitud.IsChecked = true;
+                rbRechazarSolicitud.IsEnabled = false;
+                rbAceptarSolicitud.IsEnabled = false;
+                MessageBox.Show("La solicitud ha sido rechazada de forma automática por no cumplir las políticas","informacion");
+            }
+            else
+            {
+                MessageBox.Show("La solicitud ha pasado el porcentaje mínimo de políticas");
+            }
         }
     }
 }
