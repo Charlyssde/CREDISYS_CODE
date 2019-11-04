@@ -19,12 +19,32 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class RealizarDictamen : Window
     {
-        public RealizarDictamen()
+        public RealizarDictamen(Solicitud solicitud)
         {
             InitializeComponent();
         }
 
         private void btnVerExpediente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnContinuar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCalcularPoliticas_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
         {
 
         }

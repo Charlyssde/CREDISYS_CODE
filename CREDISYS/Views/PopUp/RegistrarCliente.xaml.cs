@@ -17,11 +17,26 @@ namespace CREDISYS.Views.PopUp
     /// <summary>
     /// Lógica de interacción para RegistrarSolicitud.xaml
     /// </summary>
-    public partial class RegistrarSolicitud : Window
+    public partial class RegistrarCliente : Window
     {
-        public RegistrarSolicitud()
+        public RegistrarCliente()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

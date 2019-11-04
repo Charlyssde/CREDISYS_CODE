@@ -22,7 +22,6 @@ C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\bin\Debug\EntityFramework.xml
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\CREDISYS.csproj.CopyComplete
-C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\RegistrarUsuario.g.cs
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\RegistrarUsuario.baml
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\EditarUsuario.g.cs
@@ -63,3 +62,9 @@ C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\C
 C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\obj\Debug\CREDISYS.csproj.CopyComplete
 C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\obj\Debug\CREDISYS.exe
 C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\obj\Debug\CREDISYS.pdb
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\Dashboard_Capturista.g.cs
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\RegistrarCliente.g.cs
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\RealizarDictamen.g.cs
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\Dashboard_Capturista.baml
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\RegistrarCliente.baml
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\RealizarDictamen.baml

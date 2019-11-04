@@ -166,7 +166,10 @@ namespace CREDISYS.Views
 
         private void btnDictamen_Click(object sender, RoutedEventArgs e)
         {
-
+            RealizarDictamen realizarDictamen = new RealizarDictamen(selected);
+            realizarDictamen.WindowStartupLocation = this.WindowStartupLocation;
+            realizarDictamen.Show();
+            this.Close();
         }
 
         private void dg_Solicitudes_SelectionChanged(object sender, SelectionChangedEventArgs e)

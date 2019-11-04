@@ -19,7 +19,7 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
-                <Button x:Name="btnBack" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnBack_Click" >
+                <Button x:Name="btnBack" Cursor="Hand" Width="35" Height="34" VerticalAlignment="Top" HorizontalAlignment="Left" Click="btnBack_Click" Margin="0,8,0,0" >
                     <Button.Template>
                         <ControlTemplate>
                             <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
