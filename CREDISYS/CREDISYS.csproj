@@ -155,8 +155,11 @@
     <Compile Include="Views\PopUp\EditarUsuario.xaml.cs">
       <DependentUpon>EditarUsuario.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PopUp\RegistrarCliente.xaml.cs">
-      <DependentUpon>RegistrarCliente.xaml</DependentUpon>
+    <Compile Include="Views\PopUp\RegistrarDomicilio.xaml.cs">
+      <DependentUpon>RegistrarDomicilio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RegistrarCliente2.xaml.cs">
+      <DependentUpon>RegistrarCliente2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\RegistrarUsuario.xaml.cs">
       <DependentUpon>RegistrarUsuario.xaml</DependentUpon>
@@ -196,7 +199,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PopUp\RegistrarCliente.xaml">
+    <Page Include="Views\PopUp\RegistrarDomicilio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\RegistrarCliente2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -285,6 +292,8 @@
       <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.cs</LastGenOutput>
     </Content>
+    <Resource Include="Image2.png" />
+    <Resource Include="Image1.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
