@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\App.xaml
-11-527424218
+14816446618
 2-506896003
-38-540520181
+4125919117
 201590687211
-MainWindow.xaml;Views\Dashboard_Admin.xaml;Views\AdministrarUsuarios.xaml;Views\Dashboard_AnalistaC.xaml;Views\Dashboard_Capturista.xaml;Views\PopUp\CalcularPoliticas.xaml;Views\PopUp\EditarUsuario.xaml;Views\PopUp\RegistrarCliente.xaml;Views\PopUp\RegistrarUsuario.xaml;Views\RealizarDictamen.xaml;Views\VisualizarSolicitudes.xaml;
+MainWindow.xaml;Views\Dashboard_Admin.xaml;Views\AdministrarUsuarios.xaml;Views\Dashboard_AnalistaC.xaml;Views\Dashboard_Capturista.xaml;Views\PopUp\CalcularPoliticas.xaml;Views\PopUp\Comentarios.xaml;Views\PopUp\EditarUsuario.xaml;Views\PopUp\EncuestaSolicitud.xaml;Views\PopUp\RealizarSolicitud.xaml;Views\PopUp\RegistrarCliente.xaml;Views\PopUp\RegistrarUsuario.xaml;Views\RealizarDictamen.xaml;Views\VisualizarSolicitudes.xaml;
 
 False
 

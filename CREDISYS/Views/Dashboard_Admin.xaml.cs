@@ -21,16 +21,18 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class DashboardAdmin: Window
     {
+        Usuario usuario;
         public DashboardAdmin(Usuario user)
         {
             InitializeComponent();
+            this.usuario = user;
             lblNombre.Content = user.nombre;
             lblRol.Content = user.Rol.rol1;
         }
 
         private void btnAdminUsuarios_Click(object sender, RoutedEventArgs e)
         {
-            AdministrarUsuarios admin = new AdministrarUsuarios();
+            AdministrarUsuarios admin = new AdministrarUsuarios(this.usuario);
             admin.Show();
             this.Close();
         }

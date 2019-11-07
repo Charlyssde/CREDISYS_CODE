@@ -70,3 +70,9 @@ C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\RealizarDictamen.baml
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\CalcularPoliticas.g.cs
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\CalcularPoliticas.baml
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\Comentarios.g.cs
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\EncuestaSolicitud.g.cs
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\RealizarSolicitud.g.cs
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\Comentarios.baml
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\EncuestaSolicitud.baml
+C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\RealizarSolicitud.baml

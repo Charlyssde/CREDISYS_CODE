@@ -16,10 +16,12 @@ namespace CREDISYS.Views
     {
         Usuario selected = null;
         List<Rol> roles;
-        public AdministrarUsuarios()
+
+        Usuario usuario;
+        public AdministrarUsuarios(Usuario usuario)
         {
             InitializeComponent();
-            
+            this.usuario = usuario;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -83,35 +85,40 @@ namespace CREDISYS.Views
                 if (username.Equals("")) 
                 {
                     MessageBox.Show(Settings.Default.MensajeCamposVacios);
-                    txtNombre.Text = "";
-                    txtUsername.Text = "";
-                    txtRol.Text = "";
-                    txtPassword.Password = "";
+                    limpiarInformacion();
                 }
                 else
                 {
                     try
                     {
                         selected = db.Usuarios.Where(b => b.username.Equals(username)).FirstOrDefault();
+                        if (selected != null)
+                        {
+                            txtNombre.Text = selected.nombre;
+                            txtUsername.Text = selected.username;
+                            txtRol.Text = selected.Rol.rol1;
+                            txtPassword.Password = "" + selected.password;
+
+                            if (selected.username == this.usuario.username)
+                            {
+                                MessageBox.Show("Este usuario no se puede editar o eliminar... Porque eres tú");
+                            }
+                            else
+                            {
+                                btnDelete.IsEnabled = true;
+                                btnEdit.IsEnabled = true;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show(Settings.Default.MensajeNoEncontrado);
+                        }
                     }
                     catch (Exception)
                     {
                         MessageBox.Show(Settings.Default.MensajeErrorBD);
                     }
-                    if (selected != null)
-                    {
-                        txtNombre.Text = selected.nombre;
-                        txtUsername.Text = selected.username;
-                        txtRol.Text = selected.Rol.rol1;
-                        txtPassword.Password = "" + selected.password;
-
-                        btnDelete.IsEnabled = true;
-                        btnEdit.IsEnabled = true;
-                    }
-                    else
-                    {
-                        MessageBox.Show(Settings.Default.MensajeNoEncontrado);
-                    }
+                    
                 }
             }
             txtBusqueda.Text = "";
@@ -120,6 +127,10 @@ namespace CREDISYS.Views
     private void limpiarInformacion()
         {
             selected = null;
+
+            this.btnDelete.IsEnabled = false;
+            this.btnEdit.IsEnabled = false;
+
             txtNombre.Text = "";
             txtPassword.Password = "";
             txtUsername.Text = "";

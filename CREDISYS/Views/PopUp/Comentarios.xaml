@@ -16,21 +16,13 @@
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
-                <Button x:Name="btnBack" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnBack_Click" >
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
                 <Label Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"></Label>
             </StackPanel>
             <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Nueva solicitud" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                <Label Content="Comentarios" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
             </StackPanel>
             <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" ></Label>
                 <Image Source="pack://application:,,,/Resources/IcUsuario.png" Height="35" ></Image>
             </StackPanel>
         </Grid>

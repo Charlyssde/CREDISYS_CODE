@@ -60,8 +60,7 @@ namespace CREDISYS.Views.PopUp
             {
                 try
                 {
-                    if (txtUsername.Text.Equals("") || txtNombre.Text.Equals("") || txtPassword.Password.Equals("")
-                        || cbRoles.SelectedItem == null)
+                    if (txtUsername.Text.Equals("") || txtNombre.Text.Equals("") || txtPassword.Password.Equals(""))
                     {
                         MessageBox.Show(Settings.Default.MensajeCamposVacios);
                     }
@@ -70,13 +69,16 @@ namespace CREDISYS.Views.PopUp
                             Usuario usuarioM = db.Usuarios.Where(b => b.username == usuario.username).FirstOrDefault();
                             byte[] bytes = Encoding.ASCII.GetBytes(txtPassword.Password);
                             usuarioM.password = bytes;
+                        if (cbRoles.SelectedItem != null)
+                        {
                             foreach (Rol rol in roles)
                             {
                                 if (rol.rol1.Equals(cbRoles.SelectedItem))
                                 {
                                     usuarioM.idRol = rol.idRol;
-                               }
-                           }
+                                }
+                            }
+                        }
                         db.SaveChanges();
 
                         MessageBox.Show(Settings.Default.MensajeExito);

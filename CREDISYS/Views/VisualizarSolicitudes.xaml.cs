@@ -32,7 +32,9 @@ namespace CREDISYS.Views
         private void cargarComboBox()
         {
             String[] listaFiltros = {"Fecha","Folio","Rango de monto","RFC de cliente" };
-            String[] listaEstadosSol = {"Aceptada","Rechazada","En espera","En modificación", "Cancelada" };
+            String[] listaEstadosSol = {Settings.Default.SolicitudEstatus1, Settings.Default.SolicitudEstatus2, Settings.Default.SolicitudEstatus3,
+                    Settings.Default.SolicitudEstatus4, Settings.Default.SolicitudEstatus5, Settings.Default.SolicitudEstatus6, Settings.Default.SolicitudEstatus7,
+                    Settings.Default.SolicitudEstatus8};
 
             cbEstatus.ItemsSource = listaEstadosSol;
             cbFiltro.ItemsSource = listaFiltros;

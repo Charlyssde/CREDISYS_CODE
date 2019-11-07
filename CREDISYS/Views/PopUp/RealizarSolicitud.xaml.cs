@@ -23,27 +23,19 @@ namespace CREDISYS.Views.PopUp
         private List<CondicionCredito> condiciones;
         private int plazos = 12;
 
-        public RealizarSolicitud()
+
+        private Usuario usuario;
+        private Cliente cliente;
+
+        private CondicionCredito selected;
+
+        public RealizarSolicitud(Usuario usuario, Cliente cliente)
         {
             InitializeComponent();
-            cargarTasas();
-            txtPlazos.Text = plazos.ToString();
+            cargarInfo(usuario, cliente);
+            
         }
 
-        private void cargarTasas()
-        {
-            try
-            {
-                using (DBEntities db = new DBEntities())
-                {
-                    condiciones = db.CondicionCreditoes.ToList<CondicionCredito>();      
-                }
-            }
-            catch (Exception)
-            {
-
-            }
-        }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
@@ -59,6 +51,36 @@ namespace CREDISYS.Views.PopUp
             else
             {
                 Solicitud solicitud = new Solicitud();
+                solicitud.destinoCredito = txtDestino.Text;
+                solicitud.estatus = Settings.Default.SolicitudEstatus1;
+                solicitud.montoLetra = txtMontoLetra.Text;
+                solicitud.montoNumero = int.Parse(txtMontoNumero.Text);
+                solicitud.Usuario = this.usuario;
+                solicitud.vendedor = this.usuario.username;
+                solicitud.Cliente = this.cliente;
+                solicitud.rfcCliente = this.cliente.rfc;
+                solicitud.CondicionCredito = this.selected;
+                solicitud.idCondicion = this.selected.idCondicionCredito;
+                solicitud.disposicion = Settings.Default.Disposicion;
+                DateTime date = new DateTime();
+                solicitud.fecha = date;
+
+                try
+                {
+                    using (DBEntities db = new DBEntities())
+                    {
+                        db.Solicituds.Add(solicitud);
+                    }
+                    EncuestaSolicitud encuestaSolicitud = new EncuestaSolicitud(solicitud);
+                    encuestaSolicitud.WindowStartupLocation = this.WindowStartupLocation;
+                    encuestaSolicitud.Show();
+                    this.Close();
+                }
+                catch ( Exception)
+                {
+                    MessageBox.Show(Settings.Default.MensajeErrorBD);
+                }
+
                 CloseWindow();
             }
 
@@ -70,6 +92,7 @@ namespace CREDISYS.Views.PopUp
             {
                 if (condicion.condicion.Equals("tasa cero"))
                 {
+                    selected = condicion;
                     txtIva.Text = condicion.iva.ToString();
                     txtInterés.Text = condicion.interes.ToString();
                 }
@@ -83,6 +106,7 @@ namespace CREDISYS.Views.PopUp
             {
                 if (condicion.condicion.Equals("tasa cinco %"))
                 {
+                    selected = condicion;
                     txtIva.Text = condicion.iva.ToString();
                     txtInterés.Text = condicion.interes.ToString();
                 }
@@ -99,9 +123,43 @@ namespace CREDISYS.Views.PopUp
                 }
                 return true;
             }
-            return false;
+            int val;
+            if (int.TryParse(txtMontoNumero.Text, out val))
+            {
+                return false;
+            }
+            else
+            {
+                MessageBox.Show("El monto en número no cuenta con el formato especificado");
+                return true;
+            }
+            
         }
 
+        private void cargarInfo(Usuario usuario, Cliente cliente)
+        {
+            this.usuario = usuario;
+            this.cliente = cliente;
+            lblRol.Content = usuario.nombre;
+            lblNombreVendedor.Content = lblNombre.Content = usuario.nombre;
+            cargarTasas();
+        }
+
+        private void cargarTasas()
+        {
+            try
+            {
+                using (DBEntities db = new DBEntities())
+                {
+                    condiciones = db.CondicionCreditoes.ToList<CondicionCredito>();
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            txtPlazos.Text = plazos.ToString();
+        }
         private void CloseWindow()
         {
             this.Close();

@@ -94,5 +94,113 @@ namespace CREDISYS.Properties {
                 this["MensajeYaExiste"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("En espera")]
+        public string SolicitudEstatus1 {
+            get {
+                return ((string)(this["SolicitudEstatus1"]));
+            }
+            set {
+                this["SolicitudEstatus1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Cancelada")]
+        public string SolicitudEstatus2 {
+            get {
+                return ((string)(this["SolicitudEstatus2"]));
+            }
+            set {
+                this["SolicitudEstatus2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("En modificacion")]
+        public string SolicitudEstatus3 {
+            get {
+                return ((string)(this["SolicitudEstatus3"]));
+            }
+            set {
+                this["SolicitudEstatus3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Aceptada")]
+        public string SolicitudEstatus4 {
+            get {
+                return ((string)(this["SolicitudEstatus4"]));
+            }
+            set {
+                this["SolicitudEstatus4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Rechazada")]
+        public string SolicitudEstatus5 {
+            get {
+                return ((string)(this["SolicitudEstatus5"]));
+            }
+            set {
+                this["SolicitudEstatus5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pagada")]
+        public string SolicitudEstatus6 {
+            get {
+                return ((string)(this["SolicitudEstatus6"]));
+            }
+            set {
+                this["SolicitudEstatus6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pagando")]
+        public string SolicitudEstatus7 {
+            get {
+                return ((string)(this["SolicitudEstatus7"]));
+            }
+            set {
+                this["SolicitudEstatus7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Completada")]
+        public string SolicitudEstatus8 {
+            get {
+                return ((string)(this["SolicitudEstatus8"]));
+            }
+            set {
+                this["SolicitudEstatus8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Efectivo")]
+        public string Disposicion {
+            get {
+                return ((string)(this["Disposicion"]));
+            }
+            set {
+                this["Disposicion"] = value;
+            }
+        }
     }
 }

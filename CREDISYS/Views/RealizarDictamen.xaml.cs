@@ -29,7 +29,8 @@ namespace CREDISYS.Views
 
         private void btnVerExpediente_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO
+            //Redirige a la pantalla para ver el expediente de la solicitud
         }
 
         private void btnContinuar_Click(object sender, RoutedEventArgs e)
@@ -48,7 +49,7 @@ namespace CREDISYS.Views
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            //DashboardAdmin dashboardAdmin = new DashboardAdmin();
+            
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
