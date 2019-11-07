@@ -156,8 +156,14 @@
     <Compile Include="Views\PopUp\CalcularPoliticas.xaml.cs">
       <DependentUpon>CalcularPoliticas.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\Comentarios.xaml.cs">
+      <DependentUpon>Comentarios.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\EditarUsuario.xaml.cs">
       <DependentUpon>EditarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\EncuestaSolicitud.xaml.cs">
+      <DependentUpon>EncuestaSolicitud.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\RealizarSolicitud.xaml.cs">
       <DependentUpon>RealizarSolicitud.xaml</DependentUpon>
@@ -206,7 +212,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PopUp\Comentarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\EditarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\EncuestaSolicitud.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -307,6 +321,7 @@
       <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\btnComentarios.png" />
     <Resource Include="Resources\btnCalcularPoliticas.png" />
   </ItemGroup>
   <ItemGroup />

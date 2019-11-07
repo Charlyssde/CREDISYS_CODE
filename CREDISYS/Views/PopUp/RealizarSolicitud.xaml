@@ -78,9 +78,8 @@
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
                     <RadioButton GroupName="Tasas" Content="Tasa Cero" x:Name="rbTasaCero" Checked="rbTasaCero_Checked"></RadioButton>
                     <Label Width="50"></Label>
-                    <RadioButton GroupName="Tasas" Content="Tasa Cinco" x:Name="rbTasaCinco" Height="25" VerticalAlignment="Bottom" Checked="rbTasaCinco_Checked"></RadioButton>
+                    <RadioButton GroupName="Tasas" Content="Tasa Cinco %" x:Name="rbTasaCinco" Height="25" VerticalAlignment="Bottom" Checked="rbTasaCinco_Checked"></RadioButton>
                     <Label Width="50"></Label>
-                    <RadioButton GroupName="Tasas" Content="Otra" x:Name="rbOtra"></RadioButton>
                 </StackPanel>
                 <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
