@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CREDISYS.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,11 +29,13 @@ namespace CREDISYS.Views.PopUp
         List<String> listEstados;
         List<Ciudad> Ciudades;
         List<String> listCiudades;
-        public RegistrarCliente()
+        Cliente clientenuevo;
+        public RegistrarCliente(Cliente cliente)
         {
             InitializeComponent();
             cargartipoDomicilio();
             cargarPaises();
+            clientenuevo = cliente;
         }
 
       
@@ -95,16 +98,99 @@ namespace CREDISYS.Views.PopUp
                 cargarEstados();
             }
         }
+        public void cargarCiudades()
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                Ciudades = db.Ciudads.ToList<Ciudad>();
+                listCiudades = new List<String>();
+
+                foreach (Ciudad c in Ciudades)
+                {
+                    listCiudades.Add(c.ciudad1);
+                }
+                cb_ciudad.ItemsSource = listCiudades;
+
+            }
+        }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            closeWindow();
         }
 
         private void btnContinuar_Click(object sender, RoutedEventArgs e)
         {
+            using (DBEntities db = new DBEntities())
+            {
+                try
+                {
+                    if (txtCalle.Text.Equals("") || txtCP.Text.Equals("") || txtColonia.Text.Equals("")
+                         || txtNumeEx.Text.Equals("") || txtNumeroIn.Text.Equals("") || txtTiempo.Text.Equals("")
+                         ||cb_tipoDomicilio.SelectedItem == null || cb_pais.SelectedItem == null || cb_estado.SelectedItem == null || cb_ciudad.SelectedItem == null)
+                    {
+                        MessageBox.Show(Settings.Default.MensajeCamposVacios);
+                    }
+                    else
+                    {
+                       
+                       
+                            Domicilio nuevo = new Domicilio();
+                        nuevo.colonia = txtColonia.Text;
+                        nuevo.calle = txtCalle.Text;
+                        nuevo.codPostal = txtCP.Text;
+                        nuevo.numExt = txtNumeEx.Text;
+                        nuevo.numIn = txtNumeroIn.Text;
+                        nuevo.tiempoResidencia = txtTiempo.Text;
+                        nuevo.rfcCliente = clientenuevo.rfc;
 
+
+                            foreach (Pai pais in Paises)
+                            {
+                                if (pais.pais.Equals(cb_pais.SelectedItem))
+                                {
+                                    nuevo.idPais = pais.idPais;
+                                }
+                            }
+                            foreach (Estado estado in Estados)
+                            {
+                                if (estado.estado1.Equals(cb_estado.SelectedItem))
+                                {
+                                    nuevo.idEstado = estado.idEstado;
+                                }
+                            }
+                            foreach (Ciudad ciudad in Ciudades)
+                            {
+                                if (ciudad.ciudad1.Equals(cb_ciudad.SelectedItem))
+                                {
+                                    nuevo.idCiudad = ciudad.idCiudad;
+                                }
+                            }
+                        
+
+                            db.Domicilios.Add(nuevo);
+                            db.SaveChanges();
+                            MessageBox.Show(Settings.Default.MensajeExito);
+                        RegistroContacto registrarcontacto = new RegistroContacto(Cliente clientenuevo);
+                        registrarcontacto.WindowStartupLocation = this.WindowStartupLocation;
+                        registrarcontacto.Show();
+                        closeWindow();
+                        
+                    }
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show(Settings.Default.MensajeErrorBD);
+                }
+
+            }
         }
+        private void closeWindow()
+        {
+            this.Close();
+        }
+        
     }
 
 }
