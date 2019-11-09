@@ -28,5 +28,10 @@ namespace CREDISYS.Views.PopUp
         {
 
         }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

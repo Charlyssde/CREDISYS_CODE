@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
-        Title="RegistrarEmpleo" Height="450" Width="800">
-    <Grid>
-        
+        Title="Registrar Empleo" Height="805.677" Width="858.065">
+    <Grid Margin="0,0,-6.4,-122">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="737*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#283593" Margin="0,0,0.4,833" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label x:Name="lblRol1" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Registrar empleo" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
+            </StackPanel>
+        </Grid>
+
     </Grid>
 </Window>

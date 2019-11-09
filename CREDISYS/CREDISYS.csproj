@@ -152,6 +152,9 @@
     <Compile Include="Views\Dashboard_Capturista.xaml.cs">
       <DependentUpon>Dashboard_Capturista.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard_Gestor.xaml.cs">
+      <DependentUpon>Dashboard_Gestor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\EditarUsuario.xaml.cs">
       <DependentUpon>EditarUsuario.xaml</DependentUpon>
     </Compile>
@@ -161,8 +164,14 @@
     <Compile Include="Views\PopUp\RegistrarCliente2.xaml.cs">
       <DependentUpon>RegistrarCliente2.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\RegistrarEmpleo.xaml.cs">
+      <DependentUpon>RegistrarEmpleo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\RegistrarUsuario.xaml.cs">
       <DependentUpon>RegistrarUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RegistroContacto.xaml.cs">
+      <DependentUpon>RegistroContacto.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\VisualizarSolicitudes.xaml.cs">
       <DependentUpon>VisualizarSolicitudes.xaml</DependentUpon>
@@ -195,6 +204,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\Dashboard_Gestor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\EditarUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -207,7 +220,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PopUp\RegistrarEmpleo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\RegistrarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\RegistroContacto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -292,6 +313,15 @@
       <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\IcQuebranto.jpg" />
+    <Resource Include="Resources\IcRegistrarPago.png" />
+    <Resource Include="Resources\IcTablaPagos.png" />
+    <Resource Include="Resources\IcSubirArchivos.png" />
+    <Resource Include="Image7.png" />
+    <Resource Include="Image6.png" />
+    <Resource Include="Image5.png" />
+    <Resource Include="Image4.png" />
+    <Resource Include="Image3.png" />
     <Resource Include="Image2.png" />
     <Resource Include="Image1.png" />
   </ItemGroup>
