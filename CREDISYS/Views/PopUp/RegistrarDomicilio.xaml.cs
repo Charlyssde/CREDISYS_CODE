@@ -143,6 +143,8 @@ namespace CREDISYS.Views.PopUp
                         nuevo.numIn = txtNumeroIn.Text;
                         nuevo.tiempoResidencia = txtTiempo.Text;
                         nuevo.rfcCliente = clientenuevo.rfc;
+                        string v = "activo";
+                        nuevo.estatus = v;
 
 
                             foreach (Pai pais in Paises)
@@ -171,7 +173,7 @@ namespace CREDISYS.Views.PopUp
                             db.Domicilios.Add(nuevo);
                             db.SaveChanges();
                             MessageBox.Show(Settings.Default.MensajeExito);
-                        RegistroContacto registrarcontacto = new RegistroContacto(Cliente clientenuevo);
+                        RegistroContacto registrarcontacto = new RegistroContacto(clientenuevo);
                         registrarcontacto.WindowStartupLocation = this.WindowStartupLocation;
                         registrarcontacto.Show();
                         closeWindow();

@@ -23,5 +23,10 @@ namespace CREDISYS.Views.PopUp
         {
             InitializeComponent();
         }
+
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

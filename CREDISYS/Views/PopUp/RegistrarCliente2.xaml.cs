@@ -63,7 +63,7 @@ namespace CREDISYS.Views.PopUp
                             nuevo.nombre = txt_name.Text;
                             nuevo.apellidoPaterno = txt_apellidopaterno.Text;
                             nuevo.apellidoMaterno = txt_apellidomaterno.Text;
-                           
+                            
 
                             foreach (Pai pais in Paises)
                             {
@@ -93,6 +93,10 @@ namespace CREDISYS.Views.PopUp
                             db.Clientes.Add(nuevo);
                             db.SaveChanges();
                             MessageBox.Show(Settings.Default.MensajeExito);
+                           RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
+                            registrarDomicilio.WindowStartupLocation = this.WindowStartupLocation;
+                            registrarDomicilio.Show();
+                            
                             closeWindow();
                         }
                     }

@@ -42,7 +42,7 @@
                 <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
             </StackPanel>
         </Grid>
-        <TextBox HorizontalAlignment="Left" Height="40" Margin="10,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="370" FontSize="18"/>
+        <TextBox Name="txtCorreo" HorizontalAlignment="Left" Height="40" Margin="10,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="370" FontSize="18"/>
         <Button x:Name="btnCancelar" Cursor="Hand" Margin="356,211,250.6,78.6" Click="btnCancelar_Click">
             <Button.Template>
                 <ControlTemplate>
