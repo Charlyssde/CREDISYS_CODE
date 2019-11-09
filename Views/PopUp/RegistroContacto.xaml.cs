@@ -33,7 +33,7 @@ namespace CREDISYS.Views.PopUp
             {
                 try
                 {
-                    if (txtCorreo.Text.Equals("") == null)
+                    if (txtCorreo.Text.Equals(""))
                     {
                         MessageBox.Show(Settings.Default.MensajeCamposVacios);
                     }

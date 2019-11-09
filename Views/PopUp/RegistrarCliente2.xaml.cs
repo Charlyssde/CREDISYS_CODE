@@ -172,5 +172,9 @@ namespace CREDISYS.Views.PopUp
             }
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

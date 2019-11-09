@@ -1,0 +1,146 @@
+﻿<Window x:Class="CREDISYS.Views.PopUp.EncuestaSolicitud"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="EncuestaSolicitud" Height="450" Width="600">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="#283593" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Nueva solicitud" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" ></Label>
+                <Image Source="pack://application:,,,/Resources/IcUsuario.png" Height="35" ></Image>
+            </StackPanel>
+        </Grid>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="¿Usted desempeña o ha desempeñado funciones públicas destacadas en un país extranjero o en territorio 
+                       nacional, considerando entre otros, a los jefes de estado o de gobierno, líderes políticos, 
+                           funcionarios gubernamentales de alta jerarquía, judIciales o militares de alta jerarquía, 
+altos ejecutivos de empresas estatales o funccionarios o miembros de partidos políticos?" TextWrapping="Wrap" Margin="5,0"></TextBlock>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RadioButton x:Name="rbSiUno" GroupName="Uno" Content="Sí" Checked="rbSiUno_Checked"/>
+                    <Label Width="150"/>
+                    <RadioButton x:Name="rbNoUno" GroupName="Uno" Content="No" Checked="rbNoUno_Checked"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Center">
+                    <Label Content="Puesto: "/>
+                    <TextBox x:Name="txtPuestoUno" Width="150" IsEnabled="False"></TextBox>
+                    <Label Width="50"/>
+                    <Label Content="Periodo: "/>
+                    <TextBox x:Name="txtPeriodoInicio" Width="50" IsEnabled="False"></TextBox>
+                    <Label Content=" a "/>
+                    <TextBox x:Name="txtPeriodoFinal" Width="50" IsEnabled="False"></TextBox>
+                </StackPanel>
+                <Separator Background="Black" Height="3" Margin="1,61,-1,0" Grid.Row="2" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"></RowDefinition>
+                    <RowDefinition Height="25"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="35"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" IsEnabled="False" Text="Su conyuge, concubina o parienes cosanguineaos  o afines, hasta el segundo grado, tales como padres, hijos, hermanos, abuelos, tios, primos, cuñados, suegros, yernos o nueras, se encuentra en el supuesto antes mencionado?" TextWrapping="Wrap" Margin="5,0"></TextBlock>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RadioButton x:Name="rbSiDos" GroupName="Uno" Content="Sí" Checked="rbSiDos_Checked"/>
+                    <Label Width="150"/>
+                    <RadioButton x:Name="rbNoDos" GroupName="Uno" Content="No" Checked="rbNoDos_Checked"/>
+                </StackPanel>
+    
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Label Content="Apellido paterno:" FontSize="10"/>
+                        <TextBox x:Name="txtApellidoPaterno" Width="100" IsEnabled="False"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Label Content="Apellido materno:" FontSize="10"/>
+                        <TextBox x:Name="txtApellidoMaterno" Width="100" IsEnabled="False"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Label Content="Nombre(s):" FontSize="10" Width="86"/>
+                        <TextBox x:Name="txtNombre" Width="100" IsEnabled="False"></TextBox>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Orientation="Horizontal">
+                        <Label Content="Parentesco:" FontSize="10" Width="89"/>
+                        <ComboBox x:Name="cbParentensco" Width="100"></ComboBox>
+                    </StackPanel>
+                </Grid>
+                
+                <StackPanel Orientation="Horizontal" Grid.Row="3" VerticalAlignment="Center">
+                    <Label Content="Puesto: "/>
+                    <TextBox x:Name="txtPuestoDos" Width="150" IsEnabled="False"></TextBox>
+                    <Label Width="50"/>
+                    <Label Content="Periodo: "/>
+                    <TextBox x:Name="txtPeriodoInicioDos" Width="50" IsEnabled="False"></TextBox>
+                    <Label Content=" a "/>
+                    <TextBox x:Name="txtPeriodoFinalDos" Width="50" IsEnabled="False"></TextBox>
+                </StackPanel>
+                <Separator Background="Black" Height="3" Margin="1,61,-1,0" Grid.Row="2" VerticalAlignment="Top"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Margin="5">
+                    <Button x:Name="btnComentarios" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnComentarios_Click" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/btnComentarios.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button x:Name="btnCancelar" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,20,0" Click="btnCancelar_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/icCancelar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnAceptar" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,35,0" Click="btnAceptar_Click">
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcAceptar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </DockPanel>
+</Window>

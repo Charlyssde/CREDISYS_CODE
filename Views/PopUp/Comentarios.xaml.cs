@@ -12,31 +12,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CREDISYS.Views
+namespace CREDISYS.Views.PopUp
 {
     /// <summary>
-    /// Lógica de interacción para Dashboard_Capturista.xaml
+    /// Lógica de interacción para Comentarios.xaml
     /// </summary>
-    public partial class Dashboard_Capturista : Window
+    public partial class Comentarios : Window
     {
-        public Dashboard_Capturista()
+        EncuestaSolicitud previous;
+        public Comentarios(EncuestaSolicitud encuestaSolicitud)
         {
             InitializeComponent();
+            this.previous = encuestaSolicitud;
         }
 
-        private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void btnClientes_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-
+            previous.comentarios = txtComentarios.Text;
+            this.Close();
         }
     }
 }

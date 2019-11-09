@@ -34,14 +34,15 @@
         </Grid>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="14*"></ColumnDefinition>
+                <ColumnDefinition Width="419*"/>
+                <ColumnDefinition Width="432*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Margin="114,0,128,0">
                 <Label Content="Subir Archivos" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
                 <Button x:Name="btnSubir" Width="177" Cursor="Hand" Click="btnSubir_Click">
                     <Button.Template>
@@ -51,7 +52,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="113,0">
                 <Label Content="Generar tabla de pagos" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
                 <Button x:Name="btnTablaPagos" Width="150" Cursor="Hand" Click="btnTablaPagos_Click">
                     <Button.Template>
@@ -61,7 +62,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="118,0,131,0">
                 <Label Content="Registrar pago" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
                 <Button x:Name="btnRegistrarPago" Width="170" Cursor="Hand" Click="btnRegistrarPago_Click">
                     <Button.Template>
@@ -71,7 +72,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center">
+            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="131,0">
                 <Label Content="Marcar quebranto" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
                 <Button x:Name="btnQuebranto" Width="170" Cursor="Hand" Click="btnQuebranto_Click">
                     <Button.Template>

@@ -1,0 +1,59 @@
+﻿<Window x:Class="CREDISYS.Views.PopUp.CalcularPoliticas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Title="CalcularPoliticas" Height="450" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="70,50,0,0">
+            <CheckBox x:Name="chbMayorEdad" Content="Es mayor de edad" FontSize="14" Margin="10" Checked="chbMayorEdad_Checked" Unchecked="chbMayorEdad_Unchecked" ></CheckBox>
+            <CheckBox x:Name="chbMexicano" Content="Nacionalidad mexicana" FontSize="14" Margin="10" Checked="chbMexicano_Checked" Unchecked="chbMexicano_Unchecked" ></CheckBox>
+            <CheckBox x:Name="chbSueldoMensual" Content="El préstamo no supera el 30% del sueldo mensual" FontSize="14" Margin="10" Checked="chbSueldoMensual_Checked" Unchecked="chbSueldoMensual_Unchecked" ></CheckBox>
+            <CheckBox x:Name="chbListaNegra" Content="No pertenece a la lista negra" FontSize="14" Margin="10" Checked="chbListaNegra_Checked" Unchecked="chbListaNegra_Unchecked" ></CheckBox>
+        </StackPanel>
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Cursor="Hand">
+            <Button x:Name="btnCalcularPoliticas" Height="50" Click="btnCalcularPoliticas_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="pack://application:,,,/Resources/btnCalcularPoliticas.png"></Image>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Label Content="Calcular porcentaje"></Label>
+        </StackPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label x:Name="lblResultado" Content="Resultado" FontSize="18"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal">
+                <Button x:Name="btnCancelar" Cursor="Hand" Width="60" Margin="0,0,10,0" Click="btnCancelar_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcCancelar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="btnAceptar" Cursor="Hand" Width="50" Margin="50,0,0,0" Click="btnAceptar_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcAceptar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
