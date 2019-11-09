@@ -22,6 +22,8 @@ namespace CREDISYS.Views
     {
         bool emptyFields;
         Solicitud selected;
+
+        Usuario usuario;
         public VisualizarSolicitudes(Usuario user)
         {
             InitializeComponent();
@@ -29,27 +31,12 @@ namespace CREDISYS.Views
             cargarComboBox();
         }
 
-        private void cargarComboBox()
-        {
-            String[] listaFiltros = {"Fecha","Folio","Rango de monto","RFC de cliente" };
-            String[] listaEstadosSol = {Settings.Default.SolicitudEstatus1, Settings.Default.SolicitudEstatus2, Settings.Default.SolicitudEstatus3,
-                    Settings.Default.SolicitudEstatus4, Settings.Default.SolicitudEstatus5, Settings.Default.SolicitudEstatus6, Settings.Default.SolicitudEstatus7,
-                    Settings.Default.SolicitudEstatus8};
-
-            cbEstatus.ItemsSource = listaEstadosSol;
-            cbFiltro.ItemsSource = listaFiltros;
-
-        }
-
-        private void cargarDatos(Usuario user)
-        {
-            lblNombre.Content = user.nombre;
-            lblRol.Content = user.Rol.rol1;
-        }
-
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            Dashboard_AnalistaC dashboard_AnalistaC = new Dashboard_AnalistaC(this.usuario);
+            dashboard_AnalistaC.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            dashboard_AnalistaC.Show();
+            closeWindow();
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -143,7 +130,7 @@ namespace CREDISYS.Views
                                 break;
                             default:
                                 int folio = int.Parse(txtBusqueda.Text);
-                                items = db.Solicituds.Where(b => b.rfcCliente == txtBusqueda.Text || b.folio == folio && b.estatus == cbEstatus.Text).ToList<Solicitud>();
+                                items = db.Solicituds.Where(b => (b.rfcCliente == txtBusqueda.Text && b.estatus == cbEstatus.Text) || (b.folio == folio && b.estatus == cbEstatus.Text)).ToList<Solicitud>();
                                 if (items.Count == 0)
                                 {
                                     MessageBox.Show(Settings.Default.MensajeNoEncontrado);
@@ -168,15 +155,39 @@ namespace CREDISYS.Views
 
         private void btnDictamen_Click(object sender, RoutedEventArgs e)
         {
-            RealizarDictamen realizarDictamen = new RealizarDictamen(selected);
-            realizarDictamen.WindowStartupLocation = this.WindowStartupLocation;
+            RealizarDictamen realizarDictamen = new RealizarDictamen(selected, this.usuario);
+            realizarDictamen.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             realizarDictamen.Show();
-            this.Close();
+            closeWindow();
         }
 
         private void dg_Solicitudes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             selected = (Solicitud) dg_Solicitudes.SelectedItem;
+        }
+
+        private void cargarDatos(Usuario user)
+        {
+            this.usuario = user;
+            lblNombre.Content = this.usuario.nombre;
+            lblRol.Content = this.usuario.Rol.rol1;
+        }
+
+        private void cargarComboBox()
+        {
+            String[] listaFiltros = { "Fecha", "Folio", "Rango de monto", "RFC de cliente" };
+            String[] listaEstadosSol = {Settings.Default.SolicitudEstatus1, Settings.Default.SolicitudEstatus2, Settings.Default.SolicitudEstatus3,
+                    Settings.Default.SolicitudEstatus4, Settings.Default.SolicitudEstatus5, Settings.Default.SolicitudEstatus6, Settings.Default.SolicitudEstatus7,
+                    Settings.Default.SolicitudEstatus8};
+
+            cbEstatus.ItemsSource = listaEstadosSol;
+            cbFiltro.ItemsSource = listaFiltros;
+
+        }
+
+        private void closeWindow()
+        {
+            this.Close();
         }
     }
 }

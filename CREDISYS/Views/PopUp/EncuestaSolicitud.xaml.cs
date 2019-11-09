@@ -59,7 +59,12 @@ namespace CREDISYS.Views.PopUp
 
         private void rbSiDos_Checked(object sender, RoutedEventArgs e)
         {
-
+            txtPuestoDos.IsEnabled = true;
+            txtPeriodoFinalDos.IsEnabled = true;
+            txtPeriodoInicioDos.IsEnabled = true;
+            txtApellidoMaterno.IsEnabled = true;
+            txtApellidoPaterno.IsEnabled = true;
+            txtNombre.IsEnabled = true;
         }
 
         private void btnComentarios_Click(object sender, RoutedEventArgs e)
@@ -72,7 +77,7 @@ namespace CREDISYS.Views.PopUp
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
             //TODO
-            //Generar los documentos que surgen de aquí, la tabla de pagos
+            //Generar los documentos que surgen de aquí, la tabla de pagos, etc
             closeWindow();
         }
 

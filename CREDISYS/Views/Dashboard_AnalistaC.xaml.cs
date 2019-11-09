@@ -24,26 +24,30 @@ namespace CREDISYS.Views
         public Dashboard_AnalistaC(Usuario user)
         {
             InitializeComponent();
-            usuario = user;
             cargarDatos(user);
-        }
-
-        private void cargarDatos(Usuario user)
-        {
-            lblNombre.Content = user.nombre;
-            lblRol.Content = user.Rol.rol1;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-
+            closeWindow();
         }
 
         private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
         {
             VisualizarSolicitudes visualizarSolicitudes = new VisualizarSolicitudes(usuario);
-            visualizarSolicitudes.WindowStartupLocation = this.WindowStartupLocation;
+            visualizarSolicitudes.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             visualizarSolicitudes.Show();
+            closeWindow();
+        }
+
+        private void cargarDatos(Usuario user)
+        {
+            this.usuario = user;
+            lblNombre.Content = this.usuario.nombre;
+            lblRol.Content = this.usuario.Rol.rol1;
+        }
+        private void closeWindow()
+        {
             this.Close();
         }
     }

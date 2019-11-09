@@ -18,18 +18,21 @@ namespace CREDISYS.Views
         List<Rol> roles;
 
         Usuario usuario;
-        public AdministrarUsuarios(Usuario usuario)
+
+        DashboardAdmin dashboardAdmin;
+
+        public AdministrarUsuarios(Usuario usuario, DashboardAdmin dashboardAdmin)
         {
             InitializeComponent();
-            this.usuario = usuario;
+            cargarInfo(usuario, dashboardAdmin);
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             DashboardAdmin dashboardAdmin = new DashboardAdmin(this.usuario);
-            dashboardAdmin.WindowStartupLocation = this.WindowStartupLocation;
+            dashboardAdmin.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             dashboardAdmin.Show();
-            this.Close();
+            closeWindow();
 
         }
 
@@ -41,8 +44,9 @@ namespace CREDISYS.Views
                 {
                     roles = db.Rols.ToList<Rol>();
                 }
-                EditarUsuario screen = new EditarUsuario(selected, roles);
-                screen.ShowDialog();
+                EditarUsuario editarUsuario = new EditarUsuario(selected, roles);
+                editarUsuario.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                editarUsuario.ShowDialog();
             }
             limpiarInformacion();
         }
@@ -73,9 +77,8 @@ namespace CREDISYS.Views
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             RegistrarUsuario screen = new RegistrarUsuario();
-            screen.WindowStartupLocation = this.WindowStartupLocation;
+            screen.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             screen.ShowDialog();
-
             limpiarInformacion();
         }
 
@@ -127,8 +130,14 @@ namespace CREDISYS.Views
             }
             txtBusqueda.Text = "";
         }
- 
-    private void limpiarInformacion()
+
+        private void cargarInfo(Usuario usuario, DashboardAdmin dashboardAdmin)
+        {
+            this.usuario = usuario;
+            this.dashboardAdmin = dashboardAdmin;
+        }
+
+        private void limpiarInformacion()
         {
             selected = null;
 
@@ -140,6 +149,11 @@ namespace CREDISYS.Views
             txtUsername.Text = "";
             txtRol.Text = "";
             
+        }
+
+        private void closeWindow()
+        {
+            this.Close();
         }
     }
 

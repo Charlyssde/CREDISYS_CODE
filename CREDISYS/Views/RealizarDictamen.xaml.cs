@@ -22,9 +22,20 @@ namespace CREDISYS.Views
     {
         public bool porcentajeRealizado = false;
         private string resultado;
-        public RealizarDictamen(Solicitud solicitud)
+
+        private Solicitud solicitud;
+        private Usuario usuario;
+
+        public RealizarDictamen(Solicitud solicitud, Usuario usuario)
         {
             InitializeComponent();
+            cargarInfo(solicitud, usuario);
+        }
+
+        private void cargarInfo(Solicitud solicitud, Usuario usuario)
+        {
+            this.solicitud = solicitud;
+            this.usuario = usuario;
         }
 
         private void btnVerExpediente_Click(object sender, RoutedEventArgs e)
@@ -44,17 +55,21 @@ namespace CREDISYS.Views
         private void btnCalcularPoliticas_Click(object sender, RoutedEventArgs e)
         {
             CalcularPoliticas calcularPoliticas = new CalcularPoliticas(this);
+            calcularPoliticas.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             calcularPoliticas.ShowDialog();
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-            
+            VisualizarSolicitudes visualizarSolicitudes = new VisualizarSolicitudes(this.usuario);
+            visualizarSolicitudes.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            visualizarSolicitudes.Show();
+            closeWindow();
         }
 
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+        private void closeWindow()
         {
-
+            this.Close();
         }
 
         public void setResultado(String resultado)
