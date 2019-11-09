@@ -21,19 +21,18 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class DashboardAdmin: Window
     {
-        Usuario usuario;
         public DashboardAdmin(Usuario user)
         {
             InitializeComponent();
-            cargarInfo(user);
+            lblNombre.Content = user.nombre;
+            lblRol.Content = user.Rol.rol1;
         }
 
         private void btnAdminUsuarios_Click(object sender, RoutedEventArgs e)
         {
-            AdministrarUsuarios admin = new AdministrarUsuarios(this.usuario, this);
-            admin.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            AdministrarUsuarios admin = new AdministrarUsuarios();
             admin.Show();
-            closeWindow();
+            this.Close();
         }
 
         private void btnAdminCatalogos_Click(object sender, RoutedEventArgs e)
@@ -63,17 +62,9 @@ namespace CREDISYS.Views
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            closeWindow();
-        }
-
-        private void cargarInfo(Usuario user)
-        {
-            this.usuario = user;
-            lblNombre.Content = this.usuario.nombre;
-            lblRol.Content = this.usuario.Rol.rol1;
-        }
-        private void closeWindow()
-        {
+            MainWindow window = new MainWindow();
+            window.WindowStartupLocation = this.WindowStartupLocation;
+            window.Show();
             this.Close();
         }
     }

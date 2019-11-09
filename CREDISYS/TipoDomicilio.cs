@@ -14,6 +14,8 @@ namespace CREDISYS
     
     public partial class TipoDomicilio
     {
+        internal string tipodomicilio1;
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TipoDomicilio()
         {

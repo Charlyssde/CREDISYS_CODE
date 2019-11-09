@@ -29,7 +29,6 @@ namespace CREDISYS
         public MainWindow()
         {
             InitializeComponent();
-            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             /*
              * TEMPORAL PARA PRUEBAS
              */
@@ -63,7 +62,7 @@ namespace CREDISYS
                             {
                                 case 5:
                                     DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
-                                    dashboard_Admin.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                                    dashboard_Admin.WindowStartupLocation = this.WindowStartupLocation;
                                     dashboard_Admin.Show();
                                     break;
                                 case 6:

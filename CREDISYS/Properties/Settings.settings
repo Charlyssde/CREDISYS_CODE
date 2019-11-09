@@ -20,32 +20,5 @@
     <Setting Name="MensajeYaExiste" Type="System.String" Scope="User">
       <Value Profile="(Default)">Ya existe un elemento con esta información, inserte nueva información</Value>
     </Setting>
-    <Setting Name="SolicitudEstatus1" Type="System.String" Scope="User">
-      <Value Profile="(Default)">En espera</Value>
-    </Setting>
-    <Setting Name="SolicitudEstatus2" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Cancelada</Value>
-    </Setting>
-    <Setting Name="SolicitudEstatus3" Type="System.String" Scope="User">
-      <Value Profile="(Default)">En modificacion</Value>
-    </Setting>
-    <Setting Name="SolicitudEstatus4" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Aceptada</Value>
-    </Setting>
-    <Setting Name="SolicitudEstatus5" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Rechazada</Value>
-    </Setting>
-    <Setting Name="SolicitudEstatus6" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Pagada</Value>
-    </Setting>
-    <Setting Name="SolicitudEstatus7" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Pagando</Value>
-    </Setting>
-    <Setting Name="SolicitudEstatus8" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Completada</Value>
-    </Setting>
-    <Setting Name="Disposicion" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Efectivo</Value>
-    </Setting>
   </Settings>
 </SettingsFile>
