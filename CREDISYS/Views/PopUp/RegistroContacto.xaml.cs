@@ -47,9 +47,9 @@ namespace CREDISYS.Views.PopUp
                         db.Correos.Add(nuevo);
                         db.SaveChanges();
                         MessageBox.Show(Settings.Default.MensajeExito);
-                        RegistroContacto registrarcontacto = new RegistroContacto(cliente);
-                        registrarcontacto.WindowStartupLocation = this.WindowStartupLocation;
-                        registrarcontacto.Show();
+                        RegistrarEmpleo registrarempleo = new RegistrarEmpleo(cliente);
+                        registrarempleo.WindowStartupLocation = this.WindowStartupLocation;
+                        registrarempleo.Show();
                         closeWindow();
                     }
 
@@ -69,7 +69,7 @@ namespace CREDISYS.Views.PopUp
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            closeWindow();
         }
     }
 }
