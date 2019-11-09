@@ -30,6 +30,7 @@ C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\Dashboard_AnalistaC.baml
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\VisualizarSolicitudes.g.cs
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\VisualizarSolicitudes.baml
+<<<<<<< HEAD
 C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\bin\Debug\CREDISYS.exe.config
 C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\bin\Debug\CREDISYS.exe
 C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\CREDISYS\bin\Debug\CREDISYS.pdb
@@ -76,3 +77,5 @@ C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\Comentarios.baml
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\EncuestaSolicitud.baml
 C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\obj\Debug\Views\PopUp\RealizarSolicitud.baml
+=======
+>>>>>>> Pantallas
