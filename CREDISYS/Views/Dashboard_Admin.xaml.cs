@@ -33,6 +33,7 @@ namespace CREDISYS.Views
         private void btnAdminUsuarios_Click(object sender, RoutedEventArgs e)
         {
             AdministrarUsuarios admin = new AdministrarUsuarios(this.usuario);
+            admin.WindowStartupLocation = this.WindowStartupLocation;
             admin.Show();
             this.Close();
         }

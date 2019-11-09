@@ -26,6 +26,10 @@ namespace CREDISYS.Views
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
+            DashboardAdmin dashboardAdmin = new DashboardAdmin(this.usuario);
+            dashboardAdmin.WindowStartupLocation = this.WindowStartupLocation;
+            dashboardAdmin.Show();
+            this.Close();
 
         }
 
