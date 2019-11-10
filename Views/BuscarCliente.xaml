@@ -63,7 +63,7 @@
                     <ColumnDefinition Width="274*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Margin="0,18,0,17" Width="40" >
-                    <Button x:Name="btnEditar" Cursor="Hand" Width="40" Height="40" Click="btnEditar_Click">
+                    <Button x:Name="btnEditar" Cursor="Hand" Width="40" Height="40" Click="btnEditar_Click" Visibility="Hidden">
                         <Button.Template>
                             <ControlTemplate>
                                 <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
@@ -73,7 +73,7 @@
 
                 </StackPanel>
                 <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Margin="117,18,117,17" Width="40">
-                    <Button x:Name="btnEliminar" Cursor="Hand" Width="40" Height="40" Click="btnEliminar_Click">
+                    <Button x:Name="btnEliminar" Cursor="Hand" Width="40" Height="40" Click="btnEliminar_Click" Visibility="Hidden">
                         <Button.Template>
                             <ControlTemplate>
                                 <Image Source="pack://application:,,,/Resources/IcBorrar.png"/>
