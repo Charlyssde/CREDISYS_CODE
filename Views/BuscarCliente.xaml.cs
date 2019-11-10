@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CREDISYS.Views.PopUp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,12 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class BuscarCliente : Window
     {
-        public BuscarCliente()
+        Cliente cliente = null;
+        Usuario usuario;
+        public BuscarCliente(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
@@ -46,7 +50,9 @@ namespace CREDISYS.Views
 
         private void btnAgregarSolicitud_Click(object sender, RoutedEventArgs e)
         {
-
+            RealizarSolicitud realizarSolicitud = new RealizarSolicitud(this.usuario, this.cliente);
+            realizarSolicitud.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            realizarSolicitud.ShowDialog();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

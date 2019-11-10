@@ -36,6 +36,9 @@
           <Property Name="idPais" Type="int" Nullable="false" />
           <Property Name="idEstado" Type="int" Nullable="false" />
           <Property Name="idCiudad" Type="int" Nullable="false" />
+          <Property Name="curp" Type="varchar" MaxLength="18" Nullable="false" />
+          <Property Name="genero" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="fechaNacimiento" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="CondicionCredito">
           <Key>
@@ -680,6 +683,9 @@
           <NavigationProperty Name="Tarjetas" Relationship="Self.FK_Tarjeta_Cliente" FromRole="Cliente" ToRole="Tarjeta" />
           <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_Cliente" FromRole="Cliente" ToRole="Telefono" />
           <NavigationProperty Name="Solicituds" Relationship="CREDISYSModel.FK_Solicitud_Cliente" FromRole="Cliente" ToRole="Solicitud" />
+          <Property Name="curp" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="genero" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="CondicionCredito">
           <Key>
@@ -1331,6 +1337,9 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="CREDISYSModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="curp" ColumnName="curp" />
                 <ScalarProperty Name="rfc" ColumnName="rfc" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />

@@ -140,6 +140,9 @@
     <Compile Include="Usuario.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Views\BuscarCliente.xaml.cs">
+      <DependentUpon>BuscarCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard_Admin.xaml.cs">
       <DependentUpon>Dashboard_Admin.xaml</DependentUpon>
     </Compile>
@@ -200,6 +203,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\BuscarCliente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Dashboard_Admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

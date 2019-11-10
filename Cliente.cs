@@ -37,6 +37,9 @@ namespace CREDISYS
         public int idPais { get; set; }
         public int idEstado { get; set; }
         public int idCiudad { get; set; }
+        public string curp { get; set; }
+        public string genero { get; set; }
+        public System.DateTime fechaNacimiento { get; set; }
     
         public virtual Ciudad Ciudad { get; set; }
         public virtual Correo Correo { get; set; }
