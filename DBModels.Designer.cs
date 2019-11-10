@@ -1,4 +1,4 @@
-﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\texch\Desktop\7o Semestre\Desarrollo De Software\CREDISYS_CODE\CREDISYS\DBModels.edmx'. 
+﻿// La generación de código T4 está habilitada para el modelo 'C:\Users\Montse\Documents\UV\7mo semestre\Desarrollo de software\CREDISYS_CODE\DBModels.edmx'. 
 // Para habilitar la generación de código heredada, cambie el valor de la propiedad del diseñador 'Estrategia de generación de código'
 // por 'ObjectContext heredado'. Esta propiedad está disponible en la ventana Propiedades cuando se abre
 // el modelo en el diseñador.

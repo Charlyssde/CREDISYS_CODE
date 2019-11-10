@@ -31,12 +31,19 @@ namespace CREDISYS.Views
 
         private void btnClientes_Click(object sender, RoutedEventArgs e)
         {
-
+            BuscarCliente buscarcliente = new BuscarCliente();
+            buscarcliente.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            buscarcliente.Show();
+            closeWindow();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void closeWindow()
+        {
+            this.Close();
         }
     }
 }
