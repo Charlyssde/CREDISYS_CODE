@@ -50,7 +50,7 @@ namespace CREDISYS.Views.PopUp
 
                 foreach (TipoDomicilio r in tiposdomicilios)
                 {
-                    listTiposDomicilios.Add(r.tipodomicilio1);
+                    listTiposDomicilios.Add(r.tipoDomicilio1);
                 }
                 cb_tipoDomicilio.ItemsSource = listTiposDomicilios;
 
