@@ -8,90 +8,247 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CREDISYS.Properties {
-    
-    
+namespace CREDISYS.Properties
+{
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
+
+        public static Settings Default
+        {
+            get
+            {
                 return defaultInstance;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("No pueden quedar campos vacíos, intente nuevamente")]
-        public string MensajeCamposVacios {
-            get {
+        public string MensajeCamposVacios
+        {
+            get
+            {
                 return ((string)(this["MensajeCamposVacios"]));
             }
-            set {
+            set
+            {
                 this["MensajeCamposVacios"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Se ha realizado la operación correctamente")]
-        public string MensajeExito {
-            get {
+        public string MensajeExito
+        {
+            get
+            {
                 return ((string)(this["MensajeExito"]));
             }
-            set {
+            set
+            {
                 this["MensajeExito"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("No se ha podido conectar a la base de datos, intente nuevamente")]
-        public string MensajeErrorBD {
-            get {
+        public string MensajeErrorBD
+        {
+            get
+            {
                 return ((string)(this["MensajeErrorBD"]));
             }
-            set {
+            set
+            {
                 this["MensajeErrorBD"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("¿Desea eliminar este elemento?")]
-        public string MensajeConfirmacion {
-            get {
+        public string MensajeConfirmacion
+        {
+            get
+            {
                 return ((string)(this["MensajeConfirmacion"]));
             }
-            set {
+            set
+            {
                 this["MensajeConfirmacion"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("No se ha encontrado el elemento, intente nuevamente")]
-        public string MensajeNoEncontrado {
-            get {
+        public string MensajeNoEncontrado
+        {
+            get
+            {
                 return ((string)(this["MensajeNoEncontrado"]));
             }
-            set {
+            set
+            {
                 this["MensajeNoEncontrado"] = value;
             }
         }
-        
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Ya existe un elemento con esta información, inserte nueva información")]
-        public string MensajeYaExiste {
-            get {
+        public string MensajeYaExiste
+        {
+            get
+            {
                 return ((string)(this["MensajeYaExiste"]));
             }
-            set {
+            set
+            {
                 this["MensajeYaExiste"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("En espera")]
+        public string SolicitudEstatus1
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus1"]));
+            }
+            set
+            {
+                this["SolicitudEstatus1"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Cancelada")]
+        public string SolicitudEstatus2
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus2"]));
+            }
+            set
+            {
+                this["SolicitudEstatus2"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("En modificacion")]
+        public string SolicitudEstatus3
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus3"]));
+            }
+            set
+            {
+                this["SolicitudEstatus3"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Aceptada")]
+        public string SolicitudEstatus4
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus4"]));
+            }
+            set
+            {
+                this["SolicitudEstatus4"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Rechazada")]
+        public string SolicitudEstatus5
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus5"]));
+            }
+            set
+            {
+                this["SolicitudEstatus5"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pagada")]
+        public string SolicitudEstatus6
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus6"]));
+            }
+            set
+            {
+                this["SolicitudEstatus6"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Pagando")]
+        public string SolicitudEstatus7
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus7"]));
+            }
+            set
+            {
+                this["SolicitudEstatus7"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Completada")]
+        public string SolicitudEstatus8
+        {
+            get
+            {
+                return ((string)(this["SolicitudEstatus8"]));
+            }
+            set
+            {
+                this["SolicitudEstatus8"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Efectivo")]
+        public string Disposicion
+        {
+            get
+            {
+                return ((string)(this["Disposicion"]));
+            }
+            set
+            {
+                this["Disposicion"] = value;
             }
         }
     }

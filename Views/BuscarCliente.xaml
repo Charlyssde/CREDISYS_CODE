@@ -34,7 +34,14 @@
 
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="45" HorizontalAlignment="Right" VerticalAlignment="Center">
-
+            <Button x:Name="btnAgregarCliente" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcAgregarCliente.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            <Label Width="50"/>
             <Button x:Name="btnSolicitudes" Height="40" Cursor="Hand" Click="btnSolicitudes_Click">
                 <Button.Template>
                     <ControlTemplate>
@@ -42,6 +49,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Label Width="50"/>
             <Button x:Name="btnAgregarSolicitud" Height="40" Cursor="Hand" Click="btnAgregarSolicitud_Click">
                 <Button.Template>
                     <ControlTemplate>
@@ -49,6 +57,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Label Width="50"/>
         </StackPanel>
         <Grid DockPanel.Dock="Bottom">
             <Grid.RowDefinitions>
@@ -60,27 +69,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="261*"></ColumnDefinition>
                     <ColumnDefinition Width="288*"></ColumnDefinition>
-                    <ColumnDefinition Width="274*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Margin="0,18,0,17" Width="40" >
-                    <Button x:Name="btnEditar" Cursor="Hand" Width="40" Height="40" Click="btnEditar_Click" Visibility="Hidden">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-
-                </StackPanel>
-                <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40" Margin="117,18,117,17" Width="40">
-                    <Button x:Name="btnEliminar" Cursor="Hand" Width="40" Height="40" Click="btnEliminar_Click" Visibility="Hidden">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="pack://application:,,,/Resources/IcBorrar.png"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
                 <StackPanel Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Margin="70,22,69,21" Width="122" >
                     <Label Content="Ingresar RFC:" FontSize="18" FontFamily="BoLT" FontWeight="Bold" ></Label>
                 </StackPanel>
@@ -95,32 +84,9 @@
                         </Button.Template>
                     </Button>
                 </StackPanel>
-                <StackPanel x:Name="stackDate" Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Visibility="Hidden" Height="35" Margin="45,20" Width="184">
-                    <DatePicker x:Name="txtDate" MinWidth="150" Height="25"></DatePicker>
-                    <Button x:Name="btnBuscarDate" Cursor="Hand" Width="35" Height="35" Click="btnBuscarDate_Click">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="pack://application:,,,/Resources/IcBuscar.png"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
-
             </Grid>
             <DataGrid Grid.Row="1" x:Name="dg_Cliente" AutoGenerateColumns="False" SelectionChanged="dg_Cliente_SelectionChanged">
-                <StackPanel x:Name="stackRange" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Visibility="Hidden">
-                    <Button x:Name="btnAgregarCliente" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="pack://application:,,,/Resources/IcAgregarCliente.png"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
             </DataGrid>
         </Grid>
-
     </DockPanel>
 </Window>

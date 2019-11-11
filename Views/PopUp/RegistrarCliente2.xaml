@@ -44,10 +44,10 @@
         </Grid>
         <Grid Height="368" Margin="0,310,0.4,-19.6">
             <Label Content="Lugar de nacimiento: " HorizontalAlignment="Left" Margin="24,10,0,0" VerticalAlignment="Top" FontSize="18"/>
-            <ComboBox x:Name="combo_pais" HorizontalAlignment="Left" Margin="24,49,0,0" VerticalAlignment="Top" Width="343" Height="42" FontSize="18"/>
+            <ComboBox x:Name="combo_pais" HorizontalAlignment="Left" Margin="24,49,0,0" VerticalAlignment="Top" Width="343" Height="42" FontSize="18" SelectionChanged="combo_pais_SelectionChanged"/>
             <Label Content="Fecha de nacimiento:" HorizontalAlignment="Left" Margin="407,10,0,0" VerticalAlignment="Top" FontSize="18"/>
             <DatePicker x:Name="date_nacimiento" HorizontalAlignment="Left" Margin="407,49,0,0" VerticalAlignment="Top" Height="42" Width="295" FontSize="18"/>
-            <ComboBox x:Name="combo_estado" HorizontalAlignment="Left" Margin="24,117,0,0" VerticalAlignment="Top" Width="343" Height="42"/>
+            <ComboBox x:Name="combo_estado" HorizontalAlignment="Left" Margin="24,117,0,0" VerticalAlignment="Top" Width="343" Height="42" SelectionChanged="combo_estado_SelectionChanged"/>
             <ComboBox x:Name="combo_ciudad" HorizontalAlignment="Left" Margin="24,188,0,0" VerticalAlignment="Top" Width="343" Height="42"/>
         </Grid>
         <StackPanel HorizontalAlignment="Stretch" 

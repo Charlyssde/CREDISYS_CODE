@@ -1,8 +1,6 @@
 ﻿using CREDISYS.Views.PopUp;
 using System;
-﻿using CREDISYS.Properties;
-using CREDISYS.Views.PopUp;
-using System;
+using CREDISYS.Properties;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,21 +23,10 @@ namespace CREDISYS.Views
     {
         Cliente cliente = null;
         Usuario usuario;
-        bool emptyFields;
         public BuscarCliente(Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
-        }
-
-        private void btnEditar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnEliminar_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -47,9 +34,16 @@ namespace CREDISYS.Views
             consultar();
         }
 
+        private void btnAgregarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarCliente2 registrarCliente2 = new RegistrarCliente2();
+            registrarCliente2.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            registrarCliente2.ShowDialog();
+        }
+
         private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
         {
-
+            //Para ver el listado de las solicitudes que tiene un cliente seleccionado
         }
 
         private void btnAgregarSolicitud_Click(object sender, RoutedEventArgs e)
@@ -61,7 +55,7 @@ namespace CREDISYS.Views
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Dashboard_Capturista cap= new Dashboard_Capturista();
+            Dashboard_Capturista cap= new Dashboard_Capturista(this.usuario);
             cap.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             cap.Show();
             closeWindow();
@@ -73,32 +67,23 @@ namespace CREDISYS.Views
             {
                 MessageBox.Show(Settings.Default.MensajeCamposVacios);
             }
-
-
             else
             {
                 try
                 {
                     using (DBEntities db = new DBEntities())
                     {
-                        
+
                         var items = db.Clientes.Where(b => b.rfc == txtBusqueda.Text).ToList<Cliente>();
                         if (items.Count == 0)
-                                {
-                                    MessageBox.Show(Settings.Default.MensajeNoEncontrado);
+                        {
+                            MessageBox.Show(Settings.Default.MensajeNoEncontrado);
                             btnAgregarCliente.Visibility = System.Windows.Visibility.Visible;
-                                }
-                                else
-                                {
-                                    dg_Cliente.ItemsSource = items;
-                                    btnEliminar.Visibility = System.Windows.Visibility.Visible;
-                            btnEditar.Visibility = System.Windows.Visibility.Visible;
                         }
-                                txtDate.Text = "";
-                                
-                           
-                                                    
-
+                        else
+                        {
+                            dg_Cliente.ItemsSource = items;
+                        }
                     }
                 }
                 catch (Exception)
@@ -113,13 +98,18 @@ namespace CREDISYS.Views
             this.Close();
         }
 
-        private void btnAgregarCliente_Click(object sender, RoutedEventArgs e)
+        private void dg_Cliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RegistrarCliente2 registrarCliente = new RegistrarCliente2();
-            registrarCliente.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            registrarCliente.Show();
-            closeWindow();
-
+            if (dg_Cliente.SelectedItem != null)
+            {
+                this.cliente = (Cliente)dg_Cliente.SelectedItem;
+                btnAgregarSolicitud.IsEnabled = true;
+            }
+            else
+            {
+                this.cliente = null;
+                btnAgregarSolicitud.IsEnabled = false;
+            }
         }
     }
 }
