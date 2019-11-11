@@ -88,7 +88,7 @@ namespace CREDISYS.Views.PopUp
                 using (DBEntities db = new DBEntities())
                 {
                     Solicitud cancelada = db.Solicituds.Where(b => b.folio == solicitud.folio).SingleOrDefault();
-                    cancelada.estatus = Settings.Default.SolicitudEstatus2;
+                    cancelada.estatus1 = Settings.Default.SolicitudEstatus2;
                     db.SaveChanges();
                     closeWindow();
                 }

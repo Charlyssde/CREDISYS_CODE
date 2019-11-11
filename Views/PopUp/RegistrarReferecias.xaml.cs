@@ -20,9 +20,11 @@ namespace CREDISYS.Views.PopUp
     /// </summary>
     public partial class RegistrarReferecias : Window
     {
-        public RegistrarReferecias()
+        Cliente clientenuevo;
+        public RegistrarReferecias(Cliente clientenuevo)
         {
             InitializeComponent();
+            this.clientenuevo = clientenuevo;
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -37,7 +39,7 @@ namespace CREDISYS.Views.PopUp
                 try
                 {
                     if (txt_name1.Text.Equals("") || txt_name2.Text.Equals("") || txtRelacion.Text.Equals("")
-                         || txtRelacion2.Text.Equals("") || txtDir.Text.Equals("") || txtDir2.Text.Equals("") || txtTel.Text.Equals("") || 
+                         || txtRelacion2.Text.Equals("") || txtDir.Text.Equals("") || txtDir2.Text.Equals("") || txtTel.Text.Equals("") ||
                          txtTel2.Text.Equals("") || txtHorario.Text.Equals("") || txtHorario2.Text.Equals(""))
                     {
                         MessageBox.Show(Settings.Default.MensajeCamposVacios);
@@ -45,8 +47,30 @@ namespace CREDISYS.Views.PopUp
                     else
                     {
                         Referencia nueva = new Referencia();
+                        nueva.nombre = txt_name1.Text;
+                        nueva.relacion = txtRelacion.Text;
+                        nueva.telefono = txtTel.Text;
+                        nueva.direccion = txtDir.Text;
+                        nueva.horario = txtHorario.Text;
 
+                        Referencia nueva2 = new Referencia();
+                        nueva.nombre = txt_name2.Text;
+                        nueva.relacion = txtRelacion2.Text;
+                        nueva.telefono = txtTel2.Text;
+                        nueva.direccion = txtDir2.Text;
+                        nueva.horario = txtHorario2.Text;
+                        clientenuevo.Referencias.Add(nueva);
+                        clientenuevo.Referencias.Add(nueva2);
+
+                        /* RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
+                        regisTel.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        regisTel.Show();
+                        */
+                        closeWindow();
                     }
+                } catch (Exception)
+                {
+                    MessageBox.Show(Settings.Default.MensajeErrorBD);
                 }
              }
         }
