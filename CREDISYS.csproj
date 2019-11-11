@@ -182,6 +182,9 @@
     <Compile Include="Views\PopUp\RegistrarEmpleo.xaml.cs">
       <DependentUpon>RegistrarEmpleo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\RegistrarReferecias.xaml.cs">
+      <DependentUpon>RegistrarReferecias.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\RegistrarUsuario.xaml.cs">
       <DependentUpon>RegistrarUsuario.xaml</DependentUpon>
     </Compile>
@@ -259,6 +262,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PopUp\RegistrarEmpleo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\RegistrarReferecias.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
