@@ -89,10 +89,11 @@ namespace CREDISYS.Views.PopUp
                             }
                             nuevo.idCorreo = 0;
                             nuevo.idEmpleo = 0;
+                            nuevo.curp = txt_curp.Text;
+                            nuevo.fechaNacimiento = date_nacimiento.SelectedDate.Value;
+                            nuevo.genero = combo_genero.Text;
 
-
-                            //db.Clientes.Add(nuevo);
-                            //db.SaveChanges();
+                            
                             MessageBox.Show(Settings.Default.MensajeExito);
                             RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
                             registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;

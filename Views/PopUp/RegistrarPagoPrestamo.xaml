@@ -1,0 +1,44 @@
+﻿<Window x:Class="CREDISYS.Views.PopUp.RegistrarPagoPrestamo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
+        mc:Ignorable="d"
+        Title="Registrar el pago del préstamo" Height="358.065" Width="756.452">
+    <Grid Margin="0,0,3.4,2.8">
+        <Grid Background="#283593" Margin="0,0,-1,259">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="153*"/>
+                <ColumnDefinition Width="346*"/>
+                <ColumnDefinition Width="249*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="10" Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,0,0.6">
+                <Label x:Name="lblRol1" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="257" Orientation="Horizontal" HorizontalAlignment="Center" Margin="48.2,0,41.2,0.6"/>
+            <StackPanel Grid.Column="2" Width="10" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,0.6">
+                <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
+            </StackPanel>
+            <Label Content="Registrar préstamo" HorizontalAlignment="Left" Height="34" Margin="123.2,10,0,0" VerticalAlignment="Top" Width="213" FontSize="20" FontWeight="Bold" Grid.Column="1"/>
+        </Grid>
+        <Label Content="Folio:" HorizontalAlignment="Left" Margin="244,97,0,0" VerticalAlignment="Top" FontSize="28" RenderTransformOrigin="0.924,0.617"/>
+        <TextBox Name="txtFolio" HorizontalAlignment="Left" Height="46" Margin="244,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="293" FontSize="18"/>
+        <Button x:Name="btnCancelar" Cursor="Hand" Margin="477,234,209.8,-0.2" Click="btnCancelar_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/CREDISYS;component/Resources/IcCancelar.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button x:Name="btnAceptar" Cursor="Hand" Margin="686,234,9.8,-0.2" Click="btnAceptar_Click" RenderTransformOrigin="0.502,0.5">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="/CREDISYS;component/Resources/IcAceptar.png"/>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+    </Grid>
+</Window>
