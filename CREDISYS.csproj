@@ -116,9 +116,6 @@
     <Compile Include="Referencia.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Relacion.cs">
-      <DependentUpon>DBModels.tt</DependentUpon>
-    </Compile>
     <Compile Include="Rol.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>

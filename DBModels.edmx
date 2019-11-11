@@ -32,13 +32,14 @@
           <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="idEmpleo" Type="int" Nullable="false" />
           <Property Name="idCorreo" Type="int" Nullable="false" />
-          <Property Name="folio" Type="int" Nullable="false" />
           <Property Name="idPais" Type="int" Nullable="false" />
           <Property Name="idEstado" Type="int" Nullable="false" />
           <Property Name="idCiudad" Type="int" Nullable="false" />
-          <Property Name="curp" Type="varchar" MaxLength="18" Nullable="false" />
-          <Property Name="genero" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="curp" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="genero" Type="varchar" MaxLength="255" />
           <Property Name="fechaNacimiento" Type="date" Nullable="false" />
+          <Property Name="estadoCivil" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="CondicionCredito">
           <Key>
@@ -142,16 +143,10 @@
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="telefono" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="idRelacion" Type="int" Nullable="false" />
           <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Relacion">
-          <Key>
-            <PropertyRef Name="idRelacion" />
-          </Key>
-          <Property Name="idRelacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="relacion" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="relacion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="direccion" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="horario" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -417,18 +412,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Referencia_Relacion">
-          <End Role="Relacion" Type="Self.Relacion" Multiplicity="1" />
-          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Relacion">
-              <PropertyRef Name="idRelacion" />
-            </Principal>
-            <Dependent Role="Referencia">
-              <PropertyRef Name="idRelacion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Solicitud_Cliente">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
           <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
@@ -557,7 +540,6 @@
           <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PoliticaAprobacion" EntityType="Self.PoliticaAprobacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Referencia" EntityType="Self.Referencia" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Relacion" EntityType="Self.Relacion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Rol" EntityType="Self.Rol" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Solicitud" EntityType="Self.Solicitud" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -629,10 +611,6 @@
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Referencia" EntitySet="Referencia" />
           </AssociationSet>
-          <AssociationSet Name="FK_Referencia_Relacion" Association="Self.FK_Referencia_Relacion">
-            <End Role="Relacion" EntitySet="Relacion" />
-            <End Role="Referencia" EntitySet="Referencia" />
-          </AssociationSet>
           <AssociationSet Name="FK_Solicitud_Cliente" Association="Self.FK_Solicitud_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Solicitud" EntitySet="Solicitud" />
@@ -697,7 +675,6 @@
           <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idEmpleo" Type="Int32" Nullable="false" />
           <Property Name="idCorreo" Type="Int32" Nullable="false" />
-          <Property Name="folio" Type="Int32" Nullable="false" />
           <Property Name="idPais" Type="Int32" Nullable="false" />
           <Property Name="idEstado" Type="Int32" Nullable="false" />
           <Property Name="idCiudad" Type="Int32" Nullable="false" />
@@ -714,9 +691,11 @@
           <NavigationProperty Name="Tarjetas" Relationship="Self.FK_Tarjeta_Cliente" FromRole="Cliente" ToRole="Tarjeta" />
           <NavigationProperty Name="Telefonoes" Relationship="Self.FK_Telefono_Cliente" FromRole="Cliente" ToRole="Telefono" />
           <NavigationProperty Name="Solicituds" Relationship="CREDISYSModel.FK_Solicitud_Cliente" FromRole="Cliente" ToRole="Solicitud" />
-          <Property Name="curp" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="false" />
-          <Property Name="genero" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="curp" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="genero" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="fechaNacimiento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="estatus" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="estadoCivil" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="CondicionCredito">
           <Key>
@@ -838,19 +817,11 @@
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idRelacion" Type="Int32" Nullable="false" />
           <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Referencia_Cliente" FromRole="Referencia" ToRole="Cliente" />
-          <NavigationProperty Name="Relacion" Relationship="Self.FK_Referencia_Relacion" FromRole="Referencia" ToRole="Relacion" />
-        </EntityType>
-        <EntityType Name="Relacion">
-          <Key>
-            <PropertyRef Name="idRelacion" />
-          </Key>
-          <Property Name="idRelacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="relacion1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Referencias" Relationship="Self.FK_Referencia_Relacion" FromRole="Relacion" ToRole="Referencia" />
+          <Property Name="relacion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="direccion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="horario" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Rol">
           <Key>
@@ -877,7 +848,7 @@
           <NavigationProperty Name="CondicionCredito" Relationship="Self.FK_Solicitud_CondicionCredito" FromRole="Solicitud" ToRole="CondicionCredito" />
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Solicitud_Usuario" FromRole="Solicitud" ToRole="Usuario" />
           <NavigationProperty Name="Cliente" Relationship="CREDISYSModel.FK_Solicitud_Cliente" FromRole="Solicitud" ToRole="Cliente" />
-          <Property Name="estatus" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="estatus1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1174,18 +1145,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Referencia_Relacion">
-          <End Role="Relacion" Type="Self.Relacion" Multiplicity="1" />
-          <End Role="Referencia" Type="Self.Referencia" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Relacion">
-              <PropertyRef Name="idRelacion" />
-            </Principal>
-            <Dependent Role="Referencia">
-              <PropertyRef Name="idRelacion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Usuario_Rol">
           <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
@@ -1223,7 +1182,6 @@
           <EntitySet Name="Pais" EntityType="Self.Pai" />
           <EntitySet Name="PoliticaAprobacions" EntityType="Self.PoliticaAprobacion" />
           <EntitySet Name="Referencias" EntityType="Self.Referencia" />
-          <EntitySet Name="Relacions" EntityType="Self.Relacion" />
           <EntitySet Name="Rols" EntityType="Self.Rol" />
           <EntitySet Name="Solicituds" EntityType="Self.Solicitud" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
@@ -1311,10 +1269,6 @@
             <End Role="Pais" EntitySet="Pais" />
             <End Role="Estado" EntitySet="Estadoes" />
           </AssociationSet>
-          <AssociationSet Name="FK_Referencia_Relacion" Association="Self.FK_Referencia_Relacion">
-            <End Role="Relacion" EntitySet="Relacions" />
-            <End Role="Referencia" EntitySet="Referencias" />
-          </AssociationSet>
           <AssociationSet Name="FK_Usuario_Rol" Association="Self.FK_Usuario_Rol">
             <End Role="Rol" EntitySet="Rols" />
             <End Role="Usuario" EntitySet="Usuarios" />
@@ -1398,6 +1352,8 @@
           <EntitySetMapping Name="Clientes">
             <EntityTypeMapping TypeName="CREDISYSModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
                 <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
                 <ScalarProperty Name="genero" ColumnName="genero" />
                 <ScalarProperty Name="curp" ColumnName="curp" />
@@ -1407,7 +1363,6 @@
                 <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
                 <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
                 <ScalarProperty Name="idCorreo" ColumnName="idCorreo" />
-                <ScalarProperty Name="folio" ColumnName="folio" />
                 <ScalarProperty Name="idPais" ColumnName="idPais" />
                 <ScalarProperty Name="idEstado" ColumnName="idEstado" />
                 <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
@@ -1519,20 +1474,13 @@
           <EntitySetMapping Name="Referencias">
             <EntityTypeMapping TypeName="CREDISYSModel.Referencia">
               <MappingFragment StoreEntitySet="Referencia">
+                <ScalarProperty Name="horario" ColumnName="horario" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="relacion" ColumnName="relacion" />
                 <ScalarProperty Name="idReferencia" ColumnName="idReferencia" />
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
                 <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
-                <ScalarProperty Name="idRelacion" ColumnName="idRelacion" />
-                <ScalarProperty Name="estatus" ColumnName="estatus" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Relacions">
-            <EntityTypeMapping TypeName="CREDISYSModel.Relacion">
-              <MappingFragment StoreEntitySet="Relacion">
-                <ScalarProperty Name="idRelacion" ColumnName="idRelacion" />
-                <ScalarProperty Name="relacion1" ColumnName="relacion" />
                 <ScalarProperty Name="estatus" ColumnName="estatus" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -1549,7 +1497,7 @@
           <EntitySetMapping Name="Solicituds">
             <EntityTypeMapping TypeName="CREDISYSModel.Solicitud">
               <MappingFragment StoreEntitySet="Solicitud">
-                <ScalarProperty Name="estatus" ColumnName="estatus" />
+                <ScalarProperty Name="estatus1" ColumnName="estatus" />
                 <ScalarProperty Name="folio" ColumnName="folio" />
                 <ScalarProperty Name="vendedor" ColumnName="vendedor" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
