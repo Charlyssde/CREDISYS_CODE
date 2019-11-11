@@ -41,8 +41,6 @@ namespace CREDISYS.Views.PopUp
         {
             using (DBEntities db = new DBEntities())
             {
-                try
-                {
                     if (txt_apellidopaterno.Text.Equals("") || txt_apellidomaterno.Text.Equals("") || txt_name.Text.Equals("")
                          || txt_curp.Text.Equals("") || txt_rfc.Text.Equals("") || combo_genero.SelectedItem == null ||
                          combo_pais.SelectedItem == null || combo_estado.SelectedItem == null || combo_ciudad.SelectedItem == null)
@@ -51,7 +49,7 @@ namespace CREDISYS.Views.PopUp
                     }
                     else
                     {
-                        Cliente existe = db.Clientes.Where(b => b.rfc.Equals(txt_rfc.Text)).FirstOrDefault();
+                        Cliente existe = db.Clientes.Where(b => b.rfc == txt_rfc.Text).FirstOrDefault();
                         if (existe != null)
                         {
                             MessageBox.Show(Settings.Default.MensajeYaExiste);
@@ -100,12 +98,6 @@ namespace CREDISYS.Views.PopUp
                             closeWindow();
                         }
                     }
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show(Settings.Default.MensajeErrorBD);
-                }
 
             }
         }

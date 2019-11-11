@@ -52,7 +52,7 @@ namespace CREDISYS.Views.PopUp
             {
                 Solicitud solicitud = new Solicitud();
                 solicitud.destinoCredito = txtDestino.Text;
-                solicitud.estatus = Settings.Default.SolicitudEstatus1;
+                solicitud.estatus1 = Settings.Default.SolicitudEstatus1;
                 solicitud.montoLetra = txtMontoLetra.Text;
                 solicitud.montoNumero = int.Parse(txtMontoNumero.Text);
                 solicitud.Usuario = this.usuario;

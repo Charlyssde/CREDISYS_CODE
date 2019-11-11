@@ -116,7 +116,7 @@ namespace CREDISYS.Views
                             case "Rango":
                                 int min = int.Parse(txtRangeMin.Text);
                                 int max = int.Parse(txtRangeMax.Text);
-                                items = db.Solicituds.Where(b => b.montoNumero <= max && b.montoNumero >= min && b.estatus == cbEstatus.Text).ToList<Solicitud>();
+                                items = db.Solicituds.Where(b => b.montoNumero <= max && b.montoNumero >= min && b.estatus1 == cbEstatus.Text).ToList<Solicitud>();
                                 if (items.Count == 0)
                                 {
                                     MessageBox.Show(Settings.Default.MensajeNoEncontrado);

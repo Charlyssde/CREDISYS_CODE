@@ -15,7 +15,7 @@
                 <ColumnDefinition Width="116*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Nombre(s): " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="19,0,0,0" Height="34" Width="102"/>
-            <TextBox x:Name="txt_name" HorizontalAlignment="Left" Margin="20,37,0,7" TextWrapping="Wrap" Text="" Width="353" FontSize="18" RenderTransformOrigin="0.485,0.323" TextChanged="TextBox_TextChanged" Grid.ColumnSpan="3"/>
+            <TextBox x:Name="txt_name" HorizontalAlignment="Left" Margin="20,37,0,7" TextWrapping="Wrap" Text="" Width="353" FontSize="18" RenderTransformOrigin="0.485,0.323" Grid.ColumnSpan="3"/>
 
             <Label Content="Género:" HorizontalAlignment="Left" Margin="62,0,0,0" VerticalAlignment="Top" FontSize="18" Grid.Column="2" Height="34" Width="72"/>
             <ComboBox x:Name="combo_genero" HorizontalAlignment="Left" Margin="62,39,0,0" VerticalAlignment="Top" Width="166" Height="39" Grid.Column="2" FontSize="18" Grid.ColumnSpan="2">
