@@ -163,11 +163,6 @@ namespace CREDISYS.Views.PopUp
             }
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void combo_pais_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             foreach( Pai p in this.Paises)
