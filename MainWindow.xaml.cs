@@ -95,9 +95,11 @@ namespace CREDISYS
                             MessageBox.Show(Settings.Default.MensajeNoEncontrado);
                         }
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         MessageBox.Show(Settings.Default.MensajeErrorBD);
+                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(ex.StackTrace);
                     }
 
                 }

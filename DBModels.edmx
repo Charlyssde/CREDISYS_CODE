@@ -1549,6 +1549,7 @@
           <EntitySetMapping Name="Solicituds">
             <EntityTypeMapping TypeName="CREDISYSModel.Solicitud">
               <MappingFragment StoreEntitySet="Solicitud">
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
                 <ScalarProperty Name="folio" ColumnName="folio" />
                 <ScalarProperty Name="vendedor" ColumnName="vendedor" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />

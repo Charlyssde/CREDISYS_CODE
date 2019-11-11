@@ -56,16 +56,16 @@ namespace CREDISYS.Views.PopUp
                         nuevo.estatus = "activo";
                         nuevo.antiguedadAños = 0;
                         nuevo.rfcCliente = clientenuevo.rfc;
-                        
 
+                        this.clientenuevo.idEmpleo = nuevo.idEmpleo;
+                        this.clientenuevo.Empleo = nuevo;
 
-
-                        db.Empleos.Add(nuevo);
-                        db.SaveChanges();
                         MessageBox.Show(Settings.Default.MensajeExito);
+
                         RegistroContacto registrarcontacto = new RegistroContacto(clientenuevo);
                         registrarcontacto.WindowStartupLocation = this.WindowStartupLocation;
                         registrarcontacto.Show();
+                        
                         closeWindow();
 
                     }

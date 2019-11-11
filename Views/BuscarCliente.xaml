@@ -34,7 +34,14 @@
 
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="45" HorizontalAlignment="Right" VerticalAlignment="Center">
-
+            <Button x:Name="btnAgregarCliente" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcAgregarCliente.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            <Label Width="50"/>
             <Button x:Name="btnSolicitudes" Height="40" Cursor="Hand" Click="btnSolicitudes_Click">
                 <Button.Template>
                     <ControlTemplate>
@@ -42,6 +49,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Label Width="50"/>
             <Button x:Name="btnAgregarSolicitud" Height="40" Cursor="Hand" Click="btnAgregarSolicitud_Click">
                 <Button.Template>
                     <ControlTemplate>
@@ -49,6 +57,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            <Label Width="50"/>
         </StackPanel>
         <Grid DockPanel.Dock="Bottom">
             <Grid.RowDefinitions>
@@ -77,18 +86,7 @@
                 </StackPanel>
             </Grid>
             <DataGrid Grid.Row="1" x:Name="dg_Cliente" AutoGenerateColumns="False" SelectionChanged="dg_Cliente_SelectionChanged">
-                <StackPanel x:Name="stackRange" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center"
-                            Visibility="Hidden">
-                    <Button x:Name="btnAgregarCliente" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="pack://application:,,,/Resources/IcAgregarCliente.png"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                </StackPanel>
             </DataGrid>
         </Grid>
-
     </DockPanel>
 </Window>

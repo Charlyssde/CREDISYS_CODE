@@ -29,10 +29,6 @@ namespace CREDISYS.Views.PopUp
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            using (DBEntities db = new DBEntities())
-            {
-                try
-                {
                     if (txtCorreo.Text.Equals(""))
                     {
                         MessageBox.Show(Settings.Default.MensajeCamposVacios);
@@ -44,23 +40,16 @@ namespace CREDISYS.Views.PopUp
                         nuevo.rfcCliente = cliente.rfc;
                         nuevo.estatus = "activo";
 
-                        db.Correos.Add(nuevo);
-                        db.SaveChanges();
+                        cliente.Correo = nuevo;
+                        cliente.idCorreo = nuevo.idCorreo;
+                        
                         MessageBox.Show(Settings.Default.MensajeExito);
+                        
                         RegistrarEmpleo registrarempleo = new RegistrarEmpleo(cliente);
                         registrarempleo.WindowStartupLocation = this.WindowStartupLocation;
                         registrarempleo.Show();
                         closeWindow();
                     }
-
-                }
-
-                catch (Exception)
-                {
-                    MessageBox.Show(Settings.Default.MensajeErrorBD);
-                }
-
-            }
         }
         private void closeWindow()
         {

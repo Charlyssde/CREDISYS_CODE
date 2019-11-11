@@ -29,6 +29,7 @@ namespace CREDISYS.Views.PopUp
         public RegistrarCliente2()
         {
             InitializeComponent();
+            cargarPaises();
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -90,8 +91,8 @@ namespace CREDISYS.Views.PopUp
                             nuevo.idEmpleo = 0;
 
 
-                            db.Clientes.Add(nuevo);
-                            db.SaveChanges();
+                            //db.Clientes.Add(nuevo);
+                            //db.SaveChanges();
                             MessageBox.Show(Settings.Default.MensajeExito);
                             RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
                             registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -131,11 +132,11 @@ namespace CREDISYS.Views.PopUp
 
         }
 
-        public void cargarEstados()
+        public void cargarEstados(int idPais)
         {
             using (DBEntities db = new DBEntities())
             {
-                Estados = db.Estadoes.ToList<Estado>();
+                Estados = db.Estadoes.Where(b => b.idPais == idPais).ToList<Estado>();
                 listEstados = new List<String>();
 
                 foreach (Estado e in Estados)
@@ -143,15 +144,14 @@ namespace CREDISYS.Views.PopUp
                     listEstados.Add(e.estado1);
                 }
                 combo_estado.ItemsSource = listEstados;
-                cargarCiudades();
 
             }
         }
-        public void cargarCiudades()
+        public void cargarCiudades(int idEstado)
         {
             using (DBEntities db = new DBEntities())
             {
-                Ciudades = db.Ciudads.ToList<Ciudad>();
+                Ciudades = db.Ciudads.Where(b=> b.idEstado == idEstado).ToList<Ciudad>();
                 listCiudades = new List<String>();
 
                 foreach (Ciudad c in Ciudades)
@@ -163,17 +163,34 @@ namespace CREDISYS.Views.PopUp
             }
         }
 
-        private void cb_pais_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            using (DBEntities db = new DBEntities())
-            {
-                cargarEstados();
-            }
-        }
-
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void combo_pais_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach( Pai p in this.Paises)
+            {
+                if (p.pais.Equals(combo_pais.SelectedItem))
+                {
+                    cargarEstados(p.idPais);
+                    break;
+                }
+            }
+            
+        }
+
+        private void combo_estado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (Estado p in this.Estados)
+            {
+                if (p.estado1.Equals(combo_estado.SelectedItem))
+                {
+                    cargarCiudades(p.idEstado);
+                    break;
+                }
+            }
         }
     }
 }
