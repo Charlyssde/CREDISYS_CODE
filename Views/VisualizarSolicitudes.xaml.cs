@@ -101,7 +101,7 @@ namespace CREDISYS.Views
                         switch (filtro)
                         {
                             case "Fecha":
-                                var items = db.Solicituds.Where(b => b.fecha == txtDate.SelectedDate && b.estatus == cbEstatus.Text).ToList<Solicitud>();
+                                var items = db.Solicituds.Where(b => b.fecha == txtDate.SelectedDate && b.estatus1 == cbEstatus.Text).ToList<Solicitud>();
                                 if (items.Count == 0)
                                 {
                                     MessageBox.Show(Settings.Default.MensajeNoEncontrado);
@@ -130,7 +130,7 @@ namespace CREDISYS.Views
                                 break;
                             default:
                                 int folio = int.Parse(txtBusqueda.Text);
-                                items = db.Solicituds.Where(b => (b.rfcCliente == txtBusqueda.Text && b.estatus == cbEstatus.Text) || (b.folio == folio && b.estatus == cbEstatus.Text)).ToList<Solicitud>();
+                                items = db.Solicituds.Where(b => (b.rfcCliente == txtBusqueda.Text && b.estatus1 == cbEstatus.Text) || (b.folio == folio && b.estatus1 == cbEstatus.Text)).ToList<Solicitud>();
                                 if (items.Count == 0)
                                 {
                                     MessageBox.Show(Settings.Default.MensajeNoEncontrado);
