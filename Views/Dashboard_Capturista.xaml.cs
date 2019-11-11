@@ -19,9 +19,11 @@ namespace CREDISYS.Views
     /// </summary>
     public partial class Dashboard_Capturista : Window
     {
-        public Dashboard_Capturista()
+        Usuario usuario;
+        public Dashboard_Capturista(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
@@ -31,7 +33,7 @@ namespace CREDISYS.Views
 
         private void btnClientes_Click(object sender, RoutedEventArgs e)
         {
-            BuscarCliente buscarcliente = new BuscarCliente();
+            BuscarCliente buscarcliente = new BuscarCliente(this.usuario);
             buscarcliente.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             buscarcliente.Show();
             closeWindow();
