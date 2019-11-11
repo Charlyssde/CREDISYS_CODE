@@ -65,23 +65,26 @@ namespace CREDISYS
                                     DashboardAdmin dashboard_Admin = new DashboardAdmin(user);
                                     dashboard_Admin.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                                     dashboard_Admin.Show();
+                                    closeWindow();
                                     break;
                                 case 6:
-                                    /*
-                                     * para el capturista
-                                     */
+                                    Dashboard_Capturista dashboard_Capturista = new Dashboard_Capturista(user);
+                                    dashboard_Capturista.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                                    dashboard_Capturista.Show();
+                                    closeWindow();
                                     break;
                                 case 7:
-                                    /*
-                                     * DashboardGestorC dashboard_Gestor = new DashboardGestorC();
-                                     * dashboard_Gestor.windowStartupLocation = this.WindowStartupLocation;
-                                     * dashboard_Gestor.Show();
-                                     */
+                                    
+                                    Dashboard_Gestor dashboard_Gestor = new Dashboard_Gestor();
+                                    dashboard_Gestor.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                                    dashboard_Gestor.Show();
+                                    closeWindow();
                                     break;
                                 case 8:
                                     Dashboard_AnalistaC dashboard_AnalistaC = new Dashboard_AnalistaC(user);
                                     dashboard_AnalistaC.WindowStartupLocation = this.WindowStartupLocation;
                                     dashboard_AnalistaC.Show();
+                                    closeWindow();
                                     break;
                             }
 
@@ -103,6 +106,11 @@ namespace CREDISYS
                 
             }
             
+        }
+
+        private void closeWindow()
+        {
+            this.Close();
         }
     }
 }

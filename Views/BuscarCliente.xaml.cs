@@ -36,7 +36,9 @@ namespace CREDISYS.Views
 
         private void btnAgregarCliente_Click(object sender, RoutedEventArgs e)
         {
-
+            RegistrarCliente2 registrarCliente2 = new RegistrarCliente2();
+            registrarCliente2.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            registrarCliente2.ShowDialog();
         }
 
         private void btnSolicitudes_Click(object sender, RoutedEventArgs e)

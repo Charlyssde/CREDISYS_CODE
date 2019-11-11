@@ -93,10 +93,9 @@ namespace CREDISYS.Views.PopUp
                             db.Clientes.Add(nuevo);
                             db.SaveChanges();
                             MessageBox.Show(Settings.Default.MensajeExito);
-                           RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
-                            registrarDomicilio.WindowStartupLocation = this.WindowStartupLocation;
+                            RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
+                            registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                             registrarDomicilio.Show();
-                            
                             closeWindow();
                         }
                     }

@@ -20,6 +20,7 @@
           <Property Name="idCiudad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ciudad" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="idEstado" Type="int" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
         </EntityType>
         <EntityType Name="Cliente">
           <Key>
@@ -173,6 +174,7 @@
           <Property Name="disposicion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="idCondicion" Type="int" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -427,6 +429,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Solicitud_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="rfc" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Solicitud_CondicionCredito">
           <End Role="CondicionCredito" Type="Self.CondicionCredito" Multiplicity="1" />
           <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
@@ -618,6 +632,10 @@
           <AssociationSet Name="FK_Referencia_Relacion" Association="Self.FK_Referencia_Relacion">
             <End Role="Relacion" EntitySet="Relacion" />
             <End Role="Referencia" EntitySet="Referencia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_Cliente" Association="Self.FK_Solicitud_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
           </AssociationSet>
           <AssociationSet Name="FK_Solicitud_CondicionCredito" Association="Self.FK_Solicitud_CondicionCredito">
             <End Role="CondicionCredito" EntitySet="CondicionCredito" />
@@ -1370,6 +1388,7 @@
           <EntitySetMapping Name="Ciudads">
             <EntityTypeMapping TypeName="CREDISYSModel.Ciudad">
               <MappingFragment StoreEntitySet="Ciudad">
+                <ScalarProperty Name="estatus" ColumnName="estatus" />
                 <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
                 <ScalarProperty Name="ciudad1" ColumnName="ciudad" />
                 <ScalarProperty Name="idEstado" ColumnName="idEstado" />
