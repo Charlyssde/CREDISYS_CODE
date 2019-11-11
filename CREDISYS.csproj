@@ -207,8 +207,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\BuscarCliente.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Dashboard_Admin.xaml">
       <SubType>Designer</SubType>
