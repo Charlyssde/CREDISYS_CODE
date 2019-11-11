@@ -28,7 +28,7 @@
             <Grid Height="117" RenderTransformOrigin="0.502,0.582" Margin="0,0,-0.8,0">
                 <StackPanel HorizontalAlignment="Left" Width="383" Margin="0,0,0,19">
                     <Label Content="Apellido paterno: " FontSize="18" Margin="20,0,0.2,0" Height="42"/>
-                    <TextBox x:Name="txt_apellidopaterno" HorizontalAlignment="Left" Height="44" Margin="20,10,0,0" TextWrapping="Wrap" Text="" Width="353" FontSize="18" RenderTransformOrigin="0.485,0.323" TextChanged="TextBox_TextChanged"/>
+                    <TextBox x:Name="txt_apellidopaterno" HorizontalAlignment="Left" Height="44" Margin="20,10,0,0" TextWrapping="Wrap" Text="" Width="353" FontSize="18" RenderTransformOrigin="0.485,0.323"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Left" Height="123" VerticalAlignment="Top" Width="406" Margin="388,0,0,0">
                     <Label Content="Apellido materno:" FontSize="18" Height="40" Margin="10,0,0.4,0"/>

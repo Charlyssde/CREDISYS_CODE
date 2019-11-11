@@ -185,11 +185,17 @@
     <Compile Include="Views\PopUp\RegistrarReferecias.xaml.cs">
       <DependentUpon>RegistrarReferecias.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\RegistrarTarjetas.xaml.cs">
+      <DependentUpon>RegistrarTarjetas.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\RegistrarUsuario.xaml.cs">
       <DependentUpon>RegistrarUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\RegistroContacto.xaml.cs">
       <DependentUpon>RegistroContacto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RegistrarTelefonos.xaml.cs">
+      <DependentUpon>RegistrarTelefonos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RealizarDictamen.xaml.cs">
       <DependentUpon>RealizarDictamen.xaml</DependentUpon>
@@ -269,11 +275,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PopUp\RegistrarTarjetas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\RegistrarUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PopUp\RegistroContacto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\RegistrarTelefonos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
