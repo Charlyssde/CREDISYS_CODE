@@ -1,6 +1,7 @@
 ﻿using CREDISYS.Views.PopUp;
 using System;
 ﻿using CREDISYS.Properties;
+using CREDISYS.Views.PopUp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -112,5 +113,13 @@ namespace CREDISYS.Views
             this.Close();
         }
 
+        private void btnAgregarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrarCliente2 registrarCliente = new RegistrarCliente2();
+            registrarCliente.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            registrarCliente.Show();
+            closeWindow();
+
+        }
     }
 }

@@ -63,9 +63,9 @@ namespace CREDISYS.Views.PopUp
                         db.Empleos.Add(nuevo);
                         db.SaveChanges();
                         MessageBox.Show(Settings.Default.MensajeExito);
-                        RegistroContacto registrarcontacto = new RegistroContacto(clientenuevo);
-                        registrarcontacto.WindowStartupLocation = this.WindowStartupLocation;
-                        registrarcontacto.Show();
+                        RegistrarReferecias registrarReferencias = new RegistrarReferecias();
+                        registrarReferencias.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        registrarReferencias.Show();
                         closeWindow();
 
                     }
