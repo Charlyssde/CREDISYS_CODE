@@ -82,12 +82,10 @@ namespace CREDISYS.Views.PopUp
         {
             using (DBEntities db = new DBEntities())
             {
-                db.Correos.Add(this.cliente.Correo);
-                /*foreach (Domicilio d in this.cliente.Domicilios)
+                foreach (Domicilio d in this.cliente.Domicilios)
                 {
                     db.Domicilios.Add(d);
                 }
-                db.Empleos.Add(this.cliente.Empleo);
                 foreach (Referencia r in this.cliente.Referencias)
                 {
                     db.Referencias.Add(r);
@@ -100,7 +98,14 @@ namespace CREDISYS.Views.PopUp
                 {
                     db.Telefonoes.Add(t);
                 }
-                */
+                foreach (Correo c in this.cliente.Correos)
+                {
+                    db.Correos.Add(c);
+                }
+                foreach (Empleo e in this.cliente.Empleos)
+                {
+                    db.Empleos.Add(e);
+                }
                 db.SaveChanges();
             }
         }

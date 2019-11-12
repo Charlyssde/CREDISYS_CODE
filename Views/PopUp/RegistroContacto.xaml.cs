@@ -40,8 +40,7 @@ namespace CREDISYS.Views.PopUp
                         nuevo.rfcCliente = cliente.rfc;
                         nuevo.estatus = "activo";
 
-                        cliente.Correo = nuevo;
-                        cliente.idCorreo = nuevo.idCorreo;
+                        
                         
                         MessageBox.Show(Settings.Default.MensajeExito);
                         
