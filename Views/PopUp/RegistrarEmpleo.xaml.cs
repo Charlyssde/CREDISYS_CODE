@@ -61,7 +61,7 @@ namespace CREDISYS.Views.PopUp
                         this.clientenuevo.Empleo = nuevo;
 
                         MessageBox.Show(Settings.Default.MensajeExito);
-                        RegistrarReferecias registrarReferencias = new RegistrarReferecias();
+                        RegistrarReferecias registrarReferencias = new RegistrarReferecias(clientenuevo);
                         registrarReferencias.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         registrarReferencias.Show();
                         closeWindow();
