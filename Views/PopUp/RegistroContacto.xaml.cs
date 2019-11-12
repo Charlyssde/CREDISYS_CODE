@@ -47,7 +47,7 @@ namespace CREDISYS.Views.PopUp
                         
                         RegistrarEmpleo registrarempleo = new RegistrarEmpleo(cliente);
                         registrarempleo.WindowStartupLocation = this.WindowStartupLocation;
-                        registrarempleo.Show();
+                        registrarempleo.ShowDialog();
                         closeWindow();
                     }
         }

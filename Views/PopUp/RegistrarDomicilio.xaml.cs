@@ -186,14 +186,14 @@ namespace CREDISYS.Views.PopUp
                             }
                         }
 
-
+                        this.clientenuevo.Domicilios = new List<Domicilio>();
                         this.clientenuevo.Domicilios.Add(nuevo);
                         
                         MessageBox.Show(Settings.Default.MensajeExito);
                         
                         RegistroContacto registrarcontacto = new RegistroContacto(clientenuevo);
                         registrarcontacto.WindowStartupLocation = this.WindowStartupLocation;
-                        registrarcontacto.Show();
+                        registrarcontacto.ShowDialog();
                         
                         closeWindow();
 

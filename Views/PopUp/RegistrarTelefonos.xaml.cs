@@ -61,6 +61,8 @@ namespace CREDISYS.Views.PopUp
                 telefono.numero = txtNumeroUno.Text;
                 telefono.rfcCliente = this.cliente.rfc;
                 telefono.tipoTelefono = selUno;
+
+                this.cliente.Telefonoes = new List<Telefono>();
                 this.cliente.Telefonoes.Add(telefono);
 
                 telefono.numero = txtNumeroDos.Text;
@@ -69,7 +71,7 @@ namespace CREDISYS.Views.PopUp
 
                 RegistrarTarjetas registrarTarjetas = new RegistrarTarjetas(this.cliente);
                 registrarTarjetas.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                registrarTarjetas.Show();
+                registrarTarjetas.ShowDialog();
                 closeWindow();
             }
         }

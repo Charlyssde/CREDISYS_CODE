@@ -56,6 +56,7 @@ namespace CREDISYS.Views.PopUp
 
                     }
                 }
+                this.cliente.Tarjetas = new List<Tarjeta>();
                 this.cliente.Tarjetas.Add(tarjeta);
 
                 tarjeta.numTarjeta = txtNumeroCuentaDos.Text;
@@ -82,7 +83,7 @@ namespace CREDISYS.Views.PopUp
             using (DBEntities db = new DBEntities())
             {
                 db.Correos.Add(this.cliente.Correo);
-                foreach (Domicilio d in this.cliente.Domicilios)
+                /*foreach (Domicilio d in this.cliente.Domicilios)
                 {
                     db.Domicilios.Add(d);
                 }
@@ -99,7 +100,7 @@ namespace CREDISYS.Views.PopUp
                 {
                     db.Telefonoes.Add(t);
                 }
-
+                */
                 db.SaveChanges();
             }
         }

@@ -59,12 +59,13 @@ namespace CREDISYS.Views.PopUp
                         nueva.telefono = txtTel2.Text;
                         nueva.direccion = txtDir2.Text;
                         nueva.horario = txtHorario2.Text;
+                        clientenuevo.Referencias = new List<Referencia>();
                         clientenuevo.Referencias.Add(nueva);
                         clientenuevo.Referencias.Add(nueva2);
 
                         RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
                         regisTel.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                        regisTel.Show();
+                        regisTel.ShowDialog();
                         
                         closeWindow();
                     }
