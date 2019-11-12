@@ -54,7 +54,6 @@ namespace CREDISYS.Views.PopUp
                         nuevo.ocupacion = txt_ocupacion.Text;
                         nuevo.periodoPresentacion = txt_periodo.Text;
                         nuevo.estatus = "activo";
-                        nuevo.antiguedadAños = 0;
                         nuevo.rfcCliente = clientenuevo.rfc;
 
                         this.clientenuevo.idEmpleo = nuevo.idEmpleo;

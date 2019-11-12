@@ -62,10 +62,10 @@ namespace CREDISYS.Views.PopUp
                         clientenuevo.Referencias.Add(nueva);
                         clientenuevo.Referencias.Add(nueva2);
 
-                        /* RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
+                        RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
                         regisTel.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         regisTel.Show();
-                        */
+                        
                         closeWindow();
                     }
                 } catch (Exception)

@@ -21,6 +21,8 @@ namespace CREDISYS.Views.PopUp
     public partial class RegistrarTelefonos : Window
     {
         Cliente cliente;
+        string selUno;
+        string selDos;
         public RegistrarTelefonos(Cliente cliente)
         {
             InitializeComponent();
@@ -29,12 +31,21 @@ namespace CREDISYS.Views.PopUp
 
         private void rbMovil_Checked(object sender, RoutedEventArgs e)
         {
-            rbCasaDos.IsChecked = true;
+            selUno = rbMovil.Content.ToString();
         }
 
         private void rbCasa_Checked(object sender, RoutedEventArgs e)
         {
-            rbMovilDos.IsChecked = true;
+            selUno = rbCasa.Content.ToString();
+        }
+        private void rbMovilDos_Checked(object sender, RoutedEventArgs e)
+        {
+            selDos = rbMovilDos.Content.ToString();
+        }
+
+        private void rbCasaDos_Checked(object sender, RoutedEventArgs e)
+        {
+            selDos = rbCasaDos.Content.ToString();
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
@@ -49,25 +60,11 @@ namespace CREDISYS.Views.PopUp
                 telefono.estatus = "Activo";
                 telefono.numero = txtNumeroUno.Text;
                 telefono.rfcCliente = this.cliente.rfc;
-                if (rbCasa.IsChecked ==  true)
-                {
-                    telefono.tipoTelefono = "casa";
-                }
-                else
-                {
-                    telefono.tipoTelefono = "movil";
-                }
+                telefono.tipoTelefono = selUno;
                 this.cliente.Telefonoes.Add(telefono);
 
                 telefono.numero = txtNumeroDos.Text;
-                if (rbCasa.IsChecked == true)
-                {
-                    telefono.tipoTelefono = "movil";
-                }
-                else
-                {
-                    telefono.tipoTelefono = "casa";
-                }
+                telefono.tipoTelefono = selUno;
                 this.cliente.Telefonoes.Add(telefono);
 
                 RegistrarTarjetas registrarTarjetas = new RegistrarTarjetas(this.cliente);
@@ -84,12 +81,14 @@ namespace CREDISYS.Views.PopUp
 
         private bool camposVacios()
         {
-            return txtNumeroUno.Text.Equals("") || txtNumeroDos.Text.Equals("");
+            return txtNumeroUno.Text.Equals("") || txtNumeroDos.Text.Equals("") || selUno == "" || selDos == "";
         }
 
         private void closeWindow()
         {
             this.Close();
         }
+
+       
     }
 }

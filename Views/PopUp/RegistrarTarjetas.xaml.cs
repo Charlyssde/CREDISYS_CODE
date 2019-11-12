@@ -134,7 +134,8 @@ namespace CREDISYS.Views.PopUp
         private bool camposVacios()
         {
             if (txtNumeroClabeDos.Text.Equals("") || txtNumeroClabeUno.Text.Equals("") || txtNumeroCuentaDos.Text.Equals("") || 
-                txtNumeroCuentaUno.Text.Equals("") || txtTelefonoDos.Text.Equals("") || txtTelefonoUno.Text.Equals(""))
+                txtNumeroCuentaUno.Text.Equals("") || txtTelefonoDos.Text.Equals("") || txtTelefonoUno.Text.Equals("") || 
+                cbBancoCobro.SelectedItem == null || cbBancoDeposito.SelectedItem == null)
             {
                 return true;
             }

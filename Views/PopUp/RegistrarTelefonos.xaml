@@ -38,8 +38,8 @@
                 <TextBox x:Name="txtNumeroUno" Width="200"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center">
-                <RadioButton x:Name="rbMovilDos" GroupName="TiposTelefono" Content="Móvil" Checked="rbMovil_Checked" IsEnabled="False" ></RadioButton>
-                <RadioButton x:Name="rbCasaDos" GroupName="TiposTelefono" Content="Casa" Checked="rbCasa_Checked" IsEnabled="False" ></RadioButton>
+                <RadioButton x:Name="rbMovilDos" GroupName="TiposTelefonoDos" Content="Móvil" Checked="rbMovilDos_Checked"></RadioButton>
+                <RadioButton x:Name="rbCasaDos" GroupName="TiposTelefonoDos" Content="Casa" Checked="rbCasaDos_Checked" ></RadioButton>
                 <Label Content="Número"/>
                 <TextBox x:Name="txtNumeroDos" Width="200"/>
             </StackPanel>
