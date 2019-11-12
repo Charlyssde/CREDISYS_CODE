@@ -23,6 +23,7 @@ namespace CREDISYS.Views
     {
         Cliente cliente = null;
         Usuario usuario;
+        Cliente selected;
         public BuscarCliente(Usuario usuario)
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace CREDISYS.Views
 
         private void btnAgregarSolicitud_Click(object sender, RoutedEventArgs e)
         {
-            RealizarSolicitud realizarSolicitud = new RealizarSolicitud(this.usuario, this.cliente);
+            RealizarSolicitud realizarSolicitud = new RealizarSolicitud(this.usuario, this.selected);
             realizarSolicitud.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             realizarSolicitud.ShowDialog();
         }
@@ -73,7 +74,8 @@ namespace CREDISYS.Views
                 {
                     using (DBEntities db = new DBEntities())
                     {
-
+                        this.selected = null;
+                        this.selected = db.Clientes.Where(b => b.rfc == txtBusqueda.Text).FirstOrDefault();
                         var items = db.Clientes.Where(b => b.rfc == txtBusqueda.Text).ToList<Cliente>();
                         if (items.Count == 0)
                         {

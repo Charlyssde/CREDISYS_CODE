@@ -54,11 +54,11 @@ namespace CREDISYS.Views.PopUp
         {
             if (politicasAprobadas > minimo)
             {
-                lblResultado.Content = "APROBADA";
+                lblResultado.Content = "aceptada";
             }
             else
             {
-                lblResultado.Content = "RECHAZADA";
+                lblResultado.Content = "rechazada";
             }
             calculoRealizado = true;
             

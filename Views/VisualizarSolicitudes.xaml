@@ -35,7 +35,7 @@
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="45" HorizontalAlignment="Right" VerticalAlignment="Center">
             <Label Content="Dictaminar"></Label>
-            <Button x:Name="btnDictamen" Height="40" Cursor="Hand" Click="btnDictamen_Click">
+            <Button x:Name="btnDictamen" Height="40" Cursor="Hand" IsEnabled="False" Click="btnDictamen_Click">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="pack://application:,,,/Resources/btnDictamenes.png"></Image>
@@ -100,7 +100,7 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            <DataGrid Grid.Row="1" x:Name="dg_Solicitudes" AutoGenerateColumns="False" SelectionChanged="dg_Solicitudes_SelectionChanged"></DataGrid>
+            <DataGrid Grid.Row="1" x:Name="dg_Solicitudes" CanUserDeleteRows="False" CanUserAddRows="False" IsReadOnly="True" SelectionChanged="dg_Solicitudes_SelectionChanged"></DataGrid>
         </Grid>
         
     </DockPanel>
