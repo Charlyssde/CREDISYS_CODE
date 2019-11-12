@@ -41,64 +41,70 @@ namespace CREDISYS.Views.PopUp
         {
             using (DBEntities db = new DBEntities())
             {
-                    if (txt_apellidopaterno.Text.Equals("") || txt_apellidomaterno.Text.Equals("") || txt_name.Text.Equals("")
-                         || txt_curp.Text.Equals("") || txt_rfc.Text.Equals("") || combo_genero.SelectedItem == null ||
-                         combo_pais.SelectedItem == null || combo_estado.SelectedItem == null || combo_ciudad.SelectedItem == null)
+                if (txt_apellidopaterno.Text.Equals("") || txt_apellidomaterno.Text.Equals("") || txt_name.Text.Equals("")
+                     || txt_curp.Text.Equals("") || txt_rfc.Text.Equals("") || combo_genero.SelectedItem == null ||
+                     combo_pais.SelectedItem == null || combo_estado.SelectedItem == null || combo_ciudad.SelectedItem == null)
+                {
+                    MessageBox.Show(Settings.Default.MensajeCamposVacios);
+                }
+                else
+                {
+                    Cliente existe = db.Clientes.Where(b => b.rfc == txt_rfc.Text).FirstOrDefault();
+                    if (existe != null)
                     {
-                        MessageBox.Show(Settings.Default.MensajeCamposVacios);
+                        MessageBox.Show(Settings.Default.MensajeYaExiste);
+                        txt_rfc.Text = "";
                     }
                     else
                     {
-                        Cliente existe = db.Clientes.Where(b => b.rfc == txt_rfc.Text).FirstOrDefault();
-                        if (existe != null)
-                        {
-                            MessageBox.Show(Settings.Default.MensajeYaExiste);
-                            txt_rfc.Text = "";
-                        }
-                        else
-                        {
-                            Cliente nuevo = new Cliente();
-                            nuevo.rfc = txt_rfc.Text;
-                            nuevo.nombre = txt_name.Text;
-                            nuevo.apellidoPaterno = txt_apellidopaterno.Text;
-                            nuevo.apellidoMaterno = txt_apellidomaterno.Text;
-                            
+                        Cliente nuevo = new Cliente();
+                        nuevo.rfc = txt_rfc.Text;
+                        nuevo.nombre = txt_name.Text;
+                        nuevo.apellidoPaterno = txt_apellidopaterno.Text;
+                        nuevo.apellidoMaterno = txt_apellidomaterno.Text;
 
-                            foreach (Pai pais in Paises)
-                            {
-                                if (pais.pais.Equals(combo_pais.SelectedItem))
-                                {
-                                    nuevo.idPais = pais.idPais;
-                                }
-                            }
-                            foreach (Estado estado in Estados)
-                            {
-                                if (estado.estado1.Equals(combo_estado.SelectedItem))
-                                {
-                                    nuevo.idEstado = estado.idEstado;
-                                }
-                            }
-                            foreach (Ciudad ciudad in Ciudades)
-                            {
-                                if (ciudad.ciudad1.Equals(combo_ciudad.SelectedItem))
-                                {
-                                    nuevo.idCiudad = ciudad.idCiudad;
-                                }
-                            }
-                            nuevo.idCorreo = 0;
-                            nuevo.idEmpleo = 0;
-                            nuevo.curp = txt_curp.Text;
-                            nuevo.fechaNacimiento = date_nacimiento.SelectedDate.Value;
-                            nuevo.genero = combo_genero.Text;
 
-                            
-                            MessageBox.Show(Settings.Default.MensajeExito);
-                            RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
-                            registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                            registrarDomicilio.ShowDialog();
-                            closeWindow();
+                        foreach (Pai pais in Paises)
+                        {
+                            if (pais.pais.Equals(combo_pais.SelectedItem))
+                            {
+                                nuevo.Pai = pais;
+                                nuevo.idPais = pais.idPais;
+                            }
                         }
+                        foreach (Estado estado in Estados)
+                        {
+                            if (estado.estado1.Equals(combo_estado.SelectedItem))
+                            {
+                                nuevo.Estado = estado;
+                                nuevo.idEstado = estado.idEstado;
+                            }
+                        }
+                        foreach (Ciudad ciudad in Ciudades)
+                        {
+                            if (ciudad.ciudad1.Equals(combo_ciudad.SelectedItem))
+                            {
+                                nuevo.Ciudad = ciudad;
+                                nuevo.idCiudad = ciudad.idCiudad;
+                            }
+                        }
+                        nuevo.curp = txt_curp.Text;
+                        nuevo.fechaNacimiento = date_nacimiento.SelectedDate.Value;
+                        nuevo.genero = combo_genero.Text;
+                        nuevo.estadoCivil = "casado";
+                        nuevo.estatus = "activo";
+
+
+                        db.Clientes.Add(nuevo);
+                        db.SaveChanges();
+
+                        MessageBox.Show(Settings.Default.MensajeExito);
+                        RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
+                        registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        registrarDomicilio.ShowDialog();
+                        closeWindow();
                     }
+                }
 
             }
         }
@@ -144,7 +150,7 @@ namespace CREDISYS.Views.PopUp
         {
             using (DBEntities db = new DBEntities())
             {
-                Ciudades = db.Ciudads.Where(b=> b.idEstado == idEstado).ToList<Ciudad>();
+                Ciudades = db.Ciudads.Where(b => b.idEstado == idEstado).ToList<Ciudad>();
                 listCiudades = new List<String>();
 
                 foreach (Ciudad c in Ciudades)
@@ -158,7 +164,7 @@ namespace CREDISYS.Views.PopUp
 
         private void combo_pais_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            foreach( Pai p in this.Paises)
+            foreach (Pai p in this.Paises)
             {
                 if (p.pais.Equals(combo_pais.SelectedItem))
                 {
@@ -166,7 +172,7 @@ namespace CREDISYS.Views.PopUp
                     break;
                 }
             }
-            
+
         }
 
         private void combo_estado_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -48,16 +48,13 @@ namespace CREDISYS.Views.PopUp
                         nuevo.nombreEmpresa = txt_empresa.Text;
                         int antiguedad = Int32.Parse(txt_antiguedad.Text);
                         nuevo.antiguedadMeses = antiguedad;
-                        int numero = Int32.Parse(txt_numero.Text);
-                        nuevo.numEmpleado = numero;
+                        nuevo.numEmpleado = txt_numero.Text;
                         nuevo.puesto = txt_puesto.Text;
                         nuevo.ocupacion = txt_ocupacion.Text;
                         nuevo.periodoPresentacion = txt_periodo.Text;
                         nuevo.estatus = "activo";
                         nuevo.rfcCliente = clientenuevo.rfc;
 
-                        this.clientenuevo.idEmpleo = nuevo.idEmpleo;
-                        this.clientenuevo.Empleo = nuevo;
 
                         MessageBox.Show(Settings.Default.MensajeExito);
                         RegistrarReferecias registrarReferencias = new RegistrarReferecias(clientenuevo);

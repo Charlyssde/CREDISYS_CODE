@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CREDISYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="CREDISYSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Banco">
           <Key>
             <PropertyRef Name="idBanco" />
@@ -30,8 +30,6 @@
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="apellidoPaterno" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="apellidoMaterno" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="idEmpleo" Type="int" Nullable="false" />
-          <Property Name="idCorreo" Type="int" Nullable="false" />
           <Property Name="idPais" Type="int" Nullable="false" />
           <Property Name="idEstado" Type="int" Nullable="false" />
           <Property Name="idCiudad" Type="int" Nullable="false" />
@@ -85,10 +83,9 @@
           <Property Name="idEmpleo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombreEmpresa" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="numEmpleado" Type="int" Nullable="false" />
+          <Property Name="numEmpleado" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="centroDeTrabajo" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="antiguedadMeses" Type="int" Nullable="false" />
-          <Property Name="antiguedadAños" Type="int" Nullable="false" />
           <Property Name="ocupacion" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="puesto" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="periodoPresentacion" Type="varchar" MaxLength="50" Nullable="false" />
@@ -199,9 +196,8 @@
           <Property Name="idTelefono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="tipoTelefono" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="numero" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="extension" Type="varchar" MaxLength="10" Nullable="false" />
           <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="estatus" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="estatus" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="TipoDomicilio">
           <Key>
@@ -241,30 +237,6 @@
             </Principal>
             <Dependent Role="Ciudad">
               <PropertyRef Name="idEstado" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Correo">
-          <End Role="Correo" Type="Self.Correo" Multiplicity="1" />
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Correo">
-              <PropertyRef Name="idCorreo" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="idCorreo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Empleo">
-          <End Role="Empleo" Type="Self.Empleo" Multiplicity="1" />
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleo">
-              <PropertyRef Name="idEmpleo" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="idEmpleo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -555,14 +527,6 @@
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Ciudad" EntitySet="Ciudad" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Correo" Association="Self.FK_Cliente_Correo">
-            <End Role="Correo" EntitySet="Correo" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Empleo" Association="Self.FK_Cliente_Empleo">
-            <End Role="Empleo" EntitySet="Empleo" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
           <AssociationSet Name="FK_Cliente_Estado" Association="Self.FK_Cliente_Estado">
             <End Role="Estado" EntitySet="Estado" />
             <End Role="Cliente" EntitySet="Cliente" />
@@ -673,14 +637,10 @@
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidoPaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="apellidoMaterno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="idEmpleo" Type="Int32" Nullable="false" />
-          <Property Name="idCorreo" Type="Int32" Nullable="false" />
           <Property Name="idPais" Type="Int32" Nullable="false" />
           <Property Name="idEstado" Type="Int32" Nullable="false" />
           <Property Name="idCiudad" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Ciudad" Relationship="Self.FK_Ciudad_Cliente" FromRole="Cliente" ToRole="Ciudad" />
-          <NavigationProperty Name="Correo" Relationship="Self.FK_Cliente_Correo" FromRole="Cliente" ToRole="Correo" />
-          <NavigationProperty Name="Empleo" Relationship="Self.FK_Cliente_Empleo" FromRole="Cliente" ToRole="Empleo" />
           <NavigationProperty Name="Estado" Relationship="Self.FK_Cliente_Estado" FromRole="Cliente" ToRole="Estado" />
           <NavigationProperty Name="Pai" Relationship="Self.FK_Cliente_Pais" FromRole="Cliente" ToRole="Pais" />
           <NavigationProperty Name="Correos" Relationship="Self.FK_Correo_Cliente" FromRole="Cliente" ToRole="Correo" />
@@ -716,7 +676,6 @@
           <Property Name="correo1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Correo" FromRole="Correo" ToRole="Cliente" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Correo_Cliente" FromRole="Correo" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Domicilio">
@@ -749,15 +708,13 @@
           <Property Name="idEmpleo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombreEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="numEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="numEmpleado" Nullable="false" Type="String" />
           <Property Name="centroDeTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="antiguedadMeses" Type="Int32" Nullable="false" />
-          <Property Name="antiguedadAños" Type="Int32" Nullable="false" />
           <Property Name="ocupacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="puesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="periodoPresentacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Clientes" Relationship="Self.FK_Cliente_Empleo" FromRole="Empleo" ToRole="Cliente" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Empleo_Cliente" FromRole="Empleo" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="Estado">
@@ -880,9 +837,8 @@
           <Property Name="idTelefono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="tipoTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numero" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="extension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="estatus" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="estatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Telefono_Cliente" FromRole="Telefono" ToRole="Cliente" />
         </EntityType>
         <EntityType Name="TipoDomicilio">
@@ -950,30 +906,6 @@
             </Principal>
             <Dependent Role="Domicilio">
               <PropertyRef Name="idCiudad" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Correo">
-          <End Role="Correo" Type="Self.Correo" Multiplicity="1" />
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Correo">
-              <PropertyRef Name="idCorreo" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="idCorreo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Empleo">
-          <End Role="Empleo" Type="Self.Empleo" Multiplicity="1" />
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Empleo">
-              <PropertyRef Name="idEmpleo" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="idEmpleo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1205,14 +1137,6 @@
             <End Role="Ciudad" EntitySet="Ciudads" />
             <End Role="Domicilio" EntitySet="Domicilios" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Correo" Association="Self.FK_Cliente_Correo">
-            <End Role="Correo" EntitySet="Correos" />
-            <End Role="Cliente" EntitySet="Clientes" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Empleo" Association="Self.FK_Cliente_Empleo">
-            <End Role="Empleo" EntitySet="Empleos" />
-            <End Role="Cliente" EntitySet="Clientes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Cliente_Estado" Association="Self.FK_Cliente_Estado">
             <End Role="Estado" EntitySet="Estadoes" />
             <End Role="Cliente" EntitySet="Clientes" />
@@ -1361,8 +1285,6 @@
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="apellidoPaterno" ColumnName="apellidoPaterno" />
                 <ScalarProperty Name="apellidoMaterno" ColumnName="apellidoMaterno" />
-                <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
-                <ScalarProperty Name="idCorreo" ColumnName="idCorreo" />
                 <ScalarProperty Name="idPais" ColumnName="idPais" />
                 <ScalarProperty Name="idEstado" ColumnName="idEstado" />
                 <ScalarProperty Name="idCiudad" ColumnName="idCiudad" />
@@ -1412,13 +1334,12 @@
           <EntitySetMapping Name="Empleos">
             <EntityTypeMapping TypeName="CREDISYSModel.Empleo">
               <MappingFragment StoreEntitySet="Empleo">
+                <ScalarProperty Name="numEmpleado" ColumnName="numEmpleado" />
                 <ScalarProperty Name="idEmpleo" ColumnName="idEmpleo" />
                 <ScalarProperty Name="nombreEmpresa" ColumnName="nombreEmpresa" />
                 <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
-                <ScalarProperty Name="numEmpleado" ColumnName="numEmpleado" />
                 <ScalarProperty Name="centroDeTrabajo" ColumnName="centroDeTrabajo" />
                 <ScalarProperty Name="antiguedadMeses" ColumnName="antiguedadMeses" />
-                <ScalarProperty Name="antiguedadAños" ColumnName="antiguedadAños" />
                 <ScalarProperty Name="ocupacion" ColumnName="ocupacion" />
                 <ScalarProperty Name="puesto" ColumnName="puesto" />
                 <ScalarProperty Name="periodoPresentacion" ColumnName="periodoPresentacion" />
@@ -1539,7 +1460,6 @@
                 <ScalarProperty Name="idTelefono" ColumnName="idTelefono" />
                 <ScalarProperty Name="tipoTelefono" ColumnName="tipoTelefono" />
                 <ScalarProperty Name="numero" ColumnName="numero" />
-                <ScalarProperty Name="extension" ColumnName="extension" />
                 <ScalarProperty Name="rfcCliente" ColumnName="rfcCliente" />
                 <ScalarProperty Name="estatus" ColumnName="estatus" />
               </MappingFragment>
