@@ -50,7 +50,7 @@ namespace CREDISYS.Views
 
         private void btnAgregarSolicitud_Click(object sender, RoutedEventArgs e)
         {
-            RealizarSolicitud realizarSolicitud = new RealizarSolicitud(this.usuario, this.selected);
+            RealizarSolicitud realizarSolicitud = new RealizarSolicitud(this.usuario, this.cliente);
             realizarSolicitud.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             realizarSolicitud.ShowDialog();
         }
@@ -85,8 +85,6 @@ namespace CREDISYS.Views
                         } else
                         {
                             btnAgregarCliente.IsEnabled = true;
-
-
                         }
 
                     }

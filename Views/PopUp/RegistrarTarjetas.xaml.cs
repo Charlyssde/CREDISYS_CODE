@@ -59,20 +59,24 @@ namespace CREDISYS.Views.PopUp
                 this.cliente.Tarjetas = new List<Tarjeta>();
                 this.cliente.Tarjetas.Add(tarjeta);
 
-                tarjeta.numTarjeta = txtNumeroCuentaDos.Text;
-                tarjeta.numTelefono = txtTelefonoDos.Text;
-                tarjeta.clabeBancaria = txtNumeroClabeDos.Text;
+                Tarjeta tarjeta2 = new Tarjeta();
+                tarjeta2.rfcCliente = this.cliente.rfc;
+                tarjeta2.numTarjeta = txtNumeroCuentaDos.Text;
+                tarjeta2.numTelefono = txtTelefonoDos.Text;
+                tarjeta2.clabeBancaria = txtNumeroClabeDos.Text;
+                tarjeta2.estatus = "Activo";
+                tarjeta2.Cliente = this.cliente;
                 foreach (Banco b in bancos)
                 {
                     if (cbBancoCobro.SelectedItem.Equals(b.banco1))
                     {
-                        tarjeta.Banco = b;
-                        tarjeta.idBanco = b.idBanco;
+                        tarjeta2.Banco = b;
+                        tarjeta2.idBanco = b.idBanco;
                         break;
 
                     }
                 }
-                this.cliente.Tarjetas.Add(tarjeta);
+                this.cliente.Tarjetas.Add(tarjeta2);
 
                 guardarCliente();
             }

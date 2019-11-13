@@ -62,7 +62,7 @@ namespace CREDISYS.Views.PopUp
                 solicitud.CondicionCredito = this.selected;
                 solicitud.idCondicion = this.selected.idCondicionCredito;
                 solicitud.disposicion = Settings.Default.Disposicion;
-                DateTime date = new DateTime();
+                DateTime date = DateTime.Now;
                 solicitud.fecha = date;
 
                 
