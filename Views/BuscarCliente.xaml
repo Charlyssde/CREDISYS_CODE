@@ -34,7 +34,7 @@
 
         </Grid>
         <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="45" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <Button x:Name="btnAgregarCliente" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
+            <Button x:Name="btnAgregarCliente" IsEnabled="False" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
                     <Button.Template>
                         <ControlTemplate>
                             <Image Source="pack://application:,,,/Resources/IcAgregarCliente.png"/>
@@ -50,7 +50,7 @@
                 </Button.Template>
             </Button>
             <Label Width="50"/>
-            <Button x:Name="btnAgregarSolicitud" Height="40" Cursor="Hand" Click="btnAgregarSolicitud_Click">
+            <Button x:Name="btnAgregarSolicitud"  IsEnabled="False" Height="40" Cursor="Hand" Click="btnAgregarSolicitud_Click">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="pack://application:,,,/Resources/IcAgregar.png"></Image>
@@ -85,8 +85,16 @@
                     </Button>
                 </StackPanel>
             </Grid>
-            <DataGrid Grid.Row="1" x:Name="dg_Cliente" AutoGenerateColumns="False" SelectionChanged="dg_Cliente_SelectionChanged">
-            </DataGrid>
+            <StackPanel Grid.Row="3">
+                <StackPanel Grid.Column="0">
+                <Label Name="Nombre" Content="Nombre:" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <TextBox x:Name="txtnombre"  Width="300" Margin="80,-30,277,0" IsReadOnly="True"></TextBox>
+                </StackPanel>
+                <Label Name="Apellidopaterno" Content="Apellido paterno:" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtapellidopaterno"  Width="300" Margin="80,-30,277,0" IsReadOnly="True"></TextBox>
+                <Label Name="Apellidomaterno" Content="Apellido materno:" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                <TextBox x:Name="txtapellidomaterno"  Width="300" Margin="80,-30,277,0" IsReadOnly="True"></TextBox>
+            </StackPanel>
         </Grid>
     </DockPanel>
 </Window>

@@ -23,8 +23,10 @@ namespace CREDISYS.Views
     {
         Cliente cliente = null;
         Usuario usuario;
+        
         public BuscarCliente(Usuario usuario)
         {
+            
             InitializeComponent();
             this.usuario = usuario;
         }
@@ -74,16 +76,19 @@ namespace CREDISYS.Views
                     using (DBEntities db = new DBEntities())
                     {
 
-                        var items = db.Clientes.Where(b => b.rfc == txtBusqueda.Text).ToList<Cliente>();
-                        if (items.Count == 0)
+                        cliente = db.Clientes.Where(b => b.rfc == txtBusqueda.Text).FirstOrDefault();
+                        if (cliente != null)
                         {
-                            MessageBox.Show(Settings.Default.MensajeNoEncontrado);
-                            btnAgregarCliente.Visibility = System.Windows.Visibility.Visible;
-                        }
-                        else
+                            txtnombre.Text = cliente.nombre.ToString();
+                            txtapellidopaterno.Text = cliente.apellidoPaterno.ToString();
+                            txtapellidomaterno.Text = cliente.apellidoMaterno.ToString();
+                        } else
                         {
-                            dg_Cliente.ItemsSource = items;
+                            btnAgregarCliente.IsEnabled = true;
+
+
                         }
+
                     }
                 }
                 catch (Exception)
@@ -100,15 +105,15 @@ namespace CREDISYS.Views
 
         private void dg_Cliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (dg_Cliente.SelectedItem != null)
+            if (cliente!=null)
             {
-                this.cliente = (Cliente)dg_Cliente.SelectedItem;
-                btnAgregarSolicitud.IsEnabled = true;
+                
+                btnAgregarSolicitud.IsEnabled = false;
             }
             else
             {
                 this.cliente = null;
-                btnAgregarSolicitud.IsEnabled = false;
+                btnAgregarSolicitud.IsEnabled = true;
             }
         }
     }
