@@ -55,9 +55,9 @@ namespace CREDISYS.Views.PopUp
                 solicitud.estatus1 = Settings.Default.SolicitudEstatus1;
                 solicitud.montoLetra = txtMontoLetra.Text;
                 solicitud.montoNumero = int.Parse(txtMontoNumero.Text);
-                solicitud.Usuario = this.usuario;
+                //solicitud.Usuario = this.usuario;
                 solicitud.vendedor = this.usuario.username;
-                solicitud.Cliente = this.cliente;
+                //solicitud.Cliente = this.cliente;
                 solicitud.rfcCliente = this.cliente.rfc;
                 solicitud.CondicionCredito = this.selected;
                 solicitud.idCondicion = this.selected.idCondicionCredito;
@@ -65,21 +65,19 @@ namespace CREDISYS.Views.PopUp
                 DateTime date = new DateTime();
                 solicitud.fecha = date;
 
-                try
-                {
+                
                     using (DBEntities db = new DBEntities())
                     {
                         db.Solicituds.Add(solicitud);
+                        db.SaveChanges();
+                        MessageBox.Show(Settings.Default.MensajeExito);
                     }
                     EncuestaSolicitud encuestaSolicitud = new EncuestaSolicitud(solicitud);
                     encuestaSolicitud.WindowStartupLocation = this.WindowStartupLocation;
                     encuestaSolicitud.Show();
                     this.Close();
-                }
-                catch ( Exception)
-                {
-                    MessageBox.Show(Settings.Default.MensajeErrorBD);
-                }
+                
+                
 
                 CloseWindow();
             }

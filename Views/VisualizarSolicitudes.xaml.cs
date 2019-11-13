@@ -101,7 +101,7 @@ namespace CREDISYS.Views
                         switch (filtro)
                         {
                             case "Fecha":
-                                var items = db.Solicituds.Where(b => b.fecha == txtDate.SelectedDate && b.estatus1 == cbEstatus.Text).ToList<Solicitud>();
+                                var items = db.Solicituds.Where(b => b.fecha == txtDate.SelectedDate && b.estatus1 == cbEstatus.Text.ToLower()).ToList<Solicitud>();
                                 if (items.Count == 0)
                                 {
                                     MessageBox.Show(Settings.Default.MensajeNoEncontrado);
@@ -109,14 +109,18 @@ namespace CREDISYS.Views
                                 else
                                 {
                                     dg_Solicitudes.ItemsSource = items;
-                                    
+                                    dg_Solicitudes.Columns.RemoveAt(12);
+                                    dg_Solicitudes.Columns.RemoveAt(11);
+                                    dg_Solicitudes.Columns.RemoveAt(10);
+                                    dg_Solicitudes.Columns.RemoveAt(8);
+
                                 }
                                 txtDate.Text = "";
                                 break;
                             case "Rango":
                                 int min = int.Parse(txtRangeMin.Text);
                                 int max = int.Parse(txtRangeMax.Text);
-                                items = db.Solicituds.Where(b => b.montoNumero <= max && b.montoNumero >= min && b.estatus1 == cbEstatus.Text).ToList<Solicitud>();
+                                items = db.Solicituds.Where(b => b.montoNumero <= max && b.montoNumero >= min && b.estatus1 == cbEstatus.Text.ToLower()).ToList<Solicitud>();
                                 if (items.Count == 0)
                                 {
                                     MessageBox.Show(Settings.Default.MensajeNoEncontrado);
@@ -124,26 +128,35 @@ namespace CREDISYS.Views
                                 else
                                 {
                                     dg_Solicitudes.ItemsSource = items;
+                                    dg_Solicitudes.Columns.RemoveAt(12);
+                                    dg_Solicitudes.Columns.RemoveAt(11);
+                                    dg_Solicitudes.Columns.RemoveAt(10);
+                                    dg_Solicitudes.Columns.RemoveAt(8);
                                 }
                                 txtRangeMax.Text = "";
                                 txtRangeMin.Text = "";
                                 break;
                             default:
                                 int folio = int.Parse(txtBusqueda.Text);
-                                items = db.Solicituds.Where(b => (b.rfcCliente == txtBusqueda.Text && b.estatus1 == cbEstatus.Text) || (b.folio == folio && b.estatus1 == cbEstatus.Text)).ToList<Solicitud>();
+                                items = db.Solicituds.Where(b => (b.rfcCliente == txtBusqueda.Text && b.estatus1 == cbEstatus.Text.ToLower()) || 
+                                (b.folio == folio && b.estatus1 == cbEstatus.Text.ToLower())).ToList<Solicitud>();
                                 if (items.Count == 0)
                                 {
                                     MessageBox.Show(Settings.Default.MensajeNoEncontrado);
+
                                 }
                                 else
                                 {
                                     dg_Solicitudes.ItemsSource = items;
-                                    
+                                    dg_Solicitudes.Columns.RemoveAt(12);
+                                    dg_Solicitudes.Columns.RemoveAt(11);
+                                    dg_Solicitudes.Columns.RemoveAt(10);
+                                    dg_Solicitudes.Columns.RemoveAt(8);
+
                                 }
                                 txtBusqueda.Text = "";
                                 break;
                         }
-                        
                     }
                 }
                 catch (Exception)
@@ -163,7 +176,18 @@ namespace CREDISYS.Views
 
         private void dg_Solicitudes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            selected = (Solicitud) dg_Solicitudes.SelectedItem;
+            if (dg_Solicitudes.SelectedItem != null)
+            {
+                selected = (Solicitud)dg_Solicitudes.SelectedItem;
+                if (cbEstatus.SelectedItem.Equals("en espera"))
+                {
+                    btnDictamen.IsEnabled = true;
+                }
+            }
+            else
+            {
+                //DO NOTHING
+            }
         }
 
         private void cargarDatos(Usuario user)

@@ -76,7 +76,7 @@
                 </StackPanel>
             </Grid>
             <StackPanel Grid.Row="2" HorizontalAlignment="Center">
-                <CheckBox IsChecked="True" Content="Tasa Cero" x:Name="chbTasa"></CheckBox>
+                <CheckBox IsChecked="True" Content="Tasa Cero" x:Name="chbTasa" IsEnabled="False"></CheckBox>
             </StackPanel>
             <Grid Grid.Row="3">
                 <Grid.RowDefinitions>

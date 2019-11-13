@@ -36,6 +36,18 @@ namespace CREDISYS.Views
         {
             this.solicitud = solicitud;
             this.usuario = usuario;
+            lblFolio.Content = this.solicitud.folio;
+            lblFecha.Content = this.solicitud.fecha;
+            txtMontoLetra.Text = this.solicitud.montoLetra;
+            txtMontoNumero.Text = this.solicitud.montoNumero.ToString();
+            txtPlazo.Text = "12";
+            using (DBEntities db = new DBEntities())
+            {
+                CondicionCredito c = db.CondicionCreditoes.Where(b => b.idCondicionCredito == this.solicitud.idCondicion).SingleOrDefault();
+                txtInteres.Text = c.interes.ToString();
+                txtIva.Text = c.iva.ToString();
+            }
+                
         }
 
         private void btnVerExpediente_Click(object sender, RoutedEventArgs e)
@@ -46,10 +58,36 @@ namespace CREDISYS.Views
 
         private void btnContinuar_Click(object sender, RoutedEventArgs e)
         {
-            if (!porcentajeRealizado)
+            if (!porcentajeRealizado && !mandarModificacion())
             {
                 MessageBox.Show("No se ha realizado el cálculo de las políticas");
             }
+            else
+            {
+                using (DBEntities db = new DBEntities())
+                {
+                    Solicitud s = db.Solicituds.Where(b => b.folio == this.solicitud.folio).FirstOrDefault();
+                    if (mandarModificacion())
+                    {
+                        s.estatus1 = "en espera";
+                    }
+                    else
+                    {
+                        s.estatus1 = this.resultado;
+                    }
+                    db.SaveChanges();
+                    MessageBox.Show("Se ha actualizado correctamente el dictamen");
+                }
+            }
+        }
+
+        private bool mandarModificacion()
+        {
+            if (rbIncorrectoExp.IsChecked == true || rbIncorrectoSol.IsChecked == true)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void btnCalcularPoliticas_Click(object sender, RoutedEventArgs e)
@@ -71,11 +109,10 @@ namespace CREDISYS.Views
         {
             this.Close();
         }
-
         public void setResultado(String resultado)
         {
             this.resultado = resultado;
-            if (this.resultado.Equals("RECHAZADA"))
+            if (this.resultado.Equals("rechazada"))
             {
                 rbRechazarSolicitud.IsChecked = true;
                 rbRechazarSolicitud.IsEnabled = false;

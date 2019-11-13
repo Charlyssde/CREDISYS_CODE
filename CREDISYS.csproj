@@ -373,6 +373,7 @@
       <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\btnCalcularPoliticas.png" />
     <Resource Include="Resources\IcQuebranto.jpg" />
     <Resource Include="Resources\IcRegistrarPago.png" />
     <Resource Include="Resources\IcTablaPagos.png" />
