@@ -74,6 +74,7 @@ namespace CREDISYS.Views.PopUp
 
                 RegistrarTarjetas registrarTarjetas = new RegistrarTarjetas(this.cliente);
                 registrarTarjetas.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                this.Hide();
                 registrarTarjetas.ShowDialog();
                 closeWindow();
             }

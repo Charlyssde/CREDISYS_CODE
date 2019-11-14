@@ -45,12 +45,10 @@ namespace CREDISYS.Views.PopUp
                 tarjeta.numTelefono = txtTelefonoUno.Text;
                 tarjeta.clabeBancaria = txtNumeroClabeUno.Text;
                 tarjeta.estatus = "Activo";
-                tarjeta.Cliente = this.cliente;
                 foreach (Banco b in bancos)
                 {
                     if (cbBancoDeposito.SelectedItem.Equals(b.banco1))
                     {
-                        tarjeta.Banco = b;
                         tarjeta.idBanco = b.idBanco;
                         break;
 
@@ -65,12 +63,10 @@ namespace CREDISYS.Views.PopUp
                 tarjeta2.numTelefono = txtTelefonoDos.Text;
                 tarjeta2.clabeBancaria = txtNumeroClabeDos.Text;
                 tarjeta2.estatus = "Activo";
-                tarjeta2.Cliente = this.cliente;
                 foreach (Banco b in bancos)
                 {
                     if (cbBancoCobro.SelectedItem.Equals(b.banco1))
                     {
-                        tarjeta2.Banco = b;
                         tarjeta2.idBanco = b.idBanco;
                         break;
 
@@ -90,28 +86,34 @@ namespace CREDISYS.Views.PopUp
                 {
                     db.Domicilios.Add(d);
                 }
+                db.SaveChanges();
                 foreach (Referencia r in this.cliente.Referencias)
                 {
                     db.Referencias.Add(r);
                 }
+                db.SaveChanges();
                 foreach (Tarjeta t in this.cliente.Tarjetas)
                 {
                     db.Tarjetas.Add(t);
                 }
+                db.SaveChanges();
                 foreach (Telefono t in this.cliente.Telefonoes)
                 {
                     db.Telefonoes.Add(t);
                 }
+                db.SaveChanges();
                 foreach (Correo c in this.cliente.Correos)
                 {
                     db.Correos.Add(c);
                 }
+                db.SaveChanges();
                 foreach (Empleo e in this.cliente.Empleos)
                 {
                     db.Empleos.Add(e);
                 }
                 db.SaveChanges();
             }
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

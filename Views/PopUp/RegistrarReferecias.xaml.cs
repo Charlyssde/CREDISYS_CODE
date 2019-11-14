@@ -52,19 +52,25 @@ namespace CREDISYS.Views.PopUp
                         nueva.telefono = txtTel.Text;
                         nueva.direccion = txtDir.Text;
                         nueva.horario = txtHorario.Text;
+                        nueva.estatus = "activa";
+                        nueva.rfcCliente = this.clientenuevo.rfc;
 
                         Referencia nueva2 = new Referencia();
-                        nueva.nombre = txt_name2.Text;
-                        nueva.relacion = txtRelacion2.Text;
-                        nueva.telefono = txtTel2.Text;
-                        nueva.direccion = txtDir2.Text;
-                        nueva.horario = txtHorario2.Text;
+                        nueva2.nombre = txt_name2.Text;
+                        nueva2.relacion = txtRelacion2.Text;
+                        nueva2.telefono = txtTel2.Text;
+                        nueva2.direccion = txtDir2.Text;
+                        nueva2.horario = txtHorario2.Text;
+                        nueva2.estatus = "activa";
+                        nueva2.rfcCliente = this.clientenuevo.rfc;
+
                         clientenuevo.Referencias = new List<Referencia>();
                         clientenuevo.Referencias.Add(nueva);
                         clientenuevo.Referencias.Add(nueva2);
 
                         RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
                         regisTel.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        this.Hide();
                         regisTel.ShowDialog();
                         
                         closeWindow();

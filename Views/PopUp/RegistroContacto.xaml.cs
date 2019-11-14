@@ -39,13 +39,14 @@ namespace CREDISYS.Views.PopUp
                         nuevo.correo1 = txtCorreo.Text;
                         nuevo.rfcCliente = cliente.rfc;
                         nuevo.estatus = "activo";
-
-                        
+                this.cliente.Correos = new List<Correo>();
+                this.cliente.Correos.Add(nuevo);
                         
                         MessageBox.Show(Settings.Default.MensajeExito);
                         
                         RegistrarEmpleo registrarempleo = new RegistrarEmpleo(cliente);
                         registrarempleo.WindowStartupLocation = this.WindowStartupLocation;
+                this.Hide();
                         registrarempleo.ShowDialog();
                         closeWindow();
                     }

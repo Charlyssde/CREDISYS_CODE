@@ -42,7 +42,7 @@ namespace CREDISYS.Views
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
             emptyFields = txtBusqueda.Text.Equals("");
-            consultar(emptyFields, "basic");
+            obtenerSolicitudes(emptyFields, "basic");
         }
 
         private void cbFiltro_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -71,17 +71,17 @@ namespace CREDISYS.Views
         private void btnBuscarDate_Click(object sender, RoutedEventArgs e)
         {
             emptyFields = txtDate.Text.Equals("");
-            consultar(emptyFields, "Fecha");
+            obtenerSolicitudes(emptyFields, "Fecha");
         }
 
         private void btnBuscarRango_Click(object sender, RoutedEventArgs e)
         {
             emptyFields = txtRangeMax.Text.Equals("") || txtRangeMin.Text.Equals("");
-            consultar(emptyFields, "Rango");
+            obtenerSolicitudes(emptyFields, "Rango");
         }
 
 
-        private void consultar(Boolean emptyFields, String filtro)
+        private void obtenerSolicitudes(Boolean emptyFields, String filtro)
         {
             if (cbEstatus.SelectedItem == null || cbFiltro.SelectedItem == null)
             {
@@ -179,14 +179,10 @@ namespace CREDISYS.Views
             if (dg_Solicitudes.SelectedItem != null)
             {
                 selected = (Solicitud)dg_Solicitudes.SelectedItem;
-                if (cbEstatus.SelectedItem.Equals("en espera"))
+                if (cbEstatus.SelectedItem.ToString().Equals("En espera"))
                 {
                     btnDictamen.IsEnabled = true;
                 }
-            }
-            else
-            {
-                //DO NOTHING
             }
         }
 

@@ -185,6 +185,13 @@ namespace CREDISYS.Views.PopUp
                                 nuevo.idCiudad = ciudad.idCiudad;
                             }
                         }
+                        foreach (TipoDomicilio t in tiposdomicilios)
+                        {
+                            if (t.tipoDomicilio1.Equals(cb_tipoDomicilio.SelectedItem))
+                            {
+                                nuevo.idTipoDomicilio = t.idTipoDomicilio;
+                            }
+                        }
 
                         this.clientenuevo.Domicilios = new List<Domicilio>();
                         this.clientenuevo.Domicilios.Add(nuevo);
@@ -193,6 +200,7 @@ namespace CREDISYS.Views.PopUp
                         
                         RegistroContacto registrarcontacto = new RegistroContacto(clientenuevo);
                         registrarcontacto.WindowStartupLocation = this.WindowStartupLocation;
+                        this.Hide();
                         registrarcontacto.ShowDialog();
                         
                         closeWindow();

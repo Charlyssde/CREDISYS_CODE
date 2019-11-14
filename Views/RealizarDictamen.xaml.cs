@@ -124,5 +124,13 @@ namespace CREDISYS.Views
                 MessageBox.Show("La solicitud ha pasado el porcentaje mínimo de políticas");
             }
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            VisualizarSolicitudes visualizarSolicitudes = new VisualizarSolicitudes(this.usuario);
+            visualizarSolicitudes.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            visualizarSolicitudes.Show();
+            this.Close();
+        }
     }
 }

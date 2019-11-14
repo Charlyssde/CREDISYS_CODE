@@ -14,6 +14,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="btnBack" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnBack_Click" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcRegresar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
                 <Label x:Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
             </StackPanel>

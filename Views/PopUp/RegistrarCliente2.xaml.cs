@@ -68,7 +68,7 @@ namespace CREDISYS.Views.PopUp
                         {
                             if (pais.pais.Equals(combo_pais.SelectedItem))
                             {
-                                nuevo.Pai = pais;
+                                //nuevo.Pai = pais;
                                 nuevo.idPais = pais.idPais;
                             }
                         }
@@ -76,7 +76,7 @@ namespace CREDISYS.Views.PopUp
                         {
                             if (estado.estado1.Equals(combo_estado.SelectedItem))
                             {
-                                nuevo.Estado = estado;
+                                //nuevo.Estado = estado;
                                 nuevo.idEstado = estado.idEstado;
                             }
                         }
@@ -84,7 +84,7 @@ namespace CREDISYS.Views.PopUp
                         {
                             if (ciudad.ciudad1.Equals(combo_ciudad.SelectedItem))
                             {
-                                nuevo.Ciudad = ciudad;
+                                //nuevo.Ciudad = ciudad;
                                 nuevo.idCiudad = ciudad.idCiudad;
                             }
                         }
@@ -101,6 +101,7 @@ namespace CREDISYS.Views.PopUp
                         MessageBox.Show(Settings.Default.MensajeExito);
                         RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
                         registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        this.Hide();
                         registrarDomicilio.ShowDialog();
                         closeWindow();
                     }

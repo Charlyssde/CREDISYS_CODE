@@ -82,9 +82,13 @@ namespace CREDISYS.Views
                             txtnombre.Text = cliente.nombre.ToString();
                             txtapellidopaterno.Text = cliente.apellidoPaterno.ToString();
                             txtapellidomaterno.Text = cliente.apellidoMaterno.ToString();
+                            btnAgregarSolicitud.IsEnabled = true;
+                            btnSolicitudes.IsEnabled = true;
+                            
                         } else
                         {
                             btnAgregarCliente.IsEnabled = true;
+                            MessageBox.Show(Settings.Default.MensajeNoEncontrado);
                         }
 
                     }

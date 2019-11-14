@@ -42,7 +42,7 @@
                     </Button.Template>
                 </Button>
             <Label Width="50"/>
-            <Button x:Name="btnSolicitudes" Height="40" Cursor="Hand" Click="btnSolicitudes_Click">
+            <Button x:Name="btnSolicitudes" Height="40" Cursor="Hand" IsEnabled="False" Click="btnSolicitudes_Click">
                 <Button.Template>
                     <ControlTemplate>
                         <Image Source="pack://application:,,,/Resources/btnSolicitudes.png"></Image>
