@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace CREDISYS.Views.PopUp
 {
     /// <summary>
@@ -20,6 +21,7 @@ namespace CREDISYS.Views.PopUp
     /// </summary>
     public partial class RegistrarCliente2 : Window
     {
+       
         List<Pai> Paises;
         List<String> listPaises;
         List<Estado> Estados;
@@ -30,6 +32,9 @@ namespace CREDISYS.Views.PopUp
         {
             InitializeComponent();
             cargarPaises();
+           
+
+
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -112,16 +117,19 @@ namespace CREDISYS.Views.PopUp
         {
             this.Close();
         }
+        
         public void cargarPaises()
         {
+           
             using (DBEntities db = new DBEntities())
             {
 
                 Paises = db.Pais.ToList<Pai>();
                 listPaises = new List<String>();
-
+                
                 foreach (Pai p in Paises)
                 {
+                    
                     listPaises.Add(p.pais);
                 }
                 combo_pais.ItemsSource = listPaises;
@@ -186,5 +194,7 @@ namespace CREDISYS.Views.PopUp
                 }
             }
         }
+
+        
     }
 }
