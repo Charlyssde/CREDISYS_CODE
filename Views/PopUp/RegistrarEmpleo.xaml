@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="Registrar Empleo" Height="805.677" Width="858.065">
     <Grid Margin="0,0,-6.4,-122">
         <Grid.ColumnDefinitions>

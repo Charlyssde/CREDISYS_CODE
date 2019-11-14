@@ -1,13 +1,12 @@
-﻿<Window x:Class="CREDISYS.Views.Dashboard_Gestor"
+﻿<Window x:Class="CREDISYS.Views.Catalogos.VisualizarPaises"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CREDISYS.Views"
+        xmlns:local="clr-namespace:CREDISYS.Views.Catalogos"
         mc:Ignorable="d"
-        Icon="pack://application:,,,/Resources/IcLogin.png"
-        Title="Menú" Height="618.377" Width="873.497">
-    <DockPanel LastChildFill="True">
+        Title="VisualizarPaises" Height="450" Width="800">
+    <DockPanel>
         <Grid DockPanel.Dock="Top" Background="#283593" Height="50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
@@ -26,7 +25,7 @@
                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"></Label>
             </StackPanel>
             <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Menú" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                <Label Content="Países" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
             </StackPanel>
             <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" ></Label>
@@ -34,51 +33,60 @@
             </StackPanel>
         </Grid>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="14*"></ColumnDefinition>
-                <ColumnDefinition Width="419*"/>
-                <ColumnDefinition Width="432*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" Margin="114,0,128,0">
-                <Label Content="Subir Archivos" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
-                <Button x:Name="btnSubir" Width="177" Cursor="Hand" Click="btnSubir_Click">
+            <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Content="Nombre del país: "/>
+                <TextBox x:Name="txtPais" Width="150"/>
+                <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35" Click="btnBuscar_Click" VerticalAlignment="Bottom">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image Source="pack://application:,,,/Resources/IcSubirArchivos.png"/>
+                            <Image Source="pack://application:,,,/Resources/IcBuscar.png"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Center" Margin="113,0">
-                <Label Content="Generar tabla de pagos" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
-                <Button x:Name="btnTablaPagos" Width="150" Cursor="Hand" Click="btnTablaPagos_Click">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label Content="País: " FontWeight="Bold" FontSize="18"/>
+                <TextBox x:Name="txtResultado" Width="150" IsEnabled="False" FontSize="18" FontWeight="Bold"/>
+                <Button x:Name="btnCancelar" Cursor="Hand" Width="40" Visibility="Hidden" Margin="15,0,10,0" Click="btnCancelar_Click">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image Source="pack://application:,,,/Resources/IcTablaPagos.png"/>
+                            <Image Source="pack://application:,,,/Resources/IcCancelar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="btnAceptar" Cursor="Hand" Width="35" Visibility="Hidden" Click="btnAceptar_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcAceptar.png"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
             </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" Margin="118,0,131,0">
-                <Label Content="Registrar pago" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
-                <Button x:Name="btnRegistrarPago" Width="170" Cursor="Hand" Click="btnRegistrarPago_Click">
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" Orientation="Horizontal">
+                <Button x:Name="btnAgregar" Cursor="Hand" Width="60" Margin="15,0,50,0" Click="btnAgregar_Click">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image Source="pack://application:,,,/Resources/IcRegistrarPago.png"/>
+                            <Image Source="pack://application:,,,/Resources/IcAgregar.png"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Margin="131,0">
-                <Label Content="Marcar quebranto" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
-                <Button x:Name="btnQuebranto" Width="170" Cursor="Hand" Click="btnQuebranto_Click">
+                <Button x:Name="btnEditar" Cursor="Hand" Width="50" Margin="100,0,0,0" IsEnabled="False" Click="btnEditar_Click">
                     <Button.Template>
                         <ControlTemplate>
-                            <Image Source="pack://application:,,,/Resources/IcQuebranto.jpg"/>
+                            <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="btnEliminar" Cursor="Hand" Width="50" Margin="100,0,0,0" IsEnabled="False" Click="btnEliminar_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcBorrar.png"/>
                         </ControlTemplate>
                     </Button.Template>
                 </Button>

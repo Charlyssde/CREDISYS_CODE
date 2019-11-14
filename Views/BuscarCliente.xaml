@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="Buscar Cliente" Height="506.452" Width="829.032">
     <DockPanel>
         <Grid DockPanel.Dock="Top" Background="#283593"  Height="50">

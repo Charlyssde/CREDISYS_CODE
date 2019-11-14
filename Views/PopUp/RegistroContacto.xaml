@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="Registro de contacto" Height="383.4" Width="677.6">
     <Grid Margin="0,0,-6.4,-20">
         <Grid Background="#283593" Margin="267,-188,-267.2,543.2">

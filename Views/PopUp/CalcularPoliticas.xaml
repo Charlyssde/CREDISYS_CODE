@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
+        BorderThickness="3"
         Title="CalcularPoliticas" Height="450" Width="500">
     <Grid>
         <Grid.RowDefinitions>

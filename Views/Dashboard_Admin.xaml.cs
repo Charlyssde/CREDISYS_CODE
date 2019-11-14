@@ -38,7 +38,10 @@ namespace CREDISYS.Views
 
         private void btnAdminCatalogos_Click(object sender, RoutedEventArgs e)
         {
-
+            Catalogos catalogos = new Catalogos(this.usuario);
+            catalogos.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            catalogos.Show();
+            this.Close();
         }
 
         private void btnCobranza_Click(object sender, RoutedEventArgs e)
