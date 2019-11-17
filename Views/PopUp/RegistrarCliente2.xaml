@@ -25,18 +25,18 @@
 
 
 
-        <Label Content="Nombre(s): " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="20,25,0,0" Height="34" Width="102" RenderTransformOrigin="1.593,7.368" Grid.Row="1"/>
+        <Label Content="Nombre(s): " HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18" Margin="23,197,0,0" Height="34" Width="102" RenderTransformOrigin="1.593,7.368" Grid.RowSpan="2"/>
 
-        <Label Content="Género:" HorizontalAlignment="Left" Margin="405,25,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="72" RenderTransformOrigin="1.618,7.5" Grid.Row="1"/>
-        
+        <Label Content="Género:" HorizontalAlignment="Left" Margin="412,197,0,0" VerticalAlignment="Top" FontSize="18" Height="34" Width="72" RenderTransformOrigin="1.618,7.5" Grid.RowSpan="2"/>
+
 
 
         <Label Content="Apellido paterno: " FontSize="18" Margin="23,98,-3,81" Height="42"/>
-        <TextBox x:Name="txt_apellidopaterno" HorizontalAlignment="Left" Height="44" Margin="15,140,0,37" TextWrapping="Wrap" Text="" Width="353" FontSize="18" RenderTransformOrigin="0.485,0.323" />
+        <TextBox x:Name="txt_apellidopaterno" HorizontalAlignment="Left" Height="44" Margin="15,141,0,36.6" TextWrapping="Wrap" Text="" Width="353" FontSize="18" RenderTransformOrigin="0.485,0.323" />
         <TextBox x:Name="txt_apellidomaterno" HorizontalAlignment="Left" Margin="412,140,0,37" TextWrapping="Wrap" Text="" Width="350" FontSize="18"/>
 
-        <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="47" Margin="15,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="18" Grid.Row="1"/>
-        <ComboBox x:Name="combo_genero"  HorizontalAlignment="Left" Margin="412,64,0,0" VerticalAlignment="Top" Width="318" Height="44" FontSize="18" Grid.Row="1">
+        <TextBox x:Name="txt_name" HorizontalAlignment="Left" Height="47" Margin="20,14.4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="18" Grid.Row="1"/>
+        <ComboBox x:Name="combo_genero"  HorizontalAlignment="Left" Margin="412,17.4,0,0" VerticalAlignment="Top" Width="318" Height="44" FontSize="18" Grid.Row="1">
             <ComboBoxItem Content="Femenino" HorizontalAlignment="Left" Width="348.8" FontSize="18"/>
             <ComboBoxItem Content="Masculino" HorizontalAlignment="Left" Width="348.8" FontSize="18"/>
         </ComboBox>
@@ -46,8 +46,8 @@
 
 
 
-        <Label Content="CURP: " HorizontalAlignment="Left" Margin="23,128,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1"/>
-        <Label Content="RFC:" HorizontalAlignment="Left" Margin="410,131,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,-0.109" FontSize="18" Grid.Row="1">
+        <Label Content="CURP: " HorizontalAlignment="Left" Margin="23,83.4,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1"/>
+        <Label Content="RFC:" HorizontalAlignment="Left" Margin="412,84.4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,-0.109" FontSize="18" Grid.Row="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -57,19 +57,19 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox x:Name="txt_curp" HorizontalAlignment="Left" Height="47" Margin="20,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="18" Grid.Row="1"/>
-        <TextBox x:Name="txt_rfc" HorizontalAlignment="Left" Height="47" Margin="412,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="18" Grid.Row="1"/>
+        <TextBox x:Name="txt_curp" HorizontalAlignment="Left" Height="47" Margin="20,122.4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="18" Grid.Row="1"/>
+        <TextBox x:Name="txt_rfc" HorizontalAlignment="Left" Height="47" Margin="412,122.4,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="350" FontSize="18" Grid.Row="1"/>
 
 
 
-        <Label Content="Lugar de nacimiento: " HorizontalAlignment="Left" Margin="23,225,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.412,1.265" Grid.Row="1"/>
-        <ComboBox x:Name="combo_pais" HorizontalAlignment="Left" Margin="23,264,0,0" VerticalAlignment="Top" Width="347" Height="42" FontSize="18" SelectionChanged="combo_pais_SelectionChanged" mah:ComboBoxHelper.CharacterCasing="Upper" mah:ControlsHelper.FocusBorderBrush="#FF356DF0" Grid.Row="1"/>
-        <Label Content="Fecha de nacimiento:" HorizontalAlignment="Left" Margin="412,225,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1"/>
-        <DatePicker x:Name="date_nacimiento" DisplayDate="1998, 7, 28" DisplayDateStart="1900,1,1" DisplayDateEnd="2001,12,31" SelectedDate="{Binding AvailableFrom, Mode=OneWay}" HorizontalAlignment="Left" Margin="412,264,0,0" VerticalAlignment="Top" Height="42" Width="318" FontSize="18" Grid.Row="1"/>
-        <ComboBox x:Name="combo_estado" HorizontalAlignment="Left" Margin="23,327,0,0" VerticalAlignment="Top" Width="347" Height="42" SelectionChanged="combo_estado_SelectionChanged" Grid.Row="1"/>
+        <Label Content="Lugar de nacimiento: " HorizontalAlignment="Left" Margin="23,195.4,0,0" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.412,1.265" Grid.Row="1"/>
+        <ComboBox x:Name="combo_pais" HorizontalAlignment="Left" Margin="23,234.4,0,0" VerticalAlignment="Top" Width="347" Height="42" FontSize="18" SelectionChanged="combo_pais_SelectionChanged" mah:ComboBoxHelper.CharacterCasing="Upper" mah:ControlsHelper.FocusBorderBrush="#FF356DF0" Grid.Row="1"/>
+        <Label Content="Fecha de nacimiento:" HorizontalAlignment="Left" Margin="412,273.4,0,0" VerticalAlignment="Top" FontSize="18" Grid.Row="1"/>
+        <DatePicker x:Name="date_nacimiento" DisplayDate="1998, 7, 28" DisplayDateStart="1900,1,1" DisplayDateEnd="2001,12,31" SelectedDate="{Binding AvailableFrom, Mode=OneWay}" HorizontalAlignment="Left" Margin="412,312.4,0,0" VerticalAlignment="Top" Height="42" Width="318" FontSize="18" Grid.Row="1"/>
+        <ComboBox x:Name="combo_estado" HorizontalAlignment="Left" Margin="23,297.4,0,0" VerticalAlignment="Top" Width="347" Height="42" SelectionChanged="combo_estado_SelectionChanged" Grid.Row="1"/>
 
         <StackPanel HorizontalAlignment="Stretch" 
-                    VerticalAlignment="Top" Orientation="Horizontal" Margin="412,343,-413,0" Height="60" Grid.Row="1">
+                    VerticalAlignment="Top" Orientation="Horizontal" Margin="412,372.4,-413.4,0" Height="60" Grid.Row="1">
             <Button x:Name="btnCancelar" Cursor="Hand" Width="60" Margin="15,0,50,0" Click="btnCancelar_Click">
                 <Button.Template>
                     <ControlTemplate>
@@ -85,7 +85,7 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        
+
         <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
             <Label x:Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
                     FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
@@ -111,7 +111,24 @@
                 <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
             </StackPanel>
         </Grid>
-                <ComboBox x:Name="combo_ciudad" HorizontalAlignment="Left" Margin="23,391,0,0" VerticalAlignment="Top" Width="347" Height="42" SelectionChanged="combo_estado_SelectionChanged" Grid.Row="1"/>
+        <ComboBox x:Name="combo_ciudad" HorizontalAlignment="Left" Margin="23,361.4,0,0" VerticalAlignment="Top" Width="347" Height="42" SelectionChanged="combo_estado_SelectionChanged" Grid.Row="1"/>
+        <Label Content="Estado civil:" HorizontalAlignment="Left" Margin="412,181.4,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,-0.109" FontSize="18" Grid.Row="1">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-1.079"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <ComboBox Name="cbEstadoCivil" HorizontalAlignment="Left" Margin="412,226.4,0,0" Grid.Row="1" VerticalAlignment="Top" Width="318" Height="42">
+            <ComboBoxItem Content="Soltero" HorizontalAlignment="Left" Width="348.8" FontSize="18"/>
+            <ComboBoxItem Content="Casado" HorizontalAlignment="Left" Width="348.8" FontSize="18"/>
+            <ComboBoxItem Content="Divorciado" HorizontalAlignment="Left" Width="348.8" FontSize="18"/>
+            <ComboBoxItem Content="Separado" HorizontalAlignment="Left" Width="348.8" FontSize="18"/>
+            <ComboBoxItem Content="Unión libre" HorizontalAlignment="Left" Width="348.8" FontSize="18"/>
+        </ComboBox>
     </Grid>
 
 

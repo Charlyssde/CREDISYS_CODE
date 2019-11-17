@@ -48,7 +48,7 @@ namespace CREDISYS.Views.PopUp
             {
                 if (txt_apellidopaterno.Text.Equals("") || txt_apellidomaterno.Text.Equals("") || txt_name.Text.Equals("")
                      || txt_curp.Text.Equals("") || txt_rfc.Text.Equals("") || combo_genero.SelectedItem == null ||
-                     combo_pais.SelectedItem == null || combo_estado.SelectedItem == null || combo_ciudad.SelectedItem == null)
+                     combo_pais.SelectedItem == null || combo_estado.SelectedItem == null || combo_ciudad.SelectedItem == null || cbEstadoCivil.SelectedItem == null)
                 {
                     MessageBox.Show(Settings.Default.MensajeCamposVacios);
                 }
@@ -96,7 +96,7 @@ namespace CREDISYS.Views.PopUp
                         nuevo.curp = txt_curp.Text;
                         nuevo.fechaNacimiento = date_nacimiento.SelectedDate.Value;
                         nuevo.genero = combo_genero.Text;
-                        nuevo.estadoCivil = "casado";
+                        nuevo.estadoCivil = cbEstadoCivil.Text;
                         nuevo.estatus = "activo";
 
 

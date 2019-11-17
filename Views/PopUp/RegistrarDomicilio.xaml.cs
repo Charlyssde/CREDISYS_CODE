@@ -151,7 +151,7 @@ namespace CREDISYS.Views.PopUp
                     else
                     {
 
-
+                        MessageBox.Show(Settings.Default.MensajeElementoNoEcontrado);
                         Domicilio nuevo = new Domicilio();
                         nuevo.colonia = txtColonia.Text;
                         nuevo.calle = txtCalle.Text;
@@ -160,8 +160,8 @@ namespace CREDISYS.Views.PopUp
                         nuevo.numIn = txtNumeroIn.Text;
                         nuevo.tiempoResidencia = txtTiempo.Text;
                         nuevo.rfcCliente = clientenuevo.rfc;
-                        string v = "activo";
-                        nuevo.estatus = v;
+                        
+                        nuevo.estatus = "activo";
 
 
                         foreach (Pai pais in Paises)
@@ -185,9 +185,9 @@ namespace CREDISYS.Views.PopUp
                                 nuevo.idCiudad = ciudad.idCiudad;
                             }
                         }
-
-                        this.clientenuevo.Domicilios = new List<Domicilio>();
-                        this.clientenuevo.Domicilios.Add(nuevo);
+                        db.Domicilios.Add(nuevo);
+                        db.SaveChanges();
+                        
                         
                         MessageBox.Show(Settings.Default.MensajeExito);
                         

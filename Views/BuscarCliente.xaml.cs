@@ -89,6 +89,7 @@ namespace CREDISYS.Views
                             txtnombre.Text = cliente.nombre.ToString();
                             txtapellidopaterno.Text = cliente.apellidoPaterno.ToString();
                             txtapellidomaterno.Text = cliente.apellidoMaterno.ToString();
+                            btnVisualiCliente.IsEnabled = true;
                         } else
                         {
                             MessageBox.Show(Settings.Default.MensajeElementoNoEcontrado);
@@ -113,14 +114,28 @@ namespace CREDISYS.Views
         {
             if (cliente!=null)
             {
-                
+                btnVisualiCliente.IsEnabled = true;
                 btnAgregarSolicitud.IsEnabled = false;
             }
             else
             {
                 this.cliente = null;
                 btnAgregarSolicitud.IsEnabled = true;
+               
+               
             }
         }
+
+        private void btnVisualiCliente_Click(object sender, RoutedEventArgs e)
+        {
+           
+            VisualizarCliente vzcliente = new VisualizarCliente(cliente);
+            vzcliente.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            vzcliente.Show();
+            
+            
+        }
+
+            
     }
 }

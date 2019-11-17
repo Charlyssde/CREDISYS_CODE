@@ -8,8 +8,7 @@
         Title="Registrar Empleo" Height="712.677" Width="828.065">
     <Grid Margin="0,0,-6.4,-122">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="122*"/>
-            <ColumnDefinition Width="737*"/>
+
         </Grid.ColumnDefinitions>
         <Grid Background="#283593" Margin="0,0,0,731" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
@@ -29,27 +28,27 @@
             </StackPanel>
         </Grid>
         <Label Content="Número de empleado:" HorizontalAlignment="Left" Margin="50,109,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Width="209"/>
-        <Label Content="Antiguedad:" Grid.Column="1" HorizontalAlignment="Left" Margin="393.4,109,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Antiguedad:" HorizontalAlignment="Left" Margin="379,109,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox Name="txt_numero" HorizontalAlignment="Left" Height="37" Margin="52,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" RenderTransformOrigin="-0.049,0.565" Grid.ColumnSpan="2" FontSize="18"/>
-        <TextBox Name="txt_antiguedad" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="393.4,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.043,-0.791" FontSize="18"/>
+        <TextBox Name="txt_antiguedad" HorizontalAlignment="Left" Height="37" Margin="379,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.043,-0.791" FontSize="18"/>
         <Label Content="Empresa:" HorizontalAlignment="Left" Margin="52,221,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Width="122"/>
-        <TextBox Name="txt_empresa" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="37" Margin="50,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="18"/>
-        <Label Content="Centro de trabajo:" Grid.Column="1" HorizontalAlignment="Left" Margin="393.4,258,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox Name="txt_centro" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="393.4,311,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="18"/>
-        <Label Content="Puesto:" HorizontalAlignment="Left" Margin="50,408,0,0" VerticalAlignment="Top" Width="71" FontSize="18"/>
-        <TextBox Name="txt_puesto" HorizontalAlignment="Left" Height="37" Margin="50,465,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="18" Grid.ColumnSpan="2"/>
-        <Label Content="Ocupación:" Grid.Column="1" HorizontalAlignment="Left" Margin="393.4,408,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox Name="txt_ocupacion" Grid.Column="1" HorizontalAlignment="Left" Height="37" Margin="393.4,465,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="18"/>
-        <Label Content="Periodo de presentación:" HorizontalAlignment="Left" Margin="50,572,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2"/>
-        <TextBox Name="txt_periodo" HorizontalAlignment="Left" Height="37" Margin="52,630,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="18" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnCancelar" Cursor="Hand" Margin="429,583,123,153" Click="btnCancelar_Click" Grid.Column="1">
+        <TextBox Name="txt_empresa" HorizontalAlignment="Left" Height="37" Margin="52,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" FontSize="18"/>
+        <Label Content="Centro de trabajo:" HorizontalAlignment="Left" Margin="393,221,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox Name="txt_centro" HorizontalAlignment="Left" Height="37" Margin="394,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="18"/>
+        <Label Content="Puesto:" HorizontalAlignment="Left" Margin="52,344,0,0" VerticalAlignment="Top" Width="71" FontSize="18"/>
+        <TextBox Name="txt_puesto" HorizontalAlignment="Left" Height="37" Margin="52,389,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="18"/>
+        <Label Content="Ocupación:" HorizontalAlignment="Left" Margin="394,344,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox Name="txt_ocupacion" HorizontalAlignment="Left" Height="37" Margin="394,389,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="18"/>
+        <Label Content="Periodo de presentación:" HorizontalAlignment="Left" Margin="52,465,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox Name="txt_periodo" HorizontalAlignment="Left" Height="37" Margin="52,504,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="18"/>
+        <Button x:Name="btnCancelar" Cursor="Hand" Margin="361,574,176,142.2" Click="btnCancelar_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/CREDISYS;component/Resources/IcCancelar.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnAceptar" Cursor="Hand" Margin="456,583,154,153" Click="btnAceptar_Click" Grid.Column="1">
+        <Button x:Name="btnAceptar" Cursor="Hand" Margin="553,583,57,153.2" Click="btnAceptar_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/CREDISYS;component/Resources/IcAceptar.png"/>

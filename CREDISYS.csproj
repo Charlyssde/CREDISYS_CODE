@@ -225,6 +225,9 @@
     <Compile Include="Views\PopUp\RegistrarTelefonos.xaml.cs">
       <DependentUpon>RegistrarTelefonos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\VisualizarCliente.xaml.cs">
+      <DependentUpon>VisualizarCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RealizarDictamen.xaml.cs">
       <DependentUpon>RealizarDictamen.xaml</DependentUpon>
     </Compile>
@@ -327,6 +330,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PopUp\VisualizarCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RealizarDictamen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -413,6 +420,7 @@
       <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\IcVisualizar.png" />
     <Resource Include="Resources\btnCalcularPoliticas.png" />
     <Resource Include="Resources\IcQuebranto.jpg" />
     <Resource Include="Resources\IcRegistrarPago.png" />

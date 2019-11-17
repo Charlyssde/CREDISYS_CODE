@@ -62,6 +62,9 @@ namespace CREDISYS.Views.PopUp
                         clientenuevo.Referencias = new List<Referencia>();
                         clientenuevo.Referencias.Add(nueva);
                         clientenuevo.Referencias.Add(nueva2);
+                        db.Referencias.Add(nueva);
+                        db.Referencias.Add(nueva2);
+                        db.SaveChanges();
 
                         RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
                         regisTel.WindowStartupLocation = WindowStartupLocation.CenterScreen;

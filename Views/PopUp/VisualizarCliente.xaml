@@ -5,8 +5,145 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
-        Title="VisualizarCliente" Height="450" Width="800">
+        Title="VisualizarCliente" Height="450" Width="700">
     <Grid>
-        
-    </Grid>
+        <Grid.ColumnDefinitions>
+
+        </Grid.ColumnDefinitions>
+        <TabControl HorizontalAlignment="Left" Height="421" VerticalAlignment="Top" Width="794"  Grid.ColumnSpan="3">
+            <TabItem Header="Datos cliente">
+                <Grid Background="#283593" Margin="0,0,-18,-18">
+                    <Label Content="RFC:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Nombre:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="9,74,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Apellido paterno:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="9,128,0,0" VerticalAlignment="Top" Width="162"/>
+                    <Label Content="Apellido materno:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="9,185,0,0" VerticalAlignment="Top" Width="170"/>
+                    <Label Name="rfc" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="63,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="nombre" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="102,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="apellidoPaterno" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="187,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="apellidoMaterno" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="184,185,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Content="Género:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="380,72,0,0" VerticalAlignment="Top"/>
+                    <Label Content="País:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,241,0,0" VerticalAlignment="Top" Width="48"/>
+                    <Label Content="Estado:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,283,0,0" VerticalAlignment="Top" Width="170"/>
+                    <Label Content="Ciudad:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="9,336,0,0" VerticalAlignment="Top" Width="170"/>
+                    <Label Content="CURP:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="383,22,0,0" VerticalAlignment="Top" Width="170"/>
+                    <Label Content="Fecha de nacimiento:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="380,185,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Estado civil:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="380,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,-0.141"/>
+                    <Label Name="paislbl" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="63,241,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="estadolbl" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="78,283,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="ciudadlbl" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="87,336,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="curp" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="449,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="genero" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="472,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="estadocivil" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="497,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Label Name="fecha" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="383,227,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
+                    <Button x:Name="btnEditar" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEditar_Click" Margin="644,348,0,27.8" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Domicilio">
+                <Grid Background="#283593">
+                    <Label Content="Colonia:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top"/>
+                    <Label Name="colonia" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="97,32,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Calle:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top"/>
+                    <Label Name="calle" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="68,74,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tipo de domicilio:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top"/>
+                    <Label Name="tipoDomi" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="183,111,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número exterior:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,153,0,0" VerticalAlignment="Top"/>
+                    <Label Name="numex" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="170,153,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número interior:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top"/>
+                    <Label Name="numint" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="170,195,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Código postal:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="382,32,0,0" VerticalAlignment="Top"/>
+                    <Label Name="CP" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="525,32,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tipo de domicilio:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top"/>
+                    <Label Name="TipoDomicilio" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="183,232,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tiempo de residencia:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,274,0,0" VerticalAlignment="Top"/>
+                    <Label Name="Tiempo" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="218,274,0,0" VerticalAlignment="Top"/>
+                    <Label Content="País:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="382,195,0,0" VerticalAlignment="Top"/>
+                    <Label Name="paisDom" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="435,195,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Estado:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="382,232,0,0" VerticalAlignment="Top"/>
+                    <Label Name="estadoDom" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="461,232,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ciudad:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="382,274,0,0" VerticalAlignment="Top"/>
+                    <Label Name="ciudadDom" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="461,274,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Empleo">
+                <Grid Background="#283593">
+                    <Label Content="Nombre de la empresa:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número de empleado:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Centro de trabajo:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Antiguedad meses:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ocupación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.449,-0.924"/>
+                    <Label Content="Puesto:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,231,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Periodo de presentación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,268,0,0" VerticalAlignment="Top"/>
+                    <Label Name="numEmple" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="226,36,0,0" VerticalAlignment="Top"/>
+                    <Label Name="nombreEmpresa" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="226,73,0,0" VerticalAlignment="Top"/>
+                    <Label Name="centroTrabajo" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="193,110,0,0" VerticalAlignment="Top"/>
+                    <Label Name="antiguedad" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="193,152,0,0" VerticalAlignment="Top"/>
+                    <Label Name="ocupacion" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="119,194,0,0" VerticalAlignment="Top"/>
+                    <Label Name="puesto" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="84,226,0,0" VerticalAlignment="Top"/>
+                    <Label Name="presentacion" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="244,268,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Referencias">
+                <Grid Background="#283593">
+                    <Label Content="Referencia 1:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Dirección:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="8,135,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Nombre:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Relación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,135,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Horario:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,89,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Referencia 2:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,237,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Dirección:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,353,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Nombre:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,274,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,316,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Relación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="391,352,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Horario:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,315,0,0" VerticalAlignment="Top"/>
+                    <Label Name="nombre1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="98,47,0,0" VerticalAlignment="Top"/>
+                    <Label Name="telefono1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,89,0,0" VerticalAlignment="Top"/>
+                    <Label Name="direccion1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="106,135,0,0" VerticalAlignment="Top"/>
+                    <Label Name="horario1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="479,89,0,0" VerticalAlignment="Top"/>
+                    <Label Name="relacion1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="485,135,0,0" VerticalAlignment="Top"/>
+                    <Label Name="nombre2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="106,274,0,0" VerticalAlignment="Top"/>
+                    <Label Name="telefono2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="109,316,0,0" VerticalAlignment="Top"/>
+                    <Label Name="direccion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="112,353,0,0" VerticalAlignment="Top"/>
+                    <Label Name="horario2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="485,316,0,0" VerticalAlignment="Top"/>
+                    <Label Name="relacion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="484,353,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Contacto">
+                <Grid Background="#283593">
+                    <Label Content="Correo eléctronico:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,37,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Teléfono 1:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Télefono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,314,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tipo de teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,272,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Teléfono 2:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,230,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Télefono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,177,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tipo de teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"/>
+                    <Label Name="correo" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="193,37,0,0" VerticalAlignment="Top"/>
+                    <Label Name="tipotel1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="178,135,0,0" VerticalAlignment="Top"/>
+                    <Label Name="tel1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="178,135,0,0" VerticalAlignment="Top"/>
+                    <Label Name="tipotel2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="178,272,0,0" VerticalAlignment="Top"/>
+                    <Label Name="tel2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,314,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+
+            </TabItem>
+            
+            <TabItem Header="Tarjeta">
+                <Grid Background="#283593">
+                    
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+            </Grid>
 </Window>

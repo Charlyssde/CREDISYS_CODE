@@ -54,7 +54,8 @@ namespace CREDISYS.Views.PopUp
                         nuevo.periodoPresentacion = txt_periodo.Text;
                         nuevo.estatus = "activo";
                         nuevo.rfcCliente = clientenuevo.rfc;
-
+                        db.Empleos.Add(nuevo);
+                        db.SaveChanges();
 
                         MessageBox.Show(Settings.Default.MensajeExito);
                         RegistrarReferecias registrarReferencias = new RegistrarReferecias(clientenuevo);
