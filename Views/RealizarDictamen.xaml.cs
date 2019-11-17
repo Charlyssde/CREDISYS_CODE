@@ -32,6 +32,9 @@ namespace CREDISYS.Views
             cargarInfo(solicitud, usuario);
         }
 
+        /*
+         * Cargar los campos con la información de la solicitud
+         */
         private void cargarInfo(Solicitud solicitud, Usuario usuario)
         {
             this.solicitud = solicitud;
@@ -64,6 +67,11 @@ namespace CREDISYS.Views
             }
             else
             {
+                /*
+                 * Se actualiza el estado de acuerdo a lo sucedido en el dictamen, y el cálculo de las políticas.
+                 * Si algún elemento (informacion, expediente) está mal, se manda a corrección con el capturista.
+                 * Sino, se le pone el resultado que viene de las políticas.
+                 */
                 using (DBEntities db = new DBEntities())
                 {
                     Solicitud s = db.Solicituds.Where(b => b.folio == this.solicitud.folio).FirstOrDefault();
@@ -83,11 +91,8 @@ namespace CREDISYS.Views
 
         private bool mandarModificacion()
         {
-            if (rbIncorrectoExp.IsChecked == true || rbIncorrectoSol.IsChecked == true)
-            {
-                return true;
-            }
-            return false;
+            
+            return rbIncorrectoExp.IsChecked == true || rbIncorrectoSol.IsChecked == true;
         }
 
         private void btnCalcularPoliticas_Click(object sender, RoutedEventArgs e)
@@ -109,6 +114,10 @@ namespace CREDISYS.Views
         {
             this.Close();
         }
+        /*
+         * Desde la ventana de cálculo de políticas se verifican dos cosas, que se haya realizado el cálculo
+         * Y el estado con el que se determinó el resultado de la solicitud.
+         */
         public void setResultado(String resultado)
         {
             this.resultado = resultado;
@@ -121,7 +130,8 @@ namespace CREDISYS.Views
             }
             else
             {
-                MessageBox.Show("La solicitud ha pasado el porcentaje mínimo de políticas");
+                MessageBox.Show("La solicitud ha pasado el porcentaje mínimo de políticas, " +
+                    "puede aceptarla o rechazarla por otros motivos");
             }
         }
 
@@ -131,6 +141,16 @@ namespace CREDISYS.Views
             visualizarSolicitudes.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             visualizarSolicitudes.Show();
             this.Close();
+        }
+
+        private void rbAceptarSolicitud_Checked(object sender, RoutedEventArgs e)
+        {
+            this.resultado = "aceptada";
+        }
+
+        private void rbRechazarSolicitud_Checked(object sender, RoutedEventArgs e)
+        {
+            this.resultado = "rechazada";
         }
     }
 }

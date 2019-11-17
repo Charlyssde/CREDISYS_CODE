@@ -25,7 +25,7 @@
                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"></Label>
             </StackPanel>
             <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Catálogos" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+                <Label Content="Ciudades" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
             </StackPanel>
             <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" ></Label>
@@ -45,16 +45,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label Content="Selecciona un'país: "/>
+                    <Label Content="Selecciona un país: "/>
                     <ComboBox x:Name="cbPaises" Width="150" SelectionChanged="cbPaises_SelectionChanged"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Label Content="Selecciona un estado: "/>
-                    <ComboBox x:Name="cbEstados" Width="150" SelectionChanged="cbEstados_SelectionChanged"/>
+                    <ComboBox x:Name="cbEstados" Width="150"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Label Content="Nombre del estado: "/>
-                    <TextBox x:Name="txtPais" Width="150"/>
+                    <Label Content="Nombre de la ciudad: "/>
+                    <TextBox x:Name="txtCiudad" Width="150"/>
                     <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35" Click="btnBuscar_Click" VerticalAlignment="Bottom">
                         <Button.Template>
                             <ControlTemplate>
@@ -65,7 +65,7 @@
                 </StackPanel>
             </Grid>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label Content="Estado: " FontWeight="Bold" FontSize="18"/>
+                <Label Content="Ciudad: " FontWeight="Bold" FontSize="18"/>
                 <TextBox x:Name="txtResultado" Width="150" IsEnabled="False" FontSize="18" FontWeight="Bold"/>
                 <Button x:Name="btnCancelar" Cursor="Hand" Width="40" Visibility="Hidden" Margin="15,0,10,0" Click="btnCancelar_Click">
                     <Button.Template>
