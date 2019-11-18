@@ -68,6 +68,7 @@ namespace CREDISYS.Views.Catalogos
             btnAceptar.Visibility = Visibility.Visible;
             btnCancelar.Visibility = Visibility.Visible;
             lastClick = true;
+            btnBuscar.IsEnabled = false;
             txtResultado.Text = "";
             txtResultado.IsEnabled = true;
         }
@@ -76,6 +77,7 @@ namespace CREDISYS.Views.Catalogos
         {
             btnAceptar.Visibility = Visibility.Visible;
             btnCancelar.Visibility = Visibility.Visible;
+            btnBuscar.IsEnabled = false;
             txtResultado.IsEnabled = true;
             lastClick = false;
 
@@ -164,12 +166,14 @@ namespace CREDISYS.Views.Catalogos
             }
             txtResultado.Text = "";
             txtResultado.IsEnabled = false;
+            btnBuscar.IsEnabled = true;
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             txtResultado.IsEnabled = false;
             txtResultado.Text = this.pais.pais;
+            btnBuscar.IsEnabled = true;
         }
 
         private bool fueModificado()
