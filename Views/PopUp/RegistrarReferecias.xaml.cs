@@ -65,8 +65,7 @@ namespace CREDISYS.Views.PopUp
                         nueva2.rfcCliente = this.clientenuevo.rfc;
 
                         clientenuevo.Referencias = new List<Referencia>();
-                        clientenuevo.Referencias.Add(nueva);
-                        clientenuevo.Referencias.Add(nueva2);
+                        
                         db.Referencias.Add(nueva);
                         db.Referencias.Add(nueva2);
                         db.SaveChanges();

@@ -90,10 +90,10 @@ namespace CREDISYS.Views.CatalogosFolder
                 {
                     using (DBEntities db = new DBEntities())
                     {
-                        Pai pais = db.Pais.Where(b => b.pais == cbPaises.SelectedItem.ToString()).SingleOrDefault();
-                        Estado estado = db.Estadoes.Where(b => b.estado1 == cbEstados.SelectedItem.ToString()
+                        this.pais = db.Pais.Where(b => b.pais == cbPaises.SelectedItem.ToString()).SingleOrDefault();
+                        this.estado = db.Estadoes.Where(b => b.estado1 == cbEstados.SelectedItem.ToString()
                         && b.idPais == pais.idPais).SingleOrDefault();
-                        Ciudad ciudad = db.Ciudads.Where(b => b.ciudad1 == txtCiudad.Text && b.idEstado == estado.idEstado).SingleOrDefault();
+                        this.ciudad = db.Ciudads.Where(b => b.ciudad1 == txtCiudad.Text && b.idEstado == estado.idEstado).SingleOrDefault();
 
                         if (ciudad == null)
                         {

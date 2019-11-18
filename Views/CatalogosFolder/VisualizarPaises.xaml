@@ -51,7 +51,7 @@
             </StackPanel>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Content="País: " FontWeight="Bold" FontSize="18"/>
-                <TextBox x:Name="txtResultado" Width="150" IsEnabled="False" FontSize="18" FontWeight="Bold" KeyDown="txtResultado_KeyDown"/>
+                <TextBox x:Name="txtResultado" Width="150" IsEnabled="False" FontSize="18" FontWeight="Bold"/>
                 <Button x:Name="btnCancelar" Cursor="Hand" Width="40" Visibility="Hidden" Margin="15,0,10,0" Click="btnCancelar_Click">
                     <Button.Template>
                         <ControlTemplate>
