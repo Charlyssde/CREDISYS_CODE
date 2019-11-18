@@ -24,6 +24,10 @@ namespace CREDISYS.Views
         Solicitud selected;
 
         Usuario usuario;
+        /*
+         * En esta clase, se tienen 3 stack panels diferentes para la búsqueda, de acuerdo al filtro, aparece uno u otro
+         * Para mejor usabilidad.
+         */
         public VisualizarSolicitudes(Usuario user)
         {
             InitializeComponent();
@@ -45,6 +49,9 @@ namespace CREDISYS.Views
             obtenerSolicitudes(emptyFields, "basic");
         }
 
+        /*
+         * Conforme cambia la selección del filtro, cambia el stack panel
+         */
         private void cbFiltro_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             switch (cbFiltro.SelectedItem)
@@ -96,6 +103,9 @@ namespace CREDISYS.Views
             {
                 try
                 {
+                    /*
+                     * Consulta de acuerdo al tipo de filtro que se escogió
+                     */
                     using (DBEntities db = new DBEntities())
                     {
                         switch (filtro)
@@ -147,6 +157,9 @@ namespace CREDISYS.Views
                                 }
                                 else
                                 {
+                                    /*
+                                     * Se remueven de forma manual las columnas innecesarias
+                                     */
                                     dg_Solicitudes.ItemsSource = items;
                                     dg_Solicitudes.Columns.RemoveAt(12);
                                     dg_Solicitudes.Columns.RemoveAt(11);

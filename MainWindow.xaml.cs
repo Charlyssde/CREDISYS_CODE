@@ -33,7 +33,7 @@ namespace CREDISYS
             /*
              * TEMPORAL PARA PRUEBAS
              */
-            txtUsername.Text = "Charlyssde";
+            //txtUsername.Text = "Charlyssde";
             txtPassword.Password = "secret";
         }
 
@@ -50,7 +50,9 @@ namespace CREDISYS
             }
             else
             {
-               
+               /**
+                * Consulta para encontrar el usuario
+                */
                 using (DBEntities db = new DBEntities())
                 {
 
@@ -59,6 +61,9 @@ namespace CREDISYS
                         var user = db.Usuarios.Where(b => b.username.Equals(username) && b.password == theBytes).FirstOrDefault();
                         if (user != null)
                         {
+                            /**
+                             * De acuerdo al rol, entra al apartado del sistema correspondiente
+                             */
                             switch (user.idRol)
                             {
                                 case 5:

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="Registrar Referencias" Height="933.132" Width="905.665">
     <Grid Margin="0,0,-0.4,-30">
         <Grid.RowDefinitions>

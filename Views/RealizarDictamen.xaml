@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views"
         mc:Ignorable="d"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="RealizarDictamen" Height="550" Width="800">
     <DockPanel LastChildFill="True">
         <Grid DockPanel.Dock="Top" Background="#283593"  Height="50">
@@ -126,9 +127,9 @@
             <Separator Background="Black" Height="3"></Separator>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" HorizontalAlignment="Center">
-            <RadioButton x:Name="rbAceptarSolicitud" Content="Aceptar Solicitud"></RadioButton>
+            <RadioButton x:Name="rbAceptarSolicitud" Content="Aceptar Solicitud" Checked="rbAceptarSolicitud_Checked" ></RadioButton>
             <Label Width="150"></Label>
-            <RadioButton x:Name="rbRechazarSolicitud" Content="Rechazar Solicitud"></RadioButton>
+            <RadioButton x:Name="rbRechazarSolicitud" Content="Rechazar Solicitud" Checked="rbRechazarSolicitud_Checked"></RadioButton>
         </StackPanel>
         <StackPanel DockPanel.Dock="Top" >
             <Separator Background="Black" Height="3"></Separator>

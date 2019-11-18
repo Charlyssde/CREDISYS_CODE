@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="VisualizarTelefonos" Height="400" Width="600">
     <DockPanel>
         <Grid DockPanel.Dock="Top" Background="#283593" Height="50">

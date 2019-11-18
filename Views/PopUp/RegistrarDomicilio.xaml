@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
         Title="Registrar Domicilio" Height="670" Width="800" FontSize="18" WindowStyle="None">
+        Icon="pack://application:,,,/Resources/IcLogin.png"
     <Grid RenderTransformOrigin="0.5,0.5">
         <Grid.RowDefinitions>
             <RowDefinition Height="36*"/>
