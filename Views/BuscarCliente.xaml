@@ -33,27 +33,35 @@
             </StackPanel>
 
         </Grid>
-        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="45" HorizontalAlignment="Right" VerticalAlignment="Center">
-            <Button x:Name="btnAgregarCliente" IsEnabled="False" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
-                    <Button.Template>
-                        <ControlTemplate>
-                            <Image Source="pack://application:,,,/Resources/IcAgregarCliente.png"/>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
-            <Label Width="50"/>
-            <Button x:Name="btnSolicitudes" Height="40" Cursor="Hand" IsEnabled="False" Click="btnSolicitudes_Click">
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Height="55" HorizontalAlignment="Right" VerticalAlignment="Center" Width="340">
+            <Button x:Name="btnVisualiCliente" IsEnabled="False" Cursor="Hand" Width="45" Height="45" Click="btnVisualiCliente_Click" RenderTransformOrigin="-0.8,0.822" Margin="0,5">
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="pack://application:,,,/Resources/btnSolicitudes.png"></Image>
+                        <Image Source="pack://application:,,,/Resources/IcVisualizar.png"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
             <Label Width="50"/>
-            <Button x:Name="btnAgregarSolicitud"  IsEnabled="False" Height="40" Cursor="Hand" Click="btnAgregarSolicitud_Click">
+            <Button x:Name="btnAgregarCliente" IsEnabled="False" Cursor="Hand" Width="35" Height="35" Click="btnAgregarCliente_Click">
                 <Button.Template>
                     <ControlTemplate>
-                        <Image Source="pack://application:,,,/Resources/IcAgregar.png"></Image>
+                        <Image Source="pack://application:,,,/Resources/IcAgregarCliente.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Label Width="50"/>
+            <Button x:Name="btnSolicitudes" Height="40" Cursor="Hand" IsEnabled="False" Click="btnSolicitudes_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="pack://application:,,,/Resources/btnSolicitudes.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Label Width="50"/>
+            <Button x:Name="btnAgregarSolicitud"  IsEnabled="False" Height="40" Cursor="Hand" Click="btnAgregarSolicitud_Click" RenderTransformOrigin="1.15,0.55" Margin="0,8,0,7">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="pack://application:,,,/Resources/IcAgregar.png"/>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
@@ -75,7 +83,7 @@
                 </StackPanel>
                 <StackPanel x:Name="stackEasy" Orientation="Horizontal" Grid.Column="1" 
                             HorizontalAlignment="Left" VerticalAlignment="Center" Height="35" Margin="0,20" Width="285">
-                    <TextBox x:Name="txtBusqueda" MinWidth="250" Height="25"></TextBox>
+                    <TextBox x:Name="txtBusqueda" MinWidth="250" Height="25"  ></TextBox>
                     <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35" Click="btnBuscar_Click" VerticalAlignment="Bottom">
                         <Button.Template>
                             <ControlTemplate>
@@ -87,7 +95,7 @@
             </Grid>
             <StackPanel Grid.Row="3">
                 <StackPanel Grid.Column="0">
-                <Label Name="Nombre" Content="Nombre:" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Label Name="Nombre" Content="Nombre:" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     <TextBox x:Name="txtnombre"  Width="300" Margin="80,-30,277,0" IsReadOnly="True"></TextBox>
                 </StackPanel>
                 <Label Name="Apellidopaterno" Content="Apellido paterno:" FontSize="18" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>

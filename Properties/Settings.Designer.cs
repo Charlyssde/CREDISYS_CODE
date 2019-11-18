@@ -41,6 +41,20 @@ namespace CREDISYS.Properties
                 this["MensajeCamposVacios"] = value;
             }
         }
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("No se ha encontrado el elemento")]
+        public string MensajeElementoNoEcontrado
+        {
+            get
+            {
+                return ((string)(this["MensajeElementoNoEcontrado"]));
+            }
+            set
+            {
+                this["MensajeElementoNoEcontrado"] = value;
+            }
+        }
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

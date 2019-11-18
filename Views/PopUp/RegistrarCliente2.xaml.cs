@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace CREDISYS.Views.PopUp
 {
     /// <summary>
@@ -20,6 +21,7 @@ namespace CREDISYS.Views.PopUp
     /// </summary>
     public partial class RegistrarCliente2 : Window
     {
+       
         List<Pai> Paises;
         List<String> listPaises;
         List<Estado> Estados;
@@ -30,6 +32,9 @@ namespace CREDISYS.Views.PopUp
         {
             InitializeComponent();
             cargarPaises();
+           
+
+
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
@@ -43,7 +48,7 @@ namespace CREDISYS.Views.PopUp
             {
                 if (txt_apellidopaterno.Text.Equals("") || txt_apellidomaterno.Text.Equals("") || txt_name.Text.Equals("")
                      || txt_curp.Text.Equals("") || txt_rfc.Text.Equals("") || combo_genero.SelectedItem == null ||
-                     combo_pais.SelectedItem == null || combo_estado.SelectedItem == null || combo_ciudad.SelectedItem == null)
+                     combo_pais.SelectedItem == null || combo_estado.SelectedItem == null || combo_ciudad.SelectedItem == null || cbEstadoCivil.SelectedItem == null)
                 {
                     MessageBox.Show(Settings.Default.MensajeCamposVacios);
                 }
@@ -91,7 +96,7 @@ namespace CREDISYS.Views.PopUp
                         nuevo.curp = txt_curp.Text;
                         nuevo.fechaNacimiento = date_nacimiento.SelectedDate.Value;
                         nuevo.genero = combo_genero.Text;
-                        nuevo.estadoCivil = "casado";
+                        nuevo.estadoCivil = cbEstadoCivil.Text;
                         nuevo.estatus = "activo";
 
 
@@ -113,16 +118,19 @@ namespace CREDISYS.Views.PopUp
         {
             this.Close();
         }
+        
         public void cargarPaises()
         {
+           
             using (DBEntities db = new DBEntities())
             {
 
                 Paises = db.Pais.ToList<Pai>();
                 listPaises = new List<String>();
-
+                
                 foreach (Pai p in Paises)
                 {
+                    
                     listPaises.Add(p.pais);
                 }
                 combo_pais.ItemsSource = listPaises;
@@ -187,5 +195,7 @@ namespace CREDISYS.Views.PopUp
                 }
             }
         }
+
+        
     }
 }

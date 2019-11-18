@@ -5,25 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
-        Title="Registro de contacto" Height="383.4" Width="677.6">
+        Title="Registro de contacto" Height="362.889" Width="683.753" WindowStyle="None">
     <Grid Margin="0,0,-6.4,-20">
-        <Grid Background="#283593" Margin="267,-188,-267.2,543.2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
-                <Label x:Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
-                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
-            </StackPanel>
-            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Registrar contacto" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </StackPanel>
-            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
-                <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
-            </StackPanel>
-        </Grid>
         <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Grid Background="#283593" Margin="0,0,-0.4,308.6">
             <Grid.ColumnDefinitions>
@@ -43,7 +26,7 @@
             </StackPanel>
         </Grid>
         <TextBox Name="txtCorreo" HorizontalAlignment="Left" Height="40" Margin="10,134,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="370" FontSize="18"/>
-        <Button x:Name="btnCancelar" Cursor="Hand" Margin="356,211,250.6,78.6" Click="btnCancelar_Click">
+        <Button x:Name="btnCancelar" Cursor="Hand" Margin="395,211,212.4,79" Click="btnCancelar_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/CREDISYS;component/Resources/IcCancelar.png"/>

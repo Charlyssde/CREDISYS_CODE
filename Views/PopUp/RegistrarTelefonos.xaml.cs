@@ -72,6 +72,7 @@ namespace CREDISYS.Views.PopUp
                 telefono2.tipoTelefono = selUno;
                 this.cliente.Telefonoes.Add(telefono2);
 
+
                 RegistrarTarjetas registrarTarjetas = new RegistrarTarjetas(this.cliente);
                 registrarTarjetas.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 this.Hide();

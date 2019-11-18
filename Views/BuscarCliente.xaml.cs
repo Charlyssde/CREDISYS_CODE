@@ -23,12 +23,13 @@ namespace CREDISYS.Views
     {
         Cliente cliente = null;
         Usuario usuario;
-        
+
         public BuscarCliente(Usuario usuario)
         {
-            
+
             InitializeComponent();
             this.usuario = usuario;
+            
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -62,7 +63,13 @@ namespace CREDISYS.Views
             cap.Show();
             closeWindow();
         }
-
+        private void txt_Busqueda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+                e.Handled = false;
+            else
+                e.Handled = true;
+        }
         private void consultar()
         {
             if (txtBusqueda.Text == "")
@@ -85,8 +92,10 @@ namespace CREDISYS.Views
                             btnAgregarSolicitud.IsEnabled = true;
                             btnSolicitudes.IsEnabled = true;
                             
+                            btnVisualiCliente.IsEnabled = true;
                         } else
                         {
+                            MessageBox.Show(Settings.Default.MensajeElementoNoEcontrado);
                             btnAgregarCliente.IsEnabled = true;
                             MessageBox.Show(Settings.Default.MensajeNoEncontrado);
                         }
@@ -109,14 +118,28 @@ namespace CREDISYS.Views
         {
             if (cliente!=null)
             {
-                
+                btnVisualiCliente.IsEnabled = true;
                 btnAgregarSolicitud.IsEnabled = false;
             }
             else
             {
                 this.cliente = null;
                 btnAgregarSolicitud.IsEnabled = true;
+               
+               
             }
         }
+
+        private void btnVisualiCliente_Click(object sender, RoutedEventArgs e)
+        {
+           
+            VisualizarCliente vzcliente = new VisualizarCliente(cliente);
+            vzcliente.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            vzcliente.Show();
+            
+            
+        }
+
+            
     }
 }
