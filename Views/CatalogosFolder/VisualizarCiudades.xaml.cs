@@ -21,10 +21,31 @@ namespace CREDISYS.Views.CatalogosFolder
     public partial class VisualizarCiudades : Window
     {
         Usuario usuario;
+
+        Pai pais;
+        Estado estado;
+        Ciudad ciudad;
         public VisualizarCiudades(Usuario usuario)
         {
             InitializeComponent();
             this.usuario = usuario;
+            cargarPaises();
+        }
+
+        private void cargarPaises()
+        {
+            try
+            {
+                using (DBEntities db = new DBEntities())
+                {
+                    List<Pai> listaPaises = db.Pais.ToList<Pai>();
+                    cbPaises.ItemsSource = listaPaises;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -32,14 +53,25 @@ namespace CREDISYS.Views.CatalogosFolder
             CatalogosC catalogos = new CatalogosC(this.usuario);
         }
 
-        private void cbEstados_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void cbPaises_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            cargarEstados(cbPaises.SelectedItem.ToString());
+        }
 
+        private void cargarEstados(string v)
+        {
+            try
+            {
+                using (DBEntities db = new DBEntities())
+                {
+                    List<Estado> estados = db.Estadoes.ToList<Estado>();
+                    cbEstados.ItemsSource = estados;
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void btnBuscar_Click(object sender, RoutedEventArgs e)
@@ -81,14 +113,21 @@ namespace CREDISYS.Views.CatalogosFolder
 
         private void btnAgregar_Click(object sender, RoutedEventArgs e)
         {
+            btnAceptar.Visibility = Visibility.Visible;
+            btnCancelar.Visibility = Visibility.Visible;
             txtResultado.Text = "";
             txtResultado.IsEnabled = true;
             txtCiudad.Text = "";
+            cbEstados.IsEnabled = false;
+            cbPaises.IsEnabled = false;
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
-
+            cbEstados.IsEnabled = false;
+            cbPaises.IsEnabled = false;
+            btnAceptar.Visibility = Visibility.Visible;
+            btnCancelar.Visibility = Visibility.Visible;
         }
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
@@ -98,7 +137,8 @@ namespace CREDISYS.Views.CatalogosFolder
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
-
+            txtResultado.Text = this.ciudad.ciudad1;
+            txtResultado.IsEnabled = false;
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
