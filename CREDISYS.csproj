@@ -38,6 +38,9 @@
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\ControlzEx.3.0.2.4\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -126,6 +129,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModels.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Domiciliación.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Domiciliación.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Domicilio.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -152,6 +161,13 @@
     </Compile>
     <Compile Include="Solicitud.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Solicitud1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Solicitud.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
@@ -182,6 +198,9 @@
     </Compile>
     <Compile Include="Views\CatalogosFolder\VisualizarPaises.xaml.cs">
       <DependentUpon>VisualizarPaises.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CatalogosFolder\VisualizarPoliticas.xaml.cs">
+      <DependentUpon>VisualizarPoliticas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard_Admin.xaml.cs">
       <DependentUpon>Dashboard_Admin.xaml</DependentUpon>
@@ -224,6 +243,9 @@
     </Compile>
     <Compile Include="Views\PopUp\RegistrarReferecias.xaml.cs">
       <DependentUpon>RegistrarReferecias.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RegistrarReferencia2.xaml.cs">
+      <DependentUpon>RegistrarReferencia2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\RegistrarTarjetas.xaml.cs">
       <DependentUpon>RegistrarTarjetas.xaml</DependentUpon>
@@ -286,6 +308,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CatalogosFolder\VisualizarPoliticas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Dashboard_Admin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -342,6 +368,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PopUp\RegistrarReferencia2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\RegistrarTarjetas.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -385,9 +415,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Domiciliación.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Domiciliación.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Solicitud.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Solicitud1.cs</LastGenOutput>
     </EmbeddedResource>
     <EntityDeploy Include="DBModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -436,6 +474,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="DBModels.Context.tt">
@@ -448,6 +487,7 @@
       <DependentUpon>DBModels.edmx</DependentUpon>
       <LastGenOutput>DBModels.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\IcPais.png" />
     <Resource Include="Resources\btnComentarios.png" />
     <Resource Include="Resources\IcVisualizar.png" />
     <Resource Include="Resources\btnCalcularPoliticas.png" />

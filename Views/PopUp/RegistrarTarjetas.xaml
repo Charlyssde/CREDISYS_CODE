@@ -33,26 +33,26 @@
                 <RowDefinition Height="75"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="0" >
-                <Label Content="DEPÓSITO"/>
-                <Label Content="Banco"/>
-                <ComboBox x:Name="cbBancoDeposito"/>
-                <Label Content="Número de cuenta"/>
-                <TextBox x:Name="txtNumeroCuentaUno" Width="200"/>
-                <Label Content="Clabe interbancaria"/>
-                <TextBox x:Name="txtNumeroClabeUno" Width="200"/>
-                <Label Content="Número de teléfono"/>
-                <TextBox x:Name="txtTelefonoUno" Width="200"/>
+                <Label Content="DEPÓSITO" FontSize="14"/>
+                <Label Content="Banco" FontSize="14"/>
+                <ComboBox x:Name="cbBancoDeposito" FontSize="14"/>
+                <Label Content="Número de cuenta" FontSize="14"/>
+                <TextBox x:Name="txtNumeroCuentaUno" Width="200" FontSize="14"/>
+                <Label Content="Clabe interbancaria" FontSize="14"/>
+                <TextBox x:Name="txtNumeroClabeUno" Width="200" FontSize="14"/>
+                <Label Content="Número de teléfono" FontSize="14"/>
+                <TextBox x:Name="txtTelefonoUno" Width="200" FontSize="14"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" >
-                <Label Content="COBRO"/>
-                <Label Content="Banco"/>
-                <ComboBox x:Name="cbBancoCobro"/>
-                <Label Content="Número de cuenta"/>
-                <TextBox x:Name="txtNumeroCuentaDos" Width="200"/>
-                <Label Content="Clabe interbancaria"/>
-                <TextBox x:Name="txtNumeroClabeDos" Width="200"/>
-                <Label Content="Número de teléfono"/>
-                <TextBox x:Name="txtTelefonoDos" Width="200"/>
+                <Label Content="COBRO" FontSize="14"/>
+                <Label Content="Banco" FontSize="14"/>
+                <ComboBox x:Name="cbBancoCobro" FontSize="14"/>
+                <Label Content="Número de cuenta" FontSize="14"/>
+                <TextBox x:Name="txtNumeroCuentaDos" Width="200" FontSize="14"/>
+                <Label Content="Clabe interbancaria" FontSize="14"/>
+                <TextBox x:Name="txtNumeroClabeDos" Width="200" FontSize="14"/>
+                <Label Content="Número de teléfono" FontSize="14"/>
+                <TextBox x:Name="txtTelefonoDos" Width="200" FontSize="14"/>
             </StackPanel>
             <StackPanel Grid.Row="2" HorizontalAlignment="Center" 
                     VerticalAlignment="Top" Orientation="Horizontal">
