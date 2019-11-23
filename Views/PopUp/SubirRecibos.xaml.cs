@@ -1,20 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using CREDISYS.Properties;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 using System.IO;
+using System.Windows;
+using System.Windows.Forms;
 
 namespace CREDISYS.Views.PopUp
 {
@@ -23,28 +12,35 @@ namespace CREDISYS.Views.PopUp
     /// </summary>
     public partial class SubirRecibos : Window
     {
-        byte[] arregloPdf;
-        public SubirRecibos()
+        Cliente cliente;
+
+        OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        public SubirRecibos(Cliente cliente)
         {
             InitializeComponent();
-            
+            this.cliente = cliente;
+
         }
 
-       
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string file_name = string.Empty;
 
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            using (DBEntities db = new DBEntities())
+            {
+                string file_name = string.Empty;
 
-            openFileDialog1.ShowDialog();
-                 string dir = openFileDialog1.FileName;
+
+
+                openFileDialog1.ShowDialog();
+                string dir = openFileDialog1.FileName;
                 string destino = System.IO.Path.GetDirectoryName(dir);
+                txtFile.Text = dir;
 
 
-            
-            
+            }
+
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -58,5 +54,57 @@ namespace CREDISYS.Views.PopUp
         {
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (txtName.Text.Trim().Equals("") || txtFile.Text.Trim().Equals(""))
+            {
+                System.Windows.MessageBox.Show("El nombre es obligatorio");
+                return;
+            }
+            byte[] file = null;
+            Stream mystream = openFileDialog1.OpenFile();
+            using (MemoryStream ms = new MemoryStream())
+            {
+                mystream.CopyTo(ms);
+                file = ms.ToArray();
+            }
+            
+            using (DBEntities db = new DBEntities())
+            {
+                Expediente expediente = new Expediente();
+                expediente.rfcCliente = "HOLA";
+                expediente.INE = file;
+                expediente.pagare = file;
+                expediente.reciboPago = file;
+                expediente.solicitud = file;
+                expediente.caratula = file;
+                expediente.domicializacion = file;
+                expediente.comprobanteDomicilio = file;
+                expediente.estadoCuenta = file; 
+                expediente.folio = 3; 
+
+                try
+                {
+                    db.Expedientes.Add(expediente);
+                    db.SaveChanges();
+                    System.Windows.MessageBox.Show(Settings.Default.MensajeExito);
+                }
+                catch (DbEntityValidationException dbEx)
+                {
+                    foreach (var validationErrors in dbEx.EntityValidationErrors)
+                    {
+                        foreach (var validationError in validationErrors.ValidationErrors)
+                        {
+                            Trace.TraceInformation("Property: {0} Error: {1}",
+                                validationError.PropertyName,
+                                validationError.ErrorMessage);
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }
+

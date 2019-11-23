@@ -105,16 +105,17 @@
             <PropertyRef Name="idExpediente" />
           </Key>
           <Property Name="idExpediente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="caratula" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="solicitud" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="domicializacion" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="pagare" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="INE" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="comprobanteDomicilio" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="estadoCuenta" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="reciboPago" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="caratula" Type="varbinary(max)" />
+          <Property Name="solicitud" Type="varbinary(max)" />
+          <Property Name="domicializacion" Type="varbinary(max)" />
+          <Property Name="pagare" Type="varbinary(max)" />
+          <Property Name="INE" Type="varbinary(max)" />
+          <Property Name="comprobanteDomicilio" Type="varbinary(max)" />
+          <Property Name="estadoCuenta" Type="varbinary(max)" />
+          <Property Name="reciboPago" Type="varbinary(max)" />
           <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
-          <Property Name="folio" Type="int" Nullable="false" />
+          <Property Name="folio" Type="int" />
+          <Property Name="guardar" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Pais">
           <Key>
@@ -753,18 +754,19 @@
             <PropertyRef Name="idExpediente" />
           </Key>
           <Property Name="idExpediente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="caratula" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="solicitud" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="domicializacion" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="pagare" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="INE" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="comprobanteDomicilio" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="estadoCuenta" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="reciboPago" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="caratula" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="solicitud" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="domicializacion" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="pagare" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="INE" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="comprobanteDomicilio" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="estadoCuenta" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="reciboPago" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="folio" Type="Int32" Nullable="false" />
+          <Property Name="folio" Type="Int32" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Expediente_Cliente" FromRole="Expediente" ToRole="Cliente" />
           <NavigationProperty Name="Solicituds" Relationship="CREDISYSModel.FK_Solicitud_Expediente" FromRole="Expediente" ToRole="Solicitud" />
+          <Property Name="guardar" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Pai">
           <Key>
@@ -1398,6 +1400,7 @@
           <EntitySetMapping Name="Expedientes">
             <EntityTypeMapping TypeName="CREDISYSModel.Expediente">
               <MappingFragment StoreEntitySet="Expediente">
+                <ScalarProperty Name="guardar" ColumnName="guardar" />
                 <ScalarProperty Name="idExpediente" ColumnName="idExpediente" />
                 <ScalarProperty Name="caratula" ColumnName="caratula" />
                 <ScalarProperty Name="solicitud" ColumnName="solicitud" />
