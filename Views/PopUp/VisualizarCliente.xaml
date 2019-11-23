@@ -95,27 +95,27 @@
             <TabItem Header="Referencias">
                 <Grid Background="#283593">
                     <Label Content="Referencia 1:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Dirección:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="8,135,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Dirección:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="11,125,0,0" VerticalAlignment="Top"/>
                     <Label Content="Nombre:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,47,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Relación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,135,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Horario:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,89,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Referencia 2:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,237,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Dirección:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,353,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Nombre:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,274,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="14,316,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Relación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="391,352,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Horario:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,315,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="11,88,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Relación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,125,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Horario:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="397,88,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Referencia 2:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="0,185,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Dirección:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,306,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Nombre:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Relación:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="403,306,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Horario:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="403,269,0,0" VerticalAlignment="Top"/>
                     <Label Name="nombre1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="98,47,0,0" VerticalAlignment="Top"/>
-                    <Label Name="telefono1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,89,0,0" VerticalAlignment="Top"/>
-                    <Label Name="direccion1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="106,135,0,0" VerticalAlignment="Top"/>
-                    <Label Name="horario1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="479,89,0,0" VerticalAlignment="Top"/>
-                    <Label Name="relacion1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="485,135,0,0" VerticalAlignment="Top"/>
-                    <Label Name="nombre2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="106,274,0,0" VerticalAlignment="Top"/>
-                    <Label Name="telefono2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="109,316,0,0" VerticalAlignment="Top"/>
-                    <Label Name="direccion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="112,353,0,0" VerticalAlignment="Top"/>
-                    <Label Name="horario2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="485,316,0,0" VerticalAlignment="Top"/>
-                    <Label Name="relacion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="484,353,0,0" VerticalAlignment="Top"/>
+                    <Label Name="telefono1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,88,0,0" VerticalAlignment="Top"/>
+                    <Label Name="direccion1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="112,125,0,0" VerticalAlignment="Top"/>
+                    <Label Name="horario1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="479,88,0,0" VerticalAlignment="Top"/>
+                    <Label Name="relacion1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="484,125,0,0" VerticalAlignment="Top"/>
+                    <Label Name="nombre2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="103,227,0,0" VerticalAlignment="Top"/>
+                    <Label Name="telefono2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="103,269,0,0" VerticalAlignment="Top"/>
+                    <Label Name="direccion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="108,306,0,0" VerticalAlignment="Top" Width="20"/>
+                    <Label Name="horario2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="485,269,0,0" VerticalAlignment="Top"/>
+                    <Label Name="relacion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="500,306,0,0" VerticalAlignment="Top"/>
 
                 </Grid>
             </TabItem>
@@ -130,20 +130,26 @@
                     <Label Content="Tipo de teléfono:" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="10,135,0,0" VerticalAlignment="Top"/>
                     <Label Name="correo" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="193,37,0,0" VerticalAlignment="Top"/>
                     <Label Name="tipotel1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="178,135,0,0" VerticalAlignment="Top"/>
-                    <Label Name="tel1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="178,135,0,0" VerticalAlignment="Top"/>
+                    <Label Name="tel1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,177,0,0" VerticalAlignment="Top"/>
                     <Label Name="tipotel2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="178,272,0,0" VerticalAlignment="Top"/>
                     <Label Name="tel2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,314,0,0" VerticalAlignment="Top"/>
-
+                    <Button x:Name="btnEditarContacto" Cursor="Hand" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEditar_Click" Margin="631,326,0,18.8" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
 
             </TabItem>
-            
+
             <TabItem Header="Tarjeta">
                 <Grid Background="#283593">
-                    
+
                 </Grid>
 
             </TabItem>
         </TabControl>
-            </Grid>
+    </Grid>
 </Window>

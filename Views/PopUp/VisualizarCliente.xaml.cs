@@ -69,8 +69,26 @@ namespace CREDISYS.Views.PopUp
                 ocupacion.Content = empleo.ocupacion;
                 puesto.Content = empleo.puesto;
                 presentacion.Content = empleo.periodoPresentacion;
-
-
+                Referencia referencia = db.Referencias.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+                nombre1.Content = referencia.nombre;
+                telefono1.Content = referencia.telefono;
+                direccion1.Content = referencia.direccion;
+                horario1.Content = referencia.horario;
+                relacion1.Content = referencia.relacion;
+                Referencia referencia2 = db.Referencias.Where(b => b.rfcCliente == cliente.rfc && b.idReferencia != referencia.idReferencia).FirstOrDefault();
+                nombre2.Content = referencia2.nombre;
+                telefono2.Content = referencia2.telefono;
+                direccion2.Content = referencia2.direccion;
+                horario2.Content = referencia2.horario;
+                relacion2.Content = referencia2.relacion;
+                Correo correoelec = db.Correos.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+                correo.Content = correoelec.correo1;
+                Telefono telefono = db.Telefonoes.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+                tipotel1.Content = telefono.tipoTelefono;
+                tel1.Content = telefono.numero;
+                Telefono telefonoBD2 = db.Telefonoes.Where(b => b.rfcCliente == cliente.rfc && b.idTelefono != telefono.idTelefono).FirstOrDefault();
+                tipotel2.Content = telefonoBD2.tipoTelefono;
+                tel2.Content = telefonoBD2.numero;
 
             }
 

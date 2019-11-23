@@ -8,7 +8,7 @@
         Icon="pack://application:,,,/Resources/IcLogin.png"
         Title="Registro de contacto" Height="362.889" Width="683.753" WindowStyle="None">
     <Grid Margin="0,0,-6.4,-20">
-        <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Correo electrónico:" HorizontalAlignment="Left" Margin="10,95,0,0" VerticalAlignment="Top" FontSize="16"/>
         <Grid Background="#283593" Margin="0,0,-0.4,308.6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>

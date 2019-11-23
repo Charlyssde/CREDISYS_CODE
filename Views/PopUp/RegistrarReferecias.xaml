@@ -6,14 +6,14 @@
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
         Icon="pack://application:,,,/Resources/IcLogin.png"
-        Title="Registrar Referencias" Height="933.132" Width="905.665">
-    <Grid Margin="0,0,-0.4,-30">
+        Title="Registrar Referencias" Height="625.932" Width="870.865">
+    <Grid Margin="0,10,-6.2,2">
         <Grid.RowDefinitions>
             <RowDefinition Height="387*"/>
             <RowDefinition Height="128*"/>
             <RowDefinition Height="418*"/>
         </Grid.RowDefinitions>
-        <Grid Background="#283593" Margin="0,0,0.6,334.2">
+        <Grid Background="#283593" Margin="0,0,0,174.4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -30,45 +30,41 @@
                 <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
             </StackPanel>
         </Grid>
-        <Label Content="Referencia 1:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" FontSize="28" FontStyle="Normal" Foreground="DarkBlue" Height="48" Width="166"/>
-        <Label Content="Nombre completo:" FontSize="18" HorizontalAlignment="Left" Margin="33,118,0,0" VerticalAlignment="Top" Height="34" Width="160"/>
-        <TextBox Name="txt_name1" HorizontalAlignment="Left" Height="40" Margin="33,156,0,0" TextWrapping="Wrap" Text="" FontSize="18
-                 " VerticalAlignment="Top" Width="719"/>
-        <Label Content="Relación:"  FontSize="18" HorizontalAlignment="Left" Margin="33,204,0,0" VerticalAlignment="Top" Height="34" Width="80"/>
-        <TextBox x:Name="txtRelacion" HorizontalAlignment="Left" Height="39" Margin="33,240,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtDir" HorizontalAlignment="Left" Height="39" Margin="496,238,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox x:Name="txtTel" HorizontalAlignment="Left" Height="39" Margin="33,340,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
-        <TextBox Name="txtHorario" HorizontalAlignment="Left" Height="39" Margin="497,340,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256"/>
+        <Label Content="Referencia 1:" HorizontalAlignment="Left" Margin="10,73,0,0" VerticalAlignment="Top" FontSize="22" FontStyle="Normal" Foreground="DarkBlue" Height="38" Width="130"/>
+        <Label Content="Nombre completo:" FontSize="16" HorizontalAlignment="Left" Margin="13,134,0,0" VerticalAlignment="Top" Height="33" Width="154" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.562"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <TextBox Name="txt_name1" HorizontalAlignment="Left" Height="42" Margin="10,170,0,0" TextWrapping="Wrap" Text="" FontSize="16" VerticalAlignment="Top" Width="765"/>
+        <Label Content="Relación:"  FontSize="16" HorizontalAlignment="Left" Margin="10,242,0,0" VerticalAlignment="Top" Height="45" Width="102" Grid.RowSpan="2"/>
+        <TextBox x:Name="txtRelacion" HorizontalAlignment="Left" Height="39" Margin="10,30.6,0,0" FontSize="16" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="308" Grid.Row="1"/>
+        <TextBox x:Name="txtDir" HorizontalAlignment="Left" Height="40" Margin="10,65.6,0,0" FontSize="16" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="308" Grid.Row="2"/>
+        <TextBox x:Name="txtTel" HorizontalAlignment="Left" Height="39" Margin="439,30.6,0,0" FontSize="16" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" Grid.Row="1"/>
+        <TextBox Name="txtHorario" HorizontalAlignment="Left" Height="45" Margin="439,60.6,0,0" FontSize="16" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="336" Grid.Row="2"/>
 
-        <Label Content="Teléfono:"  FontSize="18" HorizontalAlignment="Left" Margin="33,301,0,0" VerticalAlignment="Top" Height="34" Width="82"/>
-        <Label Content="Dirección:"  FontSize="18" HorizontalAlignment="Left" Margin="497,204,0,0" VerticalAlignment="Top" Height="34" Width="88"/>
-                   <Label Content="Horario:"  FontSize="18" HorizontalAlignment="Left" Margin="497,301,0,0" VerticalAlignment="Top" Height="34" Width="74"/>
-        <Label Content="Referencia 2:" HorizontalAlignment="Left" Margin="10,26.8,0,0" VerticalAlignment="Top" FontSize="28" FontStyle="Normal" Foreground="DarkBlue" Grid.Row="1" Height="48" Width="166"/>
-        <Label Content="Nombre completo:" FontSize="18" HorizontalAlignment="Left" Margin="32,89.8,0,0" VerticalAlignment="Top" Grid.Row="1" Height="38" Width="174"/>
-        <TextBox Name="txt_name2" HorizontalAlignment="Left" Height="40" Margin="33,8.8,0,0" TextWrapping="Wrap" Text="" FontSize="18                  " VerticalAlignment="Top" Width="719" Grid.Row="2"/>
-        <Label Content="Relación:"  FontSize="18" HorizontalAlignment="Left" Margin="35,62.8,0,0" VerticalAlignment="Top" Grid.Row="2" Height="34" Width="80"/>
-        <TextBox x:Name="txtRelacion2" HorizontalAlignment="Left" Height="39" Margin="32,101.8,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Row="2"/>
-        <TextBox Name="txtDir2" HorizontalAlignment="Left" Height="39" Margin="497,101.8,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Row="2"/>
-
-        <TextBox Name="txtTel2" HorizontalAlignment="Left" Height="39" Margin="33,212.8,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Row="2"/>
-        <Label Content="Teléfono:"  FontSize="18" HorizontalAlignment="Left" Margin="35,173.8,0,0" VerticalAlignment="Top" Grid.Row="2" Height="34" Width="82"/>
-        <Label Content="Dirección:"  FontSize="18" HorizontalAlignment="Left" Margin="497,62.8,0,0" VerticalAlignment="Top" Grid.Row="2" Height="34" Width="88"/>
-                <TextBox Name="txtHorario2" HorizontalAlignment="Left" Height="39" Margin="497,212.8,0,0" FontSize="18" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Grid.Row="2"/>
-        <Label Content="Horario:"  FontSize="18" HorizontalAlignment="Left" Margin="497,173.8,0,0" VerticalAlignment="Top" Grid.Row="2" Height="34" Width="74"/>
-        <Button x:Name="btnCancelar" Cursor="Hand" Margin="508,287.8,320.6,47.6" Click="btnCancelar_Click" Grid.Row="2">
+        <Label Content="Teléfono:"  FontSize="16" HorizontalAlignment="Left" Margin="439,242,0,0" VerticalAlignment="Top" Height="45" Width="153" Grid.RowSpan="2"/>
+        <Label Content="Dirección:"  FontSize="16" HorizontalAlignment="Left" Margin="10,27.6,0,0" VerticalAlignment="Top" Height="33" Width="124" Grid.Row="2"/>
+        <Button x:Name="btnCancelar" Cursor="Hand" Margin="538,136.6,10,10" Click="btnCancelar_Click" Grid.Row="2" RenderTransformOrigin="-9.912,-1.501">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/CREDISYS;component/Resources/IcCancelar.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button x:Name="btnAceptar" Cursor="Hand" Margin="697,287.8,146.6,47.6" Click="btnAceptar_Click" Grid.Row="2">
+        <Button x:Name="btnAceptar" Cursor="Hand" Margin="375,150.6,202,20" Click="btnAceptar_Click" Grid.Row="2">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="/CREDISYS;component/Resources/IcAceptar.png"/>
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Label Content="Horario:"  FontSize="16" HorizontalAlignment="Left" Margin="439,27.6,0,0" VerticalAlignment="Top" Height="33" Width="124" Grid.Row="2"/>
 
     </Grid>
 </Window>

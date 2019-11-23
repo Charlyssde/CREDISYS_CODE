@@ -28,20 +28,20 @@
                 <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
             </StackPanel>
         </Grid>
-        <Label Content="Número de empleado:" HorizontalAlignment="Left" Margin="50,109,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Width="209"/>
-        <Label Content="Antiguedad:" HorizontalAlignment="Left" Margin="379,109,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox Name="txt_numero" HorizontalAlignment="Left" Height="37" Margin="52,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" RenderTransformOrigin="-0.049,0.565" Grid.ColumnSpan="2" FontSize="18"/>
-        <TextBox Name="txt_antiguedad" HorizontalAlignment="Left" Height="37" Margin="379,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.043,-0.791" FontSize="18"/>
-        <Label Content="Empresa:" HorizontalAlignment="Left" Margin="52,221,0,0" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Width="122"/>
-        <TextBox Name="txt_empresa" HorizontalAlignment="Left" Height="37" Margin="52,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" FontSize="18"/>
-        <Label Content="Centro de trabajo:" HorizontalAlignment="Left" Margin="393,221,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox Name="txt_centro" HorizontalAlignment="Left" Height="37" Margin="394,258,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="18"/>
-        <Label Content="Puesto:" HorizontalAlignment="Left" Margin="52,344,0,0" VerticalAlignment="Top" Width="71" FontSize="18"/>
-        <TextBox Name="txt_puesto" HorizontalAlignment="Left" Height="37" Margin="52,389,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="18"/>
-        <Label Content="Ocupación:" HorizontalAlignment="Left" Margin="394,344,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox Name="txt_ocupacion" HorizontalAlignment="Left" Height="37" Margin="394,389,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="18"/>
-        <Label Content="Periodo de presentación:" HorizontalAlignment="Left" Margin="52,465,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox Name="txt_periodo" HorizontalAlignment="Left" Height="37" Margin="52,504,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="18"/>
+        <Label Content="Número de empleado:" HorizontalAlignment="Left" Margin="50,109,0,0" VerticalAlignment="Top" FontSize="16" Grid.ColumnSpan="2" Width="209"/>
+        <Label Content="Antiguedad:" HorizontalAlignment="Left" Margin="379,109,0,0" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="0.296,0.513"/>
+        <TextBox Name="txt_numero" HorizontalAlignment="Left" Height="37" Margin="52,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" RenderTransformOrigin="-0.049,0.565" Grid.ColumnSpan="2" FontSize="16"/>
+        <TextBox Name="txt_antiguedad" HorizontalAlignment="Left" Height="37" Margin="379,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" RenderTransformOrigin="-0.043,-0.791" FontSize="16"/>
+        <Label Content="Empresa:" HorizontalAlignment="Left" Margin="52,199,0,0" VerticalAlignment="Top" FontSize="16" Width="122"/>
+        <TextBox Name="txt_empresa" HorizontalAlignment="Left" Height="37" Margin="52,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="291" FontSize="16"/>
+        <Label Content="Centro de trabajo:" HorizontalAlignment="Left" Margin="379,199,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="txt_centro" HorizontalAlignment="Left" Height="37" Margin="379,236,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="16"/>
+        <Label Content="Puesto:" HorizontalAlignment="Left" Margin="52,300,0,0" VerticalAlignment="Top" Width="71" FontSize="16" RenderTransformOrigin="0.425,-0.613"/>
+        <TextBox Name="txt_puesto" HorizontalAlignment="Left" Height="37" Margin="54,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="16"/>
+        <Label Content="Ocupación:" HorizontalAlignment="Left" Margin="379,300,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="txt_ocupacion" HorizontalAlignment="Left" Height="37" Margin="379,337,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="281" FontSize="16"/>
+        <Label Content="Periodo de presentación:" HorizontalAlignment="Left" Margin="54,393,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="txt_periodo" HorizontalAlignment="Left" Height="37" Margin="54,430,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="289" FontSize="16"/>
         <Button x:Name="btnCancelar" Cursor="Hand" Margin="361,574,176,142.2" Click="btnCancelar_Click">
             <Button.Template>
                 <ControlTemplate>

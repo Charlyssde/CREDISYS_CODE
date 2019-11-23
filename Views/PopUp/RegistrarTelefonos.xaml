@@ -33,16 +33,16 @@
                 <RowDefinition Height="75"></RowDefinition>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center">
-                <RadioButton x:Name="rbMovil" GroupName="TiposTelefono" Content="Móvil" Checked="rbMovil_Checked" ></RadioButton>
-                <RadioButton x:Name="rbCasa" GroupName="TiposTelefono" Content="Casa" Checked="rbCasa_Checked" ></RadioButton>
-                <Label Content="Número"/>
-                <TextBox x:Name="txtNumeroUno" Width="200"/>
+                <RadioButton x:Name="rbMovil" GroupName="TiposTelefono" Content="Móvil" Checked="rbMovil_Checked" FontSize="16" ></RadioButton>
+                <RadioButton x:Name="rbCasa" GroupName="TiposTelefono" Content="Casa" Checked="rbCasa_Checked" FontSize="16" ></RadioButton>
+                <Label Content="Número" FontSize="16"/>
+                <TextBox x:Name="txtNumeroUno" Width="200" FontSize="16"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center">
-                <RadioButton x:Name="rbMovilDos" GroupName="TiposTelefonoDos" Content="Móvil" Checked="rbMovilDos_Checked"></RadioButton>
-                <RadioButton x:Name="rbCasaDos" GroupName="TiposTelefonoDos" Content="Casa" Checked="rbCasaDos_Checked" ></RadioButton>
-                <Label Content="Número"/>
-                <TextBox x:Name="txtNumeroDos" Width="200"/>
+                <RadioButton x:Name="rbMovilDos" GroupName="TiposTelefonoDos" Content="Móvil" Checked="rbMovilDos_Checked" FontSize="16"></RadioButton>
+                <RadioButton x:Name="rbCasaDos" GroupName="TiposTelefonoDos" Content="Casa" Checked="rbCasaDos_Checked" FontSize="16" ></RadioButton>
+                <Label Content="Número" FontSize="16"/>
+                <TextBox x:Name="txtNumeroDos" Width="200" FontSize="16"/>
             </StackPanel>
             <StackPanel Grid.Row="2" HorizontalAlignment="Center" 
                     VerticalAlignment="Top" Orientation="Horizontal">

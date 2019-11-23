@@ -15,32 +15,28 @@ using System.Windows.Shapes;
 
 namespace CREDISYS.Views.PopUp
 {
+
     /// <summary>
-    /// Lógica de interacción para RegistrarReferecias.xaml
+    /// Lógica de interacción para RegistrarReferencia2.xaml
     /// </summary>
-    public partial class RegistrarReferecias : Window
+    public partial class RegistrarReferencia2 : Window
     {
         Cliente clientenuevo;
-        public RegistrarReferecias(Cliente clientenuevo)
+        public RegistrarReferencia2(Cliente cliente)
         {
             InitializeComponent();
-            this.clientenuevo = clientenuevo;
-        }
-
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            closeWindow();
+            clientenuevo = cliente;
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            using(DBEntities db = new DBEntities())
+            using (DBEntities db = new DBEntities())
             {
                 try
                 {
-                    if (txt_name1.Text.Equals("") ||  txtRelacion.Text.Equals("")
-                         ||  txtDir.Text.Equals("") ||  txtTel.Text.Equals("") ||
-                          txtHorario.Text.Equals("") )
+                    if (txt_name1.Text.Equals("") || txtRelacion.Text.Equals("")
+                         || txtDir.Text.Equals("") || txtTel.Text.Equals("") ||
+                          txtHorario.Text.Equals(""))
                     {
                         MessageBox.Show(Settings.Default.MensajeCamposVacios);
                     }
@@ -55,29 +51,35 @@ namespace CREDISYS.Views.PopUp
                         nueva.estatus = "activa";
                         nueva.rfcCliente = this.clientenuevo.rfc;
 
-                       
+
                         clientenuevo.Referencias = new List<Referencia>();
-                        
+
                         db.Referencias.Add(nueva);
-                        
+
                         db.SaveChanges();
 
-                        RegistrarReferencia2 regisTel = new RegistrarReferencia2(clientenuevo);
+                        RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
                         regisTel.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         this.Hide();
                         regisTel.ShowDialog();
-                        
+
                         closeWindow();
                     }
-                } catch (Exception)
+                }
+                catch (Exception)
                 {
                     MessageBox.Show(Settings.Default.MensajeErrorBD);
                 }
-             }
+            }
         }
         private void closeWindow()
         {
             this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            closeWindow();
         }
     }
 }

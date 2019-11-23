@@ -25,18 +25,18 @@
                 <TranslateTransform/>
             </TransformGroup>
         </Grid.RenderTransform>
-        <ComboBox Name="cb_tipoDomicilio" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="172" Height="31" FontSize="18" Grid.RowSpan="2"/>
-        <Label  Content="Tipo de domicilio:" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="58" Width="172" Grid.RowSpan="2"/>
-        <Label Content="País:" HorizontalAlignment="Left" Margin="10.4,70,0,0" VerticalAlignment="Top" Grid.Column="1" Height="34" Width="63"/>
-        <ComboBox Grid.Column="1" Name="cb_pais" HorizontalAlignment="Left" Margin="10,109,0,32" Width="156" SelectionChanged="cb_pais_SelectionChanged"/>
-        <Label Content="Estado:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.402,-0.348" Height="34" Width="67"/>
-        <ComboBox Grid.Column="2" Name="cb_estado" HorizontalAlignment="Left" Margin="10.2,111,0,0" VerticalAlignment="Top" Width="166" Height="30" RenderTransformOrigin="0.584,-2.36" Grid.RowSpan="2" SelectionChanged="cb_estado_SelectionChanged"/>
-        <Label Content="Ciudad:" Grid.Column="2" HorizontalAlignment="Left" Margin="199,75,0,0" VerticalAlignment="Top" Height="34" Width="70" RenderTransformOrigin="0.741,-2.515"/>
-        <ComboBox Name="cb_ciudad" Grid.Column="2" HorizontalAlignment="Left" Margin="199,111,0,0" VerticalAlignment="Top" Width="167" Height="31"/>
-        <Label Content="Calle:" HorizontalAlignment="Left" Margin="10,10.2,0,0" VerticalAlignment="Top" Grid.Row="1" Height="34" Width="53" RenderTransformOrigin="0.801,-1.742"/>
-        <TextBox Name="txtCalle" HorizontalAlignment="Left" Height="33" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Grid.Row="1"/>
-        <Label Content="Código postal:" Grid.Column="1" HorizontalAlignment="Left" Margin="0,10.2,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="125" RenderTransformOrigin="0.489,-0.261"/>
-        <TextBox Name="txtCP" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="9.8,49,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="175"/>
+        <ComboBox Name="cb_tipoDomicilio" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top" Width="172" Height="31" FontSize="16" Grid.RowSpan="2"/>
+        <Label  Content="Tipo de domicilio:" FontSize="16" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Height="37" Width="172"/>
+        <Label FontSize="16" Content="País:" HorizontalAlignment="Left" Margin="9.8,72,0,0" VerticalAlignment="Top" Grid.Column="1" Height="34" Width="63"/>
+        <ComboBox Grid.Column="1" Name="cb_pais" HorizontalAlignment="Left" Margin="10,109,0,32" Width="156" SelectionChanged="cb_pais_SelectionChanged" FontSize="16"/>
+        <Label Content="Estado:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.402,-0.348" Height="34" Width="67" FontSize="16"/>
+        <ComboBox Grid.Column="2" Name="cb_estado" HorizontalAlignment="Left" Margin="10.6,109,0,0" VerticalAlignment="Top" Width="166" Height="30" RenderTransformOrigin="0.584,-2.36" SelectionChanged="cb_estado_SelectionChanged" FontSize="16"/>
+        <Label Content="Ciudad:" Grid.Column="2" HorizontalAlignment="Left" Margin="199,75,0,0" VerticalAlignment="Top" Height="34" Width="70" RenderTransformOrigin="0.741,-2.515" FontSize="16"/>
+        <ComboBox Name="cb_ciudad" Grid.Column="2" HorizontalAlignment="Left" Margin="199,111,0,0" VerticalAlignment="Top" Width="167" Height="31" FontSize="16"/>
+        <Label Content="Calle:" HorizontalAlignment="Left" Margin="10,10.2,0,0" VerticalAlignment="Top" Grid.Row="1" Height="34" Width="53" RenderTransformOrigin="0.801,-1.742" FontSize="16"/>
+        <TextBox Name="txtCalle" HorizontalAlignment="Left" Height="33" Margin="10,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="203" Grid.Row="1" FontSize="16"/>
+        <Label Content="Código postal:" Grid.Column="1" HorizontalAlignment="Left" Margin="12.8,10,0,0" Grid.Row="1" VerticalAlignment="Top" Height="34" Width="125" RenderTransformOrigin="0.489,-0.261" FontSize="16"/>
+        <TextBox Name="txtCP" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="9.8,49,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="175" FontSize="16"/>
         <Grid Background="#283593" Grid.ColumnSpan="3" Margin="0,0,-5,102">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -54,14 +54,14 @@
                 <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
             </StackPanel>
         </Grid>
-        <Label Content="Colonia:" Grid.Column="2" HorizontalAlignment="Left" Margin="10.2,10.2,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox Name="txtColonia" Grid.Column="2" HorizontalAlignment="Left" Height="33" Margin="10.2,49.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311"/>
-        <Label Content="Número exterior:" HorizontalAlignment="Left" Margin="10,116.2,0,0" Grid.Row="1"  VerticalAlignment="Top"/>
-        <TextBox Name="txtNumeEx" HorizontalAlignment="Left" Height="33" Margin="10,155,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-0.127,2.96"/>
-        <Label Content="Número interior:" Grid.Column="1" HorizontalAlignment="Left" Margin="11,116.2,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox Name="txtNumeroIn" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="12.8,155,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="172"/>
-        <Label Content="Tiempo de residencia:" HorizontalAlignment="Left" Margin="10,229.2,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <TextBox Name="txtTiempo" HorizontalAlignment="Left" Height="33" Margin="10,268,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.297,-4.795"/>
+        <Label Content="Colonia:" Grid.Column="2" HorizontalAlignment="Left" Margin="10.2,10.2,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="txtColonia" Grid.Column="2" HorizontalAlignment="Left" Height="33" Margin="10.2,49.2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311" FontSize="16"/>
+        <Label Content="Número exterior:" HorizontalAlignment="Left" Margin="10,116.2,0,0" Grid.Row="1"  VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="txtNumeEx" HorizontalAlignment="Left" Height="33" Margin="10,155,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" RenderTransformOrigin="-0.127,2.96" FontSize="16"/>
+        <Label Content="Número interior:" Grid.Column="1" HorizontalAlignment="Left" Margin="11,116.2,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="txtNumeroIn" Grid.Column="1" HorizontalAlignment="Left" Height="33" Margin="9.8,155,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" FontSize="16"/>
+        <Label Content="Tiempo de residencia:" HorizontalAlignment="Left" Margin="10,229.2,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox Name="txtTiempo" HorizontalAlignment="Left" Height="33" Margin="10,268,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="203" RenderTransformOrigin="0.297,-4.795" FontSize="16"/>
         <Button x:Name="btnCancelar" Width="90" Cursor="Hand" Click="btnCancelar_Click" Grid.Column="2" Margin="10,253,276,10" Grid.Row="1">
             <Button.Template>
                 <ControlTemplate>
