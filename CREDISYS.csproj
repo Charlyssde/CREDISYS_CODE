@@ -145,12 +145,6 @@
     <Compile Include="Pagare.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Pagare2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Pagare.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Pai.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -189,6 +183,9 @@
     </Compile>
     <Compile Include="Views\CatalogosFolder\VisualizarCiudades.xaml.cs">
       <DependentUpon>VisualizarCiudades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CatalogosFolder\VisualizarCondiciones.xaml.cs">
+      <DependentUpon>VisualizarCondiciones.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CatalogosFolder\VisualizarEstados.xaml.cs">
       <DependentUpon>VisualizarEstados.xaml</DependentUpon>
@@ -291,6 +288,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CatalogosFolder\VisualizarCiudades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CatalogosFolder\VisualizarCondiciones.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

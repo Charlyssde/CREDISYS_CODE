@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CREDISYS.Views.Catalogos;
+using CREDISYS.Views.CatalogosFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,17 +38,26 @@ namespace CREDISYS.Views
 
         private void btnPaises_Click(object sender, RoutedEventArgs e)
         {
-
+            VisualizarPaises visualizarPaises = new VisualizarPaises(this.usuario);
+            visualizarPaises.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            visualizarPaises.Show();
+            this.Close();
         }
 
         private void btnEstados_Click(object sender, RoutedEventArgs e)
         {
-
+            VisualizarEstados visualizarEstados = new VisualizarEstados(this.usuario);
+            visualizarEstados.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            visualizarEstados.Show();
+            this.Close();
         }
 
         private void btnCiudades_Click(object sender, RoutedEventArgs e)
         {
-
+            VisualizarCiudades visualizarCiudades = new VisualizarCiudades(this.usuario);
+            visualizarCiudades.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            visualizarCiudades.Show();
+            this.Close();
         }
 
         private void btnPoliticas_Click(object sender, RoutedEventArgs e)
@@ -56,7 +67,10 @@ namespace CREDISYS.Views
 
         private void btnCondiciones_Click(object sender, RoutedEventArgs e)
         {
-
+            VisualizarCondiciones visualizarCondiciones = new VisualizarCondiciones(this.usuario);
+            visualizarCondiciones.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            visualizarCondiciones.Show();
+            this.Close();
         }
 
         private void btnCatalogos_Click(object sender, RoutedEventArgs e)
