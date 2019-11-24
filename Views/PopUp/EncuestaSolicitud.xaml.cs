@@ -78,6 +78,7 @@ namespace CREDISYS.Views.PopUp
         {
             //TODO
             //Generar los documentos que surgen de aquí, la tabla de pagos, etc
+            Pagare pagare = new Pagare();
             closeWindow();
         }
 
