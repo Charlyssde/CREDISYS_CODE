@@ -103,6 +103,12 @@
     <Compile Include="Banco.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="CaratulaApertura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaratulaApertura.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ciudad.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -148,7 +154,10 @@
     <Compile Include="Expediente.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pagare.cs">
+    <Compile Include="Pagare2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pagare.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Pai.cs">
@@ -433,6 +442,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="CaratulaApertura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CaratulaApertura.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Domiciliación.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Domiciliación.cs</LastGenOutput>
