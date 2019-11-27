@@ -41,7 +41,7 @@
             <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Label Content="Política: "/>
                 <TextBox x:Name="txtPolitica" Width="150"/>
-                <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35" Click="btnBuscar_Click" VerticalAlignment="Bottom">
+                <Button x:Name="btnBuscar" Cursor="Hand" Width="35" Height="35" Click="btnBuscar_Click_1" VerticalAlignment="Bottom">
                     <Button.Template>
                         <ControlTemplate>
                             <Image Source="pack://application:,,,/Resources/IcBuscar.png"/>

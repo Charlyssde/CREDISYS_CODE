@@ -16,9 +16,9 @@ namespace CREDISYS {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Solicitud : ReportClass {
+    public class Solicitud1 : ReportClass {
         
-        public Solicitud() {
+        public Solicitud1() {
         }
         
         public override string ResourceName {
@@ -513,7 +513,7 @@ namespace CREDISYS {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Solicitud rpt = new Solicitud();
+            Solicitud1 rpt = new Solicitud1();
             rpt.Site = this.Site;
             return rpt;
         }
