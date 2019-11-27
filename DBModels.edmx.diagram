@@ -47,6 +47,7 @@
         <AssociationConnector Association="CREDISYSModel.FK_Usuario_Rol" ManuallyRouted="false" />
         <AssociationConnector Association="CREDISYSModel.FK_Solicitud_Usuario" ManuallyRouted="false" />
         <AssociationConnector Association="CREDISYSModel.FK_Solicitud_Cliente" />
+        <AssociationConnector Association="CREDISYSModel.FK_Solicitud_Expediente" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

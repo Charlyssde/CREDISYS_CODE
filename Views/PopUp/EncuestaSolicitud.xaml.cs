@@ -25,11 +25,14 @@ namespace CREDISYS.Views.PopUp
         public String comentarios;
 
         private Solicitud solicitud;
-        public EncuestaSolicitud(Solicitud solicitud)
+        private Usuario usuario;
+
+        public EncuestaSolicitud(Solicitud solicitud, Usuario usuario)
         {
             InitializeComponent();
             cargarCbParentesco();
             this.solicitud = solicitud;
+            this.usuario = usuario;
         }
 
         private void rbNoUno_Checked(object sender, RoutedEventArgs e)
@@ -88,17 +91,18 @@ namespace CREDISYS.Views.PopUp
         {
             using (DBEntities db = new DBEntities())
             {
-                Cliente cliente = db.Clientes.Where(b => b.rfc == this.solicitud.rfcCliente).SingleOrDefault();
-                CondicionCredito condicion = db.CondicionCreditoes.Where(b => b.idCondicionCredito == this.solicitud.idCondicion).FirstOrDefault();
+                
 
                 //PAGARÉ
                 ReportDocument pagare = new ReportDocument();
                 // Aquí pones la ruta del archivo .rpt de tu reporte
                 pagare.Load("C:\\Users\\texch\\Desktop\\7o Semestre\\Desarrollo De Software\\CREDISYS_CODE\\Pagare.rpt");
                 //parametros:
+                Cliente cliente = db.Clientes.Where(b => b.rfc == this.solicitud.rfcCliente).SingleOrDefault();
+                CondicionCredito condicion = db.CondicionCreditoes.Where(b => b.idCondicionCredito == this.solicitud.idCondicion).FirstOrDefault();
                 pagare.SetParameterValue("MontoNumero", this.solicitud.montoNumero);
                 pagare.SetParameterValue("montoLetra", this.solicitud.montoLetra);
-                pagare.SetParameterValue("amortizacion", this.solicitud.montoLetra);
+                pagare.SetParameterValue("amortizacion", this.solicitud.amortizacion);
                 pagare.SetParameterValue("interes", condicion.interes);
                 pagare.SetParameterValue("lugar", "Xalapa, Veracruz");
                 pagare.SetParameterValue("dia", this.solicitud.fecha.Day);
@@ -111,7 +115,7 @@ namespace CREDISYS.Views.PopUp
                     DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
                     PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
                     // Pones la ruta y el nombre del archivo pdf que se va a generar
-                    CrDiskFileDestinationOptions.DiskFileName = "C:\\Users\\texch\\Desktop\\" + cliente.rfc + "_" + this.solicitud.folio + ".pdf";
+                    CrDiskFileDestinationOptions.DiskFileName = "C:\\Users\\texch\\Desktop\\Docs\\Exp\\" + cliente.rfc + "_" + this.solicitud.folio + "\\Pagare.pdf";
                     CrExportOptions = pagare.ExportOptions;
                     {
                         CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
@@ -127,12 +131,186 @@ namespace CREDISYS.Views.PopUp
                 }
 
                 //SOLICITUD
+                ReportDocument solicitudRpt = new ReportDocument();
+                // Aquí pones la ruta del archivo .rpt de tu reporte
+                solicitudRpt.Load("C:\\Users\\texch\\Desktop\\7o Semestre\\Desarrollo De Software\\CREDISYS_CODE\\Solicitud.rpt");
+                //parametros:
+
+                Domicilio domicilio = db.Domicilios.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+                Ciudad ciudadDom = db.Ciudads.Where(b => b.idCiudad == domicilio.idCiudad).FirstOrDefault();
+                Estado estadoDom = db.Estadoes.Where(b => b.idEstado == domicilio.idEstado).FirstOrDefault();
+                Pai paisDom = db.Pais.Where(b => b.idPais == domicilio.idPais).FirstOrDefault();
+                TipoDomicilio tipo = db.TipoDomicilios.Where(b => b.idTipoDomicilio == domicilio.idTipoDomicilio).FirstOrDefault();
+
+                Telefono celular = db.Telefonoes.Where(b => b.tipoTelefono == "celular" && b.rfcCliente == cliente.rfc).FirstOrDefault();
+                Telefono casa = db.Telefonoes.Where(b => b.tipoTelefono == "casa" && b.rfcCliente == cliente.rfc).FirstOrDefault();
+                Correo correo = db.Correos.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+
+                Estado nacEstado = db.Estadoes.Where(b => b.idEstado == cliente.idEstado).FirstOrDefault();
+                Pai nacPais = db.Pais.Where(b => b.idPais == cliente.idPais).FirstOrDefault();
+
+                Empleo empleo = db.Empleos.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+
+                var referencias = db.Referencias.Where(b => b.rfcCliente == cliente.rfc).ToArray<Referencia>();
+                Referencia ref1 = referencias[0];
+                Referencia ref2 = referencias[1];
+
+                solicitudRpt.SetParameterValue("vendedor", this.usuario.nombre);
+                solicitudRpt.SetParameterValue("supervisor", this.usuario.nombre);
+                solicitudRpt.SetParameterValue("folio", this.solicitud.folio);
+                solicitudRpt.SetParameterValue("fecha", this.solicitud.fecha);
+                solicitudRpt.SetParameterValue("montoNumero", this.solicitud.montoNumero);
+                solicitudRpt.SetParameterValue("montoLetra", this.solicitud.montoLetra);
+                solicitudRpt.SetParameterValue("interes", condicion.interes);
+                solicitudRpt.SetParameterValue("apellidoPaterno", cliente.apellidoPaterno);
+                solicitudRpt.SetParameterValue("apellidoMaterno", cliente.apellidoMaterno);
+                solicitudRpt.SetParameterValue("nombre", cliente.nombre);
+                solicitudRpt.SetParameterValue("fechaNacimiento", cliente.fechaNacimiento.ToShortDateString());
+                solicitudRpt.SetParameterValue("genero", cliente.genero);
+                solicitudRpt.SetParameterValue("curp", cliente.curp);
+                solicitudRpt.SetParameterValue("rfc", cliente.rfc);
+                solicitudRpt.SetParameterValue("calle", domicilio.calle);
+                solicitudRpt.SetParameterValue("numExt", domicilio.numExt);
+                solicitudRpt.SetParameterValue("numInt", domicilio.numIn);
+                solicitudRpt.SetParameterValue("colonia", domicilio.colonia);
+                solicitudRpt.SetParameterValue("cp", domicilio.codPostal);
+                solicitudRpt.SetParameterValue("ciudad", ciudadDom.ciudad1);
+                solicitudRpt.SetParameterValue("estado", estadoDom.estado1);
+                solicitudRpt.SetParameterValue("pais", paisDom.pais);
+                solicitudRpt.SetParameterValue("residencia", domicilio.tiempoResidencia);
+                solicitudRpt.SetParameterValue("tipoDomicilio", tipo.tipoDomicilio1);
+                solicitudRpt.SetParameterValue("celular", celular.numero);
+                solicitudRpt.SetParameterValue("casa", casa.numero);
+                solicitudRpt.SetParameterValue("estadoCivil", cliente.estadoCivil);
+                solicitudRpt.SetParameterValue("nacionalidad", "Mexicano(a)");
+                solicitudRpt.SetParameterValue("corre", correo.correo1);
+                solicitudRpt.SetParameterValue("nacEstado", nacEstado.estado1);
+                solicitudRpt.SetParameterValue("nacPais", nacPais.pais);
+                solicitudRpt.SetParameterValue("destino", this.solicitud.destinoCredito);
+                solicitudRpt.SetParameterValue("disposicion", "Efectivo");
+                solicitudRpt.SetParameterValue("empresa", empleo.nombreEmpresa);
+                solicitudRpt.SetParameterValue("noEmpleado", empleo.numEmpleado);
+                solicitudRpt.SetParameterValue("centroTrabajo", empleo.centroDeTrabajo);
+                solicitudRpt.SetParameterValue("antigEmpleo", empleo.antiguedadMeses);
+                solicitudRpt.SetParameterValue("ocupacion", empleo.ocupacion);
+                solicitudRpt.SetParameterValue("puesto", empleo.puesto);
+                solicitudRpt.SetParameterValue("periodoPres", empleo.periodoPresentacion);
+                solicitudRpt.SetParameterValue("refNombreUno", ref1.nombre);
+                solicitudRpt.SetParameterValue("refRelUno", ref1.relacion);
+                solicitudRpt.SetParameterValue("refTelUno", ref1.telefono);
+                solicitudRpt.SetParameterValue("refDirUno", ref1.direccion);
+                solicitudRpt.SetParameterValue("refNombreDos", ref2.nombre);
+                solicitudRpt.SetParameterValue("refRelDos", ref2.relacion);
+                solicitudRpt.SetParameterValue("refTelDos", ref2.telefono);
+                solicitudRpt.SetParameterValue("refDirDos", ref2.direccion);
+
+                try
+                {
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    // Pones la ruta y el nombre del archivo pdf que se va a generar
+                    CrDiskFileDestinationOptions.DiskFileName = "C:\\Users\\texch\\Desktop\\Docs\\Exp\\" + cliente.rfc + "_" + this.solicitud.folio + "\\Solicitud.pdf";
+                    CrExportOptions = pagare.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    pagare.Export();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
 
 
                 //DOMICILIACION
+                ReportDocument domiciliacion = new ReportDocument();
+                // Aquí pones la ruta del archivo .rpt de tu reporte
+                domiciliacion.Load("C:\\Users\\texch\\Desktop\\7o Semestre\\Desarrollo De Software\\CREDISYS_CODE\\Domiciliacion.rpt");
+                //parametros:
+
+                var tarjetas = db.Tarjetas.Where(b => b.rfcCliente == cliente.rfc).ToArray<Tarjeta>();
+                Tarjeta tar1 = tarjetas[0];
+                Tarjeta tar2 = tarjetas[1];
+                Banco b1 = db.Bancoes.Where(b => b.idBanco == tar1.idBanco).FirstOrDefault();
+                Banco b2 = db.Bancoes.Where(b => b.idBanco == tar2.idBanco).FirstOrDefault();
+
+                domiciliacion.SetParameterValue("dia", this.solicitud.fecha.Day);
+                domiciliacion.SetParameterValue("mes", this.solicitud.fecha.Month);
+                domiciliacion.SetParameterValue("anio", this.solicitud.fecha.Year);
+                domiciliacion.SetParameterValue("proveedor", "Financiera Independiente");
+                domiciliacion.SetParameterValue("montoTotal", this.solicitud.montoNumero);
+                domiciliacion.SetParameterValue("idCliente", cliente.rfc);
+                domiciliacion.SetParameterValue("bancoUno", b1.banco1 );
+                domiciliacion.SetParameterValue("tarjetaUno", tar1.numTarjeta);
+                domiciliacion.SetParameterValue("clabeUno", tar1.clabeBancaria);
+                domiciliacion.SetParameterValue("telefonoUno", tar1.numTelefono);
+                domiciliacion.SetParameterValue("bancoDos", b2.banco1);
+                domiciliacion.SetParameterValue("tarjetaDos", tar2.numTarjeta);
+                domiciliacion.SetParameterValue("clabeDos", tar2.clabeBancaria);
+                domiciliacion.SetParameterValue("telefonoDos", tar2.numTelefono);
+                domiciliacion.SetParameterValue("amortizacion", this.solicitud.amortizacion);
+                domiciliacion.SetParameterValue("vence", this.solicitud.fecha.AddYears(1));
+
+                try
+                {
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    // Pones la ruta y el nombre del archivo pdf que se va a generar
+                    CrDiskFileDestinationOptions.DiskFileName = "C:\\Users\\texch\\Desktop\\Docs\\Exp\\" + cliente.rfc + "_" + this.solicitud.folio + "\\Domiciliacion.pdf";
+                    CrExportOptions = pagare.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    pagare.Export();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
 
 
                 //CARATULA
+                ReportDocument caratula = new ReportDocument();
+                // Aquí pones la ruta del archivo .rpt de tu reporte
+                caratula.Load("C:\\Users\\texch\\Desktop\\7o Semestre\\Desarrollo De Software\\CREDISYS_CODE\\Caratula.rpt");
+                //parametros:
+                caratula.SetParameterValue("nombreCliente", cliente.nombre);
+                caratula.SetParameterValue("montoTotal", this.solicitud.montoNumero);
+                caratula.SetParameterValue("interes", condicion.interes);
+                Double x = this.solicitud.montoNumero - (this.solicitud.montoNumero * (condicion.interes / 100));
+                caratula.SetParameterValue("creditoTotal", x);
+                caratula.SetParameterValue("totalPagar", this.solicitud.montoNumero);
+                caratula.SetParameterValue("amortizacion", this.solicitud.amortizacion);
+
+                try
+                {
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    // Pones la ruta y el nombre del archivo pdf que se va a generar
+                    CrDiskFileDestinationOptions.DiskFileName = "C:\\Users\\texch\\Desktop\\Docs\\Exp\\" + cliente.rfc + "_" + this.solicitud.folio + "\\Caratula.pdf";
+                    CrExportOptions = pagare.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    pagare.Export();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
 
             }
         }

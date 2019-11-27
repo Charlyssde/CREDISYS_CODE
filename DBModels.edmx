@@ -167,6 +167,8 @@
           <Property Name="rfcCliente" Type="varchar" MaxLength="12" Nullable="false" />
           <Property Name="idCondicion" Type="int" Nullable="false" />
           <Property Name="estatus" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="amortizacion" Type="float" />
+          <Property Name="idExpediente" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -408,6 +410,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Solicitud_Expediente">
+          <End Role="Expediente" Type="Self.Expediente" Multiplicity="0..1" />
+          <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expediente">
+              <PropertyRef Name="idExpediente" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idExpediente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Solicitud_Usuario">
           <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
           <End Role="Solicitud" Type="Self.Solicitud" Multiplicity="*" />
@@ -583,6 +597,10 @@
             <End Role="CondicionCredito" EntitySet="CondicionCredito" />
             <End Role="Solicitud" EntitySet="Solicitud" />
           </AssociationSet>
+          <AssociationSet Name="FK_Solicitud_Expediente" Association="Self.FK_Solicitud_Expediente">
+            <End Role="Expediente" EntitySet="Expediente" />
+            <End Role="Solicitud" EntitySet="Solicitud" />
+          </AssociationSet>
           <AssociationSet Name="FK_Solicitud_Usuario" Association="Self.FK_Solicitud_Usuario">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Solicitud" EntitySet="Solicitud" />
@@ -708,7 +726,7 @@
           <Property Name="idEmpleo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombreEmpresa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="numEmpleado" Nullable="false" Type="String" />
+          <Property Name="numEmpleado" Nullable="false" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
           <Property Name="centroDeTrabajo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="antiguedadMeses" Type="Int32" Nullable="false" />
           <Property Name="ocupacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
@@ -746,6 +764,7 @@
           <Property Name="rfcCliente" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="folio" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Expediente_Cliente" FromRole="Expediente" ToRole="Cliente" />
+          <NavigationProperty Name="Solicituds" Relationship="CREDISYSModel.FK_Solicitud_Expediente" FromRole="Expediente" ToRole="Solicitud" />
         </EntityType>
         <EntityType Name="Pai">
           <Key>
@@ -806,6 +825,9 @@
           <NavigationProperty Name="Usuario" Relationship="Self.FK_Solicitud_Usuario" FromRole="Solicitud" ToRole="Usuario" />
           <NavigationProperty Name="Cliente" Relationship="CREDISYSModel.FK_Solicitud_Cliente" FromRole="Solicitud" ToRole="Cliente" />
           <Property Name="estatus1" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="amortizacion" Type="Double" />
+          <Property Name="idExpediente" Type="Int32" />
+          <NavigationProperty Name="Expediente" Relationship="CREDISYSModel.FK_Solicitud_Expediente" FromRole="Solicitud" ToRole="Expediente" />
         </EntityType>
         <EntityType Name="sysdiagram">
           <Key>
@@ -1235,6 +1257,10 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
+          <AssociationSet Name="FK_Solicitud_Expediente" Association="CREDISYSModel.FK_Solicitud_Expediente">
+            <End Role="Expediente" EntitySet="Expedientes" />
+            <End Role="Solicitud" EntitySet="Solicituds" />
+          </AssociationSet>
         </EntityContainer>
         <Association Name="FK_Solicitud_Cliente">
           <End Type="CREDISYSModel.Cliente" Role="Cliente" Multiplicity="1" />
@@ -1245,6 +1271,18 @@
             </Principal>
             <Dependent Role="Solicitud">
               <PropertyRef Name="rfcCliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitud_Expediente">
+          <End Type="CREDISYSModel.Expediente" Role="Expediente" Multiplicity="0..1" />
+          <End Type="CREDISYSModel.Solicitud" Role="Solicitud" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expediente">
+              <PropertyRef Name="idExpediente" />
+            </Principal>
+            <Dependent Role="Solicitud">
+              <PropertyRef Name="idExpediente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1418,6 +1456,8 @@
           <EntitySetMapping Name="Solicituds">
             <EntityTypeMapping TypeName="CREDISYSModel.Solicitud">
               <MappingFragment StoreEntitySet="Solicitud">
+                <ScalarProperty Name="idExpediente" ColumnName="idExpediente" />
+                <ScalarProperty Name="amortizacion" ColumnName="amortizacion" />
                 <ScalarProperty Name="estatus1" ColumnName="estatus" />
                 <ScalarProperty Name="folio" ColumnName="folio" />
                 <ScalarProperty Name="vendedor" ColumnName="vendedor" />

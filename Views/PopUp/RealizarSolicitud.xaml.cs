@@ -54,12 +54,22 @@ namespace CREDISYS.Views.PopUp
                 solicitud.destinoCredito = txtDestino.Text;
                 solicitud.estatus1 = Settings.Default.SolicitudEstatus1;
                 solicitud.montoLetra = txtMontoLetra.Text;
-                solicitud.montoNumero = int.Parse(txtMontoNumero.Text);
+                if (!selected.condicion.Equals("tasa cero"))
+                {
+                    double n = ((double.Parse(txtMontoNumero.Text)) + (double.Parse(txtMontoNumero.Text) * .5));
+                    solicitud.montoNumero = n;
+                }
+                else
+                {
+                    solicitud.montoNumero = int.Parse(txtMontoNumero.Text);
+                }
+                
+                solicitud.amortizacion = solicitud.montoNumero / 12;
                 //solicitud.Usuario = this.usuario;
                 solicitud.vendedor = this.usuario.username;
                 //solicitud.Cliente = this.cliente;
                 solicitud.rfcCliente = this.cliente.rfc;
-                solicitud.CondicionCredito = this.selected;
+                //solicitud.CondicionCredito = this.selected;
                 solicitud.idCondicion = this.selected.idCondicionCredito;
                 solicitud.disposicion = Settings.Default.Disposicion;
                 DateTime date = DateTime.Now;
@@ -72,7 +82,7 @@ namespace CREDISYS.Views.PopUp
                         db.SaveChanges();
                         MessageBox.Show(Settings.Default.MensajeExito);
                     }
-                    EncuestaSolicitud encuestaSolicitud = new EncuestaSolicitud(solicitud);
+                    EncuestaSolicitud encuestaSolicitud = new EncuestaSolicitud(solicitud, usuario);
                     encuestaSolicitud.WindowStartupLocation = this.WindowStartupLocation;
                     encuestaSolicitud.Show();
                     this.Close();
@@ -102,7 +112,7 @@ namespace CREDISYS.Views.PopUp
 
             foreach (CondicionCredito condicion in condiciones)
             {
-                if (condicion.condicion.Equals("tasa cinco"))
+                if (!condicion.condicion.Equals("tasa cero"))
                 {
                     selected = condicion;
                     txtIva.Text = condicion.iva.ToString();

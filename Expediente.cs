@@ -14,6 +14,12 @@ namespace CREDISYS
     
     public partial class Expediente
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Expediente()
+        {
+            this.Solicituds = new HashSet<Solicitud>();
+        }
+    
         public int idExpediente { get; set; }
         public byte[] caratula { get; set; }
         public byte[] solicitud { get; set; }
@@ -27,5 +33,7 @@ namespace CREDISYS
         public int folio { get; set; }
     
         public virtual Cliente Cliente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Solicitud> Solicituds { get; set; }
     }
 }
