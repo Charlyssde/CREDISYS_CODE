@@ -1,4 +1,6 @@
 ﻿using CREDISYS.Properties;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -76,10 +78,63 @@ namespace CREDISYS.Views.PopUp
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
-            //Generar los documentos que surgen de aquí, la tabla de pagos, etc
-            Pagare pagare = new Pagare();
+
+            generarDocumentos();
+            MessageBox.Show("Documentos generados: Puede buscarlos en su escritorio");
             closeWindow();
+        }
+
+        private void generarDocumentos()
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                Cliente cliente = db.Clientes.Where(b => b.rfc == this.solicitud.rfcCliente).SingleOrDefault();
+                CondicionCredito condicion = db.CondicionCreditoes.Where(b => b.idCondicionCredito == this.solicitud.idCondicion).FirstOrDefault();
+
+                //PAGARÉ
+                ReportDocument pagare = new ReportDocument();
+                // Aquí pones la ruta del archivo .rpt de tu reporte
+                pagare.Load("C:\\Users\\texch\\Desktop\\7o Semestre\\Desarrollo De Software\\CREDISYS_CODE\\Pagare.rpt");
+                //parametros:
+                pagare.SetParameterValue("MontoNumero", this.solicitud.montoNumero);
+                pagare.SetParameterValue("montoLetra", this.solicitud.montoLetra);
+                pagare.SetParameterValue("amortizacion", this.solicitud.montoLetra);
+                pagare.SetParameterValue("interes", condicion.interes);
+                pagare.SetParameterValue("lugar", "Xalapa, Veracruz");
+                pagare.SetParameterValue("dia", this.solicitud.fecha.Day);
+                pagare.SetParameterValue("mes", this.solicitud.fecha.Month);
+                pagare.SetParameterValue("anio", this.solicitud.fecha.Year);
+
+                try
+                {
+                    ExportOptions CrExportOptions;
+                    DiskFileDestinationOptions CrDiskFileDestinationOptions = new DiskFileDestinationOptions();
+                    PdfRtfWordFormatOptions CrFormatTypeOptions = new PdfRtfWordFormatOptions();
+                    // Pones la ruta y el nombre del archivo pdf que se va a generar
+                    CrDiskFileDestinationOptions.DiskFileName = "C:\\Users\\texch\\Desktop\\" + cliente.rfc + "_" + this.solicitud.folio + ".pdf";
+                    CrExportOptions = pagare.ExportOptions;
+                    {
+                        CrExportOptions.ExportDestinationType = ExportDestinationType.DiskFile;
+                        CrExportOptions.ExportFormatType = ExportFormatType.PortableDocFormat;
+                        CrExportOptions.DestinationOptions = CrDiskFileDestinationOptions;
+                        CrExportOptions.FormatOptions = CrFormatTypeOptions;
+                    }
+                    pagare.Export();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+
+                //SOLICITUD
+
+
+                //DOMICILIACION
+
+
+                //CARATULA
+
+            }
         }
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)

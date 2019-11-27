@@ -102,7 +102,7 @@ namespace CREDISYS.Views.PopUp
 
             foreach (CondicionCredito condicion in condiciones)
             {
-                if (condicion.condicion.Equals("tasa cinco %"))
+                if (condicion.condicion.Equals("tasa cinco"))
                 {
                     selected = condicion;
                     txtIva.Text = condicion.iva.ToString();
@@ -161,6 +161,14 @@ namespace CREDISYS.Views.PopUp
         private void CloseWindow()
         {
             this.Close();
+        }
+
+        private void txtMontoNumero_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
+                e.Handled = false;
+            else
+                e.Handled = true;
         }
     }
 }

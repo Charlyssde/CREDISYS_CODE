@@ -23,5 +23,45 @@ namespace CREDISYS.Views.CatalogosFolder
         {
             InitializeComponent();
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
