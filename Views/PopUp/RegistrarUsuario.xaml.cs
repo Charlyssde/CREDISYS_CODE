@@ -55,8 +55,7 @@ namespace CREDISYS.Views.PopUp
                         }
                         else
                         {
-                            if (validPassword(txtPassword.Password))
-                            {
+                            
                                 Usuario nuevo = new Usuario();
                                 nuevo.nombre = txtNombre.Text;
                                 nuevo.username = txtUsername.Text;
@@ -75,11 +74,7 @@ namespace CREDISYS.Views.PopUp
                                 db.SaveChanges();
                                 MessageBox.Show(Settings.Default.MensajeExito);
                                 closeWindow();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Contraseña inválida: debe tener una Mayúscula, minúscula, caracter especial y debe tener un largo de 8 a 15 caracteres");
-                            }
+                          
                         }
                     }
                    
@@ -95,7 +90,7 @@ namespace CREDISYS.Views.PopUp
 
         private bool validPassword(String pass)
         {
-            Regex rx = new Regex(@"^(?=.*[a - z])(?=.*[A - Z])(?=.*\d)(?=.*[^\da - zA - Z]).{ 8, 15 }$",
+            Regex rx = new Regex(@"^(?=.*[a - z])(?=.*[A - Z])(?=.*\d)(?=.*[^\da - zA - Z])$",
             RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
             MatchCollection matches = rx.Matches(pass);

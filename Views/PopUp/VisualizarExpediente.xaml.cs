@@ -33,6 +33,7 @@ namespace CREDISYS.Views.PopUp
         private void chbDocumentos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             byte[] byteFile = cargarBytes();
+            File.Create(@"./tmpFile");
             File.WriteAllBytes(@"./tmpFile", byteFile);
 
             XpsDocument doc = new XpsDocument("./tmpFile", FileAccess.Read);

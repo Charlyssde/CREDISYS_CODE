@@ -67,9 +67,9 @@ namespace CREDISYS.Views.PopUp
 
                 Telefono telefono2 = new Telefono();
                 telefono2.estatus = "Activo";
-                telefono2.numero = txtNumeroUno.Text;
+                telefono2.numero = txtNumeroDos.Text;
                 telefono2.rfcCliente = this.cliente.rfc;
-                telefono2.tipoTelefono = selUno;
+                telefono2.tipoTelefono = selDos;
                 this.cliente.Telefonoes.Add(telefono2);
 
 
