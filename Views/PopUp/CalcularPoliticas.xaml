@@ -16,7 +16,7 @@
             <RowDefinition Height="70"></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="70,50,0,0">
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="70,50,54.6,70.2" Grid.RowSpan="2">
             <CheckBox x:Name="chbMayorEdad" Content="Es mayor de edad" FontSize="14" Margin="10" Checked="chbMayorEdad_Checked" Unchecked="chbMayorEdad_Unchecked" ></CheckBox>
             <CheckBox x:Name="chbMexicano" Content="Nacionalidad mexicana" FontSize="14" Margin="10" Checked="chbMexicano_Checked" Unchecked="chbMexicano_Unchecked" ></CheckBox>
             <CheckBox x:Name="chbSueldoMensual" Content="El préstamo no supera el 30% del sueldo mensual" FontSize="14" Margin="10" Checked="chbSueldoMensual_Checked" Unchecked="chbSueldoMensual_Unchecked" ></CheckBox>
