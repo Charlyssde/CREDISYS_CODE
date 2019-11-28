@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -54,24 +55,26 @@ namespace CREDISYS.Views.PopUp
                         }
                         else
                         {
-                            Usuario nuevo = new Usuario();
-                            nuevo.nombre = txtNombre.Text;
-                            nuevo.username = txtUsername.Text;
                             
-                            foreach (Rol rol in roles)
-                            {
-                                if (rol.rol1.Equals(cbRoles.SelectedItem))
-                                {
-                                    nuevo.idRol = rol.idRol;
-                                }    
-                            }
-                            byte[] bytes = Encoding.ASCII.GetBytes(txtPassword.Password);
-                            nuevo.password = bytes;
+                                Usuario nuevo = new Usuario();
+                                nuevo.nombre = txtNombre.Text;
+                                nuevo.username = txtUsername.Text;
 
-                            db.Usuarios.Add(nuevo);
-                            db.SaveChanges();
-                            MessageBox.Show(Settings.Default.MensajeExito);
-                            closeWindow();
+                                foreach (Rol rol in roles)
+                                {
+                                    if (rol.rol1.Equals(cbRoles.SelectedItem))
+                                    {
+                                        nuevo.idRol = rol.idRol;
+                                    }
+                                }
+                                byte[] bytes = Encoding.ASCII.GetBytes(txtPassword.Password);
+                                nuevo.password = bytes;
+
+                                db.Usuarios.Add(nuevo);
+                                db.SaveChanges();
+                                MessageBox.Show(Settings.Default.MensajeExito);
+                                closeWindow();
+                          
                         }
                     }
                    
@@ -83,6 +86,16 @@ namespace CREDISYS.Views.PopUp
 
             }
             
+        }
+
+        private bool validPassword(String pass)
+        {
+            Regex rx = new Regex(@"^(?=.*[a - z])(?=.*[A - Z])(?=.*\d)(?=.*[^\da - zA - Z])$",
+            RegexOptions.Compiled | RegexOptions.IgnoreCase);
+
+            MatchCollection matches = rx.Matches(pass);
+
+            return matches.Count > 0;
         }
 
         private void closeWindow()

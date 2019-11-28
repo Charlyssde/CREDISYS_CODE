@@ -57,6 +57,10 @@ namespace CREDISYS.Views
         {
             //TODO
             //Redirige a la pantalla para ver el expediente de la solicitud
+
+            VisualizarExpediente visualizarExpediente = new VisualizarExpediente(this.solicitud);
+            visualizarExpediente.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            visualizarExpediente.ShowDialog();
         }
 
         private void btnContinuar_Click(object sender, RoutedEventArgs e)

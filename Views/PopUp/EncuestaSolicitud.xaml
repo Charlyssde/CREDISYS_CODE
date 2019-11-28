@@ -68,9 +68,9 @@ altos ejecutivos de empresas estatales o funccionarios o miembros de partidos po
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" IsEnabled="False" Text="Su conyuge, concubina o parienes cosanguineaos  o afines, hasta el segundo grado, tales como padres, hijos, hermanos, abuelos, tios, primos, cuñados, suegros, yernos o nueras, se encuentra en el supuesto antes mencionado?" TextWrapping="Wrap" Margin="5,0"></TextBlock>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <RadioButton x:Name="rbSiDos" GroupName="Uno" Content="Sí" Checked="rbSiDos_Checked"/>
+                    <RadioButton x:Name="rbSiDos" GroupName="Dos" Content="Sí" Checked="rbSiDos_Checked"/>
                     <Label Width="150"/>
-                    <RadioButton x:Name="rbNoDos" GroupName="Uno" Content="No" Checked="rbNoDos_Checked"/>
+                    <RadioButton x:Name="rbNoDos" GroupName="Dos" Content="No" Checked="rbNoDos_Checked"/>
                 </StackPanel>
     
                 <Grid Grid.Row="2">

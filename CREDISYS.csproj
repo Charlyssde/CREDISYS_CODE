@@ -71,6 +71,7 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialSkin.Updated.0.2.2\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -101,6 +102,12 @@
     </ApplicationDefinition>
     <Compile Include="Banco.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CaratulaApertura.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CaratulaApertura.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ciudad.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
@@ -147,6 +154,12 @@
     <Compile Include="Expediente.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pagare2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pagare.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Pai.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
     </Compile>
@@ -192,6 +205,9 @@
     </Compile>
     <Compile Include="Views\CatalogosFolder\VisualizarCiudades.xaml.cs">
       <DependentUpon>VisualizarCiudades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CatalogosFolder\VisualizarCondiciones.xaml.cs">
+      <DependentUpon>VisualizarCondiciones.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CatalogosFolder\VisualizarEstados.xaml.cs">
       <DependentUpon>VisualizarEstados.xaml</DependentUpon>
@@ -274,6 +290,9 @@
     <Compile Include="Views\PopUp\VisualizarCliente.xaml.cs">
       <DependentUpon>VisualizarCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\VisualizarExpediente.xaml.cs">
+      <DependentUpon>VisualizarExpediente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RealizarDictamen.xaml.cs">
       <DependentUpon>RealizarDictamen.xaml</DependentUpon>
     </Compile>
@@ -309,6 +328,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CatalogosFolder\VisualizarCiudades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CatalogosFolder\VisualizarCondiciones.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -420,6 +443,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PopUp\VisualizarExpediente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\RealizarDictamen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -443,9 +470,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="CaratulaApertura.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CaratulaApertura.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Domiciliación.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Domiciliación.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pagare.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Pagare2.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

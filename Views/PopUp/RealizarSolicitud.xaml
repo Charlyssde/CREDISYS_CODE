@@ -53,11 +53,11 @@
                 <Label Content="Solicitud de crédito" HorizontalAlignment="Center" FontSize="15" FontWeight="Bold"></Label>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center">
                     <Label Content="Monto (Número): "></Label>
-                    <TextBox x:Name="txtMontoNumero" Width="150"></TextBox>
+                    <TextBox x:Name="txtMontoNumero" Width="150" KeyDown="txtMontoNumero_KeyDown"></TextBox>
                     <Label Content="MXN"></Label>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center">
-                    <Label Content="Monto (Número): "></Label>
+                    <Label Content="Monto (Letra): "></Label>
                     <TextBox x:Name="txtMontoLetra" Width="250"></TextBox>
                     <Label Content="MXN"></Label>
                 </StackPanel>
