@@ -1,0 +1,70 @@
+﻿<Window x:Class="CREDISYS.Views.PopUp.ModificarTarjeta"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
+        mc:Ignorable="d"
+        Title="ModificarTarjeta" Height="694.288" Width="487.56">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top" Background="#283593" Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                   FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Tarjetas" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"></Label>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Source="pack://application:,,,/Resources/IcUsuario.png" Height="35" ></Image>
+            </StackPanel>
+        </Grid>
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="0" >
+                <Label Content="DEPÓSITO" FontSize="14"/>
+                <Label Content="Banco" FontSize="14"/>
+                <ComboBox x:Name="cbBancoDeposito" FontSize="14"/>
+                <Label Content="Clabe interbancaria" FontSize="14"/>
+                <TextBox x:Name="txtNumeroClabeUno" Width="200" FontSize="14"/>
+                <Label Content="Número de teléfono" FontSize="14"/>
+                <TextBox x:Name="txtTelefonoUno" Width="200" FontSize="14"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1" >
+                <Label Content="COBRO" FontSize="14"/>
+                <Label Content="Banco" FontSize="14"/>
+                <ComboBox x:Name="cbBancoCobro" FontSize="14"/>
+                <Label Content="Clabe interbancaria" FontSize="14"/>
+                <TextBox x:Name="txtNumeroClabeDos" Width="200" FontSize="14"/>
+                <Label Content="Número de teléfono" FontSize="14"/>
+                <TextBox x:Name="txtTelefonoDos" Width="200" FontSize="14"/>
+            </StackPanel>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" 
+                    VerticalAlignment="Top" Orientation="Horizontal">
+                <Button x:Name="btnCancelar" Cursor="Hand" Width="60" Margin="15,0,50,0" Click="btnCancelar_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcCancelar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button x:Name="btnAceptar" Cursor="Hand" Width="50" Margin="15,0,50,0" Click="btnAceptar_Click">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="pack://application:,,,/Resources/IcAceptar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>

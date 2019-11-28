@@ -22,10 +22,19 @@ namespace CREDISYS.Views.PopUp
     public partial class RegistrarReferencia2 : Window
     {
         Cliente clientenuevo;
-        public RegistrarReferencia2(Cliente cliente)
+        Referencia referencia;
+        Referencia referencia2;
+        public RegistrarReferencia2(Referencia referencia, Referencia referencia2, Cliente cliente)
         {
             InitializeComponent();
             clientenuevo = cliente;
+            this.referencia = referencia;
+            this.referencia2 = referencia2;
+            txt_name1.Text = referencia.nombre;
+            txtRelacion.Text = referencia.relacion;
+            txtDir.Text = referencia.direccion;
+            txtTel.Text = referencia.telefono;
+            txtHorario.Text = referencia.horario;
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
@@ -58,10 +67,10 @@ namespace CREDISYS.Views.PopUp
 
                         db.SaveChanges();
 
-                        RegistrarTelefonos regisTel = new RegistrarTelefonos(clientenuevo);
-                        regisTel.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                        ModificarReferencia modificarReferencia2 = new ModificarReferencia(referencia2, referencia,clientenuevo);
+                        modificarReferencia2.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         this.Hide();
-                        regisTel.ShowDialog();
+                        modificarReferencia2.ShowDialog();
 
                         closeWindow();
                     }

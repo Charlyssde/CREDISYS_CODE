@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CREDISYS.Properties;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,14 @@ namespace CREDISYS.Views.PopUp
     public partial class VisualizarCliente : Window
     {
         Cliente cliente;
+        Tarjeta tarjeta;
+        Tarjeta tarjeta2;
+        Referencia referencia;
+        Referencia referencia2;
+        Correo correoelec;
+        Telefono telefono;
+        Telefono telefonoBD2;
+
         public VisualizarCliente(Cliente cliente)
         {
             this.cliente = cliente;
@@ -89,14 +98,92 @@ namespace CREDISYS.Views.PopUp
                 Telefono telefonoBD2 = db.Telefonoes.Where(b => b.rfcCliente == cliente.rfc && b.idTelefono != telefono.idTelefono).FirstOrDefault();
                 tipotel2.Content = telefonoBD2.tipoTelefono;
                 tel2.Content = telefonoBD2.numero;
-
+                Tarjeta tarjeta1 = db.Tarjetas.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+                numerotarjeta.Content = tarjeta1.numTarjeta;
+                numeroTelefono.Content = tarjeta1.numTelefono;
+                clabe.Content = tarjeta1.clabeBancaria;
+                Tarjeta tarjeta2 = db.Tarjetas.Where(b => b.rfcCliente == cliente.rfc && b.clabeBancaria != tarjeta1.clabeBancaria).FirstOrDefault();
+                numerotarjeta2.Content = tarjeta2.numTarjeta;
+                numeroTelefono2.Content = tarjeta2.numTelefono;
+                clabe2.Content = tarjeta2.clabeBancaria;
             }
 
         }
 
         private void btnEditar_Click(object sender, RoutedEventArgs e)
         {
+            ModificarTarjeta modificarTarjeta = new ModificarTarjeta(tarjeta, tarjeta2, cliente);
+            modificarTarjeta.WindowStartupLocation = this.WindowStartupLocation;
+            this.Hide();
+            modificarTarjeta.ShowDialog();
+            closeWindow();
+        }
+        private void closeWindow()
+        {
+            this.Close();
+        }
 
+        private void btnEditarReferencias_Click(object sender, RoutedEventArgs e)
+        {
+            ModificarReferencia modificarRefe = new ModificarReferencia(referencia, referencia2, cliente);
+            modificarRefe.WindowStartupLocation = this.WindowStartupLocation;
+            this.Hide();
+            modificarRefe.ShowDialog();
+            closeWindow();
+        }
+
+        private void btnEditarContacto_Click(object sender, RoutedEventArgs e)
+        {
+            ModificarContactos modificarContactos = new ModificarContactos(correoelec, telefono, telefonoBD2, cliente);
+            modificarContactos.WindowStartupLocation = this.WindowStartupLocation;
+            this.Hide();
+            modificarContactos.ShowDialog();
+            closeWindow();
+
+        }
+
+        private void btnEliminarTelefono_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("¿Desea eliminar?", "Confirmación", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                if (this.telefono != null)
+                {
+                    try
+                    {
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Telefonoes.Remove(this.telefono);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(Settings.Default.MensajeErrorBD);
+                    }
+                }
+            }
+        }
+
+        private void btnEliminarTelefono2_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("¿Desea eliminar?", "Confirmación", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                if (this.telefonoBD2 != null)
+                {
+                    try
+                    {
+                        using (DBEntities db = new DBEntities())
+                        {
+                            db.Telefonoes.Remove(this.telefonoBD2);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show(Settings.Default.MensajeErrorBD);
+                    }
+                }
+            }
         }
     }
 }

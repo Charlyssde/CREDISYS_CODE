@@ -35,13 +35,7 @@
                     <Label Name="genero" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="472,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
                     <Label Name="estadocivil" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="497,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
                     <Label Name="fecha" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="383,227,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.208,0.414"/>
-                    <Button x:Name="btnEditar" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEditar_Click" Margin="644,348,0,27.8" >
-                        <Button.Template>
-                            <ControlTemplate>
-                                <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
+
                 </Grid>
             </TabItem>
             <TabItem Header="Domicilio">
@@ -116,7 +110,14 @@
                     <Label Name="direccion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="108,306,0,0" VerticalAlignment="Top" Width="20"/>
                     <Label Name="horario2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="485,269,0,0" VerticalAlignment="Top"/>
                     <Label Name="relacion2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="500,306,0,0" VerticalAlignment="Top"/>
-
+                    <Button x:Name="btnEditarReferencias" Cursor="Hand" Width="41" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEditarReferencias_Click"
+                            Margin="626,338,0,9.8" RenderTransformOrigin="-0.054,-1.316" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
             </TabItem>
             <TabItem Header="Contacto">
@@ -133,10 +134,24 @@
                     <Label Name="tel1" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,177,0,0" VerticalAlignment="Top"/>
                     <Label Name="tipotel2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="178,272,0,0" VerticalAlignment="Top"/>
                     <Label Name="tel2" Content="" FontSize="20" Foreground="White" HorizontalAlignment="Left" Margin="100,314,0,0" VerticalAlignment="Top"/>
-                    <Button x:Name="btnEditarContacto" Cursor="Hand" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEditar_Click" Margin="631,326,0,18.8" >
+                    <Button x:Name="btnEditarContacto" Cursor="Hand" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEditarContacto_Click" Margin="631,326,0,18.8" >
                         <Button.Template>
                             <ControlTemplate>
                                 <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnEliminarTelefono" Cursor="Hand" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEliminarTelefono_Click" Margin="608,166,0,178.8" >
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Image Source="pack://application:,,,/Resources/IcBorrar.png"/>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    <Button x:Name="btnEliminarTelefono2" Cursor="Hand" Width="48" Height="48" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEliminarTelefono2_Click" Margin="564,326,0,18.8" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcBorrar.png"/>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
@@ -146,7 +161,30 @@
 
             <TabItem Header="Tarjeta">
                 <Grid Background="#283593">
+                    <Label Content="Clabe bancaria:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,92,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número de tarjeta:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,53,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número de teléfono:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,126,0,0" VerticalAlignment="Top"/>
+                    <Label Name="clabe" Content="" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="141,92,0,0" VerticalAlignment="Top"/>
+                    <Label Name="numerotarjeta" Content="" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="175,53,0,0" VerticalAlignment="Top"/>
+                    <Label Name="numeroTelefono" Content="" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="191,126,0,0" VerticalAlignment="Top"/>
 
+                    <Label Content="Tarjeta 1:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,19,0,0" VerticalAlignment="Top"/>
+
+                    <Label Content="Tarjeta 2:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,189,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Clabe bancaria:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,267,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número de tarjeta:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,228,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número de teléfono:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,301,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Número de teléfono:" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="10,126,0,0" VerticalAlignment="Top"/>
+                    <Label Name="clabe2" Content="" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="141,267,0,0" VerticalAlignment="Top"/>
+                    <Label Name="numerotarjeta2" Content="" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="176,228,0,0" VerticalAlignment="Top"/>
+                    <Label Name="numeroTelefono2" Content="" HorizontalAlignment="Left" Foreground="White" FontSize="18" Margin="191,301,0,0" VerticalAlignment="Top"/>
+                    <Button x:Name="btnEditar" Cursor="Hand" Width="41" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnEditar_Click" Margin="626,338,0,9.8" RenderTransformOrigin="-0.054,-1.316" >
+                        <Button.Template>
+                            <ControlTemplate>
+                                <Image Source="pack://application:,,,/Resources/IcEditar.png"/>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
                 </Grid>
 
             </TabItem>

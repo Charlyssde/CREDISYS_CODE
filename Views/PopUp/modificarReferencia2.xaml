@@ -18,13 +18,13 @@
                     FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
             </StackPanel>
             <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Label Content="Registrar referencias" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <Label Content="Modificar referencias" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
             <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
                 <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
             </StackPanel>
         </Grid>
-        <Label Content="Referencia 2:" HorizontalAlignment="Left" Margin="4,86,0,0" VerticalAlignment="Top" FontSize="22" FontStyle="Normal" Foreground="DarkBlue" Height="38" Width="130"/>
+        <Label Content="Referencia " HorizontalAlignment="Left" Margin="4,86,0,0" VerticalAlignment="Top" FontSize="22" FontStyle="Normal" Foreground="DarkBlue" Height="38" Width="130"/>
         <Label Content="Nombre completo:" FontSize="16" HorizontalAlignment="Left" Margin="13,134,0,0" VerticalAlignment="Top" Height="33" Width="154" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>

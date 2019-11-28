@@ -29,6 +29,8 @@ namespace CREDISYS.Views.PopUp
             InitializeComponent();
             cargarBancos();
             this.cliente = cliente;
+            
+
         }
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)

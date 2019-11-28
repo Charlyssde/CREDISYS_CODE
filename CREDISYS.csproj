@@ -229,6 +229,12 @@
     <Compile Include="Views\PopUp\EncuestaSolicitud.xaml.cs">
       <DependentUpon>EncuestaSolicitud.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\ModificarContactos.xaml.cs">
+      <DependentUpon>ModificarContactos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\ModificarTarjeta.xaml.cs">
+      <DependentUpon>ModificarTarjeta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\RealizarSolicitud.xaml.cs">
       <DependentUpon>RealizarSolicitud.xaml</DependentUpon>
     </Compile>
@@ -244,8 +250,11 @@
     <Compile Include="Views\PopUp\RegistrarReferecias.xaml.cs">
       <DependentUpon>RegistrarReferecias.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PopUp\RegistrarReferencia2.xaml.cs">
-      <DependentUpon>RegistrarReferencia2.xaml</DependentUpon>
+    <Compile Include="Views\PopUp\modificarReferencia2.xaml.cs">
+      <DependentUpon>modificarReferencia2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RegistrarReferencias2.xaml.cs">
+      <DependentUpon>RegistrarReferencias2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\RegistrarTarjetas.xaml.cs">
       <DependentUpon>RegistrarTarjetas.xaml</DependentUpon>
@@ -258,6 +267,9 @@
     </Compile>
     <Compile Include="Views\PopUp\RegistrarTelefonos.xaml.cs">
       <DependentUpon>RegistrarTelefonos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\SubirDocumentos.xaml.cs">
+      <DependentUpon>SubirDocumentos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\VisualizarCliente.xaml.cs">
       <DependentUpon>VisualizarCliente.xaml</DependentUpon>
@@ -348,6 +360,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PopUp\ModificarContactos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\ModificarTarjeta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\RealizarSolicitud.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -368,7 +388,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PopUp\RegistrarReferencia2.xaml">
+    <Page Include="Views\PopUp\modificarReferencia2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\RegistrarReferencias2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -385,6 +409,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PopUp\RegistrarTelefonos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\SubirDocumentos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

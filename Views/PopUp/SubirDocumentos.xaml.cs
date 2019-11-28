@@ -23,5 +23,31 @@ namespace CREDISYS.Views.PopUp
         {
             InitializeComponent();
         }
+
+        private void InitializeComponent()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            closeWindow();
+        }
+        private void btnSubirArchivos_Click(object sender, RoutedEventArgs e)
+        {
+            closeWindow();
+        }
+        private void btnSubir_Click(object sender, RoutedEventArgs e)
+        {
+            closeWindow();
+        }
+        private void btnAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            closeWindow();
+        }
+        private void closeWindow()
+        {
+            this.Close();
+        }
     }
 }

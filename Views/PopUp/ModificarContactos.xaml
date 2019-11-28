@@ -1,0 +1,60 @@
+﻿<Window x:Class="CREDISYS.Views.PopUp.ModificarContactos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
+        mc:Ignorable="d"
+        Title="ModificarContactos" Height="670.735" Width="524.881">
+    <Grid Margin="0,0,0,0.8" HorizontalAlignment="Left" Width="687">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="0" VerticalAlignment="Center" Margin="157,357,277,172" Width="253" Height="111">
+            <RadioButton x:Name="rbMovil" GroupName="TiposTelefono" Content="Móvil" Checked="rbMovil_Checked" FontSize="16" ></RadioButton>
+            <RadioButton x:Name="rbCasa" GroupName="TiposTelefono" Content="Casa" Checked="rbCasa_Checked" FontSize="16" ></RadioButton>
+            <Label Content="Número" FontSize="16"/>
+            <TextBox x:Name="txtNumeroUno" Width="200" FontSize="16"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="157,216,291,283" Height="141" Width="239">
+            <RadioButton x:Name="rbMovilDos" GroupName="TiposTelefonoDos" Content="Móvil" Checked="rbMovilDos_Checked" FontSize="16"></RadioButton>
+            <RadioButton x:Name="rbCasaDos" GroupName="TiposTelefonoDos" Content="Casa" Checked="rbCasaDos_Checked" FontSize="16" ></RadioButton>
+            <Label Content="Número" FontSize="16"/>
+            <TextBox x:Name="txtNumeroDos" Width="200" FontSize="16"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center" 
+                    VerticalAlignment="Top" Orientation="Horizontal" Margin="187,541,261,0">
+            <Button x:Name="btnCancelar" Cursor="Hand" Width="60" Margin="15,0,50,0" Click="btnCancelar_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="pack://application:,,,/Resources/IcCancelar.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="btnAceptar" Cursor="Hand" Width="50" Margin="15,0,50,0" Click="btnAceptar_Click">
+                <Button.Template>
+                    <ControlTemplate>
+                        <Image Source="pack://application:,,,/Resources/IcAceptar.png"/>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+        <TextBox Name="txtCorreo" HorizontalAlignment="Left" Height="24" Margin="157,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="223" FontSize="18"/>
+        <Label Content="Correo electronico:" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,113,0,0"/>
+        <Grid Background="#283593" Margin="0,0,93.4,590">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label x:Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Modificar contactos" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Image Source="/CREDISYS;component/Resources/IcUsuario.png" Height="35" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
