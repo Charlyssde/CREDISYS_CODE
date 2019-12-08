@@ -50,34 +50,37 @@ namespace CREDISYS.Views.PopUp
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            if (camposVacios())
+            using (DBEntities db = new DBEntities())
             {
-                MessageBox.Show(Settings.Default.MensajeCamposVacios);
-            }
-            else
-            {
-                Telefono telefono = new Telefono();
-                telefono.estatus = "Activo";
-                telefono.numero = txtNumeroUno.Text;
-                telefono.rfcCliente = this.cliente.rfc;
-                telefono.tipoTelefono = selUno;
+                if (camposVacios())
+                {
+                    MessageBox.Show(Settings.Default.MensajeCamposVacios);
+                }
+                else
+                {
+                    Telefono telefono = new Telefono();
+                    telefono.estatus = "Activo";
+                    telefono.numero = txtNumeroUno.Text;
+                    telefono.rfcCliente = this.cliente.rfc;
+                    telefono.tipoTelefono = selUno;
 
-                this.cliente.Telefonoes = new List<Telefono>();
-                this.cliente.Telefonoes.Add(telefono);
+                    
 
-                Telefono telefono2 = new Telefono();
-                telefono2.estatus = "Activo";
-                telefono2.numero = txtNumeroDos.Text;
-                telefono2.rfcCliente = this.cliente.rfc;
-                telefono2.tipoTelefono = selDos;
-                this.cliente.Telefonoes.Add(telefono2);
+                    Telefono telefono2 = new Telefono();
+                    telefono2.estatus = "Activo";
+                    telefono2.numero = txtNumeroDos.Text;
+                    telefono2.rfcCliente = this.cliente.rfc;
+                    telefono2.tipoTelefono = selDos;
+                    db.Telefonoes.Add(telefono2);
+                    db.Telefonoes.Add(telefono);
+                    db.SaveChanges();
 
-
-                RegistrarTarjetas registrarTarjetas = new RegistrarTarjetas(this.cliente);
-                registrarTarjetas.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                this.Hide();
-                registrarTarjetas.ShowDialog();
-                closeWindow();
+                    RegistrarTarjetas registrarTarjetas = new RegistrarTarjetas(cliente);
+                    registrarTarjetas.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                    this.Hide();
+                    registrarTarjetas.ShowDialog();
+                    closeWindow();
+                }
             }
         }
 

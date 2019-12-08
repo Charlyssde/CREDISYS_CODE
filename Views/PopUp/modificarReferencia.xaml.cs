@@ -15,28 +15,28 @@ using System.Windows.Shapes;
 
 namespace CREDISYS.Views.PopUp
 {
-
     /// <summary>
-    /// Lógica de interacción para RegistrarReferencia2.xaml
+    /// Lógica de interacción para modificarReferencia.xaml
     /// </summary>
-    public partial class RegistrarReferencia2 : Window
+    public partial class modificarReferencia : Window
     {
         Cliente clientenuevo;
         Referencia referencia;
         Referencia referencia2;
-        public RegistrarReferencia2(Referencia referencia, Referencia referencia2, Cliente cliente)
+        
+
+        public modificarReferencia(Referencia referencia, Referencia referencia2, Cliente cliente)
         {
             InitializeComponent();
-            clientenuevo = cliente;
-            this.referencia = referencia;
-            this.referencia2 = referencia2;
+            this.clientenuevo = cliente;
+            this.referencia = referencia2;
+            this.referencia2 = referencia;
             txt_name1.Text = referencia.nombre;
             txtRelacion.Text = referencia.relacion;
             txtDir.Text = referencia.direccion;
             txtTel.Text = referencia.telefono;
             txtHorario.Text = referencia.horario;
         }
-
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
             using (DBEntities db = new DBEntities())
@@ -67,7 +67,7 @@ namespace CREDISYS.Views.PopUp
 
                         db.SaveChanges();
 
-                        modificarReferencia modificarReferencia2 = new modificarReferencia(referencia2, referencia,clientenuevo);
+                        modificarReferencia modificarReferencia2 = new modificarReferencia(referencia2, referencia, clientenuevo);
                         modificarReferencia2.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                         this.Hide();
                         modificarReferencia2.ShowDialog();

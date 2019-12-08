@@ -248,6 +248,9 @@
     <Compile Include="Views\PopUp\ModificarContactos.xaml.cs">
       <DependentUpon>ModificarContactos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\modificarReferencia.xaml.cs">
+      <DependentUpon>modificarReferencia.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\ModificarTarjeta.xaml.cs">
       <DependentUpon>ModificarTarjeta.xaml</DependentUpon>
     </Compile>
@@ -284,8 +287,8 @@
     <Compile Include="Views\PopUp\RegistrarTelefonos.xaml.cs">
       <DependentUpon>RegistrarTelefonos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PopUp\SubirDocumentos.xaml.cs">
-      <DependentUpon>SubirDocumentos.xaml</DependentUpon>
+    <Compile Include="Views\PopUp\SubirRecibos.xaml.cs">
+      <DependentUpon>SubirRecibos.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\VisualizarCliente.xaml.cs">
       <DependentUpon>VisualizarCliente.xaml</DependentUpon>
@@ -387,6 +390,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\PopUp\modificarReferencia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\ModificarTarjeta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -435,7 +442,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PopUp\SubirDocumentos.xaml">
+    <Page Include="Views\PopUp\SubirRecibos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

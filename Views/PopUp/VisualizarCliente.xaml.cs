@@ -125,7 +125,7 @@ namespace CREDISYS.Views.PopUp
 
         private void btnEditarReferencias_Click(object sender, RoutedEventArgs e)
         {
-            ModificarReferencia modificarRefe = new ModificarReferencia(referencia, referencia2, cliente);
+            RegistrarReferencia2 modificarRefe = new RegistrarReferencia2(referencia, referencia2, cliente);
             modificarRefe.WindowStartupLocation = this.WindowStartupLocation;
             this.Hide();
             modificarRefe.ShowDialog();

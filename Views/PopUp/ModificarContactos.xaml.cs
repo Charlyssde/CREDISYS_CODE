@@ -56,41 +56,44 @@ namespace CREDISYS.Views.PopUp
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            if (camposVacios())
+            using (DBEntities db = new DBEntities())
             {
-                MessageBox.Show(Settings.Default.MensajeCamposVacios);
-            }
-            else
-            {
-                Telefono telefono = new Telefono();
-                telefono.estatus = "Activo";
-                telefono.numero = txtNumeroUno.Text;
-                telefono.rfcCliente = this.cliente.rfc;
-                telefono.tipoTelefono = selUno;
-
-                this.cliente.Telefonoes = new List<Telefono>();
-                this.cliente.Telefonoes.Add(telefono);
-
-                Telefono telefono2 = new Telefono();
-                telefono2.estatus = "Activo";
-                telefono2.numero = txtNumeroUno.Text;
-                telefono2.rfcCliente = this.cliente.rfc;
-                telefono2.tipoTelefono = selUno;
-                this.cliente.Telefonoes.Add(telefono2);
-                if (txtCorreo.Text.Equals(""))
+                if (camposVacios())
                 {
                     MessageBox.Show(Settings.Default.MensajeCamposVacios);
                 }
                 else
                 {
-                    Correo nuevo = new Correo();
-                    nuevo.correo1 = txtCorreo.Text;
-                    nuevo.rfcCliente = cliente.rfc;
-                    nuevo.estatus = "activo";
-                    this.cliente.Correos = new List<Correo>();
-                    this.cliente.Correos.Add(nuevo);
+                    Telefono telefono = new Telefono();
+                    telefono.estatus = "Activo";
+                    telefono.numero = txtNumeroUno.Text;
+                    telefono.rfcCliente = this.cliente.rfc;
+                    telefono.tipoTelefono = selUno;
 
-                    MessageBox.Show(Settings.Default.MensajeExito);
+
+                    Telefono telefono2 = new Telefono();
+                    telefono2.estatus = "Activo";
+                    telefono2.numero = txtNumeroUno.Text;
+                    telefono2.rfcCliente = this.cliente.rfc;
+                    telefono2.tipoTelefono = selUno;
+                    
+                    db.Telefonoes.Add(telefono);
+                    db.Telefonoes.Add(telefono2);
+                    
+                    if (txtCorreo.Text.Equals(""))
+                    {
+                        MessageBox.Show(Settings.Default.MensajeCamposVacios);
+                    }
+                    else
+                    {
+                        Correo nuevo = new Correo();
+                        nuevo.correo1 = txtCorreo.Text;
+                        nuevo.rfcCliente = cliente.rfc;
+                        nuevo.estatus = "activo";
+                        db.Correos.Add(nuevo);
+                        db.SaveChanges();
+                        MessageBox.Show(Settings.Default.MensajeExito);
+                    }
                 }
             }
         }

@@ -29,27 +29,31 @@ namespace CREDISYS.Views.PopUp
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-                    if (txtCorreo.Text.Equals(""))
-                    {
-                        MessageBox.Show(Settings.Default.MensajeCamposVacios);
-                    }
-                    else
-                    {
-                        Correo nuevo = new Correo();
-                        nuevo.correo1 = txtCorreo.Text;
-                        nuevo.rfcCliente = cliente.rfc;
-                        nuevo.estatus = "activo";
-                this.cliente.Correos = new List<Correo>();
-                this.cliente.Correos.Add(nuevo);
-                        
-                        MessageBox.Show(Settings.Default.MensajeExito);
-                        
-                        RegistrarEmpleo registrarempleo = new RegistrarEmpleo(cliente);
-                        registrarempleo.WindowStartupLocation = this.WindowStartupLocation;
-                this.Hide();
-                        registrarempleo.ShowDialog();
-                        closeWindow();
-                    }
+            using (DBEntities db = new DBEntities())
+            {
+                if (txtCorreo.Text.Equals(""))
+                {
+                    MessageBox.Show(Settings.Default.MensajeCamposVacios);
+                }
+                else
+                {
+                    Correo nuevo = new Correo();
+                    nuevo.correo1 = txtCorreo.Text;
+                    nuevo.rfcCliente = cliente.rfc;
+                    nuevo.estatus = "activo";
+
+                    db.Correos.Add(nuevo);
+                    db.SaveChanges();
+
+                    MessageBox.Show(Settings.Default.MensajeExito);
+
+                    RegistrarEmpleo registrarempleo = new RegistrarEmpleo(cliente);
+                    registrarempleo.WindowStartupLocation = this.WindowStartupLocation;
+                    this.Hide();
+                    registrarempleo.ShowDialog();
+                    closeWindow();
+                } 
+            }
         }
         private void closeWindow()
         {

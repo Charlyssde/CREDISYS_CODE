@@ -99,16 +99,17 @@ namespace CREDISYS.Views.PopUp
                         nuevo.estadoCivil = cbEstadoCivil.Text;
                         nuevo.estatus = "activo";
 
-
+                        
                         db.Clientes.Add(nuevo);
                         db.SaveChanges();
 
                         MessageBox.Show(Settings.Default.MensajeExito);
+                        ;
                         RegistrarCliente registrarDomicilio = new RegistrarCliente(nuevo);
-                        registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-                        this.Hide();
-                        registrarDomicilio.ShowDialog();
-                        closeWindow();
+                       registrarDomicilio.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                       this.Hide();
+                       registrarDomicilio.ShowDialog();
+                         closeWindow();
                     }
                 }
 

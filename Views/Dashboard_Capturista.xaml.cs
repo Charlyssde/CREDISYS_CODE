@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CREDISYS.Views.PopUp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,10 +21,10 @@ namespace CREDISYS.Views
     public partial class Dashboard_Capturista : Window
     {
         Usuario usuario;
-        public Dashboard_Capturista(Usuario usuario)
+        public Dashboard_Capturista()
         {
             InitializeComponent();
-            this.usuario = usuario;
+            
         }
 
         private void btnSolicitudes_Click(object sender, RoutedEventArgs e)
@@ -46,6 +47,14 @@ namespace CREDISYS.Views
         private void closeWindow()
         {
             this.Close();
+        }
+
+        private void btnSubir_Click(object sender, RoutedEventArgs e)
+        {
+            SubirRecibos modificarRefe = new SubirRecibos();
+            modificarRefe.WindowStartupLocation = this.WindowStartupLocation;
+            this.Hide();
+            modificarRefe.ShowDialog();
         }
     }
 }

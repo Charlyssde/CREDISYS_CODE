@@ -33,47 +33,50 @@ namespace CREDISYS.Views.PopUp
 
         private void BtnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            if (camposVacios())
+            using (DBEntities db = new DBEntities())
             {
-                MessageBox.Show(Settings.Default.MensajeCamposVacios);
-            }
-            else
-            {
-                Tarjeta tarjeta3 = new Tarjeta();
-
-                tarjeta.numTelefono = txtTelefonoUno.Text;
-                tarjeta.clabeBancaria = txtNumeroClabeUno.Text;
-                tarjeta.estatus = "Activo";
-                foreach (Banco b in bancos)
+                if (camposVacios())
                 {
-                    if (cbBancoDeposito.SelectedItem.Equals(b.banco1))
-                    {
-                        tarjeta.idBanco = b.idBanco;
-                        break;
-
-                    }
+                    MessageBox.Show(Settings.Default.MensajeCamposVacios);
                 }
-                this.cliente.Tarjetas = new List<Tarjeta>();
-                this.cliente.Tarjetas.Add(tarjeta);
-
-                Tarjeta tarjeta2 = new Tarjeta();
-                tarjeta2.rfcCliente = this.cliente.rfc;
-                
-                tarjeta2.numTelefono = txtTelefonoDos.Text;
-                tarjeta2.clabeBancaria = txtNumeroClabeDos.Text;
-                tarjeta2.estatus = "Activo";
-                foreach (Banco b in bancos)
+                else
                 {
-                    if (cbBancoCobro.SelectedItem.Equals(b.banco1))
+                    Tarjeta tarjeta3 = new Tarjeta();
+                    tarjeta.rfcCliente = this.cliente.rfc;
+                    tarjeta.numTelefono = txtTelefonoUno.Text;
+                    tarjeta.clabeBancaria = txtNumeroClabeUno.Text;
+                    tarjeta.estatus = "Activo";
+                    foreach (Banco b in bancos)
                     {
-                        tarjeta2.idBanco = b.idBanco;
-                        break;
+                        if (cbBancoDeposito.SelectedItem.Equals(b.banco1))
+                        {
+                            tarjeta.idBanco = b.idBanco;
+                            break;
 
+                        }
                     }
-                }
-                this.cliente.Tarjetas.Add(tarjeta2);
 
-                
+
+                    Tarjeta tarjeta2 = new Tarjeta();
+                    tarjeta2.rfcCliente = this.cliente.rfc;
+
+                    tarjeta2.numTelefono = txtTelefonoDos.Text;
+                    tarjeta2.clabeBancaria = txtNumeroClabeDos.Text;
+                    tarjeta2.estatus = "Activo";
+                    foreach (Banco b in bancos)
+                    {
+                        if (cbBancoCobro.SelectedItem.Equals(b.banco1))
+                        {
+                            tarjeta2.idBanco = b.idBanco;
+                            break;
+
+                        }
+                    }
+                    db.Tarjetas.Add(tarjeta);
+                    db.Tarjetas.Add(tarjeta2);
+
+                }
+
             }
         }
         private bool camposVacios()
@@ -86,6 +89,12 @@ namespace CREDISYS.Views.PopUp
             }
             return false;
         }
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
         private void cargarBancos()
             {
                 try

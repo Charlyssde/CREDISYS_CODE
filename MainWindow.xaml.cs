@@ -73,7 +73,7 @@ namespace CREDISYS
                                     closeWindow();
                                     break;
                                 case 6:
-                                    Dashboard_Capturista dashboard_Capturista = new Dashboard_Capturista(user);
+                                    Dashboard_Capturista dashboard_Capturista = new Dashboard_Capturista();
                                     dashboard_Capturista.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                                     dashboard_Capturista.Show();
                                     closeWindow();

@@ -35,88 +35,61 @@ namespace CREDISYS.Views.PopUp
 
         private void btnAceptar_Click(object sender, RoutedEventArgs e)
         {
-            if (camposVacios())
-            {
-                MessageBox.Show(Settings.Default.MensajeCamposVacios);
-            }
-            else
-            {
-                Tarjeta tarjeta = new Tarjeta();
-                tarjeta.rfcCliente = this.cliente.rfc;
-                tarjeta.numTarjeta = txtNumeroCuentaUno.Text;
-                tarjeta.numTelefono = txtTelefonoUno.Text;
-                tarjeta.clabeBancaria = txtNumeroClabeUno.Text;
-                tarjeta.estatus = "Activo";
-                foreach (Banco b in bancos)
-                {
-                    if (cbBancoDeposito.SelectedItem.Equals(b.banco1))
-                    {
-                        tarjeta.idBanco = b.idBanco;
-                        break;
-
-                    }
-                }
-                this.cliente.Tarjetas = new List<Tarjeta>();
-                this.cliente.Tarjetas.Add(tarjeta);
-
-                Tarjeta tarjeta2 = new Tarjeta();
-                tarjeta2.rfcCliente = this.cliente.rfc;
-                tarjeta2.numTarjeta = txtNumeroCuentaDos.Text;
-                tarjeta2.numTelefono = txtTelefonoDos.Text;
-                tarjeta2.clabeBancaria = txtNumeroClabeDos.Text;
-                tarjeta2.estatus = "Activo";
-                foreach (Banco b in bancos)
-                {
-                    if (cbBancoCobro.SelectedItem.Equals(b.banco1))
-                    {
-                        tarjeta2.idBanco = b.idBanco;
-                        break;
-
-                    }
-                }
-                this.cliente.Tarjetas.Add(tarjeta2);
-
-                guardarCliente();
-            }
-        }
-
-        private void guardarCliente()
-        {
             using (DBEntities db = new DBEntities())
             {
-                foreach (Domicilio d in this.cliente.Domicilios)
+                if (camposVacios())
                 {
-                    db.Domicilios.Add(d);
+                    MessageBox.Show(Settings.Default.MensajeCamposVacios);
                 }
-                db.SaveChanges();
-                foreach (Referencia r in this.cliente.Referencias)
+                else
                 {
-                    db.Referencias.Add(r);
+                    Tarjeta tarjeta = new Tarjeta();
+                    tarjeta.rfcCliente = this.cliente.rfc;
+                    tarjeta.numTarjeta = txtNumeroCuentaUno.Text;
+                    tarjeta.numTelefono = txtTelefonoUno.Text;
+                    tarjeta.clabeBancaria = txtNumeroClabeUno.Text;
+                    tarjeta.estatus = "Activo";
+                    foreach (Banco b in bancos)
+                    {
+                        if (cbBancoDeposito.SelectedItem.Equals(b.banco1))
+                        {
+                            tarjeta.idBanco = b.idBanco;
+                            break;
+
+                        }
+                    }
+                    
+
+                    Tarjeta tarjeta2 = new Tarjeta();
+                    tarjeta2.rfcCliente = this.cliente.rfc;
+                    tarjeta2.numTarjeta = txtNumeroCuentaDos.Text;
+                    tarjeta2.numTelefono = txtTelefonoDos.Text;
+                    tarjeta2.clabeBancaria = txtNumeroClabeDos.Text;
+                    tarjeta2.estatus = "Activo";
+                    foreach (Banco b in bancos)
+                    {
+                        if (cbBancoCobro.SelectedItem.Equals(b.banco1))
+                        {
+                            tarjeta2.idBanco = b.idBanco;
+                            break;
+
+                        }
+                    }
+                    db.Tarjetas.Add(tarjeta);
+                    db.Tarjetas.Add(tarjeta2);
+                    
+                    db.SaveChanges();
+                    MessageBox.Show(Settings.Default.MensajeExito);
+                    Dashboard_Capturista dash = new Dashboard_Capturista();
+                    dash.WindowStartupLocation = this.WindowStartupLocation;
+                    this.Hide();
+                    dash.ShowDialog();
+                    closeWindow();
                 }
-                db.SaveChanges();
-                foreach (Tarjeta t in this.cliente.Tarjetas)
-                {
-                    db.Tarjetas.Add(t);
-                }
-                db.SaveChanges();
-                foreach (Telefono t in this.cliente.Telefonoes)
-                {
-                    db.Telefonoes.Add(t);
-                }
-                db.SaveChanges();
-                foreach (Correo c in this.cliente.Correos)
-                {
-                    db.Correos.Add(c);
-                }
-                db.SaveChanges();
-                foreach (Empleo e in this.cliente.Empleos)
-                {
-                    db.Empleos.Add(e);
-                }
-                db.SaveChanges();
             }
-            this.Close();
         }
+
+       
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {

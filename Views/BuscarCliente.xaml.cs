@@ -58,7 +58,7 @@ namespace CREDISYS.Views
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Dashboard_Capturista cap= new Dashboard_Capturista(this.usuario);
+            Dashboard_Capturista cap= new Dashboard_Capturista();
             cap.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             cap.Show();
             closeWindow();
@@ -97,7 +97,7 @@ namespace CREDISYS.Views
                         {
                             MessageBox.Show(Settings.Default.MensajeElementoNoEcontrado);
                             btnAgregarCliente.IsEnabled = true;
-                            MessageBox.Show(Settings.Default.MensajeNoEncontrado);
+                            
                         }
 
                     }
