@@ -21,7 +21,7 @@ namespace CREDISYS.Views
     public partial class Dashboard_Capturista : Window
     {
         Usuario usuario;
-        Cliente cliente;
+        
         public Dashboard_Capturista()
         {
             InitializeComponent();
@@ -52,10 +52,7 @@ namespace CREDISYS.Views
 
         private void btnSubir_Click(object sender, RoutedEventArgs e)
         {
-            SubirRecibos modificarRefe = new SubirRecibos(cliente);
-            modificarRefe.WindowStartupLocation = this.WindowStartupLocation;
-            this.Hide();
-            modificarRefe.ShowDialog();
+            
         }
     }
 }

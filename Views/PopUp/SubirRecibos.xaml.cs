@@ -5,6 +5,7 @@ using System.IO;
 using System.Windows;
 using System.Windows.Forms;
 
+
 namespace CREDISYS.Views.PopUp
 {
     /// <summary>
@@ -15,6 +16,10 @@ namespace CREDISYS.Views.PopUp
         Cliente cliente;
 
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
+        OpenFileDialog openFileDialog2 = new OpenFileDialog();
+        OpenFileDialog openFileDialog3 = new OpenFileDialog();
+        OpenFileDialog openFileDialog4 = new OpenFileDialog();
+        OpenFileDialog openFileDialog5 = new OpenFileDialog();
         public SubirRecibos(Cliente cliente)
         {
             InitializeComponent();
@@ -59,30 +64,45 @@ namespace CREDISYS.Views.PopUp
         {
             if (txtName.Text.Trim().Equals("") || txtFile.Text.Trim().Equals(""))
             {
-                System.Windows.MessageBox.Show("El nombre es obligatorio");
+                System.Windows.MessageBox.Show("Elegir un archivo es obligatorio");
                 return;
             }
             byte[] file = null;
             Stream mystream = openFileDialog1.OpenFile();
+            byte[] file2 = null;
+            Stream mystream2 = openFileDialog2.OpenFile();
+            byte[] file3 = null;
+            Stream mystream3 = openFileDialog3.OpenFile();
+            byte[] file4 = null;
+            Stream mystream4 = openFileDialog4.OpenFile();
+            byte[] file5 = null;
+            Stream mystream5 = openFileDialog5.OpenFile();
             using (MemoryStream ms = new MemoryStream())
             {
                 mystream.CopyTo(ms);
                 file = ms.ToArray();
+                mystream2.CopyTo(ms);
+                file2 = ms.ToArray();
+                mystream3.CopyTo(ms);
+                file3 = ms.ToArray();
+                mystream4.CopyTo(ms);
+                file4 = ms.ToArray();
+                mystream5.CopyTo(ms);
+                file5 = ms.ToArray();
+
             }
-            
+
             using (DBEntities db = new DBEntities())
             {
                 Expediente expediente = new Expediente();
-                expediente.rfcCliente = "HOLA";
+                expediente.rfcCliente = cliente.rfc;
                 expediente.INE = file;
-                expediente.pagare = file;
-                expediente.reciboPago = file;
-                expediente.solicitud = file;
-                expediente.caratula = file;
-                expediente.domicializacion = file;
-                expediente.comprobanteDomicilio = file;
-                expediente.estadoCuenta = file; 
-                expediente.folio = 3; 
+                expediente.reciboPago = file4;
+                expediente.comprobanteDomicilio = file2;
+                expediente.estadoCuenta = file3;
+            
+                
+                 
 
                 try
                 {
@@ -102,6 +122,75 @@ namespace CREDISYS.Views.PopUp
                         }
                     }
                 }
+
+            }
+        }
+
+        private void Buttonbuscar7_Click(object sender, RoutedEventArgs e)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                string file_name = string.Empty;
+
+
+
+                openFileDialog5.ShowDialog();
+                string dir = openFileDialog5.FileName;
+                string destino = System.IO.Path.GetDirectoryName(dir);
+                txtFile5.Text = dir;
+
+
+            }
+        }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                string file_name = string.Empty;
+
+
+
+                openFileDialog2.ShowDialog();
+                string dir = openFileDialog2.FileName;
+                string destino = System.IO.Path.GetDirectoryName(dir);
+                txtFile2.Text = dir;
+
+
+            }
+
+        }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                string file_name = string.Empty;
+
+
+
+                openFileDialog3.ShowDialog();
+                string dir = openFileDialog3.FileName;
+                string destino = System.IO.Path.GetDirectoryName(dir);
+                txtFile3.Text = dir;
+
+
+            }
+        }
+
+        private void Button4_Click(object sender, RoutedEventArgs e)
+        {
+            using (DBEntities db = new DBEntities())
+            {
+                string file_name = string.Empty;
+
+
+
+                openFileDialog4.ShowDialog();
+                string dir = openFileDialog4.FileName;
+                string destino = System.IO.Path.GetDirectoryName(dir);
+                txtFile4.Text = dir;
+
 
             }
         }

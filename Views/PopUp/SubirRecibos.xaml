@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
-        Title="Subir Recibos" Height="450" Width="800">
+        Title="Subir Recibos" Height="750" Width="800">
     <Grid>
-        <Grid Background="#283593" Margin="0,0,0,370">
+        <Grid Background="#283593" Margin="0,0,-0.4,659.8">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -32,10 +32,32 @@
                 <Image Source="/CREDISYS;component/Resources/IcUsuario.png" Height="35" />
             </StackPanel>
         </Grid>
-        <Button Name="ButtonGuardar" Content="..." HorizontalAlignment="Left" Margin="592,167,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="31" Margin="153,167,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="343"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="571,298,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="199,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Name="ButtonGuardar" Content="..." HorizontalAlignment="Left" Margin="460,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="100,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="609,512,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_1" Height="26"/>
+        <TextBox x:Name="txtName"  HorizontalAlignment="Left" Height="23" Margin="100,91,0,0" TextWrapping="Wrap" Text="INE" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,88,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="58,120,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonBuscar2" Content="..." HorizontalAlignment="Left" Margin="460,203,0,0" VerticalAlignment="Top" Width="75" Click="Button2_Click"/>
+        <TextBox x:Name="txtFile2" HorizontalAlignment="Left" Height="23" Margin="100,199,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <TextBox x:Name="txtName_Copy"  HorizontalAlignment="Left" Height="23" Margin="100,171,0,0" TextWrapping="Wrap" Text="Comprobante de domicilio" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,168,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="58,200,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonBuscar" Content="..." HorizontalAlignment="Left" Margin="460,283,0,0" VerticalAlignment="Top" Width="75" Click="Button3_Click"/>
+        <TextBox x:Name="txtFile3" HorizontalAlignment="Left" Height="23" Margin="100,279,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <TextBox x:Name="txtName_Copy1"  HorizontalAlignment="Left" Height="23" Margin="100,251,0,0" TextWrapping="Wrap" Text="Estado de cuenta" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,248,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="58,280,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonBuscar3" Content="..." HorizontalAlignment="Left" Margin="460,360,0,0" VerticalAlignment="Top" Width="75" Click="Button4_Click"/>
+        <TextBox x:Name="txtFile4" HorizontalAlignment="Left" Height="23" Margin="100,356,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <TextBox x:Name="txtName_Copy2"  HorizontalAlignment="Left" Height="23" Margin="100,328,0,0" TextWrapping="Wrap" Text="Recibo de pago" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,325,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="58,357,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Buttonbuscar7" Content="..." HorizontalAlignment="Left" Margin="460,438,0,0" VerticalAlignment="Top" Width="75" Click="Buttonbuscar7_Click"/>
+        <TextBox x:Name="txtFile5" HorizontalAlignment="Left" Height="23" Margin="100,434,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <TextBox x:Name="txtName_Copy3"  HorizontalAlignment="Left" Height="23" Margin="100,406,0,0" TextWrapping="Wrap" Text="Recibo de pago 2" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,403,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="58,435,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

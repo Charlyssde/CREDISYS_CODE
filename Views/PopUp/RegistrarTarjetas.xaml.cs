@@ -80,10 +80,10 @@ namespace CREDISYS.Views.PopUp
                     
                     db.SaveChanges();
                     MessageBox.Show(Settings.Default.MensajeExito);
-                    Dashboard_Capturista dash = new Dashboard_Capturista();
-                    dash.WindowStartupLocation = this.WindowStartupLocation;
+                    SubirRecibos modificarRefe = new SubirRecibos(cliente);
+                    modificarRefe.WindowStartupLocation = this.WindowStartupLocation;
                     this.Hide();
-                    dash.ShowDialog();
+                    modificarRefe.ShowDialog();
                     closeWindow();
                 }
             }
