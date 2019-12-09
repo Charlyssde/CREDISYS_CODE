@@ -52,7 +52,12 @@ namespace CREDISYS.Views
 
         private void btnSubir_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            ModificarDocumentos modificarDoc = new ModificarDocumentos();
+            modificarDoc.WindowStartupLocation = this.WindowStartupLocation;
+            this.Hide();
+            modificarDoc.ShowDialog();
+            closeWindow();
         }
     }
 }

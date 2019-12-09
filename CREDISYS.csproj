@@ -248,6 +248,9 @@
     <Compile Include="Views\PopUp\ModificarContactos.xaml.cs">
       <DependentUpon>ModificarContactos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\ModificarDocumentos.xaml.cs">
+      <DependentUpon>ModificarDocumentos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\modificarReferencia.xaml.cs">
       <DependentUpon>modificarReferencia.xaml</DependentUpon>
     </Compile>
@@ -387,6 +390,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PopUp\ModificarContactos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\ModificarDocumentos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

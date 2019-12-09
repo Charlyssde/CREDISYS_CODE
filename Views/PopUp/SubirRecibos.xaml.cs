@@ -62,7 +62,8 @@ namespace CREDISYS.Views.PopUp
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (txtName.Text.Trim().Equals("") || txtFile.Text.Trim().Equals(""))
+            if (txtName.Text.Trim().Equals("") || txtFile.Text.Trim().Equals("") || txtFile2.Text.Trim().Equals("")
+                 ||txtFile3.Text.Trim().Equals("") || txtFile4.Text.Trim().Equals("") )
             {
                 System.Windows.MessageBox.Show("Elegir un archivo es obligatorio");
                 return;

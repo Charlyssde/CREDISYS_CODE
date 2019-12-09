@@ -63,7 +63,7 @@
                 </Button>
             </StackPanel>
             <StackPanel Orientation="Vertical" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">
-                <Label Content="Subir documentos" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
+                <Label Content="Modificar documentos" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold"></Label>
                 <Button x:Name="btnSubir" Width="150" Cursor="Hand" Click="btnSubir_Click">
                     <Button.Template>
                         <ControlTemplate>

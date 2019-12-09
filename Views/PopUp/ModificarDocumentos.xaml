@@ -5,8 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
-        Title="ModificarDocumentos" Height="450" Width="800">
+        Title="Modificar Documentos" Height="600" Width="800">
     <Grid>
-        
+        <Button x:Name="guardarboton" Content="Modificar" HorizontalAlignment="Left" Margin="620,508,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Grid Background="#283593" Margin="0,0,-0.4,511.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="btnBack" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnBack_Click" Margin="0,8,0,7.4" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="/CREDISYS;component/Resources/IcRegresar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label x:Name="lblRol" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Modificar documentos" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label x:Name="lblNombre"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
+                <Image Source="/CREDISYS;component/Resources/IcUsuario.png" Height="35" />
+            </StackPanel>
+        </Grid>
+        <Button x:Name="ButtonGuardar" Content="..." HorizontalAlignment="Left" Margin="447,210,0,0" VerticalAlignment="Top" Width="75" Click="ButtonGuardar_Click"/>
+        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="87,207,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True" TextChanged="txtFile_TextChanged"/>
+        <TextBox x:Name="txtName"  HorizontalAlignment="Left" Height="23" Margin="87,179,0,0" TextWrapping="Wrap" Text="INE" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,175,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="45,207,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonBuscar2" Content="..." HorizontalAlignment="Left" Margin="447,290,0,0" VerticalAlignment="Top" Width="75" Click="Button2_Click"/>
+        <TextBox x:Name="txtFile2" HorizontalAlignment="Left" Height="23" Margin="87,287,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <TextBox x:Name="txtName_Copy"  HorizontalAlignment="Left" Height="23" Margin="87,259,0,0" TextWrapping="Wrap" Text="Comprobante de domicilio" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,255,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="45,287,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonBuscar" Content="..." HorizontalAlignment="Left" Margin="447,370,0,0" VerticalAlignment="Top" Width="75" Click="Button3_Click"/>
+        <TextBox x:Name="txtFile3" HorizontalAlignment="Left" Height="23" Margin="87,367,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <TextBox x:Name="txtName_Copy1"  HorizontalAlignment="Left" Height="23" Margin="87,339,0,0" TextWrapping="Wrap" Text="Estado de cuenta" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,335,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="45,367,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="ButtonBuscar3" Content="..." HorizontalAlignment="Left" Margin="447,447,0,0" VerticalAlignment="Top" Width="75" Click="Button4_Click"/>
+        <TextBox x:Name="txtFile4" HorizontalAlignment="Left" Height="23" Margin="87,443,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
+        <TextBox x:Name="txtName_Copy2"  HorizontalAlignment="Left" Height="23" Margin="87,415,0,0" TextWrapping="Wrap" Text="Recibo de pago" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,412,0,0"/>
+        <Label Content="Ruta:" HorizontalAlignment="Left" Margin="45,444,0,0" VerticalAlignment="Top"/>
+        <Label Content="RFC Cliente:" HorizontalAlignment="Left" Margin="26,95,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="rfcCliente" HorizontalAlignment="Left" Height="23" Margin="105,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <Label Content="Folio:" HorizontalAlignment="Left" Margin="26,136,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="foliotxt" HorizontalAlignment="Left" Height="23" Margin="105,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+
     </Grid>
 </Window>
