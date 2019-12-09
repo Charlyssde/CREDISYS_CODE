@@ -25,6 +25,7 @@ namespace CREDISYS.Views
 
         private Solicitud solicitud;
         private Usuario usuario;
+        private Cliente cliente;
 
         public RealizarDictamen(Solicitud solicitud, Usuario usuario)
         {
@@ -44,6 +45,7 @@ namespace CREDISYS.Views
             txtMontoLetra.Text = this.solicitud.montoLetra;
             txtMontoNumero.Text = this.solicitud.montoNumero.ToString();
             txtPlazo.Text = "12";
+            cliente.rfc = solicitud.rfcCliente;
             using (DBEntities db = new DBEntities())
             {
                 CondicionCredito c = db.CondicionCreditoes.Where(b => b.idCondicionCredito == this.solicitud.idCondicion).SingleOrDefault();
@@ -155,6 +157,15 @@ namespace CREDISYS.Views
         private void rbRechazarSolicitud_Checked(object sender, RoutedEventArgs e)
         {
             this.resultado = "rechazada";
+        }
+
+        private void visualizar_Click(object sender, RoutedEventArgs e)
+        {
+            VisualizarCliente vc = new VisualizarCliente(cliente);
+            
+            vc.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.Hide();
+            vc.ShowDialog();
         }
     }
 }

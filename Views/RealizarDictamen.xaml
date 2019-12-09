@@ -150,9 +150,10 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            
-            
+
+
         </StackPanel>
-        
+        <Button Name="visualizar" Content="Visualizar cliente" Height="53" VerticalAlignment="Top" Width="165" Margin="0,0.2,0,0" Click="visualizar_Click"/>
+
     </DockPanel>
 </Window>
