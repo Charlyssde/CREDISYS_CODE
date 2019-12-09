@@ -33,7 +33,7 @@
             </StackPanel>
         </Grid>
         <Button Name="ButtonGuardar" Content="..." HorizontalAlignment="Left" Margin="460,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="100,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True" TextChanged="txtFile_TextChanged"/>
+        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="100,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True" />
         <Button Content="Guardar" HorizontalAlignment="Left" Margin="576,497,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click_1" Height="41"/>
         <TextBox x:Name="txtName"  HorizontalAlignment="Left" Height="23" Margin="100,91,0,0" TextWrapping="Wrap" Text="INE" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,88,0,0"/>

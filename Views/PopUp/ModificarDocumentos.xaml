@@ -34,7 +34,7 @@
             </StackPanel>
         </Grid>
         <Button x:Name="ButtonGuardar" Content="..." HorizontalAlignment="Left" Margin="447,210,0,0" VerticalAlignment="Top" Width="75" Click="ButtonGuardar_Click"/>
-        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="87,207,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True" TextChanged="txtFile_TextChanged"/>
+        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="87,207,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True" />
         <TextBox x:Name="txtName"  HorizontalAlignment="Left" Height="23" Margin="87,179,0,0" TextWrapping="Wrap" Text="INE" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,175,0,0"/>
         <Label Content="Ruta:" HorizontalAlignment="Left" Margin="45,207,0,0" VerticalAlignment="Top"/>
@@ -54,9 +54,9 @@
         <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="26,412,0,0"/>
         <Label Content="Ruta:" HorizontalAlignment="Left" Margin="45,444,0,0" VerticalAlignment="Top"/>
         <Label Content="RFC Cliente:" HorizontalAlignment="Left" Margin="26,95,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="rfcCliente" HorizontalAlignment="Left" Height="23" Margin="105,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox Name="rfcCliente" HorizontalAlignment="Left" Height="23" Margin="105,97,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
         <Label Content="Folio:" HorizontalAlignment="Left" Margin="26,136,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="foliotxt" HorizontalAlignment="Left" Height="23" Margin="105,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="foliotxt" HorizontalAlignment="Left" Height="23" Margin="105,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" />
 
     </Grid>
 </Window>

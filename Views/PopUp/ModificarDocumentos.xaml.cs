@@ -115,5 +115,10 @@ namespace CREDISYS.Views.PopUp
             string destino = System.IO.Path.GetDirectoryName(dir);
             txtFile4.Text = dir;
         }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
