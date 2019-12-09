@@ -27,7 +27,9 @@ namespace CREDISYS.Views.PopUp
         public RegistrarReferencia2(Referencia referencia, Referencia referencia2, Cliente cliente)
         {
             InitializeComponent();
+           
             clientenuevo = cliente;
+            
             this.referencia = referencia;
             this.referencia2 = referencia2;
             txt_name1.Text = referencia.nombre;
@@ -51,7 +53,8 @@ namespace CREDISYS.Views.PopUp
                     }
                     else
                     {
-                        Referencia nueva = new Referencia();
+                        Referencia nueva = new Referencia { idReferencia = referencia.idReferencia };
+                        db.Referencias.Attach(nueva);
                         nueva.nombre = txt_name1.Text;
                         nueva.relacion = txtRelacion.Text;
                         nueva.telefono = txtTel.Text;

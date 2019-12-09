@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CREDISYS.Views.PopUp"
         mc:Ignorable="d"
-        Title="Subir Recibos" Height="750" Width="800">
+        Title="Subir Recibos" Height="600" Width="800">
     <Grid>
         <Grid Background="#283593" Margin="0,0,-0.4,659.8">
             <Grid.ColumnDefinitions>
@@ -33,8 +33,8 @@
             </StackPanel>
         </Grid>
         <Button Name="ButtonGuardar" Content="..." HorizontalAlignment="Left" Margin="460,123,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="100,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True"/>
-        <Button Content="Guardar" HorizontalAlignment="Left" Margin="609,512,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_1" Height="26"/>
+        <TextBox x:Name="txtFile" HorizontalAlignment="Left" Height="23" Margin="100,119,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="344" IsReadOnly="True" TextChanged="txtFile_TextChanged"/>
+        <Button Content="Guardar" HorizontalAlignment="Left" Margin="576,497,0,0" VerticalAlignment="Top" Width="109" Click="Button_Click_1" Height="41"/>
         <TextBox x:Name="txtName"  HorizontalAlignment="Left" Height="23" Margin="100,91,0,0" TextWrapping="Wrap" Text="INE" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,88,0,0"/>
         <Label Content="Ruta:" HorizontalAlignment="Left" Margin="58,120,0,0" VerticalAlignment="Top"/>
@@ -58,6 +58,31 @@
         <TextBox x:Name="txtName_Copy3"  HorizontalAlignment="Left" Height="23" Margin="100,406,0,0" TextWrapping="Wrap" Text="Recibo de pago 2" VerticalAlignment="Top" Width="210" FontSize="16" FontWeight="Bold" IsReadOnly="True"/>
         <Label Content="Nombre:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="39,403,0,0"/>
         <Label Content="Ruta:" HorizontalAlignment="Left" Margin="58,435,0,0" VerticalAlignment="Top"/>
+        <Grid Background="#283593" Margin="0,0,-0.4,509.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Width="auto" Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button x:Name="btnBack1" Cursor="Hand" Width="35" Height="35" VerticalAlignment="Center" HorizontalAlignment="Left" Click="btnBack_Click" Margin="0,8,0,7.4" >
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Image Source="/CREDISYS;component/Resources/IcRegresar.png"/>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Label x:Name="lblRol1" Width="auto" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                    FontSize="15" FontStyle="Italic" HorizontalAlignment="Right"/>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Width="auto" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Label Content="Subir documentos" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Width="auto" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Label x:Name="lblNombre1"  Width="auto" FontSize="15" VerticalContentAlignment="Center" />
+                <Image Source="/CREDISYS;component/Resources/IcUsuario.png" Height="35" />
+            </StackPanel>
+        </Grid>
 
     </Grid>
 </Window>
