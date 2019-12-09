@@ -20,6 +20,7 @@ namespace CREDISYS.Views.PopUp
     /// </summary>
     public partial class VisualizarCliente : Window
     {
+        Cliente clientenuevo;
         Cliente cliente;
         Tarjeta tarjeta;
         Tarjeta tarjeta2;
@@ -31,7 +32,7 @@ namespace CREDISYS.Views.PopUp
 
         public VisualizarCliente(Cliente cliente)
         {
-            this.cliente = cliente;
+            this.clientenuevo = cliente;
             InitializeComponent();
             cargarDatos();
         }
@@ -39,7 +40,7 @@ namespace CREDISYS.Views.PopUp
         {
             using (DBEntities db = new DBEntities())
             {
-                
+               Cliente cliente = db.Clientes.Where(b => b.rfc == clientenuevo.rfc).FirstOrDefault();
                 rfc.Content = cliente.rfc;
                 nombre.Content = cliente.nombre;
                 apellidoPaterno.Content = cliente.apellidoPaterno;
