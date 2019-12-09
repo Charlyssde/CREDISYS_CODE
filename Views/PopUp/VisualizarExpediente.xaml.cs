@@ -33,11 +33,51 @@ namespace CREDISYS.Views.PopUp
         private void chbDocumentos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             byte[] byteFile = cargarBytes();
-            File.Create(@"./tmpFile");
-            File.WriteAllBytes(@"./tmpFile", byteFile);
 
-            XpsDocument doc = new XpsDocument("./tmpFile", FileAccess.Read);
-            pdfViewer.Document = doc.GetFixedDocumentSequence();
+            using (DBEntities db = new DBEntities())
+            {
+                Cliente cliente = db.Clientes.Where(b => b.rfc == this.solicitud.rfcCliente).FirstOrDefault();
+                String path = "C:\\Users\\texch\\Desktop\\Docs\\Exp\\" + cliente.rfc + "_" + this.solicitud.folio + "\\";
+
+                switch (chbDocumentos.SelectedItem.ToString())
+                {
+                    case "Solicitud":
+                        path = path + "Solicitud.pdf";
+                        break;
+                    case "Domicializacion":
+                        path = path + "Domiciliacion.pdf";
+                        break;
+                    case "Pagare":
+                        path = path + "Pagare.pdf";
+                        break;
+                    case "INE":
+                        path = path + "Solicitud.pdf";
+                        break;
+                    case "Comprobante de domicilio":
+                        path = path + "Solicitud.pdf";
+                        break;
+                    case "Estado de cuenta":
+                        path = path + "Solicitud.pdf";
+                        break;
+                    case "Recibo de pago":
+                        path = path + "Solicitud.pdf";
+                        break;
+                    case "Caratula de apertura":
+                        path = path + "Caratula.pdf";
+                        break;
+
+                    default:
+                        path = path + "Solicitud.pdf";
+                        break;
+                }
+                XpsDocument doc = new XpsDocument(path, FileAccess.Read);
+                pdfViewer.Document = doc.GetFixedDocumentSequence();
+
+            }
+
+                
+
+           
         }
 
         private byte[] cargarBytes()

@@ -92,7 +92,7 @@ namespace CREDISYS.Views.PopUp
         {
             using (DBEntities db = new DBEntities())
             {
-                
+
 
                 //PAGARÉ
                 ReportDocument pagare = new ReportDocument();
@@ -131,6 +131,7 @@ namespace CREDISYS.Views.PopUp
                 {
                     MessageBox.Show(ex.ToString());
                 }
+
 
                 //SOLICITUD
                 ReportDocument solicitudRpt = new ReportDocument();
@@ -246,7 +247,7 @@ namespace CREDISYS.Views.PopUp
                 domiciliacion.SetParameterValue("proveedor", "Financiera Independiente");
                 domiciliacion.SetParameterValue("montoTotal", this.solicitud.montoNumero);
                 domiciliacion.SetParameterValue("idCliente", cliente.rfc);
-                domiciliacion.SetParameterValue("bancoUno", b1.banco1 );
+                domiciliacion.SetParameterValue("bancoUno", b1.banco1);
                 domiciliacion.SetParameterValue("tarjetaUno", tar1.numTarjeta);
                 domiciliacion.SetParameterValue("clabeUno", tar1.clabeBancaria);
                 domiciliacion.SetParameterValue("telefonoUno", tar1.numTelefono);
@@ -313,6 +314,21 @@ namespace CREDISYS.Views.PopUp
                 {
                     MessageBox.Show(ex.ToString());
                 }
+
+                Expediente expediente = db.Expedientes.Where(b => b.rfcCliente == cliente.rfc).FirstOrDefault();
+                String path = "C:\\Users\\texch\\Desktop\\Docs\\Exp\\" + cliente.rfc + "_" + this.solicitud.folio;
+                Byte[] caratulaFile = File.ReadAllBytes(path + "\\Caratula.pdf");
+                Byte[] solicitudFile = File.ReadAllBytes(path + "\\Solicitud.pdf");
+                Byte[] pagareFile = File.ReadAllBytes(path + "\\Pagare.pdf");
+                Byte[] domiciliacionFile = File.ReadAllBytes(path + "\\Domiciliacion.pdf");
+
+                expediente.caratula = caratulaFile;
+                expediente.solicitud = solicitudFile;
+                expediente.pagare = pagareFile;
+                expediente.domicializacion = domiciliacionFile;
+
+                db.SaveChanges();
+
 
             }
         }

@@ -148,7 +148,7 @@ namespace CREDISYS.Views.PopUp
         {
             this.usuario = usuario;
             this.cliente = cliente;
-            lblRol.Content = usuario.nombre;
+            //lblRol.Content = usuario.nombre;
             lblNombreVendedor.Content = lblNombre.Content = usuario.nombre;
             cargarTasas();
         }

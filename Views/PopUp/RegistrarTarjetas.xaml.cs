@@ -78,6 +78,7 @@ namespace CREDISYS.Views.PopUp
                     db.Tarjetas.Add(tarjeta);
                     db.Tarjetas.Add(tarjeta2);
                     
+
                     db.SaveChanges();
                     MessageBox.Show(Settings.Default.MensajeExito);
                     SubirRecibos modificarRefe = new SubirRecibos(cliente);

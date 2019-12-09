@@ -14,7 +14,7 @@ namespace CREDISYS.Views.PopUp
     public partial class SubirRecibos : Window
     {
         Cliente cliente;
-
+        private Usuario usuario;
         OpenFileDialog openFileDialog1 = new OpenFileDialog();
         OpenFileDialog openFileDialog2 = new OpenFileDialog();
         OpenFileDialog openFileDialog3 = new OpenFileDialog();
@@ -50,7 +50,7 @@ namespace CREDISYS.Views.PopUp
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Dashboard_Capturista dashboard_Capturista = new Dashboard_Capturista();
+            MainWindow dashboard_Capturista = new MainWindow();
             dashboard_Capturista.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             dashboard_Capturista.Show();
             closeWindow();

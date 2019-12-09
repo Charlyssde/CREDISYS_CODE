@@ -58,7 +58,7 @@ namespace CREDISYS.Views
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            Dashboard_Capturista cap= new Dashboard_Capturista();
+            Dashboard_Capturista cap= new Dashboard_Capturista(this.usuario);
             cap.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             cap.Show();
             closeWindow();

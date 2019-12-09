@@ -22,9 +22,10 @@ namespace CREDISYS.Views
     {
         Usuario usuario;
         
-        public Dashboard_Capturista()
+        public Dashboard_Capturista(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
             
         }
 

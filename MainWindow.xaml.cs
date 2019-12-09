@@ -34,7 +34,7 @@ namespace CREDISYS
              * TEMPORAL PARA PRUEBAS
              */
             //txtUsername.Text = "Charlyssde";
-            txtPassword.Password = "secret";
+            //txtPassword.Password = "secret";
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -73,7 +73,7 @@ namespace CREDISYS
                                     closeWindow();
                                     break;
                                 case 6:
-                                    Dashboard_Capturista dashboard_Capturista = new Dashboard_Capturista();
+                                    Dashboard_Capturista dashboard_Capturista = new Dashboard_Capturista(user);
                                     dashboard_Capturista.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                                     dashboard_Capturista.Show();
                                     closeWindow();
