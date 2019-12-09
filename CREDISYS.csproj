@@ -174,7 +174,6 @@
     </Compile>
     <Compile Include="Solicitud.cs">
       <DependentUpon>DBModels.tt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Solicitud1.cs">
       <AutoGen>True</AutoGen>
@@ -245,6 +244,9 @@
     <Compile Include="Views\PopUp\EncuestaSolicitud.xaml.cs">
       <DependentUpon>EncuestaSolicitud.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PopUp\MarcarQuebranto.xaml.cs">
+      <DependentUpon>MarcarQuebranto.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PopUp\ModificarContactos.xaml.cs">
       <DependentUpon>ModificarContactos.xaml</DependentUpon>
     </Compile>
@@ -268,6 +270,9 @@
     </Compile>
     <Compile Include="Views\PopUp\RegistrarEmpleo.xaml.cs">
       <DependentUpon>RegistrarEmpleo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PopUp\RegistrarPago.xaml.cs">
+      <DependentUpon>RegistrarPago.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PopUp\RegistrarReferecias.xaml.cs">
       <DependentUpon>RegistrarReferecias.xaml</DependentUpon>
@@ -389,6 +394,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PopUp\MarcarQuebranto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\PopUp\ModificarContactos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -418,6 +427,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\PopUp\RegistrarEmpleo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PopUp\RegistrarPago.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

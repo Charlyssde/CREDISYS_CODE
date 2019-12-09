@@ -64,21 +64,24 @@ namespace CREDISYS.Views.PopUp
                 }
                 else
                 {
-                    Telefono telefono = new Telefono();
+                    
+                    
+                    Telefono telefono = new Telefono { idTelefono = this.telefono.idTelefono };
+                    db.Telefonoes.Attach(telefono);
                     telefono.estatus = "Activo";
                     telefono.numero = txtNumeroUno.Text;
                     telefono.rfcCliente = this.cliente.rfc;
                     telefono.tipoTelefono = selUno;
 
 
-                    Telefono telefono2 = new Telefono();
+                    Telefono telefono2 = new Telefono { idTelefono = this.telefono2.idTelefono };
+                    db.Telefonoes.Attach(telefono2);
                     telefono2.estatus = "Activo";
                     telefono2.numero = txtNumeroUno.Text;
                     telefono2.rfcCliente = this.cliente.rfc;
                     telefono2.tipoTelefono = selUno;
                     
-                    db.Telefonoes.Add(telefono);
-                    db.Telefonoes.Add(telefono2);
+                    
                     
                     if (txtCorreo.Text.Equals(""))
                     {
@@ -86,11 +89,12 @@ namespace CREDISYS.Views.PopUp
                     }
                     else
                     {
-                        Correo nuevo = new Correo();
+                        Correo nuevo = new Correo() { idCorreo = this.correo.idCorreo };
+                        db.Correos.Attach(nuevo);
                         nuevo.correo1 = txtCorreo.Text;
                         nuevo.rfcCliente = cliente.rfc;
                         nuevo.estatus = "activo";
-                        db.Correos.Add(nuevo);
+                        
                         db.SaveChanges();
                         MessageBox.Show(Settings.Default.MensajeExito);
                     }

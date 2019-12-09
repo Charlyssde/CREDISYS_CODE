@@ -29,6 +29,8 @@ namespace CREDISYS.Views.PopUp
             InitializeComponent();
             cargarBancos();
             this.cliente = cliente;
+            this.tarjeta = tarjeta;
+            this.tarjeta2 = tarjeta2;
         }
 
         private void BtnAceptar_Click(object sender, RoutedEventArgs e)
@@ -41,7 +43,9 @@ namespace CREDISYS.Views.PopUp
                 }
                 else
                 {
-                    Tarjeta tarjeta3 = new Tarjeta();
+                    
+                    Tarjeta tarjeta3 = new Tarjeta { numTarjeta = tarjeta.numTarjeta };
+                    db.Tarjetas.Attach(tarjeta3);
                     tarjeta.rfcCliente = this.cliente.rfc;
                     tarjeta.numTelefono = txtTelefonoUno.Text;
                     tarjeta.clabeBancaria = txtNumeroClabeUno.Text;
@@ -57,12 +61,13 @@ namespace CREDISYS.Views.PopUp
                     }
 
 
-                    Tarjeta tarjeta2 = new Tarjeta();
-                    tarjeta2.rfcCliente = this.cliente.rfc;
+                    Tarjeta tarjeta4 = new Tarjeta { numTarjeta = tarjeta2.numTarjeta };
+                    db.Tarjetas.Attach(tarjeta4);
+                    tarjeta4.rfcCliente = this.cliente.rfc;
 
-                    tarjeta2.numTelefono = txtTelefonoDos.Text;
-                    tarjeta2.clabeBancaria = txtNumeroClabeDos.Text;
-                    tarjeta2.estatus = "Activo";
+                    tarjeta4.numTelefono = txtTelefonoDos.Text;
+                    tarjeta4.clabeBancaria = txtNumeroClabeDos.Text;
+                    tarjeta4.estatus = "Activo";
                     foreach (Banco b in bancos)
                     {
                         if (cbBancoCobro.SelectedItem.Equals(b.banco1))
@@ -72,8 +77,8 @@ namespace CREDISYS.Views.PopUp
 
                         }
                     }
-                    db.Tarjetas.Add(tarjeta);
-                    db.Tarjetas.Add(tarjeta2);
+                    db.SaveChanges();
+                   
 
                 }
 

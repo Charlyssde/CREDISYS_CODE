@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CREDISYS.Properties;
+using CREDISYS.Views.PopUp;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,11 +29,20 @@ namespace CREDISYS.Views
         private void btnQuebranto_Click(object sender, RoutedEventArgs e)
         {
 
+            MarcarQuebranto registrarReferencias = new MarcarQuebranto();
+            registrarReferencias.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.Hide();
+            registrarReferencias.ShowDialog();
         }
 
         private void btnRegistrarPago_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            RegistrarPago registrarReferencias = new RegistrarPago();
+            registrarReferencias.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.Hide();
+            registrarReferencias.ShowDialog();
+            
         }
 
         private void btnTablaPagos_Click(object sender, RoutedEventArgs e)

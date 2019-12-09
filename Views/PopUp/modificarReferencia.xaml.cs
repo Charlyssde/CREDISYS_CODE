@@ -51,7 +51,8 @@ namespace CREDISYS.Views.PopUp
                     }
                     else
                     {
-                        Referencia nueva = new Referencia();
+                        Referencia nueva = new Referencia { idReferencia = referencia.idReferencia };
+                        db.Referencias.Attach(nueva);
                         nueva.nombre = txt_name1.Text;
                         nueva.relacion = txtRelacion.Text;
                         nueva.telefono = txtTel.Text;
