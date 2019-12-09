@@ -45,12 +45,12 @@ namespace CREDISYS.Views
             txtMontoLetra.Text = this.solicitud.montoLetra;
             txtMontoNumero.Text = this.solicitud.montoNumero.ToString();
             txtPlazo.Text = "12";
-            cliente.rfc = solicitud.rfcCliente;
             using (DBEntities db = new DBEntities())
             {
                 CondicionCredito c = db.CondicionCreditoes.Where(b => b.idCondicionCredito == this.solicitud.idCondicion).SingleOrDefault();
                 txtInteres.Text = c.interes.ToString();
                 txtIva.Text = c.iva.ToString();
+                cliente = db.Clientes.Where(b => b.rfc == solicitud.rfcCliente).FirstOrDefault();
             }
                 
         }
@@ -164,7 +164,7 @@ namespace CREDISYS.Views
             VisualizarCliente vc = new VisualizarCliente(cliente);
             
             vc.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            this.Hide();
+            //this.Hide();
             vc.ShowDialog();
         }
     }
